@@ -4,6 +4,9 @@ package generators;
 import json23plet.modules.Json;
 import json23plet.modules.Triplet;
 
+import static json23plet.modules.Json.json;
+import static json23plet.modules.Triplet.triplet;
+
 /**
  * Created by yon_b on 29/11/16.
  */
@@ -12,30 +15,25 @@ public class PasukGenerator extends JbsBaseGenerator {
     public void generate() {
         try {
             super.generate();
-            for (Json j : json23plet.modules.Json.json().getAsArray("subjects")) {
+            for (Json j : json().getAsArray("subjects")) {
                 String sub = JBR_PREFIX + ":" + j.value("uri");
-                Triplet
-                        .triplet()
+                triplet()
                         .subject(sub)
                         .predicate(RDF_P_TYPE)
                         .object(JBO_C_PASUK);
-                Triplet
-                        .triplet()
+                triplet()
                         .subject(sub)
                         .predicate(JBO_P_CONTAINER)
                         .object(j.value("parasha"));
-                Triplet
-                        .triplet()
+                triplet()
                         .subject(sub)
                         .predicate(JBO_P_CONTAINER)
                         .object(j.value("perek"));
-                Triplet
-                        .triplet()
+                triplet()
                         .subject(sub)
                         .predicate(JBO_P_POSITION_IN_PEREK)
                         .object(j.value("positionInPerek"));
-                Triplet
-                        .triplet()
+                triplet()
                         .subject(sub)
                         .predicate(JBO_P_POSITION_IN_PARASHA)
                         .object(j.value("positionInParasha"));
