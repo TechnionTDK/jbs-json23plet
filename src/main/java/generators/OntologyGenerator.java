@@ -1,7 +1,8 @@
-package Generators;
+package generators;
 
-import JSONUtils.JsonAPI;
-import TripletUtils.Triplet;
+
+import json23plet.modules.Json;
+import json23plet.modules.Triplet;
 
 /**
  * Created by yon_b on 03/12/16.
@@ -9,10 +10,10 @@ import TripletUtils.Triplet;
 public class OntologyGenerator implements IGenerator{
     @Override
     public void generate() {
-        for (JsonAPI j : JsonAPI.json().getAsArray("prefixes")) {
+        for (Json j : json23plet.modules.Json.json().getAsArray("prefixes")) {
             Triplet.addNSprefix(j.value("prefix"), j.value("uri"));
         }
-        for (JsonAPI j : JsonAPI.json().getAsArray("metadata")) {
+        for (Json j : json23plet.modules.Json.json().getAsArray("metadata")) {
             Triplet
                     .triplet()
                     .subject(j.value("subject"))

@@ -1,7 +1,8 @@
-package Generators;
+package generators;
 
-import JSONUtils.JsonAPI;
-import TripletUtils.Triplet;
+
+import json23plet.modules.Json;
+import json23plet.modules.Triplet;
 
 /**
  * Created by yon_b on 06/12/16.
@@ -9,7 +10,7 @@ import TripletUtils.Triplet;
 public class JbsBaseGenerator extends JbsOntology {
     protected JbsBaseGenerator() {
         String jbrPrefix = "jbr:";
-        for (JsonAPI j : JsonAPI.json().getAsArray("subjects")) {
+        for (Json j : json23plet.modules.Json.json().getAsArray("subjects")) {
             String sub = jbrPrefix + j.value("uri");
             Triplet
                     .triplet()
@@ -21,12 +22,12 @@ public class JbsBaseGenerator extends JbsOntology {
                     .subject(sub)
                     .predicate(JBO_P_CONTAINER)
                     .object(j.value("sefer"));
-            for (JsonAPI json : j.getAsArray("titles")) {
+            for (json23plet.modules.Json Json : j.getAsArray("titles")) {
                 Triplet
                         .triplet()
                         .subject(sub)
                         .predicate(RDFS_P_LABEL)
-                        .object(json.value("title"));
+                        .object(Json.value("title"));
             }
         }
 

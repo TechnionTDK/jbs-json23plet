@@ -1,4 +1,4 @@
-package Generators;
+package generators;
 
 /**
  * Created by yon_b on 29/11/16.

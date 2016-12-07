@@ -1,7 +1,8 @@
-package Generators;
+package generators;
 
-import JSONUtils.JsonAPI;
-import TripletUtils.Triplet;
+
+import json23plet.modules.Json;
+import json23plet.modules.Triplet;
 
 /**
  * Created by yon_b on 29/11/16.
@@ -11,7 +12,7 @@ public class PasukGenerator extends JbsBaseGenerator implements IGenerator {
     public void generate() {
         String jbrPrefix = "jbr:";
         try {
-            for (JsonAPI j : JsonAPI.json().getAsArray("subjects")) {
+            for (Json j : json23plet.modules.Json.json().getAsArray("subjects")) {
                 String sub = jbrPrefix + j.value("uri");
                 Triplet
                         .triplet()

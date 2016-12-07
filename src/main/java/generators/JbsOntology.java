@@ -1,8 +1,6 @@
-package Generators;
+package generators;
 
-import TripletUtils.Triplet;
-import org.apache.jena.ontology.OntModel;
-import org.apache.jena.rdf.model.ModelFactory;
+import json23plet.modules.Triplet;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 

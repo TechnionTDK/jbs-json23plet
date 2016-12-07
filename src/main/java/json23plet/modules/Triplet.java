@@ -1,4 +1,4 @@
-package TripletUtils;
+package json23plet.modules;
 
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.*;

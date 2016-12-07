@@ -1,4 +1,4 @@
-package JSONUtils;
+package json23plet.modules;
 
 
 import com.google.gson.JsonElement;
@@ -12,32 +12,32 @@ import java.util.List;
 /**
  * Created by yon_b on 28/11/16.
  */
-public class JsonAPI {
+public class Json {
     static private JsonElement root;
 
     private JsonObject currentElement;
 
-    private JsonAPI(JsonObject obj) {
+    private Json(JsonObject obj) {
 
         currentElement = obj;
     }
-    private JsonAPI() {
+    private Json() {
 
         currentElement = root.getAsJsonObject();
     }
-    static public JsonAPI json() {
+    static public Json json() {
 
-        return new JsonAPI();
+        return new Json();
     }
-    public List<JsonAPI> getAsArray(String member) {
-        List<JsonAPI> res = new ArrayList<JsonAPI>();
+    public List<Json> getAsArray(String member) {
+        List<Json> res = new ArrayList<Json>();
         for (JsonElement e : currentElement.getAsJsonArray(member)) {
-            res.add(new JsonAPI(e.getAsJsonObject()));
+            res.add(new Json(e.getAsJsonObject()));
         }
         return res;
     }
 
-    public JsonAPI getAsObject(String member) {
+    public Json getAsObject(String member) {
         currentElement = currentElement.getAsJsonObject(member);
         return this;
     }

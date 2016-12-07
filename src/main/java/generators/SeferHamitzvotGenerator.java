@@ -1,8 +1,8 @@
-package Generators;
+package generators;
 
-import JSONUtils.JsonAPI;
-import TripletUtils.Triplet;
-import org.apache.jena.base.Sys;
+
+import json23plet.modules.Json;
+import json23plet.modules.Triplet;
 
 /**
  * Created by yon_b on 06/12/16.
@@ -11,7 +11,7 @@ public class SeferHamitzvotGenerator extends JbsBaseGenerator implements IGenera
     @Override
     public void generate() {
         try {
-            for (JsonAPI j : JsonAPI.json().getAsArray("subjects")) {
+            for (Json j : Json.json().getAsArray("subjects")) {
                 Triplet
                         .triplet()
                         .subject("jbr:" + j.value("uri"))

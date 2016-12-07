@@ -1,11 +1,11 @@
-package GeneratorFactory;
+package generatorFactory;
 
-import Generators.KnownOntologies;
-import JSONUtils.JsonAPI;
-import TripletUtils.Triplet;
+import generators.KnownOntologies;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import json23plet.modules.Json;
+import json23plet.modules.Triplet;
 import org.apache.commons.io.FilenameUtils;
 
 
@@ -48,10 +48,10 @@ public class GeneratorFactory {
     static private void activateGenerator(String genName, String jsonInput, String ont)
             throws Exception {
         Triplet.Init();
-        JsonAPI.Init(jsonInput);
+        Json.Init(jsonInput);
         KnownOntologies.Init(ont);
-        Class genClass = Class.forName("Generators." + genName);
-        if (!Arrays.asList(genClass.getInterfaces()).contains(Class.forName("Generators.IGenerator"))) {
+        Class genClass = Class.forName("generators." + genName);
+        if (!Arrays.asList(genClass.getInterfaces()).contains(Class.forName("generators.IGenerator"))) {
             throw new Exception("Generator need to implement IGenerator");
         }
         Constructor ctor = genClass.getConstructor();
