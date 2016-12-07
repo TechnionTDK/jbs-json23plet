@@ -1,0 +1,22 @@
+{
+  "generators" : [
+    {
+      "name" : "PasukGenerator",
+      "input" : "tanach-json/tanach",
+      "ontology" : "ontologies/jbsOntology.ttl",
+      "active" : "true"
+    },
+    {
+      "name" : "SeferHamitzvotGenerator",
+      "input" : "seferhamitzvot-json",
+      "ontology" : "ontologies/jbsOntology.ttl",
+      "active" : "false"
+    },
+    {
+      "name" : "OntologyGenerator",
+      "input" : "ontologies/jbsOntology/jbsOntology.json",
+      "ontology" : "",
+      "active" : "false"
+    }
+  ]
+}
