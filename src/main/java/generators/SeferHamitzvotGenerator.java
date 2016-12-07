@@ -4,24 +4,28 @@ package generators;
 import json23plet.modules.Json;
 import json23plet.modules.Triplet;
 
+import static json23plet.modules.Json.json;
+import static json23plet.modules.Triplet.triplet;
+
 /**
  * Created by yon_b on 06/12/16.
  */
-public class SeferHamitzvotGenerator extends JbsBaseGenerator implements IGenerator {
+public class SeferHamitzvotGenerator extends JbsBaseGenerator {
     @Override
     public void generate() {
         try {
-            for (Json j : Json.json().getAsArray("subjects")) {
-                Triplet
-                        .triplet()
-                        .subject("jbr:" + j.value("uri"))
+            super.generate();
+            for (Json j : json().getAsArray("subjects")) {
+                String sub = JBR_PREFIX + ":" + j.value("uri");
+                triplet()
+                        .subject(sub)
                         .predicate(RDF_P_TYPE)
                         .object(JBO_C_MITZVA);
-                Triplet
-                        .triplet()
-                        .object("jbr:" + j.value("uri"))
+
+                triplet()
+                        .object(sub)
                         .predicate(RDF_P_TYPE)
-                        .object("jbo:" + j.value("mitzvaType"));
+                        .object(JBO_PREFIX + ":" + j.value("mitzvaType"));
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());

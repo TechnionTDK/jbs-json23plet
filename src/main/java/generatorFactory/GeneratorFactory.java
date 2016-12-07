@@ -1,6 +1,6 @@
 package generatorFactory;
 
-import generators.KnownOntologies;
+import generators.Generator;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -16,7 +16,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,11 +48,8 @@ public class GeneratorFactory {
             throws Exception {
         Triplet.Init();
         Json.Init(jsonInput);
-        KnownOntologies.Init(ont);
+        Generator.Init(ont);
         Class genClass = Class.forName("generators." + genName);
-        if (!Arrays.asList(genClass.getInterfaces()).contains(Class.forName("generators.IGenerator"))) {
-            throw new Exception("Generator need to implement IGenerator");
-        }
         Constructor ctor = genClass.getConstructor();
         Method generate = genClass.getDeclaredMethod("generate", null);
         Object instance = ctor.newInstance(null);
@@ -68,7 +64,7 @@ public class GeneratorFactory {
             String inputPath = Paths.get(inputRootDir, generatorsMap.get(gen)[0]).toString();
             if(new File(inputPath).isFile()) {
                 activateGenerator(gen, new File(inputPath).getPath(), generatorsMap.get(gen)[1]);
-                return;
+                continue;
             }
             Files.find(Paths.get(inputPath), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
                 try {

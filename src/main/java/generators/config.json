@@ -10,7 +10,7 @@
       "name" : "SeferHamitzvotGenerator",
       "input" : "seferhamitzvot-json",
       "ontology" : "ontologies/jbsOntology.ttl",
-      "active" : "false"
+      "active" : "true"
     },
     {
       "name" : "OntologyGenerator",

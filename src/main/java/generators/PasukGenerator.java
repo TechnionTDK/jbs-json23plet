@@ -7,13 +7,13 @@ import json23plet.modules.Triplet;
 /**
  * Created by yon_b on 29/11/16.
  */
-public class PasukGenerator extends JbsBaseGenerator implements IGenerator {
+public class PasukGenerator extends JbsBaseGenerator {
     @Override
     public void generate() {
-        String jbrPrefix = "jbr:";
         try {
+            super.generate();
             for (Json j : json23plet.modules.Json.json().getAsArray("subjects")) {
-                String sub = jbrPrefix + j.value("uri");
+                String sub = JBR_PREFIX + ":" + j.value("uri");
                 Triplet
                         .triplet()
                         .subject(sub)
