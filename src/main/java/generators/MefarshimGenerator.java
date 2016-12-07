@@ -1,17 +1,13 @@
 package generators;
 
-
 import json23plet.modules.Json;
-import json23plet.modules.Triplet;
-
 import static json23plet.modules.Json.json;
 import static json23plet.modules.Triplet.triplet;
 
 /**
- * Created by yon_b on 29/11/16.
+ * Created by yon_b on 07/12/16.
  */
-public class PasukGenerator extends JbsBaseGenerator {
-    @Override
+public class MefarshimGenerator extends JbsBaseGenerator {
     public void generate() {
         try {
             super.generate();
@@ -22,7 +18,7 @@ public class PasukGenerator extends JbsBaseGenerator {
                 triplet()
                         .subject(sub)
                         .predicate(RDF_P_TYPE)
-                        .object(JBO_C_PASUK);
+                        .object(JBO_C_PERUSH);
                 triplet()
                         .subject(sub)
                         .predicate(JBO_P_CONTAINER)
@@ -31,6 +27,10 @@ public class PasukGenerator extends JbsBaseGenerator {
                         .subject(sub)
                         .predicate(JBO_P_CONTAINER)
                         .object(prefix + j.value("perek"));
+                triplet()
+                        .subject(sub)
+                        .predicate(JBO_P_INTERPRETS)
+                        .object(prefix + j.value("interprets"));
                 triplet()
                         .subject(sub)
                         .predicate(JBO_P_POSITION_IN_PEREK)

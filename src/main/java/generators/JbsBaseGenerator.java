@@ -20,10 +20,12 @@ public class JbsBaseGenerator extends Generator {
 
     protected static Resource JBO_C_PASUK;
     protected static Resource JBO_C_MITZVA;
+    protected static Resource JBO_C_PERUSH;
     protected static Property JBO_P_TEXT;
     protected static Property JBO_P_CONTAINER;
     protected static Property JBO_P_POSITION_IN_PEREK;
     protected static Property JBO_P_POSITION_IN_PARASHA;
+    protected static Property JBO_P_INTERPRETS;
 
     static {
         JBR_PREFIX = "jbr";
@@ -32,17 +34,20 @@ public class JbsBaseGenerator extends Generator {
         JBO_URI =  Generator.model.getNsPrefixURI(JBO_PREFIX);
         JBO_C_PASUK = Generator.model.getOntClass(JBO_URI + "Pasuk");
         JBO_C_MITZVA = Generator.model.getOntClass(JBO_URI + "Mitzva");
+        JBO_C_PERUSH = Generator.model.getOntClass(JBO_URI + "Perush");
         JBO_P_TEXT = Generator.model.getOntProperty(JBO_URI + "text");
         JBO_P_CONTAINER = Generator.model.getOntProperty(JBO_URI + "container");
         JBO_P_POSITION_IN_PEREK = Generator.model.getOntProperty(JBO_URI + "positionInPerek");
         JBO_P_POSITION_IN_PARASHA = Generator.model.getOntProperty(JBO_URI + "positionInParasha");
+        JBO_P_INTERPRETS = Generator.model.getOntProperty(JBO_URI + "interprets");
     }
 
     public void generate() {
         Triplet.addNSprefix(JBO_PREFIX, JBO_URI);
         Triplet.addNSprefix(JBR_PREFIX, JBR_URI);
         for (Json j : json().getAsArray("subjects")) {
-            String sub = JBR_PREFIX + ":" + j.value("uri");
+            String prefix = JBR_PREFIX + ":";
+            String sub = prefix + j.value("uri");
             triplet()
                     .subject(sub)
                     .predicate(JBO_P_TEXT)
@@ -50,7 +55,7 @@ public class JbsBaseGenerator extends Generator {
             triplet()
                     .subject(sub)
                     .predicate(JBO_P_CONTAINER)
-                    .object(j.value("sefer"));
+                    .object(prefix + j.value("sefer"));
             for (Json js : j.getAsArray("titles")) {
                 triplet()
                         .subject(sub)

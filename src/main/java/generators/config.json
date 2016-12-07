@@ -4,13 +4,19 @@
       "name" : "PasukGenerator",
       "input" : "tanach-json/tanach",
       "ontology" : "ontologies/jbsOntology.ttl",
-      "active" : "true"
+      "active" : "false"
+    },
+    {
+    "name" : "MefarshimGenerator",
+    "input" : "tanach-mefarshim",
+    "ontology" : "ontologies/jbsOntology.ttl",
+    "active" : "false"
     },
     {
       "name" : "SeferHamitzvotGenerator",
       "input" : "seferhamitzvot-json",
       "ontology" : "ontologies/jbsOntology.ttl",
-      "active" : "true"
+      "active" : "false"
     },
     {
       "name" : "OntologyGenerator",
