@@ -11,7 +11,7 @@ import static json23plet.modules.Triplet.triplet;
  * Created by yon_b on 29/11/16.
  */
 public class PasukGenerator extends JbsBaseGenerator {
-    @Override
+   @Override
     public void generate() {
         try {
             super.generate();

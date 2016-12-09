@@ -1,4 +1,4 @@
-package generatorFactory;
+package json23plet.modules;
 
 import generators.Generator;
 import com.google.gson.JsonElement;

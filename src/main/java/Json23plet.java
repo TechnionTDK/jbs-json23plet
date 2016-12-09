@@ -1,3 +1,5 @@
+import json23plet.modules.GeneratorFactory;
+
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -8,16 +10,16 @@ import java.nio.file.Paths;
 public class Json23plet {
     public static void main(String argv[]) {
         initJson23plet();
-        generatorFactory.GeneratorFactory.Init("src/main/java/generators", "input", "output");
+        GeneratorFactory.Init("src/main/java/generators", "input", "output");
         try {
-            generatorFactory.GeneratorFactory.activateAllGenerators();
+            GeneratorFactory.activateAllGenerators();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
     }
     private static void initJson23plet() {
-        String[] files = {"output", "ontologies", "input", "src/generators"};
+        String[] files = {"output", "ontologies", "input", "src/main/java/generators"};
         for (String file : files) {
             if (!Files.exists(Paths.get(file))) {
                 new File(file).mkdir();
