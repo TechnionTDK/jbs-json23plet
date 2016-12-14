@@ -1,11 +1,11 @@
-package generators;
+package json23plet.generators;
 
 
 import json23plet.modules.Json;
-import json23plet.modules.Triplet;
 
 import static json23plet.modules.Json.json;
 import static json23plet.modules.Triplet.triplet;
+import static json23plet.ontologies.jbsOntology.*;
 
 /**
  * Created by yon_b on 29/11/16.
@@ -33,11 +33,11 @@ public class PasukGenerator extends JbsBaseGenerator {
                         .object(prefix + j.value("perek"));
                 triplet()
                         .subject(sub)
-                        .predicate(JBO_P_POSITION_IN_PEREK)
+                        .predicate(JBO_P_POSITIONINPEREK)
                         .object(j.value("positionInPerek"));
                 triplet()
                         .subject(sub)
-                        .predicate(JBO_P_POSITION_IN_PARASHA)
+                        .predicate(JBO_P_POSITIONINPARASHA)
                         .object(j.value("positionInParasha"));
             }
 

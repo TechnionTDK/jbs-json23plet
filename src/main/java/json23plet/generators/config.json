@@ -1,0 +1,22 @@
+{
+  "generators" : [
+    {
+      "name" : "PasukGenerator",
+      "input" : "/home/yon_b/projects/gitHubProj/json23plet/input/tanach-json/tanach",
+      "output" : "output",
+      "active" : "true"
+    },
+    {
+      "name" : "MefarshimGenerator",
+      "input" : "tanach-mefarshim",
+      "output" : "ontologies/jbsOntology.ttl",
+      "active" : "false"
+    },
+    {
+      "name" : "SeferHamitzvotGenerator",
+      "input" : "seferhamitzvot-json",
+      "output" : "ontologies/jbsOntology.ttl",
+      "active" : "false"
+    }
+  ]
+}

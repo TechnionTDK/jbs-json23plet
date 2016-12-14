@@ -1,4 +1,6 @@
 import json23plet.modules.GeneratorFactory;
+import json23plet.modules.OntologyClassGenerator;
+import json23plet.modules.OntologyGenerator;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -9,20 +11,27 @@ import java.nio.file.Paths;
  */
 public class Json23plet {
     public static void main(String argv[]) {
+        boolean all = true;
         initJson23plet();
-        GeneratorFactory.Init("src/main/java/generators", "input", "output");
+//        GeneratorFactory.Init("src/main/java/json23plet.generators.generators", "input", "output");
         try {
-            GeneratorFactory.activateAllGenerators();
+
+            if(all) {
+                GeneratorFactory.activateAllGenerators();
+            }
+            //TODO: else call to GeneratorFactory.activateGenerator
+            //TODO: call to OntologyGenerator.generate(ontName) on demand
+//            OntologyGenerator.generate("jbsOntology");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
     }
     private static void initJson23plet() {
-        String[] files = {"output", "ontologies", "input", "src/main/java/generators"};
+        String[] files = {"ontologies/json", "ontologies/ttl"};
         for (String file : files) {
             if (!Files.exists(Paths.get(file))) {
-                new File(file).mkdir();
+                new File(file).mkdirs();
             }
         }
     }

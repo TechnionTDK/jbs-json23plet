@@ -1,4 +1,4 @@
-package generators;
+package json23plet.generators;
 
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.ModelFactory;
