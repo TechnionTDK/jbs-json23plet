@@ -1,5 +1,8 @@
 import json23plet.modules.GeneratorFactory;
 import json23plet.modules.ontologyGenerator.OntologyGenerator;
+import org.apache.jena.query.ARQ;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -19,10 +22,13 @@ public class Json23plet {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+        org.apache.log4j.BasicConfigurator.configure();
+        Logger.getRootLogger().setLevel(Level.INFO);
 
     }
 
     public static void main(String argv[]) {
+
         boolean all = true;
 
         try {
