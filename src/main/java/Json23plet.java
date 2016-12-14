@@ -1,6 +1,5 @@
 import json23plet.modules.GeneratorFactory;
-import json23plet.modules.OntologyClassGenerator;
-import json23plet.modules.OntologyGenerator;
+import json23plet.modules.ontologyGenerator.OntologyGenerator;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -20,7 +19,7 @@ public class Json23plet {
             }
             //TODO: else call to GeneratorFactory.activateGenerator
             //TODO: call to OntologyGenerator.generate(ontName) on demand
-//            OntologyGenerator.generate("jbsOntology");
+//            OntologyGenerator.generate("JbsOntology");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

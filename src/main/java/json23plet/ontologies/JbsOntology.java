@@ -6,11 +6,11 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 
-public class jbsOntology
+public class JbsOntology
     extends BaseOntology
 {
     public static ModelFactory smodel;
-    public static OntModel model = ((OntModel) ((OntModel) ModelFactory.createOntologyModel()).read("ontologies/ttl/jbsOntology.ttl"));
+    public static OntModel model = ((OntModel) ((OntModel) ModelFactory.createOntologyModel()).read("ontologies/ttl/JbsOntology.ttl"));
     public static String JBO_PREFIX = "jbo";
     public static String JBR_PREFIX = "jbr";
     public static String JBO_URI = "http://jbs.technion.ac.il/ontology/";

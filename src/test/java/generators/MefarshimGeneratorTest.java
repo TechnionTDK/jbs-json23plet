@@ -3,7 +3,7 @@ package generators;
 import json23plet.generators.MefarshimGenerator;
 import json23plet.modules.Json;
 import json23plet.modules.Triplet;
-import json23plet.ontologies.jbsOntology;
+import json23plet.ontologies.JbsOntology;
 import org.junit.Test;
 
 import java.nio.file.Paths;
@@ -21,7 +21,7 @@ public class MefarshimGeneratorTest {
         String outputLocation =  Paths.get("src", "test", "testsOutput", "testOutput-mefarshim.ttl").toString();
         Triplet.Init();
         Json.Init(file);
-        jbsOntology init = new jbsOntology();
+        JbsOntology init = new JbsOntology();
         MefarshimGenerator mg = new MefarshimGenerator();
         mg.generate();
         Triplet.Export(outputLocation, "TURTLE");

@@ -13,9 +13,9 @@ import static org.junit.Assert.*;
 //    @Test
 //    public void generate() throws Exception {
 //        /// may change paths to unix and windows together
-//        String file = "input\\ontologies\\jbsOntology\\jbsOntology.json";
-//        //String ontInput = "ontologies\\jbsOntology.ttl";
-//        String outputLocation = "src\\test\\testsOutput\\testOutput-jbsOntology.ttl";
+//        String file = "input\\ontologies\\JbsOntology\\JbsOntology.json";
+//        //String ontInput = "ontologies\\JbsOntology.ttl";
+//        String outputLocation = "src\\test\\testsOutput\\testOutput-JbsOntology.ttl";
 //        Triplet.Init();
 //        Json.Init(file);
 //        Generator.Init("");
@@ -23,7 +23,7 @@ import static org.junit.Assert.*;
 //        og.generate();
 //        Triplet.Export(outputLocation, "TURTLE");
 //        Triplet.Close();
-//        assertTrue(TestUtils.isTwoEqual("testOutput-jbsOntology.ttl","testExpected-jbsOntology.ttl"));
+//        assertTrue(TestUtils.isTwoEqual("testOutput-JbsOntology.ttl","testExpected-JbsOntology.ttl"));
 //    }
 //
 //}

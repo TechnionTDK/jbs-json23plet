@@ -1,6 +1,4 @@
-package json23plet.modules;
-
-import org.apache.jena.base.Sys;
+package json23plet.modules.ontologyGenerator;
 
 /**
  * Created by yon_b on 13/12/16.

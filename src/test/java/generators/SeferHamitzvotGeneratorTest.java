@@ -3,7 +3,7 @@ package generators;
 import json23plet.generators.SeferHamitzvotGenerator;
 import json23plet.modules.Json;
 import json23plet.modules.Triplet;
-import json23plet.ontologies.jbsOntology;
+import json23plet.ontologies.JbsOntology;
 import org.junit.Test;
 
 import java.nio.file.Paths;
@@ -21,7 +21,7 @@ public class SeferHamitzvotGeneratorTest {
         String outputLocation = Paths.get("src", "test", "testsOutput", "testOutput-seferhamitzvot.ttl").toString();
         Triplet.Init();
         Json.Init(file);
-        jbsOntology init = new jbsOntology();
+        JbsOntology init = new JbsOntology();
         SeferHamitzvotGenerator shg = new SeferHamitzvotGenerator();
         shg.generate();
         Triplet.Export(outputLocation, "TURTLE");

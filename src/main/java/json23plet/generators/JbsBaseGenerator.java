@@ -3,10 +3,10 @@ package json23plet.generators;
 
 import json23plet.modules.Json;
 import json23plet.modules.Triplet;
-import json23plet.ontologies.jbsOntology;
+
 import static json23plet.modules.Json.json;
 import static json23plet.modules.Triplet.triplet;
-import static json23plet.ontologies.jbsOntology.*;
+import static json23plet.ontologies.JbsOntology.*;
 
 /**
  * Created by yon_b on 06/12/16.
