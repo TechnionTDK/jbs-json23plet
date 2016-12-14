@@ -22,27 +22,29 @@ import java.util.Map;
  * Created by yon_b on 29/11/16.
  */
 public class GeneratorFactory {
+    static String outputRootDir;
 
-    static private Map<String, String[]> getActiveGeneratorsMap()
+    static private Map<String, String> getActiveGeneratorsMap()
             throws FileNotFoundException {
         String generatorsConfigFIle = Paths.get
                 ("src", "main", "java", "json23plet", "generators", "config.json").toString();
         JsonParser jp = new JsonParser();
         JsonElement root;
-        Map<String, String[]> res = new HashMap<>();
+        Map<String, String> res = new HashMap<>();
         root = jp.parse(new FileReader(generatorsConfigFIle));
         for (JsonElement e :  root.getAsJsonObject().getAsJsonArray("generators")) {
             JsonObject obj = e.getAsJsonObject();
             if(obj.get("active").getAsString().equals("true")) {
-                String[] params = {obj.get("input").getAsString(), obj.get("output").getAsString()};
+                String params = obj.get("input").getAsString();
                 res.put(obj.get("name").getAsString(), params);
             }
         }
         return res;
     }
 
-    static private void activateGenerator(String genName, String jsonInput, String outputDir)
+    static private void activateGenerator(String genName, String jsonInput, String outputDirForSingleFile)
             throws Exception {
+        String outputDir = Paths.get(outputRootDir, outputDirForSingleFile).toString();
         Triplet.Init();
         Json.Init(jsonInput);
         Class genClass = Class.forName("json23plet.generators." + genName);
@@ -58,16 +60,16 @@ public class GeneratorFactory {
     }
 
     static public void activateAllGenerators() throws Exception {
-        Map<String, String[]> generatorsMap = getActiveGeneratorsMap();
+        Map<String, String> generatorsMap = getActiveGeneratorsMap();
         for (String gen: generatorsMap.keySet()) {
-            String inputPath = generatorsMap.get(gen)[0];
+            String inputPath = generatorsMap.get(gen);
             if(new File(inputPath).isFile()) {
-                activateGenerator(gen, new File(inputPath).getPath(), generatorsMap.get(gen)[1]);
+                activateGenerator(gen, new File(inputPath).getPath(), "");
                 continue;
             }
             Files.find(Paths.get(inputPath), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
                 try {
-                    activateGenerator(gen, file.toString(), generatorsMap.get(gen)[1]);
+                    activateGenerator(gen, file.toString(), "");
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
@@ -75,7 +77,8 @@ public class GeneratorFactory {
 
         }
     }
-    public static void Init() throws IOException {
+    public static void Init(String rootDir) throws IOException {
+        outputRootDir = rootDir;
         Files.find(Paths.get("src", "main", "java", "json23plet", "ontologies"), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
             try {
                 Class genClass = Class.forName("json23plet.ontologies." + file.getFileName().toString().replace(".java",""));
