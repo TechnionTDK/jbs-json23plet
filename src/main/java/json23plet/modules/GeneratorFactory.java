@@ -1,6 +1,5 @@
 package json23plet.modules;
 
-import json23plet.generators.Generator;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -10,6 +9,7 @@ import org.apache.commons.io.FilenameUtils;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.nio.file.Files;
@@ -22,9 +22,6 @@ import java.util.Map;
  * Created by yon_b on 29/11/16.
  */
 public class GeneratorFactory {
-//    static String generatorsConfigFIle;
-//    static String inputRootDir;
-//    static String outputRootDir;
 
     static private Map<String, String[]> getActiveGeneratorsMap()
             throws FileNotFoundException {
@@ -78,29 +75,15 @@ public class GeneratorFactory {
 
         }
     }
-//    static public void Init(String configFile) {
-////        generatorsConfigFIle = configFile;
-////        inputRootDir = inputDir;
-////        outputRootDir = outputDir;
-//    }
-//    static private String getOutPath(String path) {
-//        String res = "";
-//        String[] aPath = path.split("/");
-//        for (int i = 1 ; i < aPath.length - 1 ; i++) {
-//            res = Paths.get(res,aPath[i]).toString();
-//        }
-//        res = Paths.get(res, FilenameUtils.removeExtension(new File(path).getName()) + ".ttl").toString();
-//        createPath(res);
-//        return res;
-//    }
-//    static private void createPath(String path) {
-//        String res = "";
-//        String[] aPath = path.split("/");
-//        for (int i = 0 ; i < aPath.length - 1 ; i++) {
-//            res = Paths.get(res,aPath[i]).toString();
-//            if (!Files.exists(Paths.get(res))) {
-//                new File(res).mkdir();
-//            }
-//        }
-//    }
+    public static void Init() throws IOException {
+        Files.find(Paths.get("src", "main", "java", "json23plet", "ontologies"), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
+            try {
+                Class genClass = Class.forName("json23plet.ontologies." + file.getFileName().toString().replace(".java",""));
+                Constructor ctor = genClass.getConstructor();
+                Object instance = ctor.newInstance(null);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        });
+    }
 }

@@ -12,10 +12,9 @@ import java.nio.file.Paths;
 public class Json23plet {
     public static void main(String argv[]) {
         boolean all = true;
-        initJson23plet();
-//        GeneratorFactory.Init("src/main/java/json23plet.generators.generators", "input", "output");
         try {
-
+            initJson23plet();
+            GeneratorFactory.Init();
             if(all) {
                 GeneratorFactory.activateAllGenerators();
             }

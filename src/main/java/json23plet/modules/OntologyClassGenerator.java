@@ -42,7 +42,6 @@ public class OntologyClassGenerator {
 
     static private void createOntModelComponent(JDefinedClass oc, String clssName) {
         JFieldVar model = oc.field(JMod.PUBLIC | JMod.STATIC, ModelFactory.class, "smodel");
-//        model.init(JExpr.direct("(ModelFactory) ModelFactory.createOntologyModel()"));
 
         JFieldVar ontModel = oc.field(JMod.PUBLIC | JMod.STATIC, OntModel.class, "model");
         ontModel.init(JExpr.direct("(OntModel) ((OntModel) ModelFactory.createOntologyModel()).read(\"" +

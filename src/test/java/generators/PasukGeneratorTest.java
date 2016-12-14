@@ -1,8 +1,13 @@
 package generators;
 
+import json23plet.generators.PasukGenerator;
 import json23plet.modules.Json;
 import json23plet.modules.Triplet;
+import json23plet.ontologies.jbsOntology;
 import org.junit.Test;
+
+import java.nio.file.Paths;
+
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -12,12 +17,12 @@ public class PasukGeneratorTest {
     @Test
     public void generate() throws Exception {
         /// may change paths to unix and windows together
-        String file = "input\\tanach-json\\tanach\\tanch-1.json";
-        String ontInput = "ontologies\\jbsOntology.ttl";
-        String outputLocation = "src\\test\\testsOutput\\testOutput-tanch-1.ttl";
+        String file = Paths.get("input", "tanach-json", "tanach", "tanch-1.json").toString();
+        String ontInput =  Paths.get("ontologies", "jbsOntology.ttl").toString();
+        String outputLocation =  Paths.get("src", "test", "testsOutput", "testOutput-tanch-1.ttl").toString();
         Triplet.Init();
         Json.Init(file);
-        Generator.Init(ontInput);
+        jbsOntology init = new jbsOntology();
         PasukGenerator g = new PasukGenerator();
         g.generate();
         Triplet.Export(outputLocation, "TURTLE");

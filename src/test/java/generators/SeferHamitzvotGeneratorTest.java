@@ -1,8 +1,12 @@
 package generators;
 
+import json23plet.generators.SeferHamitzvotGenerator;
 import json23plet.modules.Json;
 import json23plet.modules.Triplet;
+import json23plet.ontologies.jbsOntology;
 import org.junit.Test;
+
+import java.nio.file.Paths;
 
 import static org.junit.Assert.*;
 
@@ -13,12 +17,11 @@ public class SeferHamitzvotGeneratorTest {
     @Test
     public void generate() throws Exception {
         /// may change paths to unix and windows together
-        String file = "input\\seferhamitzvot-json\\seferhamitzvot.json";
-        String ontInput = "ontologies\\jbsOntology.ttl";
-        String outputLocation = "src\\test\\testsOutput\\testOutput-seferhamitzvot.ttl";
+        String file = Paths.get("input", "seferhamitzvot-json", "seferhamitzvot.json").toString();
+        String outputLocation = Paths.get("src", "test", "testsOutput", "testOutput-seferhamitzvot.ttl").toString();
         Triplet.Init();
         Json.Init(file);
-        Generator.Init(ontInput);
+        jbsOntology init = new jbsOntology();
         SeferHamitzvotGenerator shg = new SeferHamitzvotGenerator();
         shg.generate();
         Triplet.Export(outputLocation, "TURTLE");
