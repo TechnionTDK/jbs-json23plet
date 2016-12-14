@@ -22,7 +22,42 @@ import java.util.Map;
  * Created by yon_b on 29/11/16.
  */
 public class GeneratorFactory {
-    static String outputRootDir;
+
+    static public void activateGenerator(String gen, String jsonRoot, String outputDirRoot) throws Exception {
+        if(new File(jsonRoot).isFile()) {
+            activateGeneratorSingleFile(gen, new File(jsonRoot).getPath());
+            export(jsonRoot, jsonRoot, outputDirRoot, true);
+            return;
+        }
+        Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
+            try {
+                activateGeneratorSingleFile(gen, file.toString());
+                export(jsonRoot, file.toString(), outputDirRoot, false);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        });
+    }
+
+    static public void activateAllConfigGenerators(String outputRoot) throws Exception {
+        Map<String, String> generatorsMap = getActiveGeneratorsMap();
+        for (String gen: generatorsMap.keySet()) {
+            String inputPath = generatorsMap.get(gen);
+            activateGenerator(gen, new File(inputPath).getPath(), outputRoot);
+//            if(new File(inputPath).isFile()) {
+//                activateGenerator(gen, new File(inputPath).getPath(), outputRoot);
+//                continue;
+//            }
+//            Files.find(Paths.get(inputPath), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
+//                try {
+//                    activateGenerator(gen, file.toString(), "");
+//                } catch (Exception e) {
+//                    System.out.println(e.getMessage());
+//                }
+//            });
+
+        }
+    }
 
     static private Map<String, String> getActiveGeneratorsMap()
             throws FileNotFoundException {
@@ -58,9 +93,10 @@ public class GeneratorFactory {
 //        Triplet.Export(outputPath, "TURTLE");
 //        Triplet.Close();
     }
-    static private void export(String inputRoot, String inputFile, String outRoot) {
+    static private void export(String inputRoot, String inputFile, String outRoot, boolean isFIle) {
         String inputDir = new File(inputFile).getParent();
-        int beginConOut = inputDir.indexOf(inputRoot) + inputRoot.length();
+        String inputRootDir = isFIle ? new File(inputRoot).getParent() : inputRoot;
+        int beginConOut = inputDir.indexOf(inputRootDir) + inputRootDir.length();
         String outputDirPath = Paths.get(outRoot, inputDir.substring(beginConOut, inputDir.length())).toString();
         new File(outputDirPath).mkdirs();
         String outFile = Paths.get(outputDirPath,
@@ -69,42 +105,7 @@ public class GeneratorFactory {
         Triplet.Close();
 
     }
-    static public void activateGenerator(String gen, String jsonRoot, String outputDirRoot) throws Exception {
-        if(new File(jsonRoot).isFile()) {
-            activateGeneratorSingleFile(gen, new File(jsonRoot).getPath());
-            export(jsonRoot, jsonRoot, outputDirRoot);
-            return;
-        }
-        Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
-            try {
-                activateGeneratorSingleFile(gen, file.toString());
-                export(jsonRoot, file.toString(), outputDirRoot);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-        });
-    }
-
-    static public void activateAllConfigGenerators(String outputRoot) throws Exception {
-        Map<String, String> generatorsMap = getActiveGeneratorsMap();
-        for (String gen: generatorsMap.keySet()) {
-            String inputPath = generatorsMap.get(gen);
-            activateGenerator(gen, new File(inputPath).getPath(), outputRoot);
-//            if(new File(inputPath).isFile()) {
-//                activateGenerator(gen, new File(inputPath).getPath(), outputRoot);
-//                continue;
-//            }
-//            Files.find(Paths.get(inputPath), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
-//                try {
-//                    activateGenerator(gen, file.toString(), "");
-//                } catch (Exception e) {
-//                    System.out.println(e.getMessage());
-//                }
-//            });
-
-        }
-    }
-    public static void Init() throws IOException {
+    static public void Init() throws IOException {
         Files.find(Paths.get("src", "main", "java", "json23plet", "ontologies"), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
             try {
                 Class genClass = Class.forName("json23plet.ontologies." + file.getFileName().toString().replace(".java",""));

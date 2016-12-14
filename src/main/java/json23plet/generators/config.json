@@ -2,7 +2,7 @@
   "generators" : [
     {
       "name" : "PasukGenerator",
-      "input" : "/home/yon_b/projects/gitHubProj/json23plet/input/tanach-json/tanach",
+      "input" : "/home/yon_b/projects/gitHubProj/json23plet/input/tanach-json",
       "active" : "true"
     },
     {
