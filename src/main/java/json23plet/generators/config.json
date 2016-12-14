@@ -7,7 +7,7 @@
     },
     {
       "name" : "SeferHamitzvotGenerator",
-      "input" : "/home/yon_b/projects/gitHubProj/json23plet/input/seferhamitzvot-json",
+      "input" : "/home/yon_b/projects/gitHubProj/json23plet/input/seferhamitzvot-json/seferhamitzvot.json",
       "active" : "true"
     },
     {

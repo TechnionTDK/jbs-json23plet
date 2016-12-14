@@ -93,15 +93,18 @@ public class GeneratorFactory {
 //        Triplet.Export(outputPath, "TURTLE");
 //        Triplet.Close();
     }
+
     static private void export(String inputRoot, String inputFile, String outRoot, boolean isFIle) {
         String inputDir = new File(inputFile).getParent();
-        String inputRootDir = isFIle ? new File(inputRoot).getParent() : inputRoot;
-        int beginConOut = inputDir.indexOf(inputRootDir) + inputRootDir.length();
-        String outputDirPath = Paths.get(outRoot, inputDir.substring(beginConOut, inputDir.length())).toString();
-        new File(outputDirPath).mkdirs();
-        String outFile = Paths.get(outputDirPath,
-                Paths.get(inputFile).getFileName().toString().replace(".json", ".ttl")).toString();
-        Triplet.Export(outFile, "TURTLE");
+        String inputRootDir = new File(inputRoot).getParent();
+        int beginConOut = inputFile.indexOf(inputRootDir) + inputRootDir.length();
+
+        String outputPath = Paths.get(outRoot, inputFile.substring
+                (beginConOut, inputFile.length()).replace(".json", ".ttl")).toString();
+        new File(new File(outputPath).getParent()).mkdirs();
+//        String outFile = Paths.get(outputDirPath,
+//                Paths.get(inputFile).getFileName().toString().replace(".json", ".ttl")).toString();
+        Triplet.Export(outputPath, "TURTLE");
         Triplet.Close();
 
     }
