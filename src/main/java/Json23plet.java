@@ -27,9 +27,9 @@ public class Json23plet {
 
         try {
             initJson23plet();
-            GeneratorFactory.Init("output");
+            GeneratorFactory.Init();
             if(all) {
-                GeneratorFactory.activateAllGenerators();
+                GeneratorFactory.activateAllConfigGenerators("output");
             }
             //TODO: else call to GeneratorFactory.activateGenerator
             //TODO: call to OntologyGenerator.generate(ontName) on demand

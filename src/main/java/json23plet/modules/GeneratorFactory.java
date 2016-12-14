@@ -42,9 +42,9 @@ public class GeneratorFactory {
         return res;
     }
 
-    static private void activateGenerator(String genName, String jsonInput, String outputDirForSingleFile)
+    static private void activateGeneratorSingleFile(String genName, String jsonInput)
             throws Exception {
-        String outputDir = Paths.get(outputRootDir, outputDirForSingleFile).toString();
+//        String outputDir = Paths.get(outputRootDir, outputDirForSingleFile).toString();
         Triplet.Init();
         Json.Init(jsonInput);
         Class genClass = Class.forName("json23plet.generators." + genName);
@@ -52,33 +52,59 @@ public class GeneratorFactory {
         Method generate = genClass.getDeclaredMethod("generate", null);
         Object instance = ctor.newInstance(null);
         generate.invoke(instance);
-        String outputPath = Paths.get(outputDir,
-                Paths.get(jsonInput).getFileName().toString().replace(".json", ".ttl")).toString();
-        new File(outputDir).mkdirs();
-        Triplet.Export(outputPath, "TURTLE");
+//        String outputPath = Paths.get(outputDir,
+//                Paths.get(jsonInput).getFileName().toString().replace(".json", ".ttl")).toString();
+//        new File(outputDir).mkdirs();
+//        Triplet.Export(outputPath, "TURTLE");
+//        Triplet.Close();
+    }
+    static private void export(String inputRoot, String inputFile, String outRoot) {
+        String inputDir = new File(inputFile).getParent();
+        int beginConOut = inputDir.indexOf(inputRoot) + inputRoot.length();
+        String outputDirPath = Paths.get(outRoot, inputDir.substring(beginConOut, inputDir.length())).toString();
+        new File(outputDirPath).mkdirs();
+        String outFile = Paths.get(outputDirPath,
+                Paths.get(inputFile).getFileName().toString().replace(".json", ".ttl")).toString();
+        Triplet.Export(outFile, "TURTLE");
         Triplet.Close();
+
+    }
+    static public void activateGenerator(String gen, String jsonRoot, String outputDirRoot) throws Exception {
+        if(new File(jsonRoot).isFile()) {
+            activateGeneratorSingleFile(gen, new File(jsonRoot).getPath());
+            export(jsonRoot, jsonRoot, outputDirRoot);
+            return;
+        }
+        Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
+            try {
+                activateGeneratorSingleFile(gen, file.toString());
+                export(jsonRoot, file.toString(), outputDirRoot);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        });
     }
 
-    static public void activateAllGenerators() throws Exception {
+    static public void activateAllConfigGenerators(String outputRoot) throws Exception {
         Map<String, String> generatorsMap = getActiveGeneratorsMap();
         for (String gen: generatorsMap.keySet()) {
             String inputPath = generatorsMap.get(gen);
-            if(new File(inputPath).isFile()) {
-                activateGenerator(gen, new File(inputPath).getPath(), "");
-                continue;
-            }
-            Files.find(Paths.get(inputPath), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
-                try {
-                    activateGenerator(gen, file.toString(), "");
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                }
-            });
+            activateGenerator(gen, new File(inputPath).getPath(), outputRoot);
+//            if(new File(inputPath).isFile()) {
+//                activateGenerator(gen, new File(inputPath).getPath(), outputRoot);
+//                continue;
+//            }
+//            Files.find(Paths.get(inputPath), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
+//                try {
+//                    activateGenerator(gen, file.toString(), "");
+//                } catch (Exception e) {
+//                    System.out.println(e.getMessage());
+//                }
+//            });
 
         }
     }
-    public static void Init(String rootDir) throws IOException {
-        outputRootDir = rootDir;
+    public static void Init() throws IOException {
         Files.find(Paths.get("src", "main", "java", "json23plet", "ontologies"), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
             try {
                 Class genClass = Class.forName("json23plet.ontologies." + file.getFileName().toString().replace(".java",""));
