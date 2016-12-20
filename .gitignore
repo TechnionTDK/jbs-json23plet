@@ -16,3 +16,5 @@ output*
 # Maven
 log/
 target/
+
+src/test/testsOutput/
