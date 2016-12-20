@@ -2,13 +2,13 @@
   "generators" : [
     {
       "name" : "PasukGenerator",
-      "input" : "/home/yon_b/projects/gitHubProj/json23plet/input/tanach-json",
+      "input" : "C:/Users/Yaakov/IdeaProjects/jbs-json23plet/input/tanach-json",
       "active" : "true"
     },
     {
       "name" : "SeferHamitzvotGenerator",
       "input" : "/home/yon_b/projects/gitHubProj/json23plet/input/seferhamitzvot-json/seferhamitzvot.json",
-      "active" : "true"
+      "active" : "false"
     },
     {
       "name" : "SeferHamitzvotGenerator",
