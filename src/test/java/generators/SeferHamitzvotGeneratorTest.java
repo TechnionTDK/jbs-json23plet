@@ -18,10 +18,10 @@ public class SeferHamitzvotGeneratorTest {
     @Test
     public void generate() throws Exception {
         /// may change paths to unix and windows together
-        String file = Paths.get("src", "test", "testInput", "seferHamitzvot").toString();
+        String folder = Paths.get("src", "test", "testInput", "seferHamitzvot").toString();
         String outputLocation = Paths.get("src", "test", "testsOutput").toString();
         JbsOntology init = new JbsOntology();
-        GeneratorFactory.activateGenerator("SeferHamitzvotGenerator", file, outputLocation);
-        assertTrue(TestUtils.isTwoEqual("seferhamitzvot.ttl", "seferhamitzvot.ttl"));
+        GeneratorFactory.activateGenerator("SeferHamitzvotGenerator", folder, outputLocation);
+        assertTrue(TestUtils.isTwoEqual("seferhamitzvot"));
     }
 }

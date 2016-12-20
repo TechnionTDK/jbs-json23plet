@@ -17,12 +17,11 @@ import static org.junit.Assert.*;
 public class MefarshimGeneratorTest {
     @Test
     public void generate() throws Exception {
-        /// may change paths to unix and windows together
-        String file =  Paths.get("src", "test", "testInput", "mefarshim").toString() ;//need to change path to mefarshim
+        String folder =  Paths.get("src", "test", "testInput", "mefarshim").toString() ;
         String outputLocation =  Paths.get("src", "test", "testsOutput").toString();
         JbsOntology init = new JbsOntology();
-        GeneratorFactory.activateGenerator("SeferHamitzvotGenerator", file, outputLocation);
-        assertTrue(TestUtils.isTwoEqual("mefarshim.ttl","mefarshim.ttl"));
+        GeneratorFactory.activateGenerator("MefarshimGenerator", folder, outputLocation);
+        assertTrue(TestUtils.isTwoEqual("mefarshim"));
     }
 
 }

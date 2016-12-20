@@ -17,11 +17,10 @@ import static org.junit.Assert.assertTrue;
 public class PasukGeneratorTest {
     @Test
     public void generate() throws Exception {
-        /// may change paths to unix and windows together
-        String file = Paths.get("src", "test", "testInput", "tanach").toString();
+        String folder = Paths.get("src", "test", "testInput", "tanach").toString();
         String outputLocation =  Paths.get("src", "test", "testsOutput").toString();
         JbsOntology init = new JbsOntology();
-        GeneratorFactory.activateGenerator("PasukGenerator", file, outputLocation);
-        assertTrue(TestUtils.isTwoEqual("tanch-1.ttl","tanch-1.ttl"));
+        GeneratorFactory.activateGenerator("PasukGenerator", folder, outputLocation);
+        assertTrue(TestUtils.isTwoEqual("tanach"));
     }
 }
