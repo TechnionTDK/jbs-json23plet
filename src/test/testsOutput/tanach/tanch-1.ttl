@@ -6,71 +6,71 @@
 @prefix jbr:   <http://jbs.technion.ac.il/resource/> .
 
 jbr:tanach-1-1-8  a            jbo:Pasuk ;
-        rdfs:label             "﻿בראשית פרק א פסוק ח" , "﻿בראשית א ח" ;
+        rdfs:label             "﻿בר�?שית פרק �? פסוק ח" , "﻿בר�?שית �? ח" ;
         jbo:container          jbr:tanach-1-1 , jbr:bereshit , jbr:tanach-1 ;
         jbo:positionInParasha  "8" ;
         jbo:positionInPerek    "8" ;
-        jbo:text               "ויקרא אלהים לרקיע שמים ויהי ערב ויהי בקר יום שני" .
+        jbo:text               "ויקר�? �?�?הי�? �?רקיע ש�?י�? ויהי ערב ויהי בקר יו�? שני" .
 
 jbr:tanach-1-1-1  a            jbo:Pasuk ;
-        rdfs:label             "﻿בראשית פרק א פסוק א" , "﻿בראשית א א" ;
+        rdfs:label             "﻿בר�?שית פרק �? פסוק �?" , "﻿בר�?שית �? �?" ;
         jbo:container          jbr:tanach-1-1 , jbr:bereshit , jbr:tanach-1 ;
         jbo:positionInParasha  "1" ;
         jbo:positionInPerek    "1" ;
-        jbo:text               "בראשית ברא אלהים את השמים ואת הארץ" .
+        jbo:text               "בר�?שית בר�? �?�?הי�? �?ת הש�?י�? ו�?ת ה�?רץ" .
 
 jbr:tanach-1-1-6  a            jbo:Pasuk ;
-        rdfs:label             "﻿בראשית פרק א פסוק ו" , "﻿בראשית א ו" ;
+        rdfs:label             "﻿בר�?שית פרק �? פסוק ו" , "﻿בר�?שית �? ו" ;
         jbo:container          jbr:tanach-1-1 , jbr:bereshit , jbr:tanach-1 ;
         jbo:positionInParasha  "6" ;
         jbo:positionInPerek    "6" ;
-        jbo:text               "ויאמר אלהים יהי רקיע בתוך המים ויהי מבדיל בין מים למים" .
+        jbo:text               "וי�?�?ר �?�?הי�? יהי רקיע בתו�? ה�?י�? ויהי �?בדי�? בי�? �?י�? �?�?י�?" .
 
 jbr:tanach-1-1-4  a            jbo:Pasuk ;
-        rdfs:label             "﻿בראשית פרק א פסוק ד" , "﻿בראשית א ד" ;
+        rdfs:label             "﻿בר�?שית פרק �? פסוק ד" , "﻿בר�?שית �? ד" ;
         jbo:container          jbr:tanach-1-1 , jbr:bereshit , jbr:tanach-1 ;
         jbo:positionInParasha  "4" ;
         jbo:positionInPerek    "4" ;
-        jbo:text               "וירא אלהים את האור כי טוב ויבדל אלהים בין האור ובין החשך" .
+        jbo:text               "ויר�? �?�?הי�? �?ת ה�?ור כי טוב ויבד�? �?�?הי�? בי�? ה�?ור ובי�? החש�?" .
 
 jbr:tanach-1-1-9  a            jbo:Pasuk ;
-        rdfs:label             "﻿בראשית פרק א פסוק ט" , "﻿בראשית א ט" ;
+        rdfs:label             "﻿בר�?שית פרק �? פסוק ט" , "﻿בר�?שית �? ט" ;
         jbo:container          jbr:tanach-1-1 , jbr:bereshit , jbr:tanach-1 ;
         jbo:positionInParasha  "9" ;
         jbo:positionInPerek    "9" ;
-        jbo:text               "ויאמר אלהים יקוו המים מתחת השמים אל מקום אחד ותראה היבשה ויהי כן" .
+        jbo:text               "וי�?�?ר �?�?הי�? יקוו ה�?י�? �?תחת הש�?י�? �?�? �?קו�? �?חד ותר�?ה היבשה ויהי כ�?" .
 
 jbr:tanach-1-1-2  a            jbo:Pasuk ;
-        rdfs:label             "﻿בראשית פרק א פסוק ב" , "﻿בראשית א ב" ;
+        rdfs:label             "﻿בר�?שית פרק �? פסוק ב" , "﻿בר�?שית �? ב" ;
         jbo:container          jbr:tanach-1-1 , jbr:bereshit , jbr:tanach-1 ;
         jbo:positionInParasha  "2" ;
         jbo:positionInPerek    "2" ;
-        jbo:text               "והארץ היתה תהו ובהו וחשך על פני תהום ורוח אלהים מרחפת על פני המים" .
+        jbo:text               "וה�?רץ היתה תהו ובהו וחש�? ע�? פני תהו�? ורוח �?�?הי�? �?רחפת ע�? פני ה�?י�?" .
 
 jbr:tanach-1-1-7  a            jbo:Pasuk ;
-        rdfs:label             "﻿בראשית פרק א פסוק ז" , "﻿בראשית א ז" ;
+        rdfs:label             "﻿בר�?שית פרק �? פסוק ז" , "﻿בר�?שית �? ז" ;
         jbo:container          jbr:tanach-1-1 , jbr:bereshit , jbr:tanach-1 ;
         jbo:positionInParasha  "7" ;
         jbo:positionInPerek    "7" ;
-        jbo:text               "ויעש אלהים את הרקיע ויבדל בין המים אשר מתחת לרקיע ובין המים אשר מעל לרקיע ויהי כן" .
+        jbo:text               "ויעש �?�?הי�? �?ת הרקיע ויבד�? בי�? ה�?י�? �?שר �?תחת �?רקיע ובי�? ה�?י�? �?שר �?ע�? �?רקיע ויהי כ�?" .
 
 jbr:tanach-1-1-10  a           jbo:Pasuk ;
-        rdfs:label             "﻿בראשית פרק א פסוק י" , "﻿בראשית א י" ;
+        rdfs:label             "﻿בר�?שית פרק �? פסוק י" , "﻿בר�?שית �? י" ;
         jbo:container          jbr:tanach-1-1 , jbr:bereshit , jbr:tanach-1 ;
         jbo:positionInParasha  "10" ;
         jbo:positionInPerek    "10" ;
-        jbo:text               "ויקרא אלהים ליבשה ארץ ולמקוה המים קרא ימים וירא אלהים כי טוב" .
+        jbo:text               "ויקר�? �?�?הי�? �?יבשה �?רץ ו�?�?קוה ה�?י�? קר�? י�?י�? ויר�? �?�?הי�? כי טוב" .
 
 jbr:tanach-1-1-5  a            jbo:Pasuk ;
-        rdfs:label             "﻿בראשית פרק א פסוק ה" , "﻿בראשית א ה" ;
+        rdfs:label             "﻿בר�?שית פרק �? פסוק ה" , "﻿בר�?שית �? ה" ;
         jbo:container          jbr:tanach-1-1 , jbr:bereshit , jbr:tanach-1 ;
         jbo:positionInParasha  "5" ;
         jbo:positionInPerek    "5" ;
-        jbo:text               "ויקרא אלהים לאור יום ולחשך קרא לילה ויהי ערב ויהי בקר יום אחד" .
+        jbo:text               "ויקר�? �?�?הי�? �?�?ור יו�? ו�?חש�? קר�? �?י�?ה ויהי ערב ויהי בקר יו�? �?חד" .
 
 jbr:tanach-1-1-3  a            jbo:Pasuk ;
-        rdfs:label             "﻿בראשית פרק א פסוק ג" , "﻿בראשית א ג" ;
+        rdfs:label             "﻿בר�?שית פרק �? פסוק ג" , "﻿בר�?שית �? ג" ;
         jbo:container          jbr:tanach-1-1 , jbr:bereshit , jbr:tanach-1 ;
         jbo:positionInParasha  "3" ;
         jbo:positionInPerek    "3" ;
-        jbo:text               "ויאמר אלהים יהי אור ויהי אור" .
+        jbo:text               "וי�?�?ר �?�?הי�? יהי �?ור ויהי �?ור" .
