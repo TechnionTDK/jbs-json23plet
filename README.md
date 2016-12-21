@@ -20,7 +20,7 @@ A tool for creating and running generators of triplets (in ttl format) from give
 
 ##### run existing single generator:
 *  run json23plet.sh [-b] -generate generatorName dataInputRootDir
-    note that the input dir have to be absolute or relative to the working directory (jbs-json23plet) 
+*  note that the input dir have to be absolute or relative to the working directory (jbs-json23plet) 
 
 ##### run new single generator:
 1. create your generator and drop it in src/main/java/json23plet/generators directory
