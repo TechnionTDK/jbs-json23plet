@@ -9,32 +9,34 @@ A tool for creating and running generators of triplets (in ttl format) from give
 
 1. git clone jbs-json23plet repository to a directory
 
-1. run json23plet.sh with the appropriate params.
+1. go into the jbs-json23plet directory
 
-1. on first use the project will install on the working dir, to rebuild it use -b as first param
+1. run "./json23plet.sh -b" to build the json23plet project
 
-## usage
+1. in order to rebuild the project run again the "./json23plet.sh -b" command
 
-##### Init 
-* run json23plet.sh -init [-b] myOutputDir
+## Usage
 
-##### run existing single generator:
-*  run json23plet.sh [-b] -generate generatorName dataInputRootDir
-*  note that the input dir have to be absolute or relative to the working directory (jbs-json23plet) 
+##### Init the project output directory
+* run "./json23plet.sh -init <myOutputDir>"
 
-##### run new single generator:
-1. create your generator and drop it in src/main/java/json23plet/generators directory
-1. run json23plet.sh -b -generate generatorName dataInputRootDir
+##### Run an existing generator:
+* run "./json23plet.sh -generate <generatorName> <dataInputRootDir>" 
 
-##### create new ontology from json file:
-1. drop myOntology.json in ontologies/json
-1. run json23plet.sh [-b] -ontology myOntology
-1. the ttl file will created in ontologies/ttl
-1. the myOntology.java will created in src/main/java/json23plet/ontologies
+##### Run multiple generators:
+1. config the generators that you want to run in jbs-json23plet/src/main/java/json23plet/generators/config.json
+1. run "./json23plet.sh -generateAll"
 
-##### run all generators:
-1. config the generators you want to run in src/main/java/json23plet/generators/config.json
-2. run json23plet.sh [-b] -generateAll
+##### Run a new generator:
+1. create your generator and drop it in jbs-json23plet/src/main/java/json23plet/generators directory
+1. run "./json23plet.sh -b" to rebuild the json23plet project
+1. run "./json23plet.sh -generate <generatorName> >dataInputRootDir>"
+
+##### Create a new ontology from a json file:
+1. drop myOntology.json in jbs-json23plet/ontologies/json
+1. run "./json23plet.sh -ontology <myOntology>"
+1. the myOntology.ttl file will be created in jbs-json23plet/ontologies/ttl
+1. the myOntology.java will be created in jbs-json23plet/src/main/java/json23plet/ontologies
 
 
 
