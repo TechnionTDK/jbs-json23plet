@@ -1,8 +1,10 @@
 #!/bin/bash
 cd $(dirname "$0")
-echo "Start activate maven"
-echo "Build Json23plet project"
-mvn install
-echo -n "Run Json23plet whith args: "
-echo "$@"
-java -jar ./target/json23plet-1.0-jar-with-dependencies.jar "$@"
+if [[ $1 == "-b" ]] || [[ ! -d "./target" ]]; then
+    mvn install
+fi
+jargs="$@"
+if [[ $1 == "-b" ]]; then
+    jargs=${@:2}
+fi
+java -jar ./target/json23plet-1.0-jar-with-dependencies.jar ${jargs[*]}
