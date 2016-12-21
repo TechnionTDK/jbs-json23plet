@@ -17,4 +17,4 @@ output*
 log/
 target/
 
-src/test/testsOutput/
+/src/test/testsOutput/
