@@ -18,10 +18,10 @@ A tool for creating and running generators of triplets (in ttl format) from give
 ## Usage
 
 ##### Init the project output directory
-* run "./json23plet.sh -init <myOutputDir>"
+* run "./json23plet.sh -init \<myOutputDir\>"
 
 ##### Run an existing generator:
-* run "./json23plet.sh -generate <generatorName> <dataInputRootDir>" 
+* run "./json23plet.sh -generate \<generatorName\> \<dataInputRootDir\>" 
 
 ##### Run multiple generators:
 1. config the generators that you want to run in jbs-json23plet/src/main/java/json23plet/generators/config.json
@@ -30,11 +30,11 @@ A tool for creating and running generators of triplets (in ttl format) from give
 ##### Run a new generator:
 1. create your generator and drop it in jbs-json23plet/src/main/java/json23plet/generators directory
 1. run "./json23plet.sh -b" to rebuild the json23plet project
-1. run "./json23plet.sh -generate <generatorName> >dataInputRootDir>"
+1. run "./json23plet.sh -generate \<generatorName\> \<dataInputRootDir\>"
 
 ##### Create a new ontology from a json file:
 1. drop myOntology.json in jbs-json23plet/ontologies/json
-1. run "./json23plet.sh -ontology <myOntology>"
+1. run "./json23plet.sh -ontology \<myOntology\>"
 1. the myOntology.ttl file will be created in jbs-json23plet/ontologies/ttl
 1. the myOntology.java will be created in jbs-json23plet/src/main/java/json23plet/ontologies
 
