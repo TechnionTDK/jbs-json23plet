@@ -44,6 +44,12 @@ public class Cli {
                 .hasArg()
                 .desc("create the appropriate ontology resources to a given ontology name")
                 .build());
+        options.addOption(Option.builder("config")
+                .argName("generator config")
+                .hasArg()
+                .numberOfArgs(4)
+                .desc("add or edit configuration to a specific generator")
+                .build());
     }
 
     public void parse() {
@@ -72,6 +78,15 @@ public class Cli {
             }
             if (line.hasOption("generateAll")) {
                 generateAll();
+            }
+            if (line.hasOption("config")) {
+                String[] configOptions = line.getOptionValues("config");
+                if (configOptions[0].equals("-add")) {
+                    GeneratorsUtils.setNewGeneratorConfiguration(configOptions[1], configOptions[2], configOptions[3]);
+                } else if (configOptions[0].equals("-edit")) {
+                    GeneratorsUtils.setGenConfig(configOptions[1], configOptions[2], configOptions[3]);
+                }
+
             }
         }
         catch (ParseException e) {

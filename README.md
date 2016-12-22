@@ -38,6 +38,13 @@ A tool for creating and running generators of triplets (in ttl format) from give
 1. the myOntology.ttl file will be created in jbs-json23plet/ontologies/ttl
 1. the myOntology.java will be created in jbs-json23plet/src/main/java/json23plet/ontologies
 
+##### Add configuration for new generator
+1. run "./json23plet -config -add \<generatorName\> \<inputPath\> \<active\>"
+
+##### Edit configuration for existing generator
+1. run "./json23plet -config -edit \<generatorName\> \<propertyName\> \<newPropertyValue\>"
+1. the propertyName can be one of the following only: {name, input, active}
+
 
 
 

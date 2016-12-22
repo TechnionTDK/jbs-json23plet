@@ -6,8 +6,8 @@
     "generators": [
       {
         "name": "PasukGenerator",
-        "input": "C:/Users/Yaakov/IdeaProjects/jbs-json23plet/input/tanach-json",
-        "active": "true"
+        "active": "true",
+        "input": "/home/yon_b/b"
       },
       {
         "name": "SeferHamitzvotGenerator",
@@ -15,9 +15,9 @@
         "active": "true"
       },
       {
-        "name": "aaa",
-        "input": "seferhamitzvot-json",
-        "active": "true"
+        "name": "MefarshimGenerator",
+        "input": "/home/yon_b/",
+        "active": "active"
       }
     ]
   }
