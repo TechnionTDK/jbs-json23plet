@@ -17,4 +17,5 @@ output*
 log/
 target/
 
-/src/test/testsOutput/
+src/test/testsOutput/
+src/main/java/json23plet/generators/config.json
