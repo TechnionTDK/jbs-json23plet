@@ -4,6 +4,7 @@
 .settings/
 
 # Intellij
+src/main/java/json23plet/generators/config.json
 .idea/
 *.iml
 input*
@@ -18,4 +19,4 @@ log/
 target/
 
 src/test/testsOutput/
-src/main/java/json23plet/generators/config.json
+
