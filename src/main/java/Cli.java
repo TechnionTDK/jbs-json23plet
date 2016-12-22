@@ -9,14 +9,20 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import json23plet.generators.GeneratorsUtils;
 import json23plet.modules.GeneratorFactory;
 import json23plet.modules.ontologyGenerator.OntologyGenerator;
 import org.apache.commons.cli.*;
+import static json23plet.generators.GeneratorsUtils.GLOBAL_SETTING_OUTPUTDIR;
 
 public class Cli {
     private static final Logger log = Logger.getLogger(Cli.class.getName());
     private String[] args = null;
     private Options options = new Options();
+
+    static {
+        GeneratorsUtils init = new GeneratorsUtils();
+    }
 
     public Cli(String[] args) {
         this.args = args;
@@ -86,17 +92,17 @@ public class Cli {
     }
     private void init(String outputDir) throws IOException {
         Json23plet.initJson23plet();
-        Json23plet.setNewPropConfigValue(Json23plet.outputDir, outputDir);
+        GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_OUTPUTDIR, outputDir);
     }
     private void generate(String generatorName, String inputDir) throws Exception {
-        String outputDir = Json23plet.getPropConfigValue(Json23plet.outputDir);
+        String outputDir = GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_OUTPUTDIR);
         if (outputDir.isEmpty()) {
             throw new Exception("No Output Directory is configered");
         }
         GeneratorFactory.activateGenerator(generatorName, inputDir, outputDir);
     }
     private void generateAll() throws Exception {
-        String outputDir = Json23plet.getPropConfigValue(Json23plet.outputDir);
+        String outputDir = GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_OUTPUTDIR);
         if (outputDir.isEmpty()) {
             throw new Exception("No Output Directory is configered");
         }

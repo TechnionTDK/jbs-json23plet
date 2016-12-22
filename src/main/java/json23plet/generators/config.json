@@ -1,19 +1,24 @@
 {
-  "generators" : [
-    {
-      "name" : "PasukGenerator",
-      "input" : "C:/Users/Yaakov/IdeaProjects/jbs-json23plet/input/tanach-json",
-      "active" : "true"
+  "setting": {
+    "globalSetting": {
+      "outputDir": "myNewOutPutDirBlaBlaBla"
     },
-    {
-      "name" : "SeferHamitzvotGenerator",
-      "input" : "/home/yon_b/projects/gitHubProj/json23plet/input/seferhamitzvot-json/seferhamitzvot.json",
-      "active" : "false"
-    },
-    {
-      "name" : "SeferHamitzvotGenerator",
-      "input" : "seferhamitzvot-json",
-      "active" : "false"
-    }
-  ]
+    "generators": [
+      {
+        "name": "PasukGenerator",
+        "input": "C:/Users/Yaakov/IdeaProjects/jbs-json23plet/input/tanach-json",
+        "active": "true"
+      },
+      {
+        "name": "SeferHamitzvotGenerator",
+        "input": "/home/yon_b/projects/gitHubProj/json23plet/input/seferhamitzvot-json/seferhamitzvot.json",
+        "active": "true"
+      },
+      {
+        "name": "aaa",
+        "input": "seferhamitzvot-json",
+        "active": "true"
+      }
+    ]
+  }
 }
