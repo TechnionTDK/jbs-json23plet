@@ -11,6 +11,11 @@ import java.util.Properties;
  * Created by yon_b on 28/11/16.
  */
 public class Json23plet {
+    static {
+        org.apache.log4j.BasicConfigurator.configure();
+        Logger.getRootLogger().setLevel(Level.INFO);
+    }
+
     public static void main(String argv[]) {
         new Cli(argv).parse();
     }
