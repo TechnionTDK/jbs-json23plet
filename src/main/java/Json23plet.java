@@ -1,4 +1,6 @@
+import com.helger.jcodemodel.JClassAlreadyExistsException;
 import json23plet.modules.GeneratorFactory;
+import json23plet.modules.ontologyGenerator.OntologyClassGenerator;
 import json23plet.modules.ontologyGenerator.OntologyTTLGenerator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -17,9 +19,9 @@ public class Json23plet {
         Logger.getRootLogger().setLevel(Level.INFO);
     }
 
-    public static void main(String argv[]) {
+    public static void main(String argv[]) throws IOException, JClassAlreadyExistsException {
 //        new Cli(argv).parse();
-        OntologyTTLGenerator.generate("JbsOntology");
+        OntologyClassGenerator.generate("JbsOntology");
     }
 
     public static void initJson23plet() {

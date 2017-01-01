@@ -3,6 +3,7 @@ package json23plet.modules.ontologyGenerator;
 import com.helger.jcodemodel.*;
 import json23plet.modules.Json;
 
+import static json23plet.modules.Json.PRIMITIVE_KEY;
 import static json23plet.modules.Json.json;
 
 import json23plet.ontologies.BaseOntology;
@@ -62,30 +63,61 @@ public class OntologyClassGenerator {
         }
     }
     static private void createClassesComponent(JDefinedClass oc) {
+//        List<Json> resourceList = json().getAsArray("metadata")
+//                .stream()
+//                .filter(obj -> obj.value("predicate").contains("type")
+//                        && obj.value("object").contains("Class"))
+//                .collect(Collectors.toList());
+
+        List<Json> a = json().getAsArray("metadata");
+        for (Json j : a) {
+            j.getAsDictionary().get("rdf:type")
+                    .value(PRIMITIVE_KEY)
+                    .equals("owl:Class");
+        }
         List<Json> resourceList = json().getAsArray("metadata")
                 .stream()
-                .filter(obj -> obj.value("predicate").contains("type")
-                        && obj.value("object").contains("Class"))
+                .filter(obj ->
+                        obj
+                        .getAsDictionary()
+                        .get("rdf:type")
+                        .value(PRIMITIVE_KEY)
+                        .equals("owl:Class")
+                )
                 .collect(Collectors.toList());
 
+
         for (Json j : resourceList) {
-            JFieldVar clss = oc.field(JMod.PUBLIC | JMod.STATIC, Resource.class, getClassFiledName(j.value("subject")));
-            clss.init(JExpr.direct("model.getOntClass(JBO_URI + \"" + j.value("subject").split(":")[1] +"\")"));
+            String uri = j.getAsDictionary().get("uri").value(PRIMITIVE_KEY);
+            JFieldVar clss = oc.field(JMod.PUBLIC | JMod.STATIC, Resource.class, getClassFiledName(uri));
+            clss.init(JExpr.direct("model.getOntClass(JBO_URI + \"" + uri.split(":")[1] +"\")"));
 
         }
 
     }
 
     static private void createPredicatesComponent(JDefinedClass oc) {
+//        List<Json> propList = json().getAsArray("metadata")
+//                .stream()
+//                .filter(obj -> obj.value("predicate").contains("type")
+//                        && obj.value("object")
+//                        .contains("Property")).collect(Collectors.toList());
+
         List<Json> propList = json().getAsArray("metadata")
                 .stream()
-                .filter(obj -> obj.value("predicate").contains("type")
-                        && obj.value("object")
-                        .contains("Property")).collect(Collectors.toList());
+                .filter(obj ->
+                        obj
+                        .getAsDictionary()
+                        .get("rdf:type")
+                        .value(PRIMITIVE_KEY)
+                        .equals("owl:ObjectProperty")
+                )
+                .collect(Collectors.toList());
 
         for (Json j : propList) {
-            JFieldVar clss = oc.field(JMod.PUBLIC | JMod.STATIC, Property.class, getPredicateFiledName(j.value("subject")));
-            clss.init(JExpr.direct("model.getOntProperty(JBO_URI + \"" + j.value("subject").split(":")[1] +"\")"));
+            String uri = j.getAsDictionary().get("uri").value(PRIMITIVE_KEY);
+            JFieldVar clss = oc.field(JMod.PUBLIC | JMod.STATIC, Property.class, getPredicateFiledName(uri));
+            clss.init(JExpr.direct("model.getOntProperty(JBO_URI + \"" + uri.split(":")[1] +"\")"));
 
         }
 
