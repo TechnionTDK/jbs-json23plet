@@ -11,344 +11,148 @@
   ],
   "metadata" : [
     {
-      "subject" : "jbo:Pasuk",
-      "predicate" : "rdf:type",
-      "object" : "owl:Class"
+      "uri" : "jbo:Pasuk",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Pasuk",
+      "rdfs:subClassOf" : "owl:Thing"
     },
+
     {
-      "subject" : "jbo:Pasuk",
-      "predicate" : "rdfs:label",
-      "object" : "Pasuk"
+      "uri" : "jbo:Perek",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Perek",
+      "rdfs:subClassOf" : "owl:Thing"
     },
+
     {
-      "subject" : "jbo:Pasuk",
-      "predicate" : "rdfs:subClassOf",
-      "object" : "owl:Thing"
+      "uri" : "jbo:Sefer",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Sefer",
+      "rdfs:subClassOf" : "owl:Thing"
     },
+
     {
-      "subject" : "jbo:Perek",
-      "predicate" : "rdf:type",
-      "object" : "owl:Class"
+      "uri" : "jbo:Perush",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Perush",
+      "rdfs:subClassOf" : "owl:Thing"
     },
+
+
     {
-      "subject" : "jbo:Perek",
-      "predicate" : "rdfs:label",
-      "object" : "Pasuk"
+      "uri" : "jbo:Mishnaya",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Mishnaya",
+      "rdfs:subClassOf" : "owl:Thing"
     },
+
     {
-      "subject" : "jbo:Perek",
-      "predicate" : "rdfs:subClassOf",
-      "object" : "owl:Thing"
+      "uri" : "jbo:Mitzva",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Mitzva",
+      "rdfs:subClassOf" : "owl:Thing"
     },
+
     {
-      "subject" : "jbo:Sefer",
-      "predicate" : "rdf:type",
-      "object" : "owl:Class"
+      "uri" : "jbo:Halacha",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Halacha",
+      "rdfs:subClassOf" : "owl:Thing"
     },
+
     {
-      "subject" : "jbo:Sefer",
-      "predicate" : "rdfs:label",
-      "object" : "Sefer"
+      "uri" : "jbo:DafGmara",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "DafGmara",
+      "rdfs:subClassOf" : "owl:Thing"
     },
+
     {
-      "subject" : "jbo:Sefer",
-      "predicate" : "rdfs:subClassOf",
-      "object" : "owl:Thing"
+      "uri" : "jbo:Seder",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Seder",
+      "rdfs:subClassOf" : "owl:Thing"
     },
+
     {
-      "subject" : "jbo:Perush",
-      "predicate" : "rdf:type",
-      "object" : "owl:Class"
+      "uri" : "jbo:Masechet",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Masechet",
+      "rdfs:subClassOf" : "owl:Thing"
     },
+
     {
-      "subject" : "jbo:Perush",
-      "predicate" : "rdfs:label",
-      "object" : "Perush"
+      "uri" : "jbo:MitzvatAse",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "MitzvatAse",
+      "rdfs:subClassOf" : ["owl:Thing", "jbo:Mitzva"]
     },
+
     {
-      "subject" : "jbo:Perush",
-      "predicate" : "rdfs:subClassOf",
-      "object" : "owl:Thing"
+      "uri" : "jbo:MitzvatLoTaase",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "MitzvatLoTaase",
+      "rdfs:subClassOf" : ["owl:Thing", "jbo:Mitzva"]
     },
+
+
     {
-      "subject" : "jbo:Mishnaya",
-      "predicate" : "rdf:type",
-      "object" : "owl:Class"
+      "uri" : "jbo:mentions",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:domain" : "xsd:anyURI",
+      "rdfs:range" : "xsd:anyURI",
+      "rdfs:label" : "mentions"
     },
+
     {
-      "subject" : "jbo:Mishnaya",
-      "predicate" : "rdfs:label",
-      "object" : "Mishnaya"
+      "uri" : "jbo:interprets",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:domain" : "xsd:anyURI",
+      "rdfs:range" : "xsd:anyURI",
+      "rdfs:label" : "interprets"
     },
+
     {
-      "subject" : "jbo:Mishnaya",
-      "predicate" : "rdfs:subClassOf",
-      "object" : "owl:Thing"
+      "uri" : "jbo:content",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:domain" : "xsd:anyURI",
+      "rdfs:range" : "xsd:xstring",
+      "rdfs:label" : "content"
     },
     {
-      "subject" : "jbo:Mitzva",
-      "predicate" : "rdf:type",
-      "object" : "owl:Class"
+      "uri" : "jbo:container",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:domain" : "xsd:anyURI",
+      "rdfs:range" : "xsd:anyURI",
+      "rdfs:label" : "container"
     },
     {
-      "subject" : "jbo:Mitzva",
-      "predicate" : "rdfs:label",
-      "object" : "Mitzva"
+      "uri" : "jbo:position",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:domain" : "xsd:anyURI",
+      "rdfs:range" : "xsd:integer",
+      "rdfs:label" : "position"
     },
     {
-      "subject" : "jbo:Mitzva",
-      "predicate" : "rdfs:subClassOf",
-      "object" : "owl:Thing"
+      "uri" : "jbo:text",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:domain" : "xsd:anyURI",
+      "rdfs:range" : "xsd:xstring",
+      "rdfs:label" : "text"
     },
     {
-      "subject" : "jbo:Halacha",
-      "predicate" : "rdf:type",
-      "object" : "owl:Class"
+      "uri" : "jbo:positionInPerek",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:domain" : "xsd:anyURI",
+      "rdfs:range" : "xsd:integer",
+      "rdfs:label" : "positionInPerek"
     },
     {
-      "subject" : "jbo:Halacha",
-      "predicate" : "rdfs:label",
-      "object" : "Halacha"
+      "uri" : "jbo:positionInParasha",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:domain" : "xsd:anyURI",
+      "rdfs:range" : "xsd:integer",
+      "rdfs:label" : "positionInParasha"
     },
-    {
-      "subject" : "jbo:Halacha",
-      "predicate" : "rdfs:subClassOf",
-      "object" : "owl:Thing"
-    },
-    {
-      "subject" : "jbo:DafGmara",
-      "predicate" : "rdf:type",
-      "object" : "owl:Class"
-    },
-    {
-      "subject" : "jbo:DafGmara",
-      "predicate" : "rdfs:label",
-      "object" : "DafGmara"
-    },
-    {
-      "subject" : "jbo:DafGmara",
-      "predicate" : "rdfs:subClassOf",
-      "object" : "owl:Thing"
-    },
-    {
-      "subject" : "jbo:Seder",
-      "predicate" : "rdf:type",
-      "object" : "owl:Class"
-    },
-    {
-      "subject" : "jbo:Seder",
-      "predicate" : "rdfs:label",
-      "object" : "Seder"
-    },
-    {
-      "subject" : "jbo:Seder",
-      "predicate" : "rdfs:subClassOf",
-      "object" : "owl:Thing"
-    },
-    {
-      "subject" : "jbo:Masechet",
-      "predicate" : "rdf:type",
-      "object" : "owl:Class"
-    },
-    {
-      "subject" : "jbo:Masechet",
-      "predicate" : "rdfs:label",
-      "object" : "Masechet"
-    },
-    {
-      "subject" : "jbo:Masechet",
-      "predicate" : "rdfs:subClassOf",
-      "object" : "owl:Thing"
-    },
-    {
-      "subject" : "jbo:MitzvatAse",
-      "predicate" : "rdf:type",
-      "object" : "owl:Class"
-    },
-    {
-      "subject" : "jbo:MitzvatAse",
-      "predicate" : "rdfs:label",
-      "object" : "MitzvatAse"
-    },
-    {
-      "subject" : "jbo:MitzvatAse",
-      "predicate" : "rdfs:subClassOf",
-      "object" : "jbo:Mitzva"
-    },
-    {
-      "subject" : "jbo:MitzvatLoTaase",
-      "predicate" : "rdf:type",
-      "object" : "owl:Class"
-    },
-    {
-      "subject" : "jbo:MitzvatLoTaase",
-      "predicate" : "rdfs:label",
-      "object" : "MitzvatLoTaase"
-    },
-    {
-      "subject" : "jbo:MitzvatLoTaase",
-      "predicate" : "rdfs:subClassOf",
-      "object" : "jbo:Mitzva"
-    },
-    {
-      "subject" : "jbo:mentions",
-      "predicate" : "rdf:type",
-      "object" : "owl:ObjectProperty"
-    },
-    {
-      "subject" : "jbo:mentions",
-      "predicate" : "rdfs:domain",
-      "object" : "xsd:anyURI"
-    },
-    {
-      "subject" : "jbo:mentions",
-      "predicate" : "rdfs:label",
-      "object" : "mentions"
-    },
-    {
-      "subject" : "jbo:mentions",
-      "predicate" : "rdfs:range",
-      "object" : "xsd:anyURI"
-    },
-    {
-      "subject" : "jbo:interprets",
-      "predicate" : "rdf:type",
-      "object" : "owl:ObjectProperty"
-    },
-    {
-      "subject" : "jbo:interprets",
-      "predicate" : "rdfs:domain",
-      "object" : "xsd:anyURI"
-    },
-    {
-      "subject" : "jbo:interprets",
-      "predicate" : "rdfs:label",
-      "object" : "interprets"
-    },
-    {
-      "subject" : "jbo:interprets",
-      "predicate" : "rdfs:range",
-      "object" : "xsd:anyURI"
-    },
-    {
-      "subject" : "jbo:content",
-      "predicate" : "rdf:type",
-      "object" : "owl:ObjectProperty"
-    },
-    {
-      "subject" : "jbo:content",
-      "predicate" : "rdfs:domain",
-      "object" : "xsd:anyURI"
-    },
-    {
-      "subject" : "jbo:content",
-      "predicate" : "rdfs:label",
-      "object" : "content"
-    },
-    {
-      "subject" : "jbo:content",
-      "predicate" : "rdfs:range",
-      "object" : "xsd:xstring"
-    },
-    {
-      "subject" : "jbo:container",
-      "predicate" : "rdf:type",
-      "object" : "owl:ObjectProperty"
-    },
-    {
-      "subject" : "jbo:container",
-      "predicate" : "rdfs:domain",
-      "object" : "xsd:anyURI"
-    },
-    {
-      "subject" : "jbo:container",
-      "predicate" : "rdfs:label",
-      "object" : "container"
-    },
-    {
-      "subject" : "jbo:container",
-      "predicate" : "rdfs:range",
-      "object" : "xsd:anyURI"
-    },
-    {
-      "subject" : "jbo:position",
-      "predicate" : "rdf:type",
-      "object" : "owl:ObjectProperty"
-    },
-    {
-      "subject" : "jbo:position",
-      "predicate" : "rdfs:domain",
-      "object" : "xsd:anyURI"
-    },
-    {
-      "subject" : "jbo:position",
-      "predicate" : "rdfs:label",
-      "object" : "position"
-    },
-    {
-      "subject" : "jbo:position",
-      "predicate" : "rdfs:range",
-      "object" : "xsd:integer"
-    },
-    {
-      "subject" : "jbo:text",
-      "predicate" : "rdf:type",
-      "object" : "owl:ObjectProperty"
-    },
-    {
-      "subject" : "jbo:text",
-      "predicate" : "rdfs:domain",
-      "object" : "xsd:anyURI"
-    },
-    {
-      "subject" : "jbo:text",
-      "predicate" : "rdfs:label",
-      "object" : "text"
-    },
-    {
-      "subject" : "jbo:text",
-      "predicate" : "rdfs:range",
-      "object" : "xsd:xstring"
-    },
-    {
-      "subject" : "jbo:positionInPerek",
-      "predicate" : "rdf:type",
-      "object" : "owl:ObjectProperty"
-    },
-    {
-      "subject" : "jbo:positionInPerek",
-      "predicate" : "rdfs:domain",
-      "object" : "xsd:anyURI"
-    },
-    {
-      "subject" : "jbo:positionInPerek",
-      "predicate" : "rdfs:label",
-      "object" : "positionInPerek"
-    },
-    {
-      "subject" : "jbo:positionInPerek",
-      "predicate" : "rdfs:range",
-      "object" : "xsd:integer"
-    },
-    {
-      "subject" : "jbo:positionInParasha",
-      "predicate" : "rdf:type",
-      "object" : "owl:ObjectProperty"
-    },
-    {
-      "subject" : "jbo:positionInParasha",
-      "predicate" : "rdfs:domain",
-      "object" : "xsd:anyURI"
-    },
-    {
-      "subject" : "jbo:positionInParasha",
-      "predicate" : "rdfs:label",
-      "object" : "positionInParasha"
-    },
-    {
-      "subject" : "jbo:positionInParasha",
-      "predicate" : "rdfs:range",
-      "object" : "xsd:integer"
-    }
   ]
 }
