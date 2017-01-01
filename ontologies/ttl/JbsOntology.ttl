@@ -44,7 +44,7 @@ jbo:positionInParasha
 
 jbo:MitzvatAse  a        owl:Class ;
         rdfs:label       "MitzvatAse" ;
-        rdfs:subClassOf  jbo:Mitzva .
+        rdfs:subClassOf  jbo:Mitzva , owl:Thing .
 
 jbo:interprets  a    owl:ObjectProperty ;
         rdfs:domain  xsd:anyURI ;
@@ -77,7 +77,7 @@ jbo:positionInPerek  a  owl:ObjectProperty ;
         rdfs:range   xsd:integer .
 
 jbo:Perek  a             owl:Class ;
-        rdfs:label       "Pasuk" ;
+        rdfs:label       "Perek" ;
         rdfs:subClassOf  owl:Thing .
 
 jbo:content  a       owl:ObjectProperty ;
@@ -87,7 +87,7 @@ jbo:content  a       owl:ObjectProperty ;
 
 jbo:MitzvatLoTaase  a    owl:Class ;
         rdfs:label       "MitzvatLoTaase" ;
-        rdfs:subClassOf  jbo:Mitzva .
+        rdfs:subClassOf  jbo:Mitzva , owl:Thing .
 
 jbo:mentions  a      owl:ObjectProperty ;
         rdfs:domain  xsd:anyURI ;

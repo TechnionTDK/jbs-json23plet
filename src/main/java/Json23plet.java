@@ -1,4 +1,5 @@
 import json23plet.modules.GeneratorFactory;
+import json23plet.modules.ontologyGenerator.OntologyTTLGenerator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -17,7 +18,8 @@ public class Json23plet {
     }
 
     public static void main(String argv[]) {
-        new Cli(argv).parse();
+//        new Cli(argv).parse();
+        OntologyTTLGenerator.generate("JbsOntology");
     }
 
     public static void initJson23plet() {

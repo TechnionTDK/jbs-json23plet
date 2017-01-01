@@ -94,8 +94,6 @@
       "rdfs:label" : "MitzvatLoTaase",
       "rdfs:subClassOf" : ["owl:Thing", "jbo:Mitzva"]
     },
-
-
     {
       "uri" : "jbo:mentions",
       "rdf:type" : "owl:ObjectProperty",
@@ -153,6 +151,6 @@
       "rdfs:domain" : "xsd:anyURI",
       "rdfs:range" : "xsd:integer",
       "rdfs:label" : "positionInParasha"
-    },
+    }
   ]
 }
