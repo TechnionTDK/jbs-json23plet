@@ -63,12 +63,6 @@ public class OntologyClassGenerator {
         }
     }
     static private void createClassesComponent(JDefinedClass oc) {
-//        List<Json> resourceList = json().getAsArray("metadata")
-//                .stream()
-//                .filter(obj -> obj.value("predicate").contains("type")
-//                        && obj.value("object").contains("Class"))
-//                .collect(Collectors.toList());
-
         List<Json> a = json().getAsArray("metadata");
         for (Json j : a) {
             j.getAsDictionary().get("rdf:type")
@@ -97,11 +91,6 @@ public class OntologyClassGenerator {
     }
 
     static private void createPredicatesComponent(JDefinedClass oc) {
-//        List<Json> propList = json().getAsArray("metadata")
-//                .stream()
-//                .filter(obj -> obj.value("predicate").contains("type")
-//                        && obj.value("object")
-//                        .contains("Property")).collect(Collectors.toList());
 
         List<Json> propList = json().getAsArray("metadata")
                 .stream()
