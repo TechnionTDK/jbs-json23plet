@@ -18,11 +18,11 @@ import java.util.Map;
 public class GeneratorFactory {
 
     static public void activateGenerator(String gen, String jsonRoot, String outputDirRoot) throws Exception {
-        if(new File(jsonRoot).isFile()) {
-            activateGeneratorSingleFile(gen, new File(jsonRoot).getPath());
-            export(jsonRoot, jsonRoot, outputDirRoot, true);
-            return;
-        }
+//        if(new File(jsonRoot).isFile()) {
+//            activateGeneratorSingleFile(gen, new File(jsonRoot).getPath());
+//            export(jsonRoot, jsonRoot, outputDirRoot, true);
+//            return;
+//        }
         Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
             try {
                 activateGeneratorSingleFile(gen, file.toString());

@@ -2,6 +2,7 @@ import com.helger.jcodemodel.JClassAlreadyExistsException;
 import json23plet.JsonValidators.JbsValidator;
 import json23plet.JsonValidators.JsonValidator;
 import json23plet.generators.ontologyGenerator.OntologyGenerator;
+import json23plet.modules.GeneratorFactory;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -18,12 +19,13 @@ public class Json23plet {
         Logger.getRootLogger().setLevel(Level.INFO);
     }
 
-    public static void main(String argv[]) throws IOException, JClassAlreadyExistsException {
+    public static void main(String argv[]) throws Exception {
 //        new Cli(argv).parse();
-        OntologyGenerator.generate("JbsOntology");
+//        OntologyGenerator.generate("JbsOntology");
 //        JsonValidator validator = new JbsValidator();
 //        validator.registerValidators();
 //        validator.validate("input/mefarshim.json");
+        GeneratorFactory.activateGenerator("JbsBaseGenerator", "input/mefarshim.json", "aaa");
     }
 
     public static void initJson23plet() {
