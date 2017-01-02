@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 import json23plet.generators.GeneratorsUtils;
 import json23plet.modules.GeneratorFactory;
-import json23plet.modules.ontologyGenerator.OntologyGenerator;
+import json23plet.generators.ontologyGenerator.OntologyGenerator;
 import org.apache.commons.cli.*;
 import static json23plet.generators.GeneratorsUtils.GLOBAL_SETTING_OUTPUTDIR;
 

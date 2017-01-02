@@ -1,6 +1,7 @@
 package json23plet.generators;
 
 import com.google.gson.*;
+import json23plet.modules.Json;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -8,6 +9,10 @@ import java.io.FileWriter;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
+
+import static json23plet.modules.Json.PRIMITIVE_KEY;
+import static json23plet.modules.Json.json;
+import static json23plet.modules.Triplet.triplet;
 
 /**
  * Created by yon_b on 22/12/16.
@@ -101,5 +106,28 @@ public class GeneratorsUtils {
             e.printStackTrace();
         }
 
+    }
+
+    static public void generateBasicJsonForm(String propOfJsonString) {
+        for (Json j : json().getAsArray(propOfJsonString)) {
+            Map<String, Json> mapJson = j.getAsDictionary();
+            String uri = mapJson.get("uri").value(PRIMITIVE_KEY);
+            for (String key : mapJson.keySet()) {
+                if (key.equals("uri")) continue;
+                if (mapJson.get(key).isArray()) {
+                    for (String s : mapJson.get(key).getAsStringArray(PRIMITIVE_KEY)) {
+                        triplet()
+                                .subject(uri)
+                                .predicate(key)
+                                .object(s);
+                    }
+                } else {
+                    triplet()
+                            .subject(uri)
+                            .predicate(key)
+                            .object(mapJson.get(key).value(PRIMITIVE_KEY));
+                }
+            }
+        }
     }
 }

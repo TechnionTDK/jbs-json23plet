@@ -1,4 +1,4 @@
-package json23plet.modules.ontologyGenerator;
+package json23plet.generators.ontologyGenerator;
 
 import com.helger.jcodemodel.*;
 import json23plet.modules.Json;

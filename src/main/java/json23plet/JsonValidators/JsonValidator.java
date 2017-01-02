@@ -13,6 +13,7 @@ import org.apache.jena.rdf.model.ModelFactory;
 
 import java.awt.*;
 import java.io.*;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +37,16 @@ public abstract class JsonValidator {
         validatorsList.add(v);
     }
 
-    public void validate(String jsonPath) {
+    public void validate(String jsonPath) throws IOException {
+        Files.find(Paths.get(jsonPath), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
+            validateSingleJsonFile(file.toString());
+        });
+
+
+    }
+    private void validateSingleJsonFile(String jsonPath) {
         Json.Init(jsonPath);
+        System.out.println("[PATH]... " + jsonPath);
         for (Json j : getJsonsToValidate()) {
             for (IJsonValidator v : validatorsList) {
                 if (v.JsonValidate(j)) {
@@ -47,55 +56,5 @@ public abstract class JsonValidator {
                 }
             }
         }
-
     }
-
-
-//    static public boolean spell(String inputPath, String ontName) {
-//        OntModel model = (OntModel) ModelFactory.createOntologyModel().read(Paths.get("ontologies", "ttl", ontName + ".ttl").toString());
-//
-//
-//        return true;
-//    }
-//    static private List<String> getAllProperties(OntModel om) {
-//        List<String> res = om.listObjectProperties()
-//                .toList()
-//                .stream()
-//                .map(p -> om.getNsURIPrefix(p.getNameSpace()) + ":" + p.getLocalName())
-//                .collect(Collectors.toList());
-//        return res;
-//    }
-//
-//    static private void validateJsonAsStream(String jsonPath, OntModel om) throws IOException {
-//
-//        InputStream stream;
-//        JsonReader reader = new JsonReader(new FileReader(jsonPath));
-//        Gson gson = new GsonBuilder().create();
-//        reader.beginArray();
-//        while (reader.hasNext()) {
-//            JsonElement element = gson.fromJson (reader, JsonElement.class);
-//            if (! validateJsonObjectProperties(element, om)) {
-//                System.out.println("error");
-//            }
-//
-//        }
-//
-//    }
-//
-//    static boolean validateJsonObjectProperties(JsonElement json, OntModel om) {
-//        List<String> ontProp = getAllProperties(om);
-//        ontProp.add("uri");
-//        Set<Map.Entry<String, JsonElement>> entries = json
-//                .getAsJsonObject()
-//                .entrySet();
-//
-//        return entries
-//                .stream()
-//                .allMatch(entry ->
-//                        ontProp
-//                        .contains(
-//                                entry.getKey()
-//                        )
-//                );
-//    }
 }

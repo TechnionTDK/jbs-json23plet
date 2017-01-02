@@ -1,4 +1,4 @@
-package json23plet.modules.ontologyGenerator;
+package json23plet.generators.ontologyGenerator;
 
 /**
  * Created by yon_b on 13/12/16.
