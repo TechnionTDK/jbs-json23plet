@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 /**
  * Created by yon_b on 02/01/17.
  */
-public abstract class BasicRegExGenerator {
+public abstract class BaseRegexGenerator {
 
     List<IRegExGenerator> generatorsList = new ArrayList<>();
     public abstract void registerGenerators();
@@ -47,15 +47,11 @@ public abstract class BasicRegExGenerator {
 
     protected void _activateRegExGenerator() {
         for (IRegExGenerator rgen : generatorsList) {
-            Triplet.Init();
             for (Json js : getJsonsToGenerate()) {
-                if (rgen.match(js.value("uri"))) {
+                if (rgen.match(js)) {
                     rgen.generate(js);
                 }
             }
-            new File(new File(rgen.outputPath()).getParent()).mkdirs();
-            Triplet.Export(rgen.outputPath(), "TURTLE");
-            Triplet.Close();
         }
     }
 }

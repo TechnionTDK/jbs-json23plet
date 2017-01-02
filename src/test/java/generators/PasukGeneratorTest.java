@@ -20,7 +20,7 @@ public class PasukGeneratorTest {
         String folder = Paths.get("src", "test", "testInput", "tanach").toString();
         String outputLocation =  Paths.get("src", "test", "testsOutput").toString();
         JbsOntology init = new JbsOntology();
-        GeneratorFactory.activateGenerator("PasukGenerator", folder, outputLocation);
+        GeneratorFactory.activateGenerator("PasukGenerator", folder, outputLocation, false);
         assertTrue(TestUtils.isTwoEqual("tanach"));
     }
 }

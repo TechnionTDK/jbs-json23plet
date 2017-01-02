@@ -23,8 +23,10 @@ public class GeneratorsUtils {
     public static String GENERATOR_INPUT_PROP = "input";
     public static String GENERATOR_ACTIVE_PROP = "active";
     public static String GENERATOR_NAME_PROP = "name";
-    public static String GLOBAL_SETTING_OUTPUTDIR = "outputDir";
+    public static String GLOBAL_SETTING_GEN_OUTPUTDIR = "GenoutputDir";
+    public static String GLOBAL_SETTING_REGEX_GEN_OUTPUTDIR = "regexGenOutputDir";
     public static String GLOBAL_SETTING = "globalSetting";
+    public static String GLOBAL_SETTING_ERROR_LEVEL = "errorLevel";
     static String SETTING_PROP = "setting";
     static JsonElement root;
     static {
@@ -107,7 +109,6 @@ public class GeneratorsUtils {
         }
 
     }
-
     static public void generateBasicJsonForm(String propOfJsonString) {
         for (Json j : json().getAsArray(propOfJsonString)) {
             Map<String, Json> mapJson = j.getAsDictionary();

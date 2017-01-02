@@ -8,9 +8,7 @@ import json23plet.modules.Json;
 public interface IRegExGenerator {
     public void generate(Json js);
 
-    public boolean match(String uri);
-
-    public String outputPath();
+    public boolean match(Json js);
 
     public String getRegEx();
 

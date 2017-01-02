@@ -1,7 +1,9 @@
 {
   "setting": {
     "globalSetting": {
-      "outputDir": "aaa"
+      "GenoutputDir": "Gen",
+      "regexGenOutputDir" : "regexGen",
+      "errorLevel": "info"
     },
     "generators": [
       {

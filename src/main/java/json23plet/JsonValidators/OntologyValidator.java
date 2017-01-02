@@ -11,14 +11,14 @@ import java.util.stream.Collectors;
 /**
  * Created by yon_b on 02/01/17.
  */
-public class JbsValidator extends  JsonValidator{
+public class OntologyValidator extends  JsonValidator{
     @Override
     public void registerValidators() {
         registerValidator(new IJsonValidator() {
+            String jbsOntName = "JbsOntology";
+            OntModel model = (OntModel) ModelFactory.createOntologyModel().read(Paths.get("ontologies", "ttl", jbsOntName + ".ttl").toString());
             @Override
             public boolean JsonValidate(Json obj) {
-                String jbsOntName = "JbsOntology";
-                OntModel model = (OntModel) ModelFactory.createOntologyModel().read(Paths.get("ontologies", "ttl", jbsOntName + ".ttl").toString());
                 List<String> JbsKeys = model.listAllOntProperties()
                 .toList()
                 .stream()
@@ -47,5 +47,10 @@ public class JbsValidator extends  JsonValidator{
     @Override
     public List<Json> getJsonsToValidate() {
         return Json.json().getAsArray("subjects");
+    }
+
+    @Override
+    public List<Json> getJsonsToValidate(Json jsonRoot) {
+        return jsonRoot.getAsArray("subjects");
     }
 }
