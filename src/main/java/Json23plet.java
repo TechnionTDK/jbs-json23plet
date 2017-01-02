@@ -2,7 +2,10 @@ import com.helger.jcodemodel.JClassAlreadyExistsException;
 import json23plet.JsonValidators.JbsValidator;
 import json23plet.JsonValidators.JsonValidator;
 import json23plet.generators.ontologyGenerator.OntologyGenerator;
+import json23plet.generators.regExGenerators.BasicRegExGenerator;
+import json23plet.generators.regExGenerators.JbsMatchAllRegExGenerator;
 import json23plet.modules.GeneratorFactory;
+import json23plet.modules.RegExGeneratorFactory;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -25,7 +28,8 @@ public class Json23plet {
 //        JsonValidator validator = new JbsValidator();
 //        validator.registerValidators();
 //        validator.validate("input/mefarshim.json");
-        GeneratorFactory.activateGenerator("JbsBaseGenerator", "input/mefarshim.json", "aaa");
+//        GeneratorFactory.activateGenerator("BasicJsonGenerator", "input/mefarshim.json", "aaa");
+        RegExGeneratorFactory.activateSingleRegExGenerator("JbsMatchAllRegExGenerator", "input/mefarshim.json");
     }
 
     public static void initJson23plet() {

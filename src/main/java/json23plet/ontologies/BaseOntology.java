@@ -13,6 +13,8 @@ public class BaseOntology {
     public static Resource OWL_C_THING = OWL.Thing;
     public static Resource OWL_C_CLASS = OWL.Class;
     public static Property RDF_P_TYPE = RDF.type;
+
+    public static Property RDFS_P_SUB_CLASS_OF = RDFS.subClassOf;
     public static Property RDFS_P_COMMENT = RDFS.comment;
     public static Property RDFS_P_LABEL = RDFS.label;
 }

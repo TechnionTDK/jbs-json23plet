@@ -4,6 +4,14 @@ import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.*;
 
 import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by yon_b on 28/11/16.
@@ -15,12 +23,46 @@ public class Triplet {
     private Property predicate = null;
     private RDFNode object = null;
 
-
     static public Triplet triplet() {
         return new Triplet();
     }
     static public void Init() {
         model = ModelFactory.createOntologyModel();
+        try {
+            Files.find(Paths.get("src", "main", "java", "json23plet", "ontologies"), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
+                try {
+                    Class genClass = Class.forName("json23plet.ontologies." + file.getFileName().toString().replace(".java",""));
+                    Constructor ctor = genClass.getConstructor();
+                    Object instance = ctor.newInstance(null);
+
+                    List<Field> perfixes =  Arrays.stream(genClass.getDeclaredFields())
+                            .filter(f -> f.getName().contains("PREFIX"))
+                            .collect(Collectors.toList());
+
+                    List<Field> uris =  Arrays.stream(genClass.getDeclaredFields())
+                            .filter(f -> f.getName().contains("URI"))
+                            .collect(Collectors.toList());
+
+                    for (Field f : perfixes) {
+                        String uri = uris
+                                .stream()
+                                .filter(u -> u.getName()
+                                        .split("_")[0]
+                                        .equals(f.getName().split("_")[0]))
+                                .collect(Collectors.toList())
+                                .get(0)
+                                .get(new Object())
+                                .toString();
+                        addNSprefix(f.get(new Object()).toString(), uri);
+                    }
+
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     private void addStatement() {
         if (subject != null && predicate != null && object != null) {

@@ -38,10 +38,10 @@ public abstract class JsonValidator {
     }
 
     public void validate(String jsonPath) throws IOException {
-//        if(new File(jsonPath).isFile()) {
-//            validateSingleJsonFile(jsonPath);
-//            return;
-//        }
+        if(new File(jsonPath).isFile()) {
+            validateSingleJsonFile(jsonPath);
+            return;
+        }
         Files.find(Paths.get(jsonPath), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
             validateSingleJsonFile(file.toString());
         });

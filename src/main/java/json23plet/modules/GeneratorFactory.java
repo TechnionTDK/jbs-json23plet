@@ -18,11 +18,11 @@ import java.util.Map;
 public class GeneratorFactory {
 
     static public void activateGenerator(String gen, String jsonRoot, String outputDirRoot) throws Exception {
-//        if(new File(jsonRoot).isFile()) {
-//            activateGeneratorSingleFile(gen, new File(jsonRoot).getPath());
-//            export(jsonRoot, jsonRoot, outputDirRoot, true);
-//            return;
-//        }
+        if(new File(jsonRoot).isFile()) {
+            activateGeneratorSingleFile(gen, new File(jsonRoot).getPath());
+            export(jsonRoot, jsonRoot, outputDirRoot, true);
+            return;
+        }
         Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
             try {
                 activateGeneratorSingleFile(gen, file.toString());
@@ -63,15 +63,17 @@ public class GeneratorFactory {
         Triplet.Close();
 
     }
-    static public void Init() throws IOException {
-        Files.find(Paths.get("src", "main", "java", "json23plet", "ontologies"), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
-            try {
-                Class genClass = Class.forName("json23plet.ontologies." + file.getFileName().toString().replace(".java",""));
-                Constructor ctor = genClass.getConstructor();
-                Object instance = ctor.newInstance(null);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-        });
-    }
+
+
+//    static public void Init() throws IOException {
+//        Files.find(Paths.get("src", "main", "java", "json23plet", "ontologies"), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
+//            try {
+//                Class genClass = Class.forName("json23plet.ontologies." + file.getFileName().toString().replace(".java",""));
+//                Constructor ctor = genClass.getConstructor();
+//                Object instance = ctor.newInstance(null);
+//            } catch (Exception e) {
+//                System.out.println(e.getMessage());
+//            }
+//        });
+//    }
 }
