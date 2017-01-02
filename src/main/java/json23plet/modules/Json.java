@@ -91,6 +91,14 @@ public class Json {
         return res;
     }
 
+    public List<String> getJsonKeys() {
+        return currentElement
+                .entrySet()
+                .stream()
+                .map(entry -> entry.getKey())
+                .collect(Collectors.toList());
+    }
+
     public boolean isArray() {
         return currentElement.get(PRIMITIVE_KEY).isJsonArray();
     }
