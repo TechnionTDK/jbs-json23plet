@@ -23,13 +23,13 @@ public class Json23plet {
     }
 
     public static void main(String argv[]) throws Exception {
-//        new Cli(argv).parse();
+        new Cli(argv).parse();
 //        OntologyGenerator.generate("JbsOntology");
 //        JsonValidator validator = new JbsValidator();
 //        validator.registerValidators();
 //        validator.validate("input/mefarshim.json");
 //        GeneratorFactory.activateGenerator("BasicJsonGenerator", "input/mefarshim.json", "aaa");
-        RegExGeneratorFactory.activateSingleRegExGenerator("JbsMatchAllRegExGenerator", "input/mefarshim.json");
+//        RegExGeneratorFactory.activateSingleRegExGenerator("JbsMatchAllRegExGenerator", "input/mefarshim.json");
     }
 
     public static void initJson23plet() {
