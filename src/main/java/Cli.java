@@ -13,7 +13,10 @@ import json23plet.generators.GeneratorsUtils;
 import json23plet.modules.GeneratorFactory;
 import json23plet.generators.ontologyGenerator.OntologyGenerator;
 import org.apache.commons.cli.*;
+
+import static json23plet.generators.GeneratorsUtils.GLOBAL_SETTING_ERROR_LEVEL;
 import static json23plet.generators.GeneratorsUtils.GLOBAL_SETTING_GEN_OUTPUTDIR;
+import static json23plet.generators.GeneratorsUtils.GLOBAL_SETTING_REGEX_GEN_OUTPUTDIR;
 
 public class Cli {
     private static final Logger log = Logger.getLogger(Cli.class.getName());
@@ -28,27 +31,37 @@ public class Cli {
         this.args = args;
         options.addOption("help", "print this message");
         options.addOption(Option.builder("generate")
-                .argName("generator name> <input dir")
+//                .argName("generator class> <generator name> <input dir")
                 .hasArg()
-                .numberOfArgs(2)
-                .desc("generate the ")
+                .numberOfArgs(3)
+                .optionalArg(true)
+                .desc("generate the files under <input dir> recursively using the <generator name>\n" +
+                        "<generator class> specify the type of the generator [-gen, -regex, -basic]\n" +
+                        "(with basic option no need to specify the generator name)\n")
                 .build());
         options.addOption("generateAll", "run all generators that are configered in generator.config");
         options.addOption(Option.builder("init")
-                .argName("output dir")
                 .hasArg()
-                .desc("initializes the output location of the tool to \"output dir\"")
+                .desc("initializes the structure of the project")
                 .build());
         options.addOption(Option.builder("ontology")
-                .argName("ontology name")
+//                .argName("ontology name")
                 .hasArg()
                 .desc("create the appropriate ontology resources to a given ontology name")
                 .build());
         options.addOption(Option.builder("config")
-                .argName("generator config")
+//                .argName("config option> <[config args]")
                 .hasArg()
                 .numberOfArgs(4)
-                .desc("add or edit configuration to a specific generator")
+                .optionalArg(true)
+                .desc("add or edit configuration for generator or global setting\n" +
+                        "<config option> might be :\n" +
+                        "-addGen : add new genrator configuration\n" +
+                        "-editGen : edit specific configuration\n" +
+                        "-setGlobal : set global setting according to the filed name\n" +
+                        "-setGenOutDir : set the \"genoutputDir\" configuration (default \"genOutput\") \n" +
+                        "-setRegexGenOutDir : set the \"regexGenOutputDir\" configuration (default \"regexOutput\")\n" +
+                        "-setErrorLevel : set the \"setErrorLevel\" configuration (default \"none\") might be [\"none\", \"infi\", \"stop\"]\n")
                 .build());
     }
 
@@ -60,8 +73,7 @@ public class Cli {
                 help();
             }
             if (line.hasOption("init")) {
-                String outputDir = line.getOptionValue("init");
-                init(outputDir);
+                init();
             }
             if (line.hasOption("ontology")) {
                 String ontologyName = line.getOptionValue("ontology");
@@ -74,19 +86,14 @@ public class Cli {
             if (line.hasOption("generate")) {
                 //log.log(Level.INFO, "Using cli arguments -generate " + line.getOptionValues("generate").toString());
                 String[] generateOptions = line.getOptionValues("generate");
-                generate(generateOptions[0], generateOptions[1]);
+                generate(generateOptions);
             }
             if (line.hasOption("generateAll")) {
                 generateAll();
             }
             if (line.hasOption("config")) {
                 String[] configOptions = line.getOptionValues("config");
-                if (configOptions[0].equals("-add")) {
-                    GeneratorsUtils.setNewGeneratorConfiguration(configOptions[1], configOptions[2], configOptions[3]);
-                } else if (configOptions[0].equals("-edit")) {
-                    GeneratorsUtils.setGenConfig(configOptions[1], configOptions[2], configOptions[3]);
-                }
-
+                config(configOptions);
             }
         }
         catch (ParseException e) {
@@ -96,25 +103,31 @@ public class Cli {
         catch (Exception e) {
             log.log(Level.SEVERE, e.getMessage());
         }
-
-
     }
-
     private void help() {
         HelpFormatter formatter = new HelpFormatter();
         formatter.printHelp("json23plet", options);
         //System.exit(0);
     }
-    private void init(String outputDir) throws IOException {
+    private void init() throws IOException {
         Json23plet.initJson23plet();
-        GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR, outputDir);
     }
-    private void generate(String generatorName, String inputDir) throws Exception {
-        String outputDir = GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR);
-        if (outputDir.isEmpty()) {
-            throw new Exception("No Output Directory is configered");
+    private void generate(String[] params) throws Exception {
+        String action = params[0];
+        switch (action) {
+            case "-gen" : String outputDir = GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR);
+                if ( outputDir.isEmpty())  throw new Exception("No Output Directory is configered for " + params[1]);
+                GeneratorFactory.activateGenerator(params[1], params[2], outputDir);
+                break;
+            case "-regex" : String regexOutputDir = GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_REGEX_GEN_OUTPUTDIR);
+                if ( regexOutputDir.isEmpty())  throw new Exception("No Output Directory is configered for " + params[1]);
+                GeneratorFactory.activateRegexGenerator(params[1], params[2], regexOutputDir);
+                break;
+            case "-basic" : String basicOutputDir = GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR);
+                if ( basicOutputDir.isEmpty())  throw new Exception("No Output Directory is configered for " + params[1]);
+                GeneratorFactory.activateGenerator("BasicJsonGenerator", params[1], basicOutputDir);
+            default:
         }
-        GeneratorFactory.activateGenerator(generatorName, inputDir, outputDir);
     }
     private void generateAll() throws Exception {
         String outputDir = GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR);
@@ -122,5 +135,18 @@ public class Cli {
             throw new Exception("No Output Directory is configered");
         }
         GeneratorFactory.activateAllConfigGenerators(outputDir);
+    }
+
+    private void config(String[] params) {
+        String action = params[0];
+        switch (action) {
+            case "-addGen" : GeneratorsUtils.setNewGeneratorConfiguration(params[1], params[2], params[3]); break;
+            case "-editGen" : GeneratorsUtils.setGenConfig(params[1], params[2], params[3]); break;
+            case "-setGlobal" :  GeneratorsUtils.setGlobalSettingProp(params[1], params[2]); break;
+            case "-setGenOutDir" :  GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR, params[1]); break;
+            case "-setRegexGenOutDir" : GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_REGEX_GEN_OUTPUTDIR, params[1]); break;
+            case "-setErrorLevel" :  GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL, params[1]); break;
+            default:
+        }
     }
 }

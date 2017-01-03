@@ -16,13 +16,7 @@ public class Json23plet {
     }
 
     public static void main(String argv[]) throws Exception {
-//        new Cli(argv).parse();
-//        OntologyGenerator.generate("JbsOntology");
-//        JsonValidator validator = new OntologyValidator();
-//        validator.registerValidators();
-//        validator.validate("input/mefarshim.json");
-            GeneratorFactory.activateRegexGenerator("RdfTypeGenerator", "input", "bbb");
-//        RegexGeneratorFactory.activateSingleRegExGenerator("RdfTypeGenerator", "input/mefarshim.json");
+        new Cli(argv).parse();
 
     }
 

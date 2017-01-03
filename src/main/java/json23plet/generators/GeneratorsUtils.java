@@ -23,7 +23,7 @@ public class GeneratorsUtils {
     public static String GENERATOR_INPUT_PROP = "input";
     public static String GENERATOR_ACTIVE_PROP = "active";
     public static String GENERATOR_NAME_PROP = "name";
-    public static String GLOBAL_SETTING_GEN_OUTPUTDIR = "GenoutputDir";
+    public static String GLOBAL_SETTING_GEN_OUTPUTDIR = "genoutputDir";
     public static String GLOBAL_SETTING_REGEX_GEN_OUTPUTDIR = "regexGenOutputDir";
     public static String GLOBAL_SETTING = "globalSetting";
     public static String GLOBAL_SETTING_ERROR_LEVEL = "errorLevel";

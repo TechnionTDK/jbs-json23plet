@@ -101,7 +101,7 @@ public abstract class JsonValidator {
             if (! v.JsonValidate(json)) {
                 switch (errorLevel) {
                     case "none" : break;
-                    case "info" : System.out.println("[ERROR]... " + json.value("uri")); break;
+                    case "info" : System.err.println("[ERROR]... " + json.value("uri")); break;
                     case "stop" : throw new JsonValidatorException("[ERROR]... " + json.value("uri"));
                     default:
                 }
