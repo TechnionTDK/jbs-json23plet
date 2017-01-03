@@ -21,7 +21,7 @@ public class Json23plet {
 //        JsonValidator validator = new OntologyValidator();
 //        validator.registerValidators();
 //        validator.validate("input/mefarshim.json");
-            GeneratorFactory.activateGenerator("RdfTypeGenerator", "input", "bbb", true);
+            GeneratorFactory.activateRegexGenerator("RdfTypeGenerator", "input", "bbb");
 //        RegexGeneratorFactory.activateSingleRegExGenerator("RdfTypeGenerator", "input/mefarshim.json");
 
     }

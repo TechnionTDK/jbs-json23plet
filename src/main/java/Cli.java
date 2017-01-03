@@ -114,7 +114,7 @@ public class Cli {
         if (outputDir.isEmpty()) {
             throw new Exception("No Output Directory is configered");
         }
-        GeneratorFactory.activateGenerator(generatorName, inputDir, outputDir, false);
+        GeneratorFactory.activateGenerator(generatorName, inputDir, outputDir);
     }
     private void generateAll() throws Exception {
         String outputDir = GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR);

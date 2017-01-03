@@ -18,34 +18,33 @@ import java.util.Map;
  */
 public class GeneratorFactory {
 
-    static public void activateGenerator(String gen, String jsonRoot, String outputDirRoot, boolean regex) throws Exception {
-//        if(new File(jsonRoot).isFile()) {
-//            String suffix = "";
-//            if (regex)  {
-//                activateSingleRegExGeneratorSingleFile(gen, new File(jsonRoot).getPath());
-//                suffix = "_" + gen;
-//            }
-//            else activateGeneratorSingleFile(gen, new File(jsonRoot).getPath());
-//            export(jsonRoot, jsonRoot, outputDirRoot, suffix);
-//            return;
-//        }
+    static public void activateGenerator(String gen, String jsonRoot, String outputDirRoot) throws Exception {
         Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
             try {
                 DataPublisher.Init(file.toString(), jsonRoot, outputDirRoot);
-                if (regex) {
-                    activateSingleRegExGeneratorSingleFile(gen, file.toString());
-                }
-                else activateGeneratorSingleFile(gen, file.toString());
+                activateGeneratorSingleFile(gen, file.toString());
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         });
     }
+
+    static public void activateRegexGenerator(String gen, String jsonRoot, String outputDirRoot) throws Exception {
+        Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
+            try {
+                DataPublisher.Init(file.toString(), jsonRoot, outputDirRoot);
+                    activateSingleRegExGeneratorSingleFile(gen, file.toString());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        });
+    }
+
     static public void activateAllConfigGenerators(String outputRoot) throws Exception {
         Map<String, String> generatorsMap = GeneratorsUtils.getActiveGeneratorsMap();
         for (String gen: generatorsMap.keySet()) {
             String inputPath = generatorsMap.get(gen);
-            activateGenerator(gen, new File(inputPath).getPath(), outputRoot, false);
+            activateGenerator(gen, new File(inputPath).getPath(), outputRoot);
         }
     }
 
