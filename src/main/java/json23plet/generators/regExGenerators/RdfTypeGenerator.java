@@ -1,5 +1,6 @@
 package json23plet.generators.regExGenerators;
 
+import json23plet.JsonValidators.JsonValidator;
 import json23plet.modules.Json;
 
 import java.util.List;
@@ -47,7 +48,12 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
     }
 
     @Override
-    public void activateRegExGenerator() {
-        super._activateRegExGenerator();
+    public String getID() {
+        return "rdfType";
+    }
+
+    @Override
+    public void generate() {
+        super._generate();
     }
 }

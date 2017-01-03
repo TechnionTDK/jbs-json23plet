@@ -1,5 +1,8 @@
 package json23plet.generators.regExGenerators;
 
+import json23plet.JsonValidators.JsonValidator;
+import json23plet.JsonValidators.OntologyValidator;
+import json23plet.modules.DataPublisher;
 import json23plet.modules.Json;
 import json23plet.modules.Triplet;
 
@@ -27,7 +30,9 @@ public abstract class BaseRegexGenerator {
     }
     public abstract List<Json> getJsonsToGenerate();
 
-    public abstract void activateRegExGenerator();
+    public abstract String getID();
+
+    public abstract void generate();
 
     private List<Object> getRegExGenerators() throws IOException {
         return Files.find(Paths.get("src", "main", "java", "json23plet", "generators", "regExGenerator"), 999, (p, bfa) -> bfa.isRegularFile())
@@ -45,7 +50,14 @@ public abstract class BaseRegexGenerator {
 
     }
 
-    protected void _activateRegExGenerator() {
+    protected void _generate() {
+        JsonValidator v = new OntologyValidator();
+        v.registerValidators();
+        try {
+            v.validateSingleJson(Json.json());
+        } catch (JsonValidator.JsonValidatorException e) {
+            e.printStackTrace();
+        }
         for (IRegExGenerator rgen : generatorsList) {
             for (Json js : getJsonsToGenerate()) {
                 if (rgen.match(js)) {
@@ -53,5 +65,6 @@ public abstract class BaseRegexGenerator {
                 }
             }
         }
+        DataPublisher.publish("-" + getID() + ".ttl", "TURTLE");
     }
 }

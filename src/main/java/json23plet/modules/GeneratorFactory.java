@@ -31,13 +31,11 @@ public class GeneratorFactory {
 //        }
         Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
             try {
-                String suffix = "";
+                DataPublisher.Init(file.toString(), jsonRoot, outputDirRoot);
                 if (regex) {
-                    activateSingleRegExGeneratorSingleFile(gen, new File(jsonRoot).getPath());
-                    suffix = "_" + gen;
+                    activateSingleRegExGeneratorSingleFile(gen, file.toString());
                 }
-                else activateGeneratorSingleFile(gen, new File(jsonRoot).getPath());
-                export(jsonRoot, file.toString(), outputDirRoot, suffix);
+                else activateGeneratorSingleFile(gen, file.toString());
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -60,29 +58,19 @@ public class GeneratorFactory {
         Method generate = genClass.getDeclaredMethod("generate", null);
         Object instance = ctor.newInstance(null);
         generate.invoke(instance);
+        Triplet.Close();
     }
 
     static private void activateSingleRegExGeneratorSingleFile(String reGenName, String input) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        Json.Init(input);
         Triplet.Init();
+        Json.Init(input);
         Class reClass = Class.forName("json23plet.generators.regExGenerators." + reGenName);
         Constructor ctor = reClass.getConstructor();
         Method registerGenerators = reClass.getDeclaredMethod("registerGenerators", null);
-        Method activateRegExGenerator = reClass.getDeclaredMethod("activateRegExGenerator", null);
+        Method generate = reClass.getDeclaredMethod("generate", null);
         Object instance = ctor.newInstance(null);
         registerGenerators.invoke(instance);
-        activateRegExGenerator.invoke(instance);
-
-    }
-
-    static private void export(String inputRoot, String inputFile, String outRoot, String fileSuffix) {
-        String inputRootDir = new File(inputRoot).getParent();
-        int beginConOut = inputFile.indexOf(inputRootDir) + inputRootDir.length();
-        String outputPath = Paths.get(outRoot, inputFile.substring
-                (beginConOut, inputFile.length()).replace(".json", fileSuffix + ".ttl")).toString();
-        new File(new File(outputPath).getParent()).mkdirs();
-        Triplet.Export(outputPath, "TURTLE");
+        generate.invoke(instance);
         Triplet.Close();
-
     }
 }
