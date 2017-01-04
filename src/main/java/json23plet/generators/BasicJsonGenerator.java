@@ -16,6 +16,6 @@ public class BasicJsonGenerator {
         v.registerValidators();
         v.validateSingleJson(Json.json());
         GeneratorsUtils.generateBasicJsonForm("subjects");
-        DataPublisher.publish(".ttl", "TURTLE");
+        DataPublisher.publish("", ".ttl", "TURTLE");
     }
 }

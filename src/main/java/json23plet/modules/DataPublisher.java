@@ -20,16 +20,16 @@ public class DataPublisher {
     }
 
 
-    static public void publish(String fileExt, String format) {
-        String currentOutputPath = getOutputPath(fileExt);
+    static public void publish(String dir, String fileExt, String format) {
+        String currentOutputPath = getOutputPath(dir, fileExt);
         new File(new File(currentOutputPath).getParent()).mkdirs();
         Triplet.Export(currentOutputPath, format);
 
     }
 
-    static private String getOutputPath(String fileExt) {
+    static private String getOutputPath(String dir, String fileExt) {
         int beginConOut = inputPath.indexOf(inputRootDir) + inputRootDir.length();
-        String outputPath = Paths.get(outputRootDir, inputPath.substring
+        String outputPath = Paths.get(outputRootDir, dir,  inputPath.substring
                 (beginConOut, inputPath.length()).replace("." + FilenameUtils.getExtension(inputPath), fileExt)).toString();
         return outputPath;
     }

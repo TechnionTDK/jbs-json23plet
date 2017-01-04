@@ -62,9 +62,9 @@ public abstract class BaseRegexGenerator {
             for (Json js : getJsonsToGenerate()) {
                 if (rgen.match(js)) {
                     rgen.generate(js);
+                    DataPublisher.publish(getID(), "-" + rgen.getRoolID() + ".ttl", "TURTLE");
                 }
             }
         }
-        DataPublisher.publish("-" + getID() + ".ttl", "TURTLE");
     }
 }

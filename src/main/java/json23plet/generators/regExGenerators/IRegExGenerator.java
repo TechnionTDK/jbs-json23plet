@@ -10,6 +10,6 @@ public interface IRegExGenerator {
 
     public boolean match(Json js);
 
-    public String getRegEx();
+    public String getRoolID();
 
 }
