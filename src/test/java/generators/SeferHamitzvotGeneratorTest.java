@@ -21,7 +21,7 @@ public class SeferHamitzvotGeneratorTest {
         String folder = Paths.get("src", "test", "testInput", "seferHamitzvot").toString();
         String outputLocation = Paths.get("src", "test", "testsOutput").toString();
         JbsOntology init = new JbsOntology();
-        GeneratorFactory.activateGenerator("SeferHamitzvotGenerator", folder, outputLocation);
+        GeneratorFactory.generate("SeferHamitzvotGenerator", folder, outputLocation);
         assertTrue(TestUtils.isTwoEqual("seferhamitzvot"));
     }
 }

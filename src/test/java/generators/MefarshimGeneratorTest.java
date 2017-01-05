@@ -20,7 +20,7 @@ public class MefarshimGeneratorTest {
         String folder =  Paths.get("src", "test", "testInput", "mefarshim").toString() ;
         String outputLocation =  Paths.get("src", "test", "testsOutput").toString();
         JbsOntology init = new JbsOntology();
-        GeneratorFactory.activateGenerator("MefarshimGenerator", folder, outputLocation);
+        GeneratorFactory.generate("MefarshimGenerator", folder, outputLocation);
         assertTrue(TestUtils.isTwoEqual("mefarshim"));
     }
 
