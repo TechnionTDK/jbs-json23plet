@@ -179,11 +179,13 @@ one of the generated ttl files without recreate it. <br />
 For this purpose we created a framework called RegExGenerator: <br />
 The framework allow you to activate a series of rules on a selected json objects. < br />
 Each RegExGenerator contains the following component:
+
 1. Set of rules (implements of IRegExGenerator interface)
 1. A function define how to get the json objects to work with.
 1. A gator define the generator id.
 
-To create new RegExGenerator: <br />
+To create new RegExGenerator:
+
 1. create MyRegExGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators
 directory, the generator have to extend BaseRegExGenerator class.
 1. Create rules and assign them.
