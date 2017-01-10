@@ -114,7 +114,6 @@ Using:
 
         public void generate();
 
-
 1. Run "./json23plet -b" to rebuild the project. 
 1. Run "./json23plet.sh -generate MyGenerator \<dataInputRootDir\>".
  
@@ -129,8 +128,7 @@ Using as follow:
     .json()
     .getAsSomeObject(String) // might also be void, read the code.
     
-(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java)<br />
-This way you have a great flexibility in the creation of your own json format. 
+(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java)
 
 ### JsonValidator
 A library to validate your json before you generate triplets from it.<br />
@@ -144,18 +142,18 @@ To create your own validator do as follow:
         v.registerValidators();
         v.validateSingleJson(Json.json());
         
-(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java).
+(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java)
 
 * You can choose your errorLevel:
     1. none - nothing happens.
-    1. info -  will print for each uri if its O.K or EROOR
+    1. info - will print each uri that has an EROOR
     1. stop - stop the execution if error detected.
 
-    To set error level run "./json23plet -config -setGlobal errorLevel \<errorLevel\>"
+    To set the error level run "./json23plet -config -setGlobal errorLevel \<errorLevel\>"
     
 ### Regex
-A lite and nice module representing a java regex. <br />
-Example of using: <br />
+A lite component to create a java regex.<br />
+Example of usage:
 
     Regex
     .regex()
@@ -167,20 +165,19 @@ Example of using: <br />
     .onOf(regex().range(0,9).toRexString())
     .sequence("-")
     .onOf(regex().range(0,9).toRexString())
-
-Read the code for more details.
+(See Example in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators/ExampleRegExGenerator.java)
 
 ### RegExGenerator
-Sometimes we need to generate a small portion of the json. <br />
+Sometimes we need to generate a small portion of the json.<br />
 For example lets say after using the basic generator you wish to add some properties to 
-one of the generated ttl files without recreate it. <br />
-For this purpose we created a framework called RegExGenerator: <br />
-The framework allow you to activate a series of rules on a selected json objects. < br />
-Each RegExGenerator contains the following component:
+one of the generated ttl files without recreate it.<br />
+For this purpose we created a framework called RegExGenerator:<br />
+The framework allow you to activate a series of rules on a selected json objects.<br />
+Each RegExGenerator contains the following:
 
 1. Set of rules (implements of IRegExGenerator interface)
-1. A function define how to get the json objects to work with.
-1. A gator define the generator id.
+1. function that defines how to get the json objects to work on
+1. getter function that defines the generator name
 
 To create new RegExGenerator:
 
@@ -191,7 +188,7 @@ directory, the generator have to extend BaseRegExGenerator class.
 1. Rebuild the project using "json23plet.sh -b" . 
 1. Run "./json23plet.sh -generate MyGenerator \<dataInputRootDir\>".
 
-See Example in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators/ExampleRegExGenerator.java.
+(See Example in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators/ExampleRegExGenerator.java)
  
  
 
