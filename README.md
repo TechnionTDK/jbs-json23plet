@@ -17,8 +17,9 @@ A tool for creating and running generators of triplets (in ttl format) from give
 * Run "./json23plet.sh -init 
 
 ##### Run an existing generator:
-1. Run "./json23plet.sh -generate \<generatorName\> \<dataInputRootDir\>" 
-1. Run "./json23plet.sh -generate basic \<dataInputRootDir\> to generate with the basic generator (explained later). 
+* Run "./json23plet.sh -generate \<generatorName\> \<dataInputRootDir\>"
+* In case of using the basic generator (explained later).<br\>
+Run "./json23plet.sh -generate basic \<dataInputRootDir\>" 
 
 ##### Run multiple generators:
 1. Config the generators that you want to run in jbs-json23plet/src/main/java/json23plet/generators/config.json
