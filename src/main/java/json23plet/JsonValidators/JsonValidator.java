@@ -1,30 +1,15 @@
 package json23plet.JsonValidators;
 
-import com.github.jsonldjava.utils.Obj;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.stream.JsonReader;
-import json23plet.JsonValidators.IJsonValidator;
 import json23plet.modules.Json;
-import org.apache.jena.ontology.*;
-import org.apache.jena.rdf.model.ModelFactory;
 
-import java.awt.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import static json23plet.generators.GeneratorsUtils.GLOBAL_SETTING_ERROR_LEVEL;
 import static json23plet.generators.GeneratorsUtils.getGlobalSettingProp;
-import static json23plet.modules.Json.json;
 
 /**
  * Created by yon_b on 01/01/17.

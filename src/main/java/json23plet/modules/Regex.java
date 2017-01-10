@@ -71,7 +71,7 @@ public class Regex {
         regex += "([" + Integer.toString(num1) + "-" + Integer.toString(num2) + "])";
         return this;
     }
-    public String toRexString() {
+    public String toRegexString() {
         return regex;
     }
     public boolean match(String toMatch) {
