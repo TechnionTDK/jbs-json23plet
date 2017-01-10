@@ -46,7 +46,7 @@ For regExGenerator drop it in jbs-json23plet/src/main/java/json23plet/generators
 
 ##### Edit configuration of global setting
 1. Run "./json23plet -config -setGlobal \<settingPropertyName\> \<settingValue\>"
-1. The settingPropertyName can be one of the following only: {errorLevel, genoutputDir}
+1. The settingPropertyName can be one of the following only: {errorLevel, genOutputDir}
 
 ##### Add configuration for new generator
 1. Run "./json23plet -config -addGen \<generatorName\> \<inputPath\> \<active\>"
