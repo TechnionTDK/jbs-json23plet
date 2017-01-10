@@ -113,6 +113,7 @@ Using this format allow you to run "./json23plet.sh -generate basic \<dataInputR
 ### Generators
 Allow to generate new ttl file from json file. <br />
 Using:
+
 1. write MyGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators directory. <br />
 the generator have to implement the generate function.
 1. Rebuild using "./json23plet -b". 
