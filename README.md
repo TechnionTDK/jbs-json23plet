@@ -149,7 +149,7 @@ jbs-json23plet/src/main/java/json23plet/JsonValidators/
         
 (See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java).
 
-1. You can choose your errorLevel:
+* You can choose your errorLevel:
     1. none - nothing happens.
     1. info -  will print for each uri if its O.K or EROOR
     1. stop - stop the execution if error detected.
