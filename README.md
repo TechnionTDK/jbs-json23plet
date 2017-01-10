@@ -74,17 +74,14 @@ the format of the json should be as described:
     }
 (See example in jbs-json23plet/ontologies/json/JbsOntology.json)
 
-After you generate the ontology (using -ontology flag), an ontology.ttl file will be create in jbs-json23plet/ontologies/ttl,
-you can take this file and load it to your server. <br />
-Note: do not remove this file, json23plet use it to load your ontology while generate new ttl files in your project. <br />
-The ontology.java class file will be create in jbs-json23plet/src/main/java/json23plet/ontologies,
-this file contains some definition of your ontology and can be used while writing new generator. <br />
+After you generate the ontology (using -ontology flag), an ontology.ttl file will be created in jbs-json23plet/ontologies/ttl, (and you can load it to your server).<br />
+Note: do not remove this file, because json23plet uses it to load your ontology while generate new ttl files in your project.<br />The ontology.java class file will be created in jbs-json23plet/src/main/java/json23plet/ontologies, this file contains some definitions of your ontology and can be used while writing a new generator.<br />
 Note: you have to rebuild the project using "./json23plet.sh -b" command.
 
 ### Triplet
-While creating new generator you might using the Triplet class. <br />
-Each triplet represent a triplet in your rdf model <br /> 
-Use as followed:
+While creating a new generator you may use the Triplet class.<br />
+Each triplet represents a triplet in your rdf model<br /> 
+Use as follow:
 
     Triplet
     .triplet()
@@ -93,12 +90,11 @@ Use as followed:
     .object(Resource) // taken from yourOntology.java class might be also uri.
 
 ### Json files format
-Basically you can choose your own foramt and write your own generator for it 
-as explained later. <br />
-However we recommend to use the following format and avoid from create a new generator:
+Basically you can choose your own foramt and write your own generator for it ([as explained later](README.md#generators)).<br />
+However we recommend to use the following format that avoids creating a new generator:
 
     {
-        "subject" : [
+        "subjects" : [
             { "uri" : subjectUri,
               Property : Object, // the object can be also list of objects : [object1, object2, ...] 
               ...
