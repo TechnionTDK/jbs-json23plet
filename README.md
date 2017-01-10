@@ -90,8 +90,8 @@ Use as follow:
     .object(Resource) // taken from yourOntology.java class might be also uri.
 
 ### Json files format
-Basically you can choose your own foramt and write your own generator for it ([as explained later](README.md#generators)).<br />
-However we recommend to use the following format that avoids creating a new generator:
+Basically you can choose your own foramt and write your own generator for it ([as explained later](README.md#generators)).
+<br />However we recommend using the following format that avoids creating a new generator:
 
     {
         "subjects" : [
@@ -106,21 +106,23 @@ However we recommend to use the following format that avoids creating a new gene
 Using this format allow you to run "./json23plet.sh -generate basic \<dataInputRootDir\>" instead of creating your own generator.
 
 ### Generators
-Allow to generate new ttl file from json file. <br />
+Allows to generate a new ttl file from json file.<br />
 Using:
 
-1. Write MyGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators directory. <br />
-the generator have to implement the generate function.
-1. Rebuild using "./json23plet -b". 
+1. Write MyGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators directory.
+<br />the generator has to implement the generate function:
+
+    public void generate();
+
+1. Run "./json23plet -b" to rebuild the project. 
 1. Run "./json23plet.sh -generate MyGenerator \<dataInputRootDir\>".
  
 (See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java).
 
 ### Json
-While parse your json you will need a framework to do it <br />
-The framework knows to load your json file and therefor is simplify the 
-using over other libraries as Gson or Jackson. <br />
-Using as followed:
+In order to write your own generator, you will need to parse your json with a framework.<br />
+Our framework knows to load your json file and therefore it simplifies the usage compared to other libraries (as Gson or Jackson).<br />
+Using as follow:
 
     Json
     .json()
