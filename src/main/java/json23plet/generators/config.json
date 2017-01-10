@@ -1,8 +1,8 @@
 {
   "setting": {
     "globalSetting": {
-      "errorLevel": "none",
-      "genoutputDir": "output"
+      "genoutputDir": "output",
+      "errorLevel": "stop"
     },
     "generators": [
       {
