@@ -112,7 +112,8 @@ Using:
 1. Write MyGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators directory.
 <br />the generator has to implement the generate function:
 
-    public void generate();
+        public void generate();
+
 
 1. Run "./json23plet -b" to rebuild the project. 
 1. Run "./json23plet.sh -generate MyGenerator \<dataInputRootDir\>".
