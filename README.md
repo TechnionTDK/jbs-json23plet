@@ -21,11 +21,11 @@ A tool for creating and running generators of triplets (in ttl format) from give
 * In case of using the basic generator (see [Json File Formats](README.md#json-files-format)). <br /> Run "./json23plet.sh -generate basic \<dataInputRootDir\>" 
 
 ##### Run multiple generators:
-1. Config the generators that you want to run in jbs-json23plet/src/main/java/json23plet/generators/config.json
+1. [Config](README.md#add-configuration-for-new-generator) the generators that you want to run in jbs-json23plet/src/main/java/json23plet/generators/config.json
 1. Run "./json23plet.sh -generateAll"
 
 ##### Run a new generator:
-1. Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/main/java/json23plet/generators directory.<br /> For [regExGenerator](README.md#regexgenerator) drop it in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators directory.
+1. Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/main/java/json23plet/generators directory.<br /> For [regExGenerator](README.md#regexgenerator) drop it in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators directory
 1. Run "./json23plet.sh -b" to rebuild the json23plet project
 1. Run "./json23plet.sh -generate \<generatorName\> \<dataInputRootDir\>"
 
@@ -34,12 +34,12 @@ A tool for creating and running generators of triplets (in ttl format) from give
 1. Run "./json23plet.sh -ontology \<myOntology\>"
 1. The myOntology.ttl file will be created in jbs-json23plet/ontologies/ttl
 1. The myOntology.java will be created in jbs-json23plet/src/main/java/json23plet/ontologies
-1. Run "./json23plet.sh -b"
+1. Run "./json23plet.sh -b" to rebuild the json23plet project
 
-##### Add configuration for new generator
-1. Run "./json23plet -config -add \<generatorName\> \<inputPath\> \<active\>"
+##### Add configuration for a new generator
+1. Run "./json23plet -config -add \<generatorName\> \<inputPath\> \<activeState\>" (the \<activeState\> field gets either true or false)
 
-##### Edit configuration for existing generator
+##### Edit configuration for an existing generator
 1. Run "./json23plet -config -editGen \<generatorName\> \<propertyName\> \<newPropertyValue\>"
 1. The propertyName can be one of the following only: {name, input, active}
 
