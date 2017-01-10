@@ -47,9 +47,7 @@ public abstract class JsonValidator {
         System.out.println("[PATH]... " + jsonPath);
         for (Json j : getJsonsToValidate()) {
             for (IJsonValidator v : validatorsList) {
-                if (v.JsonValidate(j)) {
-                    System.out.println("[OK]... " + j.value("uri"));
-                } else {
+                if (!v.JsonValidate(j)) {
                     switch (errorLevel) {
                         case "none" : break;
                         case "info" : System.out.println("[ERROR]... " + j.value("uri")); break;
