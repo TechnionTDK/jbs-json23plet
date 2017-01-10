@@ -25,8 +25,7 @@ A tool for creating and running generators of triplets (in ttl format) from give
 1. Run "./json23plet.sh -generateAll"
 
 ##### Run a new generator:
-1. Create your generator and drop it in jbs-json23plet/src/main/java/json23plet/generators directory. <br />
-For regExGenerator drop it in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators directory.
+1. Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/main/java/json23plet/generators directory.<br /> For [regExGenerator](README.md#regexgenerator) drop it in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators directory.
 1. Run "./json23plet.sh -b" to rebuild the json23plet project
 1. Run "./json23plet.sh -generate \<generatorName\> \<dataInputRootDir\>"
 
