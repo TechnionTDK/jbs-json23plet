@@ -53,7 +53,7 @@ For regExGenerator drop it in jbs-json23plet/src/main/java/json23plet/generators
 
 
 ### Ontologies
-To generate new ontology you should create ontology.json file. 
+To generate new ontology you should create ontology.json file. <br />
 the format of the json should be as we will describe:
 
     {
@@ -75,16 +75,17 @@ the format of the json should be as we will describe:
     }
 (See example in jbs-json23plet/ontologies/json/JbsOntology)
 
-After you generate the ontology (using -ontology flag), an ontology.ttl will create in jbs-json23plet/ontologies/ttl,
+After you generate the ontology (using -ontology flag), an ontology.ttl file will be create in jbs-json23plet/ontologies/ttl,
 you can take this file and load it to your server. <br />
-Note: do not remove this file, json23plet use it to load your ontology while generate new ttl files in your project.
-The ontology.java class file will create in jbs-json23plet/src/main/java/json23plet/ontologies,
-this file contains some definition of your ontology and you can use them while generating new ttl files. <br />
+Note: do not remove this file, json23plet use it to load your ontology while generate new ttl files in your project. <br />
+The ontology.java class file will be create in jbs-json23plet/src/main/java/json23plet/ontologies,
+this file contains some definition of your ontology and can be used while writing new generator. <br />
 Note: you have to rebuild the project using "./json23plet.sh -b" command.
 
 ### Triplet
 While creating new generator you might using the Triplet class. <br />
-each triplet represent a triplet in your rdf model, therefor use the as followed:
+Each triplet represent a triplet in your rdf model <br /> 
+Use as followed:
 
     Triplet
     .triplet()
@@ -93,9 +94,9 @@ each triplet represent a triplet in your rdf model, therefor use the as followed
     .object(Resource) // taken from yourOntology.java class might be also uri.
 
 ### Json files format
-basically you can choose your own foramt and write your own generator for it 
+Basically you can choose your own foramt and write your own generator for it 
 as explained later. <br />
-However we recommend to use the following format and avoid from create new generator:
+However we recommend to use the following format and avoid from create a new generator:
 
     {
         "subject" : [
@@ -107,10 +108,21 @@ However we recommend to use the following format and avoid from create new gener
         ]
     }
 
-Using this format allow you to call "./json23plet.sh -generate basic \<dataInputRootDir\>" instead of creating your own generator.
+Using this format allow you to run "./json23plet.sh -generate basic \<dataInputRootDir\>" instead of creating your own generator.
+
+### Generators
+Allow to generate new ttl file from json file. <br />
+Using:
+1. write MyGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators directory. <br />
+the generator have to implement the generate function.
+1. Rebuild using "./json23plet -b". 
+1. Run "./json23plet.sh -generate MyGenerator \<dataInputRootDir\>".
+ 
+(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java).
+
 ### Json
-While parse your json you will need a frameWork to do it <br />
-The frameWOrk knows to self load your json file and therefor is simplify the 
+While parse your json you will need a framework to do it <br />
+The framework knows to load your json file and therefor is simplify the 
 using over other libraries as Gson or Jackson. <br />
 Using as followed:
 
@@ -176,6 +188,7 @@ directory, the generator have to extend BaseRegExGenerator class.
 1. Create rules and assign them.
 1. Implement the generator function (including your validation etc). 
 1. Rebuild the project using "json23plet.sh -b" . 
+1. Run "./json23plet.sh -generate MyGenerator \<dataInputRootDir\>".
 
 See Example in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators/ExampleRegExGenerator.java.
  
