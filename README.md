@@ -168,25 +168,22 @@ Example of usage:
 (See Example in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators/ExampleRegExGenerator.java)
 
 ### RegExGenerator
-Sometimes we need to generate a small portion of the json.<br />
-For example lets say after using the basic generator you wish to add some properties to 
-one of the generated ttl files without recreate it.<br />
-For this purpose we created a framework called RegExGenerator:<br />
-The framework allow you to activate a series of rules on a selected json objects.<br />
+In case that you want to add triplets for a specific json object (e.g. for adding rdf:type to all jbr-tanach\* json objects)<br />
+For this purpose we created a component called RegExGenerator:<br />
+It allows you to activate a series of rules on a selected json objects.<br />
 Each RegExGenerator contains the following:
 
 1. Set of rules (implements of IRegExGenerator interface)
-1. function that defines how to get the json objects to work on
-1. getter function that defines the generator name
+1. Function that defines how to get the json objects to work on
+1. Getter function that defines the generator name
 
-To create new RegExGenerator:
+##### Creating a new RegExGenerator:
 
-1. Create MyRegExGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators
-directory, the generator have to extend BaseRegExGenerator class.
-1. Create rules and assign them.
-1. Implement the generator function (including your validation etc). 
-1. Rebuild the project using "json23plet.sh -b" . 
-1. Run "./json23plet.sh -generate MyGenerator \<dataInputRootDir\>".
+1. Create MyRegExGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators directory, the generator have to extend BaseRegExGenerator class.
+1. Create rules and assign them
+1. Implement the generator function (including your validation etc.)
+1. Run "json23plet.sh -b" to rebuild the project
+1. Run "./json23plet.sh -generate MyRegExGenerator \<dataInputRootDir\>"
 
 (See Example in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators/ExampleRegExGenerator.java)
  
