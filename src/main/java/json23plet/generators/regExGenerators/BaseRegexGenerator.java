@@ -51,13 +51,6 @@ public abstract class BaseRegexGenerator {
     }
 
     protected void _generate() {
-        JsonValidator v = new OntologyValidator();
-        v.registerValidators();
-        try {
-            v.validateSingleJson(Json.json());
-        } catch (JsonValidator.JsonValidatorException e) {
-            e.printStackTrace();
-        }
         for (IRegExGenerator rgen : generatorsList) {
             for (Json js : getJsonsToGenerate()) {
                 if (rgen.match(js)) {

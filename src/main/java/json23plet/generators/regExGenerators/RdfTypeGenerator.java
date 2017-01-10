@@ -1,6 +1,7 @@
 package json23plet.generators.regExGenerators;
 
 import json23plet.JsonValidators.JsonValidator;
+import json23plet.JsonValidators.OntologyValidator;
 import json23plet.modules.Json;
 
 import java.util.List;
@@ -90,6 +91,13 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
 
     @Override
     public void generate() {
+        JsonValidator v = new OntologyValidator();
+        v.registerValidators();
+        try {
+            v.validateSingleJson(Json.json());
+        } catch (JsonValidator.JsonValidatorException e) {
+            e.printStackTrace();
+        }
         super._generate();
     }
 }
