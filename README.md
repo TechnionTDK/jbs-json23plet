@@ -73,7 +73,7 @@ the format of the json should be as described:
             ...
         ]
     }
-(See example in jbs-json23plet/ontologies/json/JbsOntology)
+(See example in jbs-json23plet/ontologies/json/JbsOntology.json)
 
 After you generate the ontology (using -ontology flag), an ontology.ttl file will be create in jbs-json23plet/ontologies/ttl,
 you can take this file and load it to your server. <br />
