@@ -3,58 +3,58 @@ A tool for creating and running generators of triplets (in ttl format) from give
 
 # Installation
 
-1. install maven on your machine. to do so, type mvn in your command line and follow instructions
+1. Install maven on your machine. to do so, type mvn in your command line and follow instructions
 
-1. git clone jbs-json23plet repository to a directory
+1. Git clone jbs-json23plet repository to a directory
 
-1. go into the jbs-json23plet directory
+1. Go into the jbs-json23plet directory
 
-1. run "./json23plet.sh -b" to build the json23plet project
+1. Run "./json23plet.sh -b" to build the json23plet project
 
 # Usage
 
 ##### Init the project directories
-* run "./json23plet.sh -init 
+* Run "./json23plet.sh -init 
 
 ##### Run an existing generator:
-1. run "./json23plet.sh -generate \<generatorName\> \<dataInputRootDir\>" 
-1. run "./json23plet.sh -generate basic \<dataInputRootDir\> to generate with the basic generator (explained later). 
+1. Run "./json23plet.sh -generate \<generatorName\> \<dataInputRootDir\>" 
+1. Run "./json23plet.sh -generate basic \<dataInputRootDir\> to generate with the basic generator (explained later). 
 
 ##### Run multiple generators:
-1. config the generators that you want to run in jbs-json23plet/src/main/java/json23plet/generators/config.json
-1. run "./json23plet.sh -generateAll"
+1. Config the generators that you want to run in jbs-json23plet/src/main/java/json23plet/generators/config.json
+1. Run "./json23plet.sh -generateAll"
 
 ##### Run a new generator:
-1. create your generator and drop it in jbs-json23plet/src/main/java/json23plet/generators directory. <br />
+1. Create your generator and drop it in jbs-json23plet/src/main/java/json23plet/generators directory. <br />
 For regExGenerator drop it in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators directory.
-1. run "./json23plet.sh -b" to rebuild the json23plet project
-1. run "./json23plet.sh -generate \<generatorName\> \<dataInputRootDir\>"
+1. Run "./json23plet.sh -b" to rebuild the json23plet project
+1. Run "./json23plet.sh -generate \<generatorName\> \<dataInputRootDir\>"
 
 ##### Create a new ontology from a json file:
-1. drop myOntology.json in jbs-json23plet/ontologies/json
-1. run "./json23plet.sh -ontology \<myOntology\>"
-1. the myOntology.ttl file will be created in jbs-json23plet/ontologies/ttl
-1. the myOntology.java will be created in jbs-json23plet/src/main/java/json23plet/ontologies
-1. run "./json23plet.sh -b"
+1. Drop myOntology.json in jbs-json23plet/ontologies/json
+1. Run "./json23plet.sh -ontology \<myOntology\>"
+1. The myOntology.ttl file will be created in jbs-json23plet/ontologies/ttl
+1. The myOntology.java will be created in jbs-json23plet/src/main/java/json23plet/ontologies
+1. Run "./json23plet.sh -b"
 
 ##### Add configuration for new generator
-1. run "./json23plet -config -add \<generatorName\> \<inputPath\> \<active\>"
+1. Run "./json23plet -config -add \<generatorName\> \<inputPath\> \<active\>"
 
 ##### Edit configuration for existing generator
-1. run "./json23plet -config -editGen \<generatorName\> \<propertyName\> \<newPropertyValue\>"
-1. the propertyName can be one of the following only: {name, input, active}
+1. Run "./json23plet -config -editGen \<generatorName\> \<propertyName\> \<newPropertyValue\>"
+1. The propertyName can be one of the following only: {name, input, active}
 
 ##### Edit configuration of global setting
-1. run "./json23plet -config -setGlobal \<settingPropertyName\> \<settingValue\>"
-1. the settingPropertyName can be one of the following only: {errorLevel, genoutputDir}
+1. Run "./json23plet -config -setGlobal \<settingPropertyName\> \<settingValue\>"
+1. The settingPropertyName can be one of the following only: {errorLevel, genoutputDir}
 
 ##### Add configuration for new generator
-1. run "./json23plet -config -addGen \<generatorName\> \<inputPath\> \<active\>"
+1. Run "./json23plet -config -addGen \<generatorName\> \<inputPath\> \<active\>"
 
 
 ### Ontologies
 To generate new ontology you should create ontology.json file. <br />
-the format of the json should be as we will describe:
+the format of the json should be as described:
 
     {
         "prefixes" : [ 
@@ -114,7 +114,7 @@ Using this format allow you to run "./json23plet.sh -generate basic \<dataInputR
 Allow to generate new ttl file from json file. <br />
 Using:
 
-1. write MyGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators directory. <br />
+1. Write MyGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators directory. <br />
 the generator have to implement the generate function.
 1. Rebuild using "./json23plet -b". 
 1. Run "./json23plet.sh -generate MyGenerator \<dataInputRootDir\>".
@@ -139,7 +139,7 @@ A frameWork to validate your json before you generate it. <br />
 Each validator is build from "registerdValidators" (rules) and two getors 
 to get the json data from the file or the Json object. <br />
 To create your own validator do as followed:
-1. create yourValidator.java class which extend JsonValidator class and drop it in 
+1. Create yourValidator.java class which extend JsonValidator class and drop it in 
 jbs-json23plet/src/main/java/json23plet/JsonValidators/
 1. Call your validator before you generate as followed:
 
@@ -186,7 +186,7 @@ Each RegExGenerator contains the following component:
 
 To create new RegExGenerator:
 
-1. create MyRegExGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators
+1. Create MyRegExGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators
 directory, the generator have to extend BaseRegExGenerator class.
 1. Create rules and assign them.
 1. Implement the generator function (including your validation etc). 
