@@ -120,25 +120,24 @@ Using:
 (See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java).
 
 ### Json
-In order to write your own generator, you will need to parse your json with a framework.<br />
-Our framework knows to load your json file and therefore it simplifies the usage compared to other libraries (as Gson or Jackson).<br />
+In order to write your own generator, you will need to parse your json.<br />
+Our library knows to load your json file and therefore it simplifies the usage compared to other libraries (as Gson or Jackson).<br />
 Using as follow:
 
     Json
     .json()
     .getAsSomeObject(String) // might also be void, read the code.
     
-(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java) <br />
+(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java)<br />
 This way you have a great flexibility in the creation of your own json format. 
 
 ### JsonValidator
-A framework to validate your json before you generate it. <br />
-Each validator is build from "registerdValidators" (rules) and two getors 
-to get the json data from the file or the Json object. <br />
-To create your own validator do as followed:
-1. Create yourValidator.java class which extend JsonValidator class and drop it in 
-jbs-json23plet/src/main/java/json23plet/JsonValidators/
-1. Call your validator before you generate as followed:
+A library to validate your json before you generate triplets from it.<br />
+Each validator is build from "registerdValidators" (rules) and two getters to get the json data from the file or the Json object.<br />
+To create your own validator do as follow:
+
+1. Create yourValidator.java class which extend JsonValidator class and drop it in jbs-json23plet/src/main/java/json23plet/JsonValidators/
+1. Call your validator before you generate triplets as follow:
 
         JsonValidator v = new MyValidator();
         v.registerValidators();
