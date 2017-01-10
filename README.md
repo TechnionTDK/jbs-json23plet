@@ -135,7 +135,7 @@ Using as followed:
 This way you have a great flexibility in the creation of your own json format. 
 
 ### JsonValidator
-A frameWork to validate your json before you generate it. <br />
+A framework to validate your json before you generate it. <br />
 Each validator is build from "registerdValidators" (rules) and two getors 
 to get the json data from the file or the Json object. <br />
 To create your own validator do as followed:
