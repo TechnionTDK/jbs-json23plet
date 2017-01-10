@@ -160,7 +160,8 @@ jbs-json23plet/src/main/java/json23plet/JsonValidators/
 A lite and nice module representing a java regex. <br />
 Example of using: <br />
 
-    regex()
+    Regex
+    .regex()
     .sequence("jbr:tanach-")
     .all()
     .sequence("-")
