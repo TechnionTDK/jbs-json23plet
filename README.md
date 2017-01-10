@@ -49,6 +49,7 @@ A tool for creating and running generators of triplets (in ttl format) from give
 1. Run "./json23plet -config -setGlobal \<settingPropertyName\> \<settingValue\>"
 1. The settingPropertyName can be one of the following only: {errorLevel, genOutputDir}
 
+# Components
 
 ### Ontologies
 To generate new ontology you should create ontology.json file. <br />
