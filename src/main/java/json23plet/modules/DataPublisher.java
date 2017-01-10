@@ -29,8 +29,8 @@ public class DataPublisher {
 
     static private String getOutputPath(String dir, String fileExt) {
         int beginConOut = inputPath.indexOf(inputRootDir) + inputRootDir.length();
-        String outputPath = Paths.get(outputRootDir, dir,  inputPath.substring
-                (beginConOut, inputPath.length()).replace("." + FilenameUtils.getExtension(inputPath), fileExt)).toString();
+        String outputPath = Paths.get(outputRootDir, (new File(inputPath.substring(beginConOut, inputPath.length()))).getParent()
+        , dir, (new File(inputPath)).getName().replace("." + FilenameUtils.getExtension(inputPath), fileExt)).toString();
         return outputPath;
     }
 }
