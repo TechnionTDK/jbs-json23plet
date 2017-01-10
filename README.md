@@ -146,8 +146,8 @@ jbs-json23plet/src/main/java/json23plet/JsonValidators/
         JsonValidator v = new MyValidator();
         v.registerValidators();
         v.validateSingleJson(Json.json());
-
-(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java) <br />
+        
+(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java).
 
 1. You can choose your errorLevel:
     1. none - nothing happens.
