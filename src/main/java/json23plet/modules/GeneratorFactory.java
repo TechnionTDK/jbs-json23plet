@@ -36,27 +36,6 @@ public class GeneratorFactory {
 
     }
 
-//    static public void activateGenerator(String gen, String jsonRoot, String outputDirRoot) throws Exception {
-//        Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
-//            try {
-//                DataPublisher.Init(file.toString(), jsonRoot, outputDirRoot);
-//                activateGeneratorSingleFile(gen, file.toString());
-//            } catch (Exception e) {
-//                System.out.println(e.getMessage());
-//            }
-//        });
-//    }
-//
-//    static public void activateRegexGenerator(String gen, String jsonRoot, String outputDirRoot) throws Exception {
-//        Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
-//            try {
-//                DataPublisher.Init(file.toString(), jsonRoot, outputDirRoot);
-//                    activateSingleRegExGeneratorSingleFile(gen, file.toString());
-//            } catch (Exception e) {
-//                System.out.println(e.getMessage());
-//            }
-//        });
-//    }
 
     static public void activateAllConfigGenerators(String outputRoot) throws Exception {
         Map<String, String> generatorsMap = GeneratorsUtils.getActiveGeneratorsMap();

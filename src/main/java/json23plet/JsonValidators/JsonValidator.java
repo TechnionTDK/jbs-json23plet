@@ -16,7 +16,7 @@ import static json23plet.generators.GeneratorsUtils.getGlobalSettingProp;
  */
 
 public abstract class JsonValidator {
-    static List<IJsonValidator> validatorsList = new ArrayList<>();
+    List<IJsonValidator> validatorsList = new ArrayList<>();
     public abstract void registerValidators();
 
     public abstract List<Json> getJsonsToValidate();
