@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  * Created by yon_b on 28/11/16.
  */
 public class Triplet {
-    static private OntModel model;
+    static private ThreadLocal<OntModel> model = new ThreadLocal<>();
 
     private Resource subject = null;
     private Property predicate = null;
@@ -27,7 +27,7 @@ public class Triplet {
         return new Triplet();
     }
     static public void Init() {
-        model = ModelFactory.createOntologyModel();
+        model.set(ModelFactory.createOntologyModel());
         try {
             Files.find(Paths.get("src", "main", "java", "json23plet", "ontologies"), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
                 try {
@@ -66,12 +66,12 @@ public class Triplet {
     }
     private void addStatement() {
         if (subject != null && predicate != null && object != null) {
-            model.add(model.createStatement(subject, predicate, object));
+            model.get().add(model.get().createStatement(subject, predicate, object));
         }
     }
 
     static public void addNSprefix(String prefix, String uri) {
-        model.setNsPrefix(prefix,uri);
+        model.get().setNsPrefix(prefix,uri);
     }
 
     private String getUri(String uri) {
@@ -79,7 +79,7 @@ public class Triplet {
         if (!hasPrefix) {
             return "";
         }
-        return model.getNsPrefixURI(uri.split(":")[0]);
+        return model.get().getNsPrefixURI(uri.split(":")[0]);
 
     }
     private String getSuffix(String uri) {
@@ -124,15 +124,15 @@ public class Triplet {
 
     static public void Export(String path, String format) {
         try {
-            model.write(new FileWriter(path), format);
+            model.get().write(new FileWriter(path), format);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
     static private boolean isModelPrefix(String obj) {
-        return model.getNsPrefixMap().containsKey(obj);
+        return model.get().getNsPrefixMap().containsKey(obj);
     }
     static public void Close() {
-        model.close();
+        model.get().close();
     }
 }
