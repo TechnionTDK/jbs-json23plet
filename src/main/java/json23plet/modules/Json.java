@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  * Created by yon_b on 28/11/16.
  */
 public class Json {
-    static private JsonElement root;
+    static private ThreadLocal<JsonElement> root = new ThreadLocal<JsonElement>();
 
     static public String PRIMITIVE_KEY = "obj";
 
@@ -28,7 +28,7 @@ public class Json {
     }
     private Json() {
 
-        currentElement = root.getAsJsonObject();
+        currentElement = root.get().getAsJsonObject();
     }
     static public Json json() {
 
@@ -66,7 +66,7 @@ public class Json {
     static public void Init(String path) {
         JsonParser jp = new JsonParser();
         try {
-            root = jp.parse(new FileReader(path));
+            root.set(jp.parse(new FileReader(path)));
         }catch(Exception e) {
             System.out.println(e.getMessage());
         }
