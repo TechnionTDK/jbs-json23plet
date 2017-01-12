@@ -9,14 +9,14 @@ import java.nio.file.Paths;
  * Created by yon_b on 03/01/17.
  */
 public class DataPublisher {
-    static String inputPath;
-    static String inputRootDir;
-    static String outputRootDir;
+    static ThreadLocal<String>  tsInputPath = new ThreadLocal<>();
+    static ThreadLocal<String> tsInputRootDir = new ThreadLocal<>();
+    static ThreadLocal<String> tsOutputRootDirDir = new ThreadLocal<>();
 
     static public void Init(String inputFilePath, String inputRootDirPath, String outputRootDirPath) {
-        inputPath = inputFilePath;
-        inputRootDir = inputRootDirPath;
-        outputRootDir = outputRootDirPath;
+        tsInputPath.set(inputFilePath);
+        tsInputRootDir.set(inputRootDirPath);
+        tsOutputRootDirDir.set(outputRootDirPath);
     }
 
 
@@ -28,6 +28,9 @@ public class DataPublisher {
     }
 
     static private String getOutputPath(String dir, String fileExt) {
+        String inputPath = tsInputPath.get();
+        String inputRootDir = tsInputRootDir.get();
+        String outputRootDir = tsOutputRootDirDir.get();
         int beginConOut = inputPath.indexOf(inputRootDir) + inputRootDir.length();
         String outputPath = Paths.get(outputRootDir, (new File(inputPath.substring(beginConOut, inputPath.length()))).getParent()
         , dir, (new File(inputPath)).getName().replace("." + FilenameUtils.getExtension(inputPath), fileExt)).toString();
