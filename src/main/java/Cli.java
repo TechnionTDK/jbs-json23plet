@@ -72,6 +72,7 @@ public class Cli {
             if (line.hasOption("ontology")) {
                 String ontologyName = line.getOptionValue("ontology");
                 OntologyGenerator.generate(ontologyName);
+                Json23plet.showMassege = true;
             }
 //            } else {
 //                log.log(Level.SEVERE, "Missing generate options");
@@ -112,6 +113,7 @@ public class Cli {
             gen = "BasicJsonGenerator";
         }
         GeneratorFactory.generate(gen, params[1], GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR));
+        Json23plet.showMassege = true;
     }
     private void generateAll() throws Exception {
         String outputDir = GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR);
@@ -119,6 +121,7 @@ public class Cli {
             throw new Exception("No Output Directory is configered");
         }
         GeneratorFactory.activateAllConfigGenerators(outputDir);
+        Json23plet.showMassege = true;
     }
 
     private void config(String[] params) {

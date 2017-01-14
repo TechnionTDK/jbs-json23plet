@@ -19,6 +19,9 @@ import java.util.Map;
 public class GeneratorFactory {
 
     static public void generate(String gen, String jsonRoot, String outputDirRoot) throws IOException {
+        int totalWork = (int) Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).count();
+        ProgressBar pb = new ProgressBar(totalWork);
+        System.out.println("Start process files");
         Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
             try {
                 DataPublisher.Init(file.toString(), jsonRoot, outputDirRoot);
@@ -29,6 +32,7 @@ public class GeneratorFactory {
                 } else {
                     throw new ClassNotFoundException();
                 }
+                pb.update();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }

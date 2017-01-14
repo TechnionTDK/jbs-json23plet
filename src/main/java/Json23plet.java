@@ -1,4 +1,5 @@
 import json23plet.modules.GeneratorFactory;
+import json23plet.modules.Json;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -14,9 +15,32 @@ public class Json23plet {
         org.apache.log4j.BasicConfigurator.configure();
         Logger.getRootLogger().setLevel(Level.INFO);
     }
+    static protected boolean showMassege = false;
+    static String massege = "\nThx for using :)\n" + "Contact us: json23plet@gmail.com";
+    static String sign =
+            "         ,---._                                               .--,-``-.                                             \n" +
+            "       .-- -.' \\                                     ,----,  /   /     '.              ,--,                 ___     \n" +
+            "       |    |   :                                  .'   .' \\/ ../        ; ,-.----.  ,--.'|               ,--.'|_   \n" +
+            "       :    ;   |             ,---.        ,---, ,----,'    \\ ``\\  .`-    '\\    /  \\ |  | :               |  | :,'  \n" +
+            "       :        | .--.--.    '   ,'\\   ,-+-. /  ||    :  .  ;\\___\\/   \\   :|   :    |:  : '               :  : ' :  \n" +
+            "       |    :   :/  /    '  /   /   | ,--.'|'   |;    |.'  /      \\   :   ||   | .\\ :|  ' |      ,---.  .;__,'  /   \n" +
+            "       :        |  :  /`./ .   ; ,. :|   |  ,\"' |`----'/  ;       /  /   / .   : |: |'  | |     /     \\ |  |   |    \n" +
+            "       |    ;   |  :  ;_   '   | |: :|   | /  | |  /  ;  /        \\  \\   \\ |   |  \\ :|  | :    /    /  |:__,'| :    \n" +
+            "   ___ l         \\  \\    `.'   | .; :|   | |  | | ;  /  /-,   ___ /   :   ||   : .  |'  : |__ .    ' / |  '  : |__  \n" +
+            " /    /\\    J   : `----.   \\   :    ||   | |  |/ /  /  /.`|  /   /\\   /   ::     |`-'|  | '.'|'   ;   /|  |  | '.'| \n" +
+            "/  ../  `..-    ,/  /`--'  /\\   \\  / |   | |--'./__;      : / ,,/  ',-    .:   : :   ;  :    ;'   |  / |  ;  :    ; \n" +
+            "\\    \\         ;'--'.     /  `----'  |   |/    |   :    .'  \\ ''\\        ; |   | :   |  ,   / |   :    |  |  ,   /  \n" +
+            " \\    \\      ,'   `--'---'           '---'     ;   | .'      \\   \\     .'  `---'.|    ---`-'   \\   \\  /    ---`-'   \n" +
+            "  \"---....--'                                  `---'          `--`-,,-'      `---`              `----'              \n" +
+            "                                                                                                                    \n";
 
     public static void main(String argv[]) throws Exception {
         new Cli(argv).parse();
+        if (Json23plet.showMassege) {
+            System.out.println(Json23plet.massege);
+            System.out.println(Json23plet.sign);
+        }
+
 
     }
 
