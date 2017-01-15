@@ -32,7 +32,11 @@ public class DataPublisher {
         String inputRootDir = tsInputRootDir.get();
         String outputRootDir = tsOutputRootDirDir.get();
         int beginConOut = inputPath.indexOf(inputRootDir) + inputRootDir.length();
-        String outputPath = Paths.get(outputRootDir, (new File(inputPath.substring(beginConOut, inputPath.length()))).getParent()
+        String path = (new File(inputPath.substring(beginConOut, inputPath.length()))).toString();
+        if (!path.equals("")) {
+            path = new File(path).getParent();
+        }
+        String outputPath = Paths.get(outputRootDir,path
         , dir, (new File(inputPath)).getName().replace("." + FilenameUtils.getExtension(inputPath), fileExt)).toString();
         return outputPath;
     }

@@ -40,7 +40,6 @@ public class GeneratorFactory {
 
     }
 
-
     static public void activateAllConfigGenerators(String outputRoot) throws Exception {
         Map<String, String> generatorsMap = GeneratorsUtils.getActiveGeneratorsMap();
         for (String gen: generatorsMap.keySet()) {
