@@ -8,6 +8,7 @@ public class ProgressBar {
     String icon = "#";
     double iter;
     double totalWork;
+    String[] sign = {"\\", "|", "/", "-"};
 
     public ProgressBar(int totalWork) {
         this.totalWork = totalWork;
@@ -27,7 +28,8 @@ public class ProgressBar {
                     this.bar.append(" ");
                 }
             }
-            this.bar.append("]").append(String.valueOf(prog)).append("%");
+            this.bar.append("]").append(String.valueOf(prog)).append("%")
+                    .append(" " + this.sign[((int)(this.iter) % 4)]);
         }
         System.out.print("\r" + this.bar.toString());
         this.bar = new StringBuilder("[");
@@ -36,6 +38,6 @@ public class ProgressBar {
         for (int i = 0 ; i < 50  ; i++) {
             this.bar.append(this.icon);
         }
-        this.bar.append("]").append("100%");
+        this.bar.append("]").append("100%").append(" -");
     }
 }
