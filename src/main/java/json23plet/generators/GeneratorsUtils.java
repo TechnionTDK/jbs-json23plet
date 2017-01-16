@@ -2,6 +2,7 @@ package json23plet.generators;
 
 import com.google.gson.*;
 import json23plet.modules.Json;
+import org.apache.log4j.Logger;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,6 +11,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.lang.System.exit;
 import static json23plet.modules.Json.PRIMITIVE_KEY;
 import static json23plet.modules.Json.json;
 import static json23plet.modules.Triplet.triplet;
@@ -113,21 +115,35 @@ public class GeneratorsUtils {
             Map<String, Json> mapJson = j.getAsDictionary();
             String uri = mapJson.get("uri").value(PRIMITIVE_KEY);
             for (String key : mapJson.keySet()) {
-                if (key.equals("uri")) continue;
-                if (mapJson.get(key).isArray()) {
-                    for (String s : mapJson.get(key).getAsStringArray(PRIMITIVE_KEY)) {
+                try {
+                    if (key.equals("uri")) continue;
+                    if (mapJson.get(key).isArray()) {
+                        for (String s : mapJson.get(key).getAsStringArray(PRIMITIVE_KEY)) {
+                            triplet()
+                                    .subject(uri)
+                                    .predicate(key)
+                                    .object(s);
+                        }
+                    } else {
                         triplet()
                                 .subject(uri)
                                 .predicate(key)
-                                .object(s);
+                                .object(mapJson.get(key).value(PRIMITIVE_KEY));
                     }
-                } else {
-                    triplet()
-                            .subject(uri)
-                            .predicate(key)
-                            .object(mapJson.get(key).value(PRIMITIVE_KEY));
+                } catch (Exception e) {
+                    reacteAsErrorLevel(e.getMessage());
+//                    System.err.println(key);
+//                    Logger.getRootLogger().debug(e.getMessage());
+
                 }
             }
+        }
+    }
+    static private void reacteAsErrorLevel(String messege) {
+        switch (getGlobalSettingProp("errorLevel")) {
+            case "none": Logger.getRootLogger().debug(messege); break;
+            case "info": Logger.getRootLogger().info(messege); break;
+            case "stop": Logger.getRootLogger().fatal(messege); exit(1);
         }
     }
 }
