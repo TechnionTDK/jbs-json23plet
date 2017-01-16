@@ -1,5 +1,5 @@
 # json23plet
-A command-line tool for generating RDF triplets from Jsons input.
+A command-line tool for generating RDF triplets from Jsons input
 
 # Installation
 
