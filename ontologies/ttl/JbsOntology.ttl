@@ -58,6 +58,11 @@ jbo:positionInParasha
         rdfs:label   "positionInPerek" ;
         rdfs:range   xsd:integer .
 
+jbo:textNikud  a     owl:ObjectProperty ;
+        rdfs:domain  xsd:anyURI ;
+        rdfs:label   "textNikud" ;
+        rdfs:range   xsd:xstring .
+
 jbo:interprets  a    owl:ObjectProperty ;
         rdfs:domain  xsd:anyURI ;
         rdfs:label   "interprets" ;

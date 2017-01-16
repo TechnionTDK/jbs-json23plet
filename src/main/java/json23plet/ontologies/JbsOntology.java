@@ -34,6 +34,7 @@ public class JbsOntology
     public static Property JBO_P_CONTAINER = (model.getOntProperty(JBO_URI + "container"));
     public static Property JBO_P_POSITION = (model.getOntProperty(JBO_URI + "position"));
     public static Property JBO_P_TEXT = (model.getOntProperty(JBO_URI + "text"));
+    public static Property JBO_P_TEXTNIKUD = (model.getOntProperty(JBO_URI + "textNikud"));
     public static Property JBO_P_POSITIONINPEREK = (model.getOntProperty(JBO_URI + "positionInPerek"));
     public static Property JBO_P_POSITIONINPARASHA = (model.getOntProperty(JBO_URI + "positionInParasha"));
 }

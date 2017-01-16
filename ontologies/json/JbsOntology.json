@@ -147,6 +147,13 @@
       "rdfs:label" : "text"
     },
     {
+      "uri" : "jbo:textNikud",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:domain" : "xsd:anyURI",
+      "rdfs:range" : "xsd:xstring",
+      "rdfs:label" : "textNikud"
+    },
+    {
       "uri" : "jbo:positionInPerek",
       "rdf:type" : "owl:ObjectProperty",
       "rdfs:domain" : "xsd:anyURI",
