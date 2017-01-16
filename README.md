@@ -186,7 +186,15 @@ Each RegExGenerator contains the following:
 1. Run "./json23plet.sh -generate MyRegExGenerator \<dataInputRootDir\>"
 
 (See Example in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators/ExampleRegExGenerator.java)
- 
+
+
+### Testing
+The tool contains an auto testing framwork.
+For testing your generator do as follow:
+
+1. Add myGenerator.input.json to jbs-json23plet/src/test/testsFiles 
+1. Add myGenerator.expected.ttl to jbs-json23plet/src/test/testsFiles 
+1. Run the test
  
 
  
