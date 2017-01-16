@@ -1,5 +1,5 @@
 # json23plet
-A tool for creating and running generators of triplets (in ttl format) from given jsons files.
+A command-line tool for generating RDF triplets from Jsons input.
 
 # Installation
 
