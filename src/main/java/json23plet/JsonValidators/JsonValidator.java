@@ -50,8 +50,8 @@ public abstract class JsonValidator {
                 if (!v.JsonValidate(j)) {
                     switch (errorLevel) {
                         case "none" : break;
-                        case "info" : System.out.println("[ERROR]... " + j.value("uri")); break;
-                        case "stop" : throw new JsonValidatorException("[ERROR]... " + j.value("uri"));
+                        case "info" : System.out.println("[ERROR]... " + j.toString()); break;
+                        case "stop" : throw new JsonValidatorException("[ERROR]... " + j.toString());
                         default:
                     }
                 }
@@ -69,8 +69,8 @@ public abstract class JsonValidator {
                 } else {
                     switch (errorLevel) {
                         case "none" : break;
-                        case "info" : System.out.println("[ERROR]... " + j.value("uri")); break;
-                        case "stop" : throw new JsonValidatorException("[ERROR]... " + j.value("uri"));
+                        case "info" : System.out.println("[ERROR]... " + j.toString()); break;
+                        case "stop" : throw new JsonValidatorException("[ERROR]... " + j.toString());
                         default:
                     }
                 }
@@ -84,8 +84,8 @@ public abstract class JsonValidator {
             if (! v.JsonValidate(json)) {
                 switch (errorLevel) {
                     case "none" : break;
-                    case "info" : System.err.println("[ERROR]... " + json.value("uri")); break;
-                    case "stop" : throw new JsonValidatorException("[ERROR]... " + json.value("uri"));
+                    case "info" : System.err.println("[ERROR]... " + json.toString()); break;
+                    case "stop" : throw new JsonValidatorException("[ERROR]... " + json.toString());
                     default:
                 }
                 return false;

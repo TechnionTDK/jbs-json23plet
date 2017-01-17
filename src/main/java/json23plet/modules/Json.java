@@ -107,5 +107,9 @@ public class Json {
         return currentElement.isJsonPrimitive();
     }
 
+    public String toString() {
+        return currentElement.toString();
+    }
+
 
 }
