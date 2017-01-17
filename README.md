@@ -194,7 +194,7 @@ For testing your generator do as follow:
 
 1. Add myGenerator.input.json to jbs-json23plet/src/test/testsFiles 
 1. Add myGenerator.expected.ttl to jbs-json23plet/src/test/testsFiles 
-1. Run the test
+1. Run AutoTest
  
 
  
