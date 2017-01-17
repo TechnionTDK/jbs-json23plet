@@ -47,8 +47,8 @@ A command-line tool for generating RDF triplets from Jsons input
 
 ##### Edit configuration of global setting
 1. Run "./json23plet -config -setGlobal \<settingPropertyName\> \<settingValue\>"
-1. The settingPropertyName can be one of the following only: {errorLevel, genOutputDir}
-
+1. The settingPropertyName can be one of the following only: {errorLevel, genOutputDir, loggerLevel}
+, 
 # Components
 
 ### Ontologies
