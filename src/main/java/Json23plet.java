@@ -16,7 +16,7 @@ public class Json23plet {
         Logger.getRootLogger().setLevel(Level.INFO);
     }
     static protected boolean showMassege = false;
-    static String massege = "\nThx for using :)\n" + "Contact us: json23plet@gmail.com";
+    static String massege = "Thx for using :)\n" + "Contact us: json23plet@gmail.com";
     static String sign =
             "         ,---._                                               .--,-``-.                                             \n" +
             "       .-- -.' \\                                     ,----,  /   /     '.              ,--,                 ___     \n" +
@@ -38,7 +38,7 @@ public class Json23plet {
         new Cli(argv).parse();
         if (Json23plet.showMassege) {
             System.out.println(Json23plet.massege);
-            System.out.println(Json23plet.sign);
+//            System.out.println(Json23plet.sign);
         }
 
 

@@ -27,21 +27,16 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
             public void generate(Json js) {
                 triplet()
                         .subject(js.value("uri"))
-                        .predicate(RDFS_P_SUB_CLASS_OF)
+                        .predicate(RDF_P_TYPE)
                         .object(OWL_C_THING);
             }
 
             @Override
             public boolean match(Json json) {
-                return regex()
-                        .sequence("jbr:")
+                return regex("jbr:(.*)")
                         .match(json.value("uri"));
             }
 
-            @Override
-            public String getRoolID() {
-                return "1";
-            }
         });
         registerGenerator(new IRegExGenerator() {
             @Override
@@ -55,25 +50,12 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
             @Override
             public boolean match(Json json) {
                 try {
-                    return regex()
-                            .sequence("jbr:tanach-")
-                            .all()
-                            .sequence("-")
-                            .onOf(regex().range(0,9).toRegexString())
-                            .sequence("-")
-                            .onOf(regex().range(0,9).toRegexString())
-                            .sequence("-")
-                            .onOf(regex().range(0,9).toRegexString())
+                    return regex("jbr:tanach-(.*)-(\\d+)-(\\d+)-(\\d+)")
                             .match(json.value("uri"));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 return false;
-            }
-
-            @Override
-            public String getRoolID() {
-                return "2";
             }
         });
 

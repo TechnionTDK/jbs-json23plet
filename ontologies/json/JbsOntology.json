@@ -11,34 +11,34 @@
   ],
   "metadata" : [
     {
-      "uri" : "jbo:pasuk",
+      "uri" : "jbo:Pasuk",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Pasuk",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
-      "uri" : "jbo:perek",
+      "uri" : "jbo:Perek",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Perek",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
-      "uri" : "jbo:sefer",
+      "uri" : "jbo:Sefer",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Sefer",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
-      "uri" : "jbo:parasha",
+      "uri" : "jbo:Parasha",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Parasha",
       "rdfs:subClassOf" : "owl:Thing"
     },
     {
-      "uri" : "jbo:perush",
+      "uri" : "jbo:Perush",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Perush",
       "rdfs:subClassOf" : "owl:Thing"
@@ -46,56 +46,56 @@
 
 
     {
-      "uri" : "jbo:mishnaya",
+      "uri" : "jbo:Mishnaya",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Mishnaya",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
-      "uri" : "jbo:mitzva",
+      "uri" : "jbo:Mitzva",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Mitzva",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
-      "uri" : "jbo:halacha",
+      "uri" : "jbo:Halacha",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Halacha",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
-      "uri" : "jbo:dafGmara",
+      "uri" : "jbo:DafGmara",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "DafGmara",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
-      "uri" : "jbo:seder",
+      "uri" : "jbo:Seder",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Seder",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
-      "uri" : "jbo:masechet",
+      "uri" : "jbo:Masechet",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Masechet",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
-      "uri" : "jbo:mitzvatAse",
+      "uri" : "jbo:MitzvatAse",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "MitzvatAse",
       "rdfs:subClassOf" : ["owl:Thing", "jbo:Mitzva"]
     },
 
     {
-      "uri" : "jbo:mitzvatLoTaase",
+      "uri" : "jbo:MitzvatLoTaase",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "MitzvatLoTaase",
       "rdfs:subClassOf" : ["owl:Thing", "jbo:Mitzva"]

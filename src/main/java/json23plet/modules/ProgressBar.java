@@ -38,6 +38,6 @@ public class ProgressBar {
         for (int i = 0 ; i < 50  ; i++) {
             this.bar.append(this.icon);
         }
-        this.bar.append("]").append("100%").append(" -");
+        this.bar.append("]").append("100%").append(" -\n");
     }
 }
