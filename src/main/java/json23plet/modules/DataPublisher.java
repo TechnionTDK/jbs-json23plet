@@ -33,6 +33,9 @@ public class DataPublisher {
         String outputRootDir = tsOutputRootDirDir.get();
         int beginConOut = inputPath.indexOf(inputRootDir) + inputRootDir.length();
         String path = (new File(inputPath.substring(beginConOut, inputPath.length()))).toString();
+        if (!path.equals("") && path.indexOf(File.separator) != 0) {
+            path = Paths.get(File.separator, path).toString();
+        }
         if (!path.equals("")) {
             path = new File(path).getParent();
         }

@@ -140,7 +140,7 @@ public class GeneratorsUtils {
         }
     }
     static private void reacteAsErrorLevel(String messege) {
-        switch (getGlobalSettingProp("errorLevel")) {
+        switch (getGlobalSettingProp("loggerLevel")) {
             case "none": Logger.getRootLogger().debug(messege); break;
             case "info": Logger.getRootLogger().info(messege); break;
             case "stop": Logger.getRootLogger().fatal(messege); exit(1);
