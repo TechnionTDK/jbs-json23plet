@@ -47,14 +47,15 @@ public abstract class JsonValidator {
         System.out.println("[PATH]... " + jsonPath);
         for (Json j : getJsonsToValidate()) {
             for (IJsonValidator v : validatorsList) {
-                if (!v.JsonValidate(j)) {
-                    switch (errorLevel) {
-                        case "none" : break;
-                        case "info" : System.out.println("[ERROR]... " + j.toString()); break;
-                        case "stop" : throw new JsonValidatorException("[ERROR]... " + j.toString());
-                        default:
-                    }
-                }
+                v.JsonValidate(j);
+//                if (!v.JsonValidate(j)) {
+//                    switch (errorLevel) {
+//                        case "none" : break;
+//                        case "info" : System.out.println("[ERROR]... " + j.toString()); break;
+//                        case "stop" : throw new JsonValidatorException("[ERROR]... " + j.toString());
+//                        default:
+//                    }
+//                }
             }
         }
     }
@@ -63,17 +64,18 @@ public abstract class JsonValidator {
         String errorLevel = getGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL);
         for (Json j : getJsonsToValidate(jsonRoot)) {
             for (IJsonValidator v : validatorsList) {
-                if (v.JsonValidate(j)) {
-                    if (errorLevel.equals("info"))
-                        System.out.println("[OK]... " + j.value("uri"));
-                } else {
-                    switch (errorLevel) {
-                        case "none" : break;
-                        case "info" : System.out.println("[ERROR]... " + j.toString()); break;
-                        case "stop" : throw new JsonValidatorException("[ERROR]... " + j.toString());
-                        default:
-                    }
-                }
+                v.JsonValidate(j);
+//                if (v.JsonValidate(j)) {
+//                    if (errorLevel.equals("info"))
+//                        System.out.println("[OK]... " + j.value("uri"));
+//                } else {
+//                    switch (errorLevel) {
+//                        case "none" : break;
+//                        case "info" : System.out.println("[ERROR]... " + j.toString()); break;
+//                        case "stop" : throw new JsonValidatorException("[ERROR]... " + j.toString());
+//                        default:
+//                    }
+//                }
             }
         }
     }
@@ -82,12 +84,12 @@ public abstract class JsonValidator {
         String errorLevel = getGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL);
         for (IJsonValidator v : validatorsList) {
             if (! v.JsonValidate(json)) {
-                switch (errorLevel) {
-                    case "none" : break;
-                    case "info" : System.err.println("[ERROR]... " + json.toString()); break;
-                    case "stop" : throw new JsonValidatorException("[ERROR]... " + json.toString());
-                    default:
-                }
+//                switch (errorLevel) {
+//                    case "none" : break;
+//                    case "info" : System.err.println("[ERROR]... " + json.toString()); break;
+//                    case "stop" : throw new JsonValidatorException("[ERROR]... " + json.toString());
+//                    default:
+//                }
                 return false;
             }
         }

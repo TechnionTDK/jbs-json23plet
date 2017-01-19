@@ -1,9 +1,7 @@
 package json23plet.modules;
 
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 
 import java.io.FileReader;
 import java.util.*;
@@ -17,7 +15,7 @@ public class Json {
 
     static public String PRIMITIVE_KEY = "obj";
 
-    private JsonObject currentElement;
+    protected JsonObject currentElement;
 
     private Json(JsonObject obj) {
 
@@ -34,7 +32,6 @@ public class Json {
 
         return new Json();
     }
-
 
     public List<Json> getAsArray(String member) {
         List<Json> res = new ArrayList<Json>();
@@ -108,7 +105,8 @@ public class Json {
     }
 
     public String toString() {
-        return currentElement.toString();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(currentElement);
     }
 
 
