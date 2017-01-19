@@ -15,7 +15,7 @@ public class PsukimTagsGenerator extends Generator {
     @Override
     public void generate() {
         for (Json j : json().getAsArray("subjects")) {
-            String subjectUri = "jbr:" + j.value(URI);
+            String subjectUri = j.value(URI);
             for (Json tag : j.getAsArray("tags")) {
                 triplet()
                         .subject(subjectUri)
