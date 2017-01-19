@@ -14,6 +14,7 @@ import json23plet.modules.GeneratorFactory;
 import json23plet.generators.ontologyGenerator.OntologyGenerator;
 import org.apache.commons.cli.*;
 
+import static json23plet.generators.GeneratorsUtils.GLOBAL_SETTING_ERROR_LEVEL;
 import static json23plet.generators.GeneratorsUtils.GLOBAL_SETTING_GEN_OUTPUTDIR;
 
 public class Cli {
@@ -126,9 +127,13 @@ public class Cli {
 
     private void config(String[] params) {
         String action = params[0];
-        switch (action) {
-            case "-addGen" : GeneratorsUtils.setNewGeneratorConfiguration(params[1], params[2], params[3]); break;
-            case "-editGen" : GeneratorsUtils.setGenConfig(params[1], params[2], params[3]); break;
+        String param = action.split("=")[0];
+        String val = action.split("=")[1];
+        switch (param) {
+            case "outputDir": GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR, val); break;
+            case "errorLevel": GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL, val); break;
+//            case "-addGen" : GeneratorsUtils.setNewGeneratorConfiguration(params[1], params[2], params[3]); break;
+//            case "-editGen" : GeneratorsUtils.setGenConfig(params[1], params[2], params[3]); break;
             case "-setGlobal" :  GeneratorsUtils.setGlobalSettingProp(params[1], params[2]); break;
             default:
         }

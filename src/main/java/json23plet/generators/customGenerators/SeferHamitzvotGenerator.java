@@ -1,4 +1,4 @@
-package json23plet.generators;
+package json23plet.generators.customGenerators;
 
 
 import json23plet.modules.Json;

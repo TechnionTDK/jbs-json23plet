@@ -25,7 +25,7 @@ public class GeneratorFactory {
         Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
             try {
                 DataPublisher.Init(file.toString(), jsonRoot, outputDirRoot);
-                if (isClassExist("json23plet.generators." + gen)) {
+                if (isClassExist("json23plet.generators.customGenerators." + gen)) {
                     activateGeneratorSingleFile(gen, file.toString());
                 } else if (isClassExist("json23plet.generators.regExGenerators." + gen)) {
                     activateSingleRegExGeneratorSingleFile(gen, file.toString());
@@ -52,7 +52,7 @@ public class GeneratorFactory {
             throws Exception {
         Triplet.Init();
         Json.Init(jsonInput);
-        Class genClass = Class.forName("json23plet.generators." + genName);
+        Class genClass = Class.forName("json23plet.generators.customGenerators." + genName);
         Constructor ctor = genClass.getConstructor();
         Method generate = genClass.getDeclaredMethod("generate", null);
         Object instance = ctor.newInstance(null);

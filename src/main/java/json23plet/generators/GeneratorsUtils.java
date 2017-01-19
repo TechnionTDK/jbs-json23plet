@@ -28,6 +28,7 @@ public class GeneratorsUtils {
     public static String GLOBAL_SETTING_GEN_OUTPUTDIR = "genOutputDir";
     public static String GLOBAL_SETTING = "globalSetting";
     public static String GLOBAL_SETTING_ERROR_LEVEL = "errorLevel";
+    public static String URI = "uri";
     static String SETTING_PROP = "setting";
     static JsonElement root;
     static {
@@ -131,19 +132,16 @@ public class GeneratorsUtils {
                                 .object(mapJson.get(key).value(PRIMITIVE_KEY));
                     }
                 } catch (Exception e) {
-                    reacteAsErrorLevel(e.getMessage());
-//                    System.err.println(key);
-//                    Logger.getRootLogger().debug(e.getMessage());
 
                 }
             }
         }
     }
-    static private void reacteAsErrorLevel(String messege) {
-        switch (getGlobalSettingProp("loggerLevel")) {
-            case "none": Logger.getRootLogger().debug(messege); break;
-            case "info": Logger.getRootLogger().info(messege); break;
-            case "stop": Logger.getRootLogger().fatal(messege); exit(1);
-        }
-    }
+//    static private void reacteAsErrorLevel(String messege) {
+//        switch (getGlobalSettingProp("loggerLevel")) {
+//            case "none": Logger.getRootLogger().debug(messege); break;
+//            case "info": Logger.getRootLogger().info(messege); break;
+//            case "stop": Logger.getRootLogger().fatal(messege); exit(1);
+//        }
+//    }
 }

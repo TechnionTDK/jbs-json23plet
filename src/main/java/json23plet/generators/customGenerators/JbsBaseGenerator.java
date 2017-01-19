@@ -1,4 +1,4 @@
-package json23plet.generators;
+package json23plet.generators.customGenerators;
 
 
 import json23plet.modules.Json;
@@ -11,11 +11,9 @@ import static json23plet.ontologies.JbsOntology.*;
 /**
  * Created by yon_b on 06/12/16.
  */
-public class JbsBaseGenerator {
+public class JbsBaseGenerator extends Generator{
 
     public void generate() {
-//        Triplet.addNSprefix(JBO_PREFIX, JBO_URI);
-//        Triplet.addNSprefix(JBR_PREFIX, JBR_URI);
         for (Json j : json().getAsArray("subjects")) {
             String prefix = JBR_PREFIX + ":";
             String sub = prefix + j.value("uri");

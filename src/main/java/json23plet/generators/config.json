@@ -2,8 +2,8 @@
   "setting": {
     "globalSetting": {
       "loggerLevel": "none",
-      "genOutputDir": "/home/yon_b/Desktop/jbs-output",
-      "errorLevel": "none"
+      "errorLevel": "none",
+      "genOutputDir": "output"
     },
     "generators": [
       {

@@ -1,8 +1,6 @@
-package json23plet.generators;
+package json23plet.generators.customGenerators;
 
 
-import json23plet.JsonValidators.JsonValidator;
-import json23plet.JsonValidators.OntologyValidator;
 import json23plet.modules.Json;
 
 import static json23plet.modules.Json.json;
@@ -12,17 +10,10 @@ import static json23plet.ontologies.JbsOntology.*;
 /**
  * Created by yon_b on 29/11/16.
  */
-public class ExampleGenerator extends JbsBaseGenerator {
+public class PasukGenerator extends JbsBaseGenerator {
    @Override
     public void generate() {
-       JsonValidator v = new OntologyValidator();
-       v.registerValidators();
-       try {
-           v.validateSingleJson(Json.json());
-       } catch (JsonValidator.JsonValidatorException e) {
-           e.printStackTrace();
-       }
-       try {
+        try {
             super.generate();
             for (Json j : json().getAsArray("subjects")) {
                 String prefix = JBR_PREFIX + ":";
