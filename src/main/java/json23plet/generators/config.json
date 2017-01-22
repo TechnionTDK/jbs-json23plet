@@ -7,18 +7,18 @@
     "generators": [
       {
         "name": "PasukGenerator",
-        "input": "aaa",
-        "active": "true"
+        "input": "a",
+        "active": "false"
       },
       {
         "name": "SeferHamitzvotGenerator",
-        "input": "/home/yon_b/projects/gitHubProj/json23plet/input/seferhamitzvot-json/seferhamitzvot.json",
-        "active": "true"
+        "input": "a",
+        "active": "false"
       },
       {
         "name": "MefarshimGenerator",
-        "input": "/home/yon_b/",
-        "active": "active"
+        "input": "a",
+        "active": "false"
       }
     ]
   }
