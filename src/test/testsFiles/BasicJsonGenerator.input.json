@@ -1,0 +1,224 @@
+{
+  "subjects": [
+    {
+      "uri": "jbr:tanach-Rashi-1-1-1",
+      "jbo:text": " רש\"י  בראשית אמר רבי יצחק, לא היה צריך להתחיל (א) את התורה אלא מהחדש הזה לכם, שהיא מצוה ראשונה שנצטוו (ב) ישראל (כי עיקר התורה אינה אלא למצותיה, והגם שנמצאו בס' בראשית ג\"כ קצת מצות כמו מילה וגיד הנשה, היה יכול לכותבן בהדי שאר המצות), ומה טעם פתח (ג) בבראשית, משום כח מעשיו הגיד לעמו לתת להם נחלת גוים (תהלים קיא, ו.), שאם יאמרו אומות העולם לישראל, ליסטים אתם, (ד) שכבשתם ארצות שבעה גוים, הם אומרים להם, כל הארץ של הקב\"ה היא, הוא בראה (נשמע מהודעת הבריאה) ונתנה לאשר ישר בעיניו, (כנשמע מספורי אדם הראשון ומבול והפלגה וסדום ומלחמת אברהם עם המלאכים ומפלת מצרים. וירושת הארץ היא משכר המצות וחשובה כמצו' ועיין מזה באריכות ברא\"ם ויפ\"ת) ברצונו נתנה להם, וברצונו נטלה מהם ונתנה לנו (ביפ\"ת כתב שכ\"ז הוא מהתנחומא, רק פסוק כח מעשיו וגו' לקחו רש\"י מהבראשית רבה ע\"ש, אך בילקוט פסוק החודש, הביא בשם התנחומא כמו שהוא כאן, וי' בשה\"ר פ' הביאני)",
+      "rdfs:label" : ["﻿בראשית א א", "﻿בראשית פרק א פסוק א"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-1",
+      "jbo:positionInPerek": 1,
+      "jbo:positionInParasha": 1
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-2",
+      "jbo:text": " רש\"י  תהו ובהו. תהו לשון תמה ושממון, שאדם תוהה ומשתומם על בהו שבה (ונקראת הארץ כן, כמו שנקראים רפאים ע\"ש שכל הרואה אותם מתרפה, ויהיה ו' ובהו במקום ב' כמו וה' שלחני וריחו)",
+      "rdfs:label": ["﻿בראשית א ב", "﻿בראשית פרק א פסוק ב"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-2",
+      "jbo:positionInPerek": 2,
+      "jbo:positionInParasha": 2
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-4",
+      "jbo:text": " רש\"י  וירא אלהים את האור כי טוב ויבדל. אף בזה אנו צריכין לדברי אגדה (חגיגה יב.), (ר) ראהו שאינו כדאי להשתמש בו רשעים, והבדילו לצדיקים (ש) (בכ\"י ליתנהו) לעתיד לבא. (כי לא יכול הבדל רק בדברים המתערבים, ואור וחושך הם העדר וקנין וא\"א חיבורם בעת מן העתים) ולפי פשוטו כך פרשהו, ראהו כי טוב, ואין נאה לו ולחשך שיהיו משתמשין בערבוביא, (ת) וקבע לזה תחומו ביום ולזה תחומו בלילה",
+      "rdfs:label": ["﻿בראשית א ד", "﻿בראשית פרק א פסוק ד"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-4",
+      "jbo:positionInPerek": 4,
+      "jbo:positionInParasha": 4
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-5",
+      "jbo:text": " רש\"י  יום אחד. לפי סדר לשון הפרשה היה לו לכתוב יום ראשון, (א) כמו שכתוב בשאר הימים, שני, ושלישי, רביעי, למה כתב אחד, לפי שהיה הקב\"ה יחיד בעולמו, שלא נבראו המלאכים עד יום שני, כך מפורש בבראשית רבה (ג, ח-ט.)",
+      "rdfs:label": ["﻿בראשית א ה", "﻿בראשית פרק א פסוק ה"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-5",
+      "jbo:positionInPerek": 5,
+      "jbo:positionInParasha": 5
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-6",
+      "jbo:text": " רש\"י  יהי רקיע. (ב) יתחזק הרקיע, שאף על פי שנבראו שמים ביום הראשון, עדיין לחים היו, וקרשו בשני מגערת הקב\"ה באומרו יהי רקיע, וזהו שנאמר עמודי שמים (ג) ירופפו (איוב כו, יא.), כל יום ראשון, ובשני (ד) יתמהו מגערתו, כאדם שמשתומם ועומד מגערת המאיים עליו",
+      "rdfs:label": ["﻿בראשית א ו", "﻿בראשית פרק א פסוק ו"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-6",
+      "jbo:positionInPerek": 6,
+      "jbo:positionInParasha": 6
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-7",
+      "jbo:text": " רש\"י  ויעש אלהים את הרקיע. (ו) תקנו על עמדו, והוא עשייתו, כמו (ז) ועשתה את צפרניה",
+      "rdfs:label": ["﻿בראשית א ז", "﻿בראשית פרק א פסוק ז"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-7",
+      "jbo:positionInPerek": 7,
+      "jbo:positionInParasha": 7
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-8",
+      "jbo:text": " רש\"י  ויקרא אלהים לרקיע שמים. שא מים, (י) שם מים, (כ) אש ומים, שערבן זה בזה ועשה מהם שמים (ס\"א שמים. שם מים ד\"א אש ומים)",
+      "rdfs:label": ["﻿בראשית א ח", "﻿בראשית פרק א פסוק ח"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-8",
+      "jbo:positionInPerek": 8,
+      "jbo:positionInParasha": 8
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-9",
+      "jbo:text": " רש\"י  יקוו המים. שטוחין היו על פני כל הארץ, והקוום באוקינוס הוא הים הגדול שבכל הימים",
+      "rdfs:label": ["﻿בראשית א ט", "﻿בראשית פרק א פסוק ט"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-9",
+      "jbo:positionInPerek": 9,
+      "jbo:positionInParasha": 9
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-10",
+      "jbo:text": " רש\"י  קרא ימים. והלא ים אחד הוא, (ל) אלא אינו דומה טעם דג העולה מן הים בעכו לדג העולה מן הים (מ) באספמיא",
+      "rdfs:label": ["﻿בראשית א י", "﻿בראשית פרק א פסוק י"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-10",
+      "jbo:positionInPerek": 10,
+      "jbo:positionInParasha": 10
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-11",
+      "jbo:text": " רש\"י  תדשא הארץ דשא עשב. (נ) לא דשא לשון עשב ולא עשב לשון דשא, ולא היה לשון המקרא לומר תעשיב הארץ, שמיני דשאים מחולקין, כל אחד לעצמו נקרא עשב פלוני, ואין לשון למדבר לומר דשא פלוני, שלשון דשא הוא לבישת הארץ כשהיא מתמלאת בדשאים",
+      "rdfs:label": ["﻿בראשית א יא", "﻿בראשית פרק א פסוק יא"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-11",
+      "jbo:positionInPerek": 11,
+      "jbo:positionInParasha": 11
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-12",
+      "jbo:text": " רש\"י  ותוצא הארץ וגו'. אף על פי שלא נאמר למינהו בדשאין בציווייהן, שמעו שנצטוו האילנות על כך, ונשאו קל וחומר בעצמן, (ר) כדמפורש באגדה בשחיטת חולין (חולין ס.)",
+      "rdfs:label": ["﻿בראשית א יב", "﻿בראשית פרק א פסוק יב"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-12",
+      "jbo:positionInPerek": 12,
+      "jbo:positionInParasha": 12
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-14",
+      "jbo:text": " רש\"י  יהי מארת וגו'. מיום ראשון נבראו, (ש) וברביעי צוה עליהם להתלות ברקיע, וכן כל תולדות שמים וארץ נבראו ביום ראשון, וכל אחד ואחד נקבע ביום שנגזר עליו, הוא שכתוב את השמים, לרבות תולדותיהם, ואת הארץ, לרבות תולדותיה",
+      "rdfs:label": ["﻿בראשית א יד", "﻿בראשית פרק א פסוק יד"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-14",
+      "jbo:positionInPerek": 14,
+      "jbo:positionInParasha": 14
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-15",
+      "jbo:text": " רש\"י  והיו למאורת. (ה) עוד זאת ישמשו שיאירו (ו) לעולם",
+      "rdfs:label": ["﻿בראשית א טו", "﻿בראשית פרק א פסוק טו"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-15",
+      "jbo:positionInPerek": 15,
+      "jbo:positionInParasha": 15
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-16",
+      "jbo:text": " רש\"י  המארת הגדולים. שוים נבראו, (ז) ונתמעטה הלבנה, על שקטרגה ואמרה אי אפשר לשני מלכים שישתמשו בכתר אחד",
+      "rdfs:label": ["﻿בראשית א טז", "﻿בראשית פרק א פסוק טז"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-16",
+      "jbo:positionInPerek": 16,
+      "jbo:positionInParasha": 16
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-20",
+      "jbo:text": " רש\"י  נפש חיה. שיהא בה (ט) חיות",
+      "rdfs:label": ["﻿בראשית א כ", "﻿בראשית פרק א פסוק כ"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-20",
+      "jbo:positionInPerek": 20,
+      "jbo:positionInParasha": 20
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-21",
+      "jbo:text": " רש\"י  התנינם. דגים גדולים שבים. ובדברי אגדה (פרק הספינה בבא בתרא עד",
+      "rdfs:label": ["﻿בראשית א כא", "﻿בראשית פרק א פסוק כא"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-21",
+      "jbo:positionInPerek": 21,
+      "jbo:positionInParasha": 21
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-22",
+      "jbo:text": " רש\"י  ויברך אותם. לפי שמחסרים אותם וצדין מהם (ס) ואוכלין אותם, הוצרכו לברכה, ואף החיות הוצרכו לברכה, אלא מפני הנחש שעתיד לקללה לכך לא ברכן, (ע) שלא יהא הוא בכלל",
+      "rdfs:label": ["﻿בראשית א כב", "﻿בראשית פרק א פסוק כב"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-22",
+      "jbo:positionInPerek": 22,
+      "jbo:positionInParasha": 22
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-24",
+      "jbo:text": " רש\"י  תוצא הארץ. הוא שפירשתי שהכל נברא מיום ראשון (צ) ולא הוצרכו אלא להוציאם",
+      "rdfs:label": ["﻿בראשית א כד", "﻿בראשית פרק א פסוק כד"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-24",
+      "jbo:positionInPerek": 24,
+      "jbo:positionInParasha": 24
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-25",
+      "jbo:text": " רש\"י  ויעש. תקנם בצביונם (ר) בתקונן (ש) ובקומתן",
+      "rdfs:label": ["﻿בראשית א כה", "﻿בראשית פרק א פסוק כה"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-25",
+      "jbo:positionInPerek": 25,
+      "jbo:positionInParasha": 25
+    },
+    {
+      "uri": "jbr:tanach-Rashi-1-1-26",
+      "jbo:text": " רש\"י  נעשה אדם. ענותנותו של הקב\"ה למדנו מכאן, לפי שהאדם הוא בדמות המלאכים ויתקנאו בו, לפיכך נמלך בהן, וכשהוא דן את המלכים הוא נמלך בפמליא שלו, שכן מצינו באחאב, שאמר לו מיכה ראיתי את ה' יושב על כסאו וכל צבא השמים עומדים עליו מימינו ומשמאלו, וכי יש ימין ושמאל לפניו, אלא אלו מיימינים לזכות ואלו משמאילים לחובה, וכן בגזירת עירין פתגמא (ת) ובמאמר קדישין שאלתא, אף כאן בפמליא שלו נטל רשות, אמר להם יש בעליונים כדמותי, אם אין כדמותי בתחתונים הרי יש קנאה במעשה בראשית",
+      "rdfs:label": ["﻿בראשית א כו", "﻿בראשית פרק א פסוק כו"],
+      "jbo:Sefer": "tanach-1",
+      "jbo:Parasha": "parasha-1",
+      "jbo:Perek": "tanach-1-1",
+      "jbo:interprets": "tanach-1-1-26",
+      "jbo:positionInPerek": 26,
+      "jbo:positionInParasha": 26
+    }
+]
+}
