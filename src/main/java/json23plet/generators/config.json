@@ -1,15 +1,14 @@
 {
   "setting": {
     "globalSetting": {
-      "loggerLevel": "none",
-      "errorLevel": "none",
-      "genOutputDir": "output"
+      "genOutputDir": "aaa",
+      "errorLevel": "info"
     },
     "generators": [
       {
         "name": "PasukGenerator",
-        "active": "true",
-        "input": "/home/yon_b/b"
+        "input": "aaa",
+        "active": "true"
       },
       {
         "name": "SeferHamitzvotGenerator",

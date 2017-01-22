@@ -30,7 +30,6 @@ public class Cli {
         this.args = args;
         options.addOption("help", "print this message");
         options.addOption(Option.builder("generate")
-//                .argName("generator name> <input dir")
                 .hasArg()
                 .numberOfArgs(3)
                 .optionalArg(true)
@@ -39,24 +38,20 @@ public class Cli {
                 .build());
         options.addOption("generateAll", "run all generators that are configered in generator.config");
         options.addOption("init", "initializes the structure of the project");
-//                .hasArg()
-//                .desc("initializes the structure of the project")
-//                .build());
         options.addOption(Option.builder("ontology")
-//                .argName("ontology name")
                 .hasArg()
                 .desc("create the appropriate ontology resources to a given ontology name")
                 .build());
         options.addOption(Option.builder("config")
-//                .argName("config option> <[config args]")
                 .hasArg()
                 .numberOfArgs(4)
                 .optionalArg(true)
                 .desc("add or edit configuration for generator or global setting\n" +
-                        "<config option> might be :\n" +
-                        "-addGen : add new genrator configuration\n" +
-                        "-editGen : edit specific configuration\n" +
-                        "-setGlobal : set global setting according to the filed name\n")
+                        "specify\n" +
+                        "1. outputDir=myOutputPath\n" +
+                        "2. errorLevel=myErrorLevel\n" +
+                        "3. genName=myGenName inputPath=myInput active=status\n"
+                )
                 .build());
     }
 
@@ -73,14 +68,8 @@ public class Cli {
             if (line.hasOption("ontology")) {
                 String ontologyName = line.getOptionValue("ontology");
                 OntologyGenerator.generate(ontologyName);
-                Json23plet.showMassege = true;
             }
-//            } else {
-//                log.log(Level.SEVERE, "Missing generate options");
-//                help();
-//            }
             if (line.hasOption("generate")) {
-                //log.log(Level.INFO, "Using cli arguments -generate " + line.getOptionValues("generate").toString());
                 String[] generateOptions = line.getOptionValues("generate");
                 generate(generateOptions);
             }
@@ -103,7 +92,6 @@ public class Cli {
     private void help() {
         HelpFormatter formatter = new HelpFormatter();
         formatter.printHelp("json23plet", options);
-        //System.exit(0);
     }
     private void init() throws IOException {
         Json23plet.initJson23plet();
@@ -114,7 +102,6 @@ public class Cli {
             gen = "BasicJsonGenerator";
         }
         GeneratorFactory.generate(gen, params[1], GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR));
-        Json23plet.showMassege = true;
     }
     private void generateAll() throws Exception {
         String outputDir = GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR);
@@ -122,7 +109,6 @@ public class Cli {
             throw new Exception("No Output Directory is configered");
         }
         GeneratorFactory.activateAllConfigGenerators(outputDir);
-        Json23plet.showMassege = true;
     }
 
     private void config(String[] params) {
@@ -132,10 +118,29 @@ public class Cli {
         switch (param) {
             case "outputDir": GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR, val); break;
             case "errorLevel": GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL, val); break;
-//            case "-addGen" : GeneratorsUtils.setNewGeneratorConfiguration(params[1], params[2], params[3]); break;
-//            case "-editGen" : GeneratorsUtils.setGenConfig(params[1], params[2], params[3]); break;
-            case "-setGlobal" :  GeneratorsUtils.setGlobalSettingProp(params[1], params[2]); break;
+            case "genName": setGenConfig(params);
             default:
         }
+    }
+    private void setGenConfig(String[] params) {
+        if (params.length < 2) {
+            return;
+        }
+        String genName = params[0].split("=")[1];
+        String inputPath ="";
+        String active = "";
+        if (params[1].split("=")[0].equals("inputPath")) {
+            inputPath = params[1].split("=")[1];
+        } else if (params[1].split("=")[0].equals("active")) {
+            active = params[1].split("=")[1];
+        }
+        if (params.length == 3) {
+            if (params[2].split("=")[0].equals("inputPath")) {
+                inputPath = params[2].split("=")[1];
+            } else if (params[2].split("=")[0].equals("active")) {
+                active = params[2].split("=")[1];
+            }
+        }
+        GeneratorsUtils.setGenConfig(genName, inputPath, active);
     }
 }

@@ -52,6 +52,7 @@ public class GeneratorsUtils {
         return res;
     }
 
+
     static public void setNewGeneratorConfiguration(String genName, String input, String active) {
         JsonElement newGen = new JsonObject();
         newGen.getAsJsonObject()
@@ -64,14 +65,20 @@ public class GeneratorsUtils {
         dispose();
     }
 
-    static public void setGenConfig(String genName, String propName, String newVal) {
+    static public void setGenConfig(String genName, String inputPath, String active) {
         for (JsonElement e : root.getAsJsonObject().get(SETTING_PROP).getAsJsonObject().getAsJsonArray(GENERATOR_PROP)) {
             if (e.getAsJsonObject().get(GENERATOR_NAME_PROP).getAsString().equals(genName)) {
-                setNewValToJsonElement(e, propName, newVal);
+                if (!inputPath.equals("")) {
+                    setNewValToJsonElement(e,GENERATOR_INPUT_PROP, inputPath);
+                }
+                if (!active.equals("")) {
+                    setNewValToJsonElement(e,GENERATOR_ACTIVE_PROP, active);
+                }
                 dispose();
                 return;
             }
         }
+        setNewGeneratorConfiguration(genName, inputPath, active);
     }
 
     static public String getGlobalSettingProp(String propName) {
@@ -137,11 +144,4 @@ public class GeneratorsUtils {
             }
         }
     }
-//    static private void reacteAsErrorLevel(String messege) {
-//        switch (getGlobalSettingProp("loggerLevel")) {
-//            case "none": Logger.getRootLogger().debug(messege); break;
-//            case "info": Logger.getRootLogger().info(messege); break;
-//            case "stop": Logger.getRootLogger().fatal(messege); exit(1);
-//        }
-//    }
 }

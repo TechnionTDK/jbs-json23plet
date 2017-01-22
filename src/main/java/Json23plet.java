@@ -15,39 +15,16 @@ public class Json23plet {
         org.apache.log4j.BasicConfigurator.configure();
         Logger.getRootLogger().setLevel(Level.INFO);
     }
-    static protected boolean showMassege = false;
-    static String massege = "Thx for using :)\n" + "Contact us: json23plet@gmail.com";
-    static String sign =
-            "         ,---._                                               .--,-``-.                                             \n" +
-            "       .-- -.' \\                                     ,----,  /   /     '.              ,--,                 ___     \n" +
-            "       |    |   :                                  .'   .' \\/ ../        ; ,-.----.  ,--.'|               ,--.'|_   \n" +
-            "       :    ;   |             ,---.        ,---, ,----,'    \\ ``\\  .`-    '\\    /  \\ |  | :               |  | :,'  \n" +
-            "       :        | .--.--.    '   ,'\\   ,-+-. /  ||    :  .  ;\\___\\/   \\   :|   :    |:  : '               :  : ' :  \n" +
-            "       |    :   :/  /    '  /   /   | ,--.'|'   |;    |.'  /      \\   :   ||   | .\\ :|  ' |      ,---.  .;__,'  /   \n" +
-            "       :        |  :  /`./ .   ; ,. :|   |  ,\"' |`----'/  ;       /  /   / .   : |: |'  | |     /     \\ |  |   |    \n" +
-            "       |    ;   |  :  ;_   '   | |: :|   | /  | |  /  ;  /        \\  \\   \\ |   |  \\ :|  | :    /    /  |:__,'| :    \n" +
-            "   ___ l         \\  \\    `.'   | .; :|   | |  | | ;  /  /-,   ___ /   :   ||   : .  |'  : |__ .    ' / |  '  : |__  \n" +
-            " /    /\\    J   : `----.   \\   :    ||   | |  |/ /  /  /.`|  /   /\\   /   ::     |`-'|  | '.'|'   ;   /|  |  | '.'| \n" +
-            "/  ../  `..-    ,/  /`--'  /\\   \\  / |   | |--'./__;      : / ,,/  ',-    .:   : :   ;  :    ;'   |  / |  ;  :    ; \n" +
-            "\\    \\         ;'--'.     /  `----'  |   |/    |   :    .'  \\ ''\\        ; |   | :   |  ,   / |   :    |  |  ,   /  \n" +
-            " \\    \\      ,'   `--'---'           '---'     ;   | .'      \\   \\     .'  `---'.|    ---`-'   \\   \\  /    ---`-'   \n" +
-            "  \"---....--'                                  `---'          `--`-,,-'      `---`              `----'              \n" +
-            "                                                                                                                    \n";
 
     public static void main(String argv[]) throws Exception {
         new Cli(argv).parse();
-        if (Json23plet.showMassege) {
-            System.out.println(Json23plet.massege);
-//            System.out.println(Json23plet.sign);
-        }
-
-
     }
 
     public static void initJson23plet() {
-        String[] files = {Paths.get("ontologies", "json").toString(), Paths.get("ontologies", "ttl").toString()};
+        String[] files = {Paths.get("ontologies", "json").toString(), Paths.get("ontologies", "ttl").toString(), Paths.get("src", "test", "testsFiles").toString()};
         for (String file : files) {
             if (!Files.exists(Paths.get(file))) {
+                System.out.println("Creating directory " + file);
                 new File(file).mkdirs();
             }
         }
