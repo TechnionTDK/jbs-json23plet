@@ -403,13 +403,6 @@
     },
 	
 	{
-      "uri" : "jbo:PerushRashi",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushRashi",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
       "uri" : "jbo:PerushSifteyChachamin",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "PerushSifteyChachamin",
