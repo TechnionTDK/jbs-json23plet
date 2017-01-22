@@ -11,7 +11,8 @@ import static json23plet.modules.Regex.regex;
 import static json23plet.modules.Triplet.triplet;
 import static json23plet.ontologies.BaseOntology.OWL_C_THING;
 import static json23plet.ontologies.BaseOntology.RDF_P_TYPE;
-import static json23plet.ontologies.JbsOntology.JBO_C_PERUSH;
+import static json23plet.ontologies.JbsOntology.JBO_C_PERUSHTANACH;
+import static json23plet.ontologies.JbsOntology.JBO_C_TORAH;
 
 /**
  * Created by yon_b on 02/01/17.
@@ -41,7 +42,7 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
                 triplet()
                         .subject(js.value("uri"))
                         .predicate(RDF_P_TYPE)
-                        .object(JBO_C_PERUSH);
+                        .object(JBO_C_PERUSHTANACH);
             }
 
             @Override
