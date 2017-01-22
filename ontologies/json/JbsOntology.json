@@ -16,26 +16,64 @@
       "rdfs:label" : "Tanach",
       "rdfs:subClassOf" : "owl:Thing"
     },
+
+    {
+      "uri" : "jbo:Mishna",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Mishna",
+      "rdfs:subClassOf" : "owl:Thing"
+    },
+
+    {
+      "uri" : "jbo:TalmudBavli",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "TalmudBavli",
+      "rdfs:subClassOf" : "owl:Thing"
+    },
+	
+    {
+      "uri" : "jbo:MishneTorah",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "MishneTorah",
+      "rdfs:subClassOf" : "owl:Thing"
+    },
+	
+    {
+      "uri" : "jbo:ShulchanAruch",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ShulchanAruch",
+      "rdfs:subClassOf" : "owl:Thing"
+    },
+	
+    {
+      "uri" : "jbo:SifreyHaravKuk",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "SifreyHaravKuk",
+      "rdfs:subClassOf" : "owl:Thing"
+    },
 	
 	{
       "uri" : "jbo:Torah",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Torah",
-      "rdfs:subClassOf" : "jbo:Tanach"
+      "rdfs:subClassOf" : "jbo:Tanach",
+	  "jbo:position" : "1"
     },
 	
 	{
       "uri" : "jbo:Neviyim",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Neviyim",
-      "rdfs:subClassOf" : "jbo:Tanach"
+      "rdfs:subClassOf" : "jbo:Tanach",
+	  "jbo:position" : "2"
     },
 	
 	{
       "uri" : "jbo:Ketuvim",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Ketuvim",
-      "rdfs:subClassOf" : "jbo:Tanach"
+      "rdfs:subClassOf" : "jbo:Tanach",
+	  "jbo:position" : "3"
     },
 	
 	{
@@ -49,294 +87,312 @@
       "uri" : "jbo:SeferBereshit",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferBereshit",
-      "rdfs:subClassOf" : "jbo:Torah"
+      "rdfs:subClassOf" : "jbo:Torah",
+	  "jbo:position" : "1"
     },
 	
 	{
       "uri" : "jbo:SeferShemot",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferShemot",
-      "rdfs:subClassOf" : "jbo:Torah"
+      "rdfs:subClassOf" : "jbo:Torah",
+	  "jbo:position" : "2"
     },
 
 	{
       "uri" : "jbo:SeferVayikra",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferVayikra",
-      "rdfs:subClassOf" : "jbo:Torah"
+      "rdfs:subClassOf" : "jbo:Torah",
+	  "jbo:position" : "3"
     },
 
 	{
       "uri" : "jbo:SeferBamidbar",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferBamidbar",
-      "rdfs:subClassOf" : "jbo:Torah"
+      "rdfs:subClassOf" : "jbo:Torah",
+	  "jbo:position" : "4"
     },
 
 	{
       "uri" : "jbo:SeferDevarim",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferDevarim",
-      "rdfs:subClassOf" : "jbo:Torah"
+      "rdfs:subClassOf" : "jbo:Torah",
+	  "jbo:position" : "5"
     },	
 
 	{
       "uri" : "jbo:SeferYehoshua",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferYehoshua",
-      "rdfs:subClassOf" : "jbo:Neviyim"
-    },
-	
-	{
-      "uri" : "jbo:SeferYehoshua",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "SeferYehoshua",
-      "rdfs:subClassOf" : "jbo:Neviyim"
-    },
-
-	{
-      "uri" : "jbo:SeferYehoshua",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "SeferYehoshua",
-      "rdfs:subClassOf" : "jbo:Neviyim"
-    },
-
-	{
-      "uri" : "jbo:SeferYehoshua",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "SeferYehoshua",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "6"
     },
 
 	{
       "uri" : "jbo:SeferShoftim",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferShoftim",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "7"
     },
 
 	{
       "uri" : "jbo:SeferShemuelA",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferShemuelA",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "8"
     },
 
 	{
       "uri" : "jbo:SeferShemuelB",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferShemuelB",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "9"
     },
 
 	{
       "uri" : "jbo:SeferMelachimA",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferMelachimA",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "10"
     },
 
 	{
       "uri" : "jbo:SeferMelachimB",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferMelachimB",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "11"
     },
 
 	{
       "uri" : "jbo:SeferYeshaaya",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferYeshaaya",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "12"
     },
 
 	{
       "uri" : "jbo:SeferYirmiya",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferYirmiya",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "13"
     },
 
 	{
       "uri" : "jbo:SeferYechezkel",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferYechezkel",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "14"
     },
 
 	{
       "uri" : "jbo:SeferHoshea",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferHoshea",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "15"
     },
 
 	{
       "uri" : "jbo:SeferYoel",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferYoel",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "16"
     },
 
 	{
       "uri" : "jbo:SeferAmos",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferAmos",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "17"
     },
 
 	{
       "uri" : "jbo:SeferOvadya",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferOvadya",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "18"
     },
 
 	{
       "uri" : "jbo:SeferYona",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferYona",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "19"
     },
 
 	{
       "uri" : "jbo:SeferMicha",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferMicha",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "20"
     },
 
 	{
       "uri" : "jbo:SeferNachum",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferNachum",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "21"
     },
 
 	{
       "uri" : "jbo:SeferChavakuk",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferChavakuk",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "22"
     },
 
 	{
       "uri" : "jbo:SeferTzefanya",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferTzefanya",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "23"
     },
 
 	{
       "uri" : "jbo:SeferChagay",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferChagay",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "24"
     },
 
 	{
       "uri" : "jbo:SeferZecharya",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferZecharya",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "25"
     },
 
 	{
       "uri" : "jbo:SeferMalachi",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferMalachi",
-      "rdfs:subClassOf" : "jbo:Neviyim"
+      "rdfs:subClassOf" : "jbo:Neviyim",
+	  "jbo:position" : "26"
     },
 
 	{
       "uri" : "jbo:SeferTehilim",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferTehilim",
-      "rdfs:subClassOf" : "jbo:Ketuvim"
+      "rdfs:subClassOf" : "jbo:Ketuvim",
+	  "jbo:position" : "27"
     },
 
 	{
       "uri" : "jbo:SeferMishley",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferMishley",
-      "rdfs:subClassOf" : "jbo:Ketuvim"
+      "rdfs:subClassOf" : "jbo:Ketuvim",
+	  "jbo:position" : "28"
     },
 
 	{
       "uri" : "jbo:SeferIyov",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferIyov",
-      "rdfs:subClassOf" : "jbo:Ketuvim"
+      "rdfs:subClassOf" : "jbo:Ketuvim",
+	  "jbo:position" : "29"
     },
 
 	{
       "uri" : "jbo:SeferShirHashirim",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferShirHashirim",
-      "rdfs:subClassOf" : "jbo:Ketuvim"
+      "rdfs:subClassOf" : "jbo:Ketuvim",
+	  "jbo:position" : "30"
     },
 
 	{
       "uri" : "jbo:SeferRut",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferRut",
-      "rdfs:subClassOf" : "jbo:Ketuvim"
+      "rdfs:subClassOf" : "jbo:Ketuvim",
+	  "jbo:position" : "31"
     },
 
 	{
       "uri" : "jbo:SeferEycha",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferEycha",
-      "rdfs:subClassOf" : "jbo:Ketuvim"
+      "rdfs:subClassOf" : "jbo:Ketuvim",
+	  "jbo:position" : "32"
     },
 
 	{
       "uri" : "jbo:SeferKohelet",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferKohelet",
-      "rdfs:subClassOf" : "jbo:Ketuvim"
+      "rdfs:subClassOf" : "jbo:Ketuvim",
+	  "jbo:position" : "33"
     },
 
 	{
       "uri" : "jbo:SeferEster",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferEster",
-      "rdfs:subClassOf" : "jbo:Ketuvim"
+      "rdfs:subClassOf" : "jbo:Ketuvim",
+	  "jbo:position" : "34"
     },
 
 	{
       "uri" : "jbo:SeferDaniel",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferDaniel",
-      "rdfs:subClassOf" : "jbo:Ketuvim"
+      "rdfs:subClassOf" : "jbo:Ketuvim",
+	  "jbo:position" : "35"
     },
 
 	{
       "uri" : "jbo:SeferEzra",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferTehilim",
-      "rdfs:subClassOf" : "jbo:Ketuvim"
+      "rdfs:subClassOf" : "jbo:Ketuvim",
+	  "jbo:position" : "36"
     },
 
 	{
       "uri" : "jbo:SeferNechemya",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferNechemya",
-      "rdfs:subClassOf" : "jbo:Ketuvim"
+      "rdfs:subClassOf" : "jbo:Ketuvim",
+	  "jbo:position" : "37"
     },
 
 	{
       "uri" : "jbo:SeferDivreyHayamimA",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferDivreyHayamimA",
-      "rdfs:subClassOf" : "jbo:Ketuvim"
+      "rdfs:subClassOf" : "jbo:Ketuvim",
+	  "jbo:position" : "38"
     },
 
 	{
       "uri" : "jbo:SeferDivreyHayamimB",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferDivreyHayamimB",
-      "rdfs:subClassOf" : "jbo:Ketuvim"
+      "rdfs:subClassOf" : "jbo:Ketuvim",
+	  "jbo:position" : "39"
     },
 	
 	{
@@ -484,6 +540,13 @@
       "rdf:type" : "owl:Class",
       "rdfs:label" : "PerushMalbimBeurHamilot",
       "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:SeferShemonaKevatzim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "SeferShemonaKevatzim",
+      "rdfs:subClassOf" : "jbo:SifreyHaravKuk"
     },
 	
     {
