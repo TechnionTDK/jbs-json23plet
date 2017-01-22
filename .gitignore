@@ -9,7 +9,12 @@ src/main/java/json23plet/generators/config.json
 *.iml
 input*
 output*
-testsFiles/
+testsFiles*
+*.iws
+
+# Mac
+.DS_Store
+
 # Maven
 log/
 target/
