@@ -51,7 +51,7 @@ A command-line tool for generating RDF triplets from Jsons input
     * none - Nothing will happen.
     * info - The errors will display.
     * stop - On error stop execution.
-, 
+    
 # Components
 
 ### Ontologies
@@ -113,7 +113,7 @@ Allows to generate a new ttl file from json file.<br />
 Using:
 
 1. Write MyGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators directory.
-<br />the generator has to implement the generate function:
+<br />the generator has to extend the generator class and implement the generate function:
 
         public void generate();
 
@@ -158,19 +158,11 @@ To create your own validator do as follow:
 A lite component to create a java regex.<br />
 Example of usage:
 
-    Regex
-    .regex()
-    .sequence("jbr:tanach-")
-    .all()
-    .sequence("-")
-    .onOf(regex().range(0,9).toRexString())
-    .sequence("-")
-    .onOf(regex().range(0,9).toRexString())
-    .sequence("-")
-    .onOf(regex().range(0,9).toRexString())
-(See Example in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators/ExampleRegExGenerator.java)
+    regex("jbr:tanach-(.*)-(\\d+)-(\\d+)-(\\d+)")
+    .match(json.value("uri"))
+(See Example in jbs-json23plet/src/main/java/json23plet/generators/regexGenerators/RdfTypeGenerator.java)
 
-### RegExGenerator
+### RegexGenerator
 In case that you want to add triplets for a specific json object (e.g. for adding rdf:type to all jbr-tanach\* json objects)<br />
 For this purpose we created a component called RegExGenerator:<br />
 It allows you to activate a series of rules on a selected json objects.<br />
@@ -188,7 +180,7 @@ Each RegExGenerator contains the following:
 1. Run "json23plet.sh -b" to rebuild the project
 1. Run "./json23plet.sh -generate MyRegExGenerator \<dataInputRootDir\>"
 
-(See Example in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators/ExampleRegExGenerator.java)
+(See Example in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators/RdfTypeGenerator.java)
 
 
 ### Testing
