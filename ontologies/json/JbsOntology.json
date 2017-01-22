@@ -39,9 +39,9 @@
     },
 	
 	{
-      "uri" : "jbo:MefarsheyTanach",
+      "uri" : "jbo:PerushTanach",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MefarsheyTanach",
+      "rdfs:label" : "PerushTanach",
       "rdfs:subClassOf" : "jbo:Tanach"
     },
 
@@ -337,6 +337,153 @@
       "rdf:type" : "owl:Class",
       "rdfs:label" : "SeferDivreyHayamimB",
       "rdfs:subClassOf" : "jbo:Ketuvim"
+    },
+	
+	{
+      "uri" : "jbo:PerushRashi",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushRashi",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushRashi",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushRashi",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushSifteyChachamin",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushSifteyChachamin",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushRamban",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushRamban",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:TargumYonatan",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "TargumYonatan",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushOrHachayim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushOrHachayim",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushRabiAvrahamIbnEzra",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushRabiAvrahamIbnEzra",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushBaalHaturim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushBaalHaturim",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:TargumOnkelos",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "TargumOnkelos",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushSeforno",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushSeforno",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushKeliYekar",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushKeliYekar",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushDaatZekenim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushDaatZekenim",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:MidrashRaba",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "MidrashRaba",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:MidrashTanchuma",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "MidrashTanchuma",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushMetzudatDavid",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushMetzudatDavid",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushMetzudatTziyon",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushMetzudatTziyon",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushRalbag",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushRalbag",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushMalbim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushMalbim",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushMalbim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushMalbim",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushMalbimBeurHainyan",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushMalbimBeurHainyan",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
+    },
+	
+	{
+      "uri" : "jbo:PerushMalbimBeurHamilot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushMalbimBeurHamilot",
+      "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
     {
