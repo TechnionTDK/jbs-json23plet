@@ -5,36 +5,365 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix jbr:   <http://jbs.technion.ac.il/resource/> .
 
+jbo:SeferMicha  a        owl:Class ;
+        rdfs:label       "SeferMicha" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "20" .
+
+jbo:SeferMishley  a      owl:Class ;
+        rdfs:label       "SeferMishley" ;
+        rdfs:subClassOf  jbo:Ketuvim ;
+        jbo:position     "28" .
+
+jbo:PerushSeforno  a     owl:Class ;
+        rdfs:label       "PerushSeforno" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:PerushKeliYekar  a   owl:Class ;
+        rdfs:label       "PerushKeliYekar" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:SeferTzefanya  a     owl:Class ;
+        rdfs:label       "SeferTzefanya" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "23" .
+
+jbo:MidrashRaba  a       owl:Class ;
+        rdfs:label       "MidrashRaba" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:SeferDaniel  a       owl:Class ;
+        rdfs:label       "SeferDaniel" ;
+        rdfs:subClassOf  jbo:Ketuvim ;
+        jbo:position     "35" .
+
+jbo:PerushMalbimBeurHamilot
+        a                owl:Class ;
+        rdfs:label       "PerushMalbimBeurHamilot" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:SeferShemuelB  a     owl:Class ;
+        rdfs:label       "SeferShemuelB" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "9" .
+
+jbo:SeferYechezkel  a    owl:Class ;
+        rdfs:label       "SeferYechezkel" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "14" .
+
+jbo:SeferRut  a          owl:Class ;
+        rdfs:label       "SeferRut" ;
+        rdfs:subClassOf  jbo:Ketuvim ;
+        jbo:position     "31" .
+
+jbo:PerushMetzudatDavid
+        a                owl:Class ;
+        rdfs:label       "PerushMetzudatDavid" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:SeferDevarim  a      owl:Class ;
+        rdfs:label       "SeferDevarim" ;
+        rdfs:subClassOf  jbo:Torah ;
+        jbo:position     "5" .
+
+jbo:content  a       owl:ObjectProperty ;
+        rdfs:domain  xsd:anyURI ;
+        rdfs:label   "content" ;
+        rdfs:range   xsd:xstring .
+
+jbo:SeferChavakuk  a     owl:Class ;
+        rdfs:label       "SeferChavakuk" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "22" .
+
+jbo:SeferYona  a         owl:Class ;
+        rdfs:label       "SeferYona" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "19" .
+
+jbo:SeferOvadya  a       owl:Class ;
+        rdfs:label       "SeferOvadya" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "18" .
+
+jbo:SeferIyov  a         owl:Class ;
+        rdfs:label       "SeferIyov" ;
+        rdfs:subClassOf  jbo:Ketuvim ;
+        jbo:position     "29" .
+
+jbo:SeferYehoshua  a     owl:Class ;
+        rdfs:label       "SeferYehoshua" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "6" .
+
 jbo:text  a          owl:ObjectProperty ;
         rdfs:domain  xsd:anyURI ;
         rdfs:label   "text" ;
         rdfs:range   xsd:xstring .
+
+jbo:PerushMetzudatTziyon
+        a                owl:Class ;
+        rdfs:label       "PerushMetzudatTziyon" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:positionInPerek  a  owl:ObjectProperty ;
+        rdfs:domain  xsd:anyURI ;
+        rdfs:label   "positionInPerek" ;
+        rdfs:range   xsd:integer .
+
+jbo:SifreyHaravKuk  a    owl:Class ;
+        rdfs:label       "SifreyHaravKuk" ;
+        rdfs:subClassOf  owl:Thing .
+
+jbo:SeferShemuelA  a     owl:Class ;
+        rdfs:label       "SeferShemuelA" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "8" .
+
+jbo:SeferShoftim  a      owl:Class ;
+        rdfs:label       "SeferShoftim" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "7" .
+
+jbo:SeferYirmiya  a      owl:Class ;
+        rdfs:label       "SeferYirmiya" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "13" .
+
+jbo:SeferBamidbar  a     owl:Class ;
+        rdfs:label       "SeferBamidbar" ;
+        rdfs:subClassOf  jbo:Torah ;
+        jbo:position     "4" .
+
+jbo:ShulchanAruch  a     owl:Class ;
+        rdfs:label       "ShulchanAruch" ;
+        rdfs:subClassOf  owl:Thing .
+
+jbo:SeferYoel  a         owl:Class ;
+        rdfs:label       "SeferYoel" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "16" .
+
+jbo:PerushBaalHaturim
+        a                owl:Class ;
+        rdfs:label       "PerushBaalHaturim" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:SeferYeshaaya  a     owl:Class ;
+        rdfs:label       "SeferYeshaaya" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "12" .
 
 jbo:container  a     owl:ObjectProperty ;
         rdfs:domain  xsd:anyURI ;
         rdfs:label   "container" ;
         rdfs:range   xsd:anyURI .
 
-jbo:Perush  a            owl:Class ;
-        rdfs:label       "Perush" ;
+jbo:MishneTorah  a       owl:Class ;
+        rdfs:label       "MishneTorah" ;
         rdfs:subClassOf  owl:Thing .
 
-jbo:Masechet  a          owl:Class ;
-        rdfs:label       "Masechet" ;
-        rdfs:subClassOf  owl:Thing .
+jbo:SeferTehilim  a      owl:Class ;
+        rdfs:label       "SeferTehilim" ;
+        rdfs:subClassOf  jbo:Ketuvim ;
+        jbo:position     "27" .
 
-jbo:Mishnaya  a          owl:Class ;
-        rdfs:label       "Mishnaya" ;
-        rdfs:subClassOf  owl:Thing .
+jbo:SeferNachum  a       owl:Class ;
+        rdfs:label       "SeferNachum" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "21" .
+
+jbo:mentions  a      owl:ObjectProperty ;
+        rdfs:domain  xsd:anyURI ;
+        rdfs:label   "mentions" ;
+        rdfs:range   xsd:anyURI .
+
+jbo:PerushOrHachayim  a  owl:Class ;
+        rdfs:label       "PerushOrHachayim" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:PerushRabiAvrahamIbnEzra
+        a                owl:Class ;
+        rdfs:label       "PerushRabiAvrahamIbnEzra" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:SeferBereshit  a     owl:Class ;
+        rdfs:label       "SeferBereshit" ;
+        rdfs:subClassOf  jbo:Torah ;
+        jbo:position     "1" .
+
+jbo:SeferNechemya  a     owl:Class ;
+        rdfs:label       "SeferNechemya" ;
+        rdfs:subClassOf  jbo:Ketuvim ;
+        jbo:position     "37" .
+
+jbo:PerushRashi  a       owl:Class ;
+        rdfs:label       "PerushRashi" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:SeferEycha  a        owl:Class ;
+        rdfs:label       "SeferEycha" ;
+        rdfs:subClassOf  jbo:Ketuvim ;
+        jbo:position     "32" .
+
+jbo:SeferShirHashirim
+        a                owl:Class ;
+        rdfs:label       "SeferShirHashirim" ;
+        rdfs:subClassOf  jbo:Ketuvim ;
+        jbo:position     "30" .
+
+jbo:Ketuvim  a           owl:Class ;
+        rdfs:label       "Ketuvim" ;
+        rdfs:subClassOf  jbo:Tanach ;
+        jbo:position     "3" .
 
 jbo:position  a      owl:ObjectProperty ;
         rdfs:domain  xsd:anyURI ;
         rdfs:label   "position" ;
         rdfs:range   xsd:integer .
 
-jbo:Sefer  a             owl:Class ;
-        rdfs:label       "Sefer" ;
+jbo:PerushRamban  a      owl:Class ;
+        rdfs:label       "PerushRamban" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:PerushMalbimBeurHainyan
+        a                owl:Class ;
+        rdfs:label       "PerushMalbimBeurHainyan" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:textNikud  a     owl:ObjectProperty ;
+        rdfs:domain  xsd:anyURI ;
+        rdfs:label   "textNikud" ;
+        rdfs:range   xsd:xstring .
+
+jbo:TalmudBavli  a       owl:Class ;
+        rdfs:label       "TalmudBavli" ;
         rdfs:subClassOf  owl:Thing .
+
+jbo:SeferChagay  a       owl:Class ;
+        rdfs:label       "SeferChagay" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "24" .
+
+jbo:SeferZecharya  a     owl:Class ;
+        rdfs:label       "SeferZecharya" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "25" .
+
+jbo:interprets  a    owl:ObjectProperty ;
+        rdfs:domain  xsd:anyURI ;
+        rdfs:label   "interprets" ;
+        rdfs:range   xsd:anyURI .
+
+jbo:MidrashTanchuma  a   owl:Class ;
+        rdfs:label       "MidrashTanchuma" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:SeferMelachimB  a    owl:Class ;
+        rdfs:label       "SeferMelachimB" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "11" .
+
+jbo:PerushRalbag  a      owl:Class ;
+        rdfs:label       "PerushRalbag" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:PerushSifteyChachamin
+        a                owl:Class ;
+        rdfs:label       "PerushSifteyChachamin" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:SeferDivreyHayamimB
+        a                owl:Class ;
+        rdfs:label       "SeferDivreyHayamimB" ;
+        rdfs:subClassOf  jbo:Ketuvim ;
+        jbo:position     "39" .
+
+jbo:Mishna  a            owl:Class ;
+        rdfs:label       "Mishna" ;
+        rdfs:subClassOf  owl:Thing .
+
+jbo:TargumOnkelos  a     owl:Class ;
+        rdfs:label       "TargumOnkelos" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:SeferEster  a        owl:Class ;
+        rdfs:label       "SeferEster" ;
+        rdfs:subClassOf  jbo:Ketuvim ;
+        jbo:position     "34" .
+
+jbo:Neviyim  a           owl:Class ;
+        rdfs:label       "Neviyim" ;
+        rdfs:subClassOf  jbo:Tanach ;
+        jbo:position     "2" .
+
+jbo:PerushMalbim  a      owl:Class ;
+        rdfs:label       "PerushMalbim" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:TargumYonatan  a     owl:Class ;
+        rdfs:label       "TargumYonatan" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:SeferShemonaKevatzim
+        a                owl:Class ;
+        rdfs:label       "SeferShemonaKevatzim" ;
+        rdfs:subClassOf  jbo:SifreyHaravKuk .
+
+jbo:SeferAmos  a         owl:Class ;
+        rdfs:label       "SeferAmos" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "17" .
+
+jbo:Torah  a             owl:Class ;
+        rdfs:label       "Torah" ;
+        rdfs:subClassOf  jbo:Tanach ;
+        jbo:position     "1" .
+
+jbo:SeferShemot  a       owl:Class ;
+        rdfs:label       "SeferShemot" ;
+        rdfs:subClassOf  jbo:Torah ;
+        jbo:position     "2" .
+
+jbo:Tanach  a            owl:Class ;
+        rdfs:label       "Tanach" ;
+        rdfs:subClassOf  owl:Thing .
+
+jbo:SeferMalachi  a      owl:Class ;
+        rdfs:label       "SeferMalachi" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "26" .
+
+jbo:PerushTanach  a      owl:Class ;
+        rdfs:label       "PerushTanach" ;
+        rdfs:subClassOf  jbo:Tanach .
+
+jbo:SeferKohelet  a      owl:Class ;
+        rdfs:label       "SeferKohelet" ;
+        rdfs:subClassOf  jbo:Ketuvim ;
+        jbo:position     "33" .
+
+jbo:SeferMelachimA  a    owl:Class ;
+        rdfs:label       "SeferMelachimA" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "10" .
+
+jbo:SeferHoshea  a       owl:Class ;
+        rdfs:label       "SeferHoshea" ;
+        rdfs:subClassOf  jbo:Neviyim ;
+        jbo:position     "15" .
+
+jbo:PerushDaatZekenim
+        a                owl:Class ;
+        rdfs:label       "PerushDaatZekenim" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:SeferDivreyHayamimA
+        a                owl:Class ;
+        rdfs:label       "SeferDivreyHayamimA" ;
+        rdfs:subClassOf  jbo:Ketuvim ;
+        jbo:position     "38" .
 
 jbo:positionInParasha
         a            owl:ObjectProperty ;
@@ -42,63 +371,12 @@ jbo:positionInParasha
         rdfs:label   "positionInPerek" ;
         rdfs:range   xsd:integer .
 
-jbo:MitzvatAse  a        owl:Class ;
-        rdfs:label       "MitzvatAse" ;
-        rdfs:subClassOf  jbo:Mitzva , owl:Thing .
+jbo:SeferEzra  a         owl:Class ;
+        rdfs:label       "SeferTehilim" ;
+        rdfs:subClassOf  jbo:Ketuvim ;
+        jbo:position     "36" .
 
-jbo:textNikud  a     owl:ObjectProperty ;
-        rdfs:domain  xsd:anyURI ;
-        rdfs:label   "textNikud" ;
-        rdfs:range   xsd:xstring .
-
-jbo:interprets  a    owl:ObjectProperty ;
-        rdfs:domain  xsd:anyURI ;
-        rdfs:label   "interprets" ;
-        rdfs:range   xsd:anyURI .
-
-jbo:Mitzva  a            owl:Class ;
-        rdfs:label       "Mitzva" ;
-        rdfs:subClassOf  owl:Thing .
-
-jbo:Halacha  a           owl:Class ;
-        rdfs:label       "Halacha" ;
-        rdfs:subClassOf  owl:Thing .
-
-jbo:DafGmara  a          owl:Class ;
-        rdfs:label       "DafGmara" ;
-        rdfs:subClassOf  owl:Thing .
-
-jbo:Seder  a             owl:Class ;
-        rdfs:label       "Seder" ;
-        rdfs:subClassOf  owl:Thing .
-
-jbo:Pasuk  a             owl:Class ;
-        rdfs:label       "Pasuk" ;
-        rdfs:subClassOf  owl:Thing .
-
-jbo:Parasha  a           owl:Class ;
-        rdfs:label       "Parasha" ;
-        rdfs:subClassOf  owl:Thing .
-
-jbo:positionInPerek  a  owl:ObjectProperty ;
-        rdfs:domain  xsd:anyURI ;
-        rdfs:label   "positionInPerek" ;
-        rdfs:range   xsd:integer .
-
-jbo:Perek  a             owl:Class ;
-        rdfs:label       "Perek" ;
-        rdfs:subClassOf  owl:Thing .
-
-jbo:content  a       owl:ObjectProperty ;
-        rdfs:domain  xsd:anyURI ;
-        rdfs:label   "content" ;
-        rdfs:range   xsd:xstring .
-
-jbo:MitzvatLoTaase  a    owl:Class ;
-        rdfs:label       "MitzvatLoTaase" ;
-        rdfs:subClassOf  jbo:Mitzva , owl:Thing .
-
-jbo:mentions  a      owl:ObjectProperty ;
-        rdfs:domain  xsd:anyURI ;
-        rdfs:label   "mentions" ;
-        rdfs:range   xsd:anyURI .
+jbo:SeferVayikra  a      owl:Class ;
+        rdfs:label       "SeferVayikra" ;
+        rdfs:subClassOf  jbo:Torah ;
+        jbo:position     "3" .

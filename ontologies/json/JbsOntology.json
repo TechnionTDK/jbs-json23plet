@@ -513,14 +513,6 @@
       "rdfs:label" : "PerushMalbim",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
-	
-	{
-      "uri" : "jbo:PerushMalbim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushMalbim",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
 	{
       "uri" : "jbo:PerushMalbimBeurHainyan",
       "rdf:type" : "owl:Class",
