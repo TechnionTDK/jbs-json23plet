@@ -27,7 +27,7 @@ public class GeneratorFactory {
                 DataPublisher.Init(file.toString(), jsonRoot, outputDirRoot);
                 if (isClassExist("json23plet.generators.customGenerators." + gen)) {
                     activateGeneratorSingleFile(gen, file.toString());
-                } else if (isClassExist("json23plet.generators.regExGenerators." + gen)) {
+                } else if (isClassExist("json23plet.generators.regexGenerators." + gen)) {
                     activateSingleRegExGeneratorSingleFile(gen, file.toString());
                 } else {
                     throw new ClassNotFoundException();
@@ -63,7 +63,7 @@ public class GeneratorFactory {
     static private void activateSingleRegExGeneratorSingleFile(String reGenName, String input) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         Triplet.Init();
         Json.Init(input);
-        Class reClass = Class.forName("json23plet.generators.regExGenerators." + reGenName);
+        Class reClass = Class.forName("json23plet.generators.regexGenerators." + reGenName);
         Constructor ctor = reClass.getConstructor();
         Method registerGenerators = reClass.getDeclaredMethod("registerGenerators", null);
         Method generate = reClass.getDeclaredMethod("generate", null);

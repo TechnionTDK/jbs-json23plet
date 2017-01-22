@@ -1,19 +1,13 @@
-package json23plet.generators.regExGenerators;
+package json23plet.generators.regexGenerators;
 
-import json23plet.JsonValidators.JsonValidator;
-import json23plet.JsonValidators.OntologyValidator;
 import json23plet.modules.DataPublisher;
 import json23plet.modules.Json;
-import json23plet.modules.Triplet;
 
-import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 

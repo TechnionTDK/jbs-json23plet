@@ -48,34 +48,14 @@ public abstract class JsonValidator {
         for (Json j : getJsonsToValidate()) {
             for (IJsonValidator v : validatorsList) {
                 v.JsonValidate(j);
-//                if (!v.JsonValidate(j)) {
-//                    switch (errorLevel) {
-//                        case "none" : break;
-//                        case "info" : System.out.println("[ERROR]... " + j.toString()); break;
-//                        case "stop" : throw new JsonValidatorException("[ERROR]... " + j.toString());
-//                        default:
-//                    }
-//                }
             }
         }
     }
 
     public void validateSingleJson(Json jsonRoot) throws JsonValidatorException {
-        String errorLevel = getGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL);
         for (Json j : getJsonsToValidate(jsonRoot)) {
             for (IJsonValidator v : validatorsList) {
                 v.JsonValidate(j);
-//                if (v.JsonValidate(j)) {
-//                    if (errorLevel.equals("info"))
-//                        System.out.println("[OK]... " + j.value("uri"));
-//                } else {
-//                    switch (errorLevel) {
-//                        case "none" : break;
-//                        case "info" : System.out.println("[ERROR]... " + j.toString()); break;
-//                        case "stop" : throw new JsonValidatorException("[ERROR]... " + j.toString());
-//                        default:
-//                    }
-//                }
             }
         }
     }
@@ -84,12 +64,6 @@ public abstract class JsonValidator {
         String errorLevel = getGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL);
         for (IJsonValidator v : validatorsList) {
             if (! v.JsonValidate(json)) {
-//                switch (errorLevel) {
-//                    case "none" : break;
-//                    case "info" : System.err.println("[ERROR]... " + json.toString()); break;
-//                    case "stop" : throw new JsonValidatorException("[ERROR]... " + json.toString());
-//                    default:
-//                }
                 return false;
             }
         }
@@ -99,6 +73,15 @@ public abstract class JsonValidator {
         JsonValidatorException(String msg) {
             System.err.println(msg);
             System.exit(1);
+        }
+    }
+    public void onError(String messege) {
+        String errorLevel = getGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL);
+        switch (errorLevel) {
+            case "none": break;
+            case  "info": System.err.println(messege); break;
+            case "stop": System.err.println(messege); System.exit(1);
+            default:
         }
     }
 }

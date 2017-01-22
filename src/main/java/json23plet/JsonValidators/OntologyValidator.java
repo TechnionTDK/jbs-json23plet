@@ -43,22 +43,14 @@ public class OntologyValidator extends  JsonValidator{
                         .stream()
                         .allMatch(key ->
                                 JbsKeys.contains(key));
-                String errorLevel = getGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL);
                 if (!valid) {
                     List<String> keys = obj
                             .getJsonKeys()
                             .stream()
                             .filter(k -> !JbsKeys.contains(k))
                             .collect(Collectors.toList());
-                    switch (errorLevel) {
-                        case "none": break;
-                        case  "info": System.err.println("[ERROR]: The following predicates don't appear in the ontology: " + keys.toString() +
-                                " in json:\n" + obj.toString() ); break;
-                        case "stop": System.err.println("[ERROR]: The following predicates don't appear in the ontology: " + keys.toString() +
-                                " in json:\n" + obj.toString() ); System.exit(1);
-                        default:
-                    }
-
+                    onError("[ERROR]: The following predicates don't appear in the ontology: " + keys.toString() +
+                            " in json:\n" + obj.toString());
                 }
                 return obj
                         .getJsonKeys()

@@ -1,18 +1,15 @@
-package json23plet.generators.regExGenerators;
+package json23plet.generators.regexGenerators;
 
 import json23plet.JsonValidators.JsonValidator;
 import json23plet.JsonValidators.OntologyValidator;
 import json23plet.modules.Json;
 
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import static json23plet.modules.Json.json;
 import static json23plet.modules.Regex.regex;
 import static json23plet.modules.Triplet.triplet;
 import static json23plet.ontologies.BaseOntology.OWL_C_THING;
-import static json23plet.ontologies.BaseOntology.RDFS_P_SUB_CLASS_OF;
 import static json23plet.ontologies.BaseOntology.RDF_P_TYPE;
 import static json23plet.ontologies.JbsOntology.JBO_C_PERUSH;
 

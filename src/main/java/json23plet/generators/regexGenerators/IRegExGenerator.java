@@ -1,4 +1,4 @@
-package json23plet.generators.regExGenerators;
+package json23plet.generators.regexGenerators;
 
 import json23plet.modules.Json;
 
