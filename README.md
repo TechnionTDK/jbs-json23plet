@@ -17,7 +17,7 @@ A command-line tool for generating RDF triplets from Jsons input
 * Run "./json23plet.sh -init
 
 ##### Config the output root directory
-* Run "./json23plet -config -setGlobal genOutputDir \<myOutputDir\>"
+* Run "./json23plet -config outputDir=\<myOutputDir\>"
 
 ##### Run single generator:
 * Run "./json23plet.sh -generate \<generatorName\> \<dataInputRootDir\>"
@@ -39,15 +39,18 @@ A command-line tool for generating RDF triplets from Jsons input
 1. Run "./json23plet.sh -b" to rebuild the json23plet project
 
 ##### Add configuration for a new generator
-* Run "./json23plet -config -add \<generatorName\> \<inputPath\> \<activeState\>" (the \<activeState\> field gets either true or false)
+* Run "./json23plet -config  genName=\<generatorName\> inputPath=\<MyInputPath\> active=\<activeState\>" (the \<activeState\> field gets either true or false)
 
 ##### Edit configuration for an existing generator
-1. Run "./json23plet -config -editGen \<generatorName\> \<propertyName\> \<newPropertyValue\>"
+1. Run "./json23plet -config genName=\<generatorName\> inputPath=\<MyInputPath\> active=\<activeState\>"
 1. The propertyName can be one of the following only: {name, input, active}
 
 ##### Edit configuration of global setting
-1. Run "./json23plet -config -setGlobal \<settingPropertyName\> \<settingValue\>"
-1. The settingPropertyName can be one of the following only: {errorLevel, genOutputDir, loggerLevel}
+1. Run "./json23plet -config outputDir=\<myOutputDir>\>" to set a new output directory
+1.  Run "./json23plet -config errorLevel=\<level>\>" to set a new errorLevel. <br /> ErrorLevel indicate eaht would happens if the validator facing an error: <br />
+    * none - Nothing will happen.
+    * info - The errors will display.
+    * stop - On error stop execution.
 , 
 # Components
 
