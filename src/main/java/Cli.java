@@ -38,10 +38,10 @@ public class Cli {
                         "for the basic generator don't specify \"basic\" as <generator name>")
                 .build());
         options.addOption("generateAll", "run all generators that are configered in generator.config");
-        options.addOption(Option.builder("init")
-                .hasArg()
-                .desc("initializes the structure of the project")
-                .build());
+        options.addOption("init", "initializes the structure of the project");
+//                .hasArg()
+//                .desc("initializes the structure of the project")
+//                .build());
         options.addOption(Option.builder("ontology")
 //                .argName("ontology name")
                 .hasArg()
