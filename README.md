@@ -38,6 +38,8 @@ A command-line tool for generating RDF triplets from Jsons input
 1. The myOntology.java will be created in jbs-json23plet/src/main/java/json23plet/ontologies
 1. Run "./json23plet.sh -b" to rebuild the json23plet project
 
+Note: While changing an existing ontology, there might  be some generators that use the old ontology properties, if so you have to update them, otherwise the project wont build due to compilations errors.
+
 ##### Add configuration for a new generator
 * Run "./json23plet -config  genName=\<generatorName\> inputPath=\<MyInputPath\> active=\<activeState\>" (the \<activeState\> field gets either true or false)
 
