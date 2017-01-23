@@ -534,6 +534,13 @@
       "rdfs:subClassOf" : "jbo:SifreyHaravKuk"
     },
 	
+	{
+      "uri" : "jbo:SeferOrot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "SeferOrot",
+      "rdfs:subClassOf" : "jbo:SifreyHaravKuk"
+    },
+	
     {
       "uri" : "jbo:mentions",
       "rdf:type" : "owl:ObjectProperty",
