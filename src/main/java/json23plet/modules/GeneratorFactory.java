@@ -1,6 +1,7 @@
 package json23plet.modules;
 
 import json23plet.generators.GeneratorsUtils;
+import org.apache.commons.io.FilenameUtils;
 
 
 import java.io.File;
@@ -23,19 +24,23 @@ public class GeneratorFactory {
         ProgressBar pb = new ProgressBar(totalWork);
         System.out.println("Start process files");
         Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
-            try {
-                DataPublisher.Init(file.toString(), jsonRoot, outputDirRoot);
-                if (isClassExist("json23plet.generators.customGenerators." + gen)) {
-                    activateGeneratorSingleFile(gen, file.toString());
-                } else if (isClassExist("json23plet.generators.regexGenerators." + gen)) {
-                    activateSingleRegExGeneratorSingleFile(gen, file.toString());
-                } else {
-                    throw new ClassNotFoundException();
+            if (FilenameUtils.getExtension(file.toString()).equals("json")) {
+                try {
+                    DataPublisher.Init(file.toString(), jsonRoot, outputDirRoot);
+                    if (isClassExist("json23plet.generators.customGenerators." + gen)) {
+                        activateGeneratorSingleFile(gen, file.toString());
+                    } else if (isClassExist("json23plet.generators.regexGenerators." + gen)) {
+                        activateSingleRegExGeneratorSingleFile(gen, file.toString());
+                    } else {
+                        throw new ClassNotFoundException();
+
+                    }
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
                 }
-                pb.update();
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
             }
+                pb.update();
+
         });
 
     }
