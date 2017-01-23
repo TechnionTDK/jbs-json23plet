@@ -17,7 +17,7 @@ A command-line tool for generating RDF triplets from Jsons input
 * Run "./json23plet.sh -init
 
 ##### Config the output root directory
-* Run "./json23plet -config outputDir=\<myOutputDir\>"
+* Run "./json23plet.sh -config outputDir=\<myOutputDir\>"
 
 ##### Run single generator:
 * Run "./json23plet.sh -generate \<generatorName\> \<dataInputRootDir\>"
