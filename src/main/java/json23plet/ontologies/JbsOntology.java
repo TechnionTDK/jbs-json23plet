@@ -10,7 +10,7 @@ public class JbsOntology
     extends BaseOntology
 {
     public static ModelFactory smodel;
-    public static OntModel model = ((OntModel) ((OntModel) ModelFactory.createOntologyModel()).read("ontologies\ttl\JbsOntology.ttl"));
+    public static OntModel model = ((OntModel) ((OntModel) ModelFactory.createOntologyModel()).read("ontologies/ttl/JbsOntology.ttl"));
     public static String JBO_PREFIX = "jbo";
     public static String JBR_PREFIX = "jbr";
     public static String JBO_URI = "http://jbs.technion.ac.il/ontology/";
