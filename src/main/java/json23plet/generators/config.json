@@ -5,21 +5,6 @@
       "errorLevel": "none"
     },
     "generators": [
-      {
-        "name": "PasukGenerator",
-        "input": "a",
-        "active": "false"
-      },
-      {
-        "name": "SeferHamitzvotGenerator",
-        "input": "a",
-        "active": "false"
-      },
-      {
-        "name": "MefarshimGenerator",
-        "input": "a",
-        "active": "false"
-      }
     ]
   }
 }
