@@ -14,6 +14,9 @@ import org.apache.jena.rdf.model.Resource;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.nio.file.FileSystem;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,6 +41,7 @@ public class OntologyClassGenerator {
         createPredicatesComponent(oc);
 
         File file = new File(Paths.get("src", "main", "java").toString());
+        System.out.print("json23plet has created " + clssName + ".java file in ");
         om.build(file);
     }
 
