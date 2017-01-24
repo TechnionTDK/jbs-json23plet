@@ -62,10 +62,8 @@ jbo:OrHachayim  a        owl:Class ;
         rdfs:label       "OrHachayim" ;
         rdfs:subClassOf  jbo:PerushTanach .
 
-jbo:content  a       owl:ObjectProperty ;
-        rdfs:domain  xsd:anyURI ;
-        rdfs:label   "content" ;
-        rdfs:range   xsd:xstring .
+jbo:content  a      owl:ObjectProperty ;
+        rdfs:label  "content" .
 
 jbo:Tehilim  a           owl:Class ;
         rdfs:label       "Tehilim" ;
@@ -92,19 +90,15 @@ jbo:Yona  a              owl:Class ;
         rdfs:subClassOf  jbo:Neviyim ;
         jbo:position     "19" .
 
-jbo:text  a          owl:ObjectProperty ;
-        rdfs:domain  xsd:anyURI ;
-        rdfs:label   "text" ;
-        rdfs:range   xsd:xstring .
+jbo:text  a         owl:ObjectProperty ;
+        rdfs:label  "text" .
 
 jbo:KeliYekar  a         owl:Class ;
         rdfs:label       "KeliYekar" ;
         rdfs:subClassOf  jbo:PerushTanach .
 
 jbo:positionInPerek  a  owl:ObjectProperty ;
-        rdfs:domain  xsd:anyURI ;
-        rdfs:label   "positionInPerek" ;
-        rdfs:range   xsd:integer .
+        rdfs:label  "positionInPerek" .
 
 jbo:DaatZekenim  a       owl:Class ;
         rdfs:label       "DaatZekenim" ;
@@ -139,10 +133,8 @@ jbo:Yoel  a              owl:Class ;
         rdfs:subClassOf  jbo:Neviyim ;
         jbo:position     "16" .
 
-jbo:container  a     owl:ObjectProperty ;
-        rdfs:domain  xsd:anyURI ;
-        rdfs:label   "container" ;
-        rdfs:range   xsd:anyURI .
+jbo:container  a    owl:ObjectProperty ;
+        rdfs:label  "container" .
 
 jbo:Eycha  a             owl:Class ;
         rdfs:label       "Eycha" ;
@@ -167,10 +159,8 @@ jbo:Orot  a              owl:Class ;
         rdfs:label       "Orot" ;
         rdfs:subClassOf  jbo:SifreyRavKuk .
 
-jbo:mentions  a      owl:ObjectProperty ;
-        rdfs:domain  xsd:anyURI ;
-        rdfs:label   "mentions" ;
-        rdfs:range   xsd:anyURI .
+jbo:mentions  a     owl:ObjectProperty ;
+        rdfs:label  "mentions" .
 
 jbo:Seforno  a           owl:Class ;
         rdfs:label       "Seforno" ;
@@ -208,10 +198,8 @@ jbo:Ramban  a            owl:Class ;
         rdfs:label       "Ramban" ;
         rdfs:subClassOf  jbo:PerushTanach .
 
-jbo:position  a      owl:ObjectProperty ;
-        rdfs:domain  xsd:anyURI ;
-        rdfs:label   "position" ;
-        rdfs:range   xsd:integer .
+jbo:position  a     owl:ObjectProperty ;
+        rdfs:label  "position" .
 
 jbo:Malachi  a           owl:Class ;
         rdfs:label       "Malachi" ;
@@ -243,10 +231,8 @@ jbo:Kohelet  a           owl:Class ;
         rdfs:subClassOf  jbo:Ketuvim ;
         jbo:position     "33" .
 
-jbo:textNikud  a     owl:ObjectProperty ;
-        rdfs:domain  xsd:anyURI ;
-        rdfs:label   "textNikud" ;
-        rdfs:range   xsd:xstring .
+jbo:textNikud  a    owl:ObjectProperty ;
+        rdfs:label  "textNikud" .
 
 jbo:SifteyChachamin  a   owl:Class ;
         rdfs:label       "SifteyChachamin" ;
@@ -265,10 +251,8 @@ jbo:BaalHaturim  a       owl:Class ;
         rdfs:label       "BaalHaturim" ;
         rdfs:subClassOf  jbo:PerushTanach .
 
-jbo:interprets  a    owl:ObjectProperty ;
-        rdfs:domain  xsd:anyURI ;
-        rdfs:label   "interprets" ;
-        rdfs:range   xsd:anyURI .
+jbo:interprets  a   owl:ObjectProperty ;
+        rdfs:label  "interprets" .
 
 jbo:MidrashTanchuma  a   owl:Class ;
         rdfs:label       "MidrashTanchuma" ;
@@ -362,10 +346,8 @@ jbo:MelachimA  a         owl:Class ;
         jbo:position     "10" .
 
 jbo:positionInParasha
-        a            owl:ObjectProperty ;
-        rdfs:domain  xsd:anyURI ;
-        rdfs:label   "positionInPerek" ;
-        rdfs:range   xsd:integer .
+        a           owl:ObjectProperty ;
+        rdfs:label  "positionInPerek" .
 
 jbo:SifreyRamchal  a     owl:Class ;
         rdfs:label       "SifreyRamchal" ;
