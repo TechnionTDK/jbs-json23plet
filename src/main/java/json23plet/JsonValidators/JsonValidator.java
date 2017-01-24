@@ -78,9 +78,9 @@ public abstract class JsonValidator {
     public void onError(String messege) {
         String errorLevel = getGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL);
         switch (errorLevel) {
-            case "none": break;
-            case  "info": System.err.println(messege); break;
-            case "stop": System.err.println(messege); System.exit(1);
+            case "low": break;
+            case  "medium": System.err.println(messege); break;
+            case "high": System.err.println(messege); System.exit(1);
             default:
         }
     }

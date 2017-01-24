@@ -1,0 +1,9 @@
+{
+  "setting": {
+    "globalSetting": {
+      "genOutputDir": "aaa",
+      "errorLevel": "low"
+    },
+    "generators": []
+  }
+}

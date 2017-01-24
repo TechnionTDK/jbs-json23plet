@@ -20,7 +20,7 @@ import static json23plet.modules.Triplet.triplet;
  * Created by yon_b on 22/12/16.
  */
 public class GeneratorsUtils {
-    public static String jsonConfigPath = Paths.get("src", "main", "java", "json23plet", "generators", "config.json").toString();
+    public static String jsonConfigPath = Paths.get("config.json").toString();
     public static String GENERATOR_PROP = "generators";
     public static String GENERATOR_INPUT_PROP = "input";
     public static String GENERATOR_ACTIVE_PROP = "active";
