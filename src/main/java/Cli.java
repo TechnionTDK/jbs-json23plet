@@ -72,8 +72,8 @@ public class Cli {
             if (line.hasOption("ontology")) {
                 String ontologyName = line.getOptionValue("ontology");
                 OntologyGenerator.generate(ontologyName);
-                System.out.println("Creating ontology has successfully finished");
-                System.out.println("Pay attention that after updating an existing ontology you might need to update related generators");
+                System.out.println("Creating ontology has finished successfully");
+                System.out.println("Pay attention that after updating an existing ontology you might need to update the related generators");
             }
             if (line.hasOption("generate")) {
                 String[] generateOptions = line.getOptionValues("generate");
