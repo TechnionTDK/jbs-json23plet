@@ -1,9 +1,6 @@
 /**
  * Created by Yaakov on 20/12/2016.
  */
-/**
- * Created by Yaakov on 20/12/2016.
- */
 
 import java.io.File;
 import java.io.IOException;
