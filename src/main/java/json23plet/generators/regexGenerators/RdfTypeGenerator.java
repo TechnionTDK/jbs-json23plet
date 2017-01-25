@@ -50,7 +50,7 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         registerGenerator(new TypeRegEx("jbr:tanach-.*", JBO_C_TANACH));
         registerGenerator(new TypeRegEx("jbr:tanach-[1-5]-.*", JBO_C_TORAH));
         registerGenerator(new TypeRegEx("jbr:tanach-[6-9]-.*|jbr:tanach-1[0-9]-.*|jbr:tanach-2[0-6]-.*", JBO_C_NEVIYIM));
-        registerGenerator(new TypeRegEx("jbr:tanach-2[7-9]-/*|jbr:tanach-3[0-9]-.*", JBO_C_KETUVIM));
+        registerGenerator(new TypeRegEx("jbr:tanach-2[7-9]-.*|jbr:tanach-3[0-9]-.*", JBO_C_KETUVIM));
 
         registerGenerator(new IRegExGenerator() { // for <book> type
             String seferPosition ="";
