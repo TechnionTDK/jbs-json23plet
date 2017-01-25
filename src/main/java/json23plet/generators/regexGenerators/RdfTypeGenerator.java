@@ -7,7 +7,6 @@ import org.apache.jena.ontology.OntClass;
 import org.apache.jena.rdf.model.Resource;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static json23plet.modules.Json.json;
 import static json23plet.modules.Regex.regex;
@@ -20,24 +19,49 @@ import static json23plet.ontologies.JbsOntology.*;
  * Created by yon_b on 02/01/17.
  */
 public class RdfTypeGenerator extends BaseRegexGenerator {
+    private class TypeRegEx implements IRegExGenerator {
+        String regex;
+        Resource clazz;
+
+        TypeRegEx(String regex, Resource clazz) {
+            this.regex = regex;
+            this.clazz = clazz;
+        }
+
+        @Override
+        public void generate(Json js) {
+            triplet()
+                    .subject(js.value("uri"))
+                    .predicate(RDF_P_TYPE)
+                    .object(clazz);
+        }
+
+        @Override
+        public boolean match(Json js) {
+            return regex(regex)
+                    .match(js.value("uri"));
+        }
+    }
+
     @Override
     public void registerGenerators() {
-        registerGenerator(new IRegExGenerator() { //Thing type
-            @Override
-            public void generate(Json js) {
-                triplet()
-                        .subject(js.value("uri"))
-                        .predicate(RDF_P_TYPE)
-                        .object(OWL_C_THING);
-            }
-
-            @Override
-            public boolean match(Json json) {
-                return regex("jbr:.*")
-                        .match(json.value("uri"));
-            }
-
-        });
+        registerGenerator(new TypeRegEx("jbr:.*", OWL_C_THING));
+//        registerGenerator(new IRegExGenerator() { //Thing type
+//            @Override
+//            public void generate(Json js) {
+//                triplet()
+//                        .subject(js.value("uri"))
+//                        .predicate(RDF_P_TYPE)
+//                        .object(OWL_C_THING);
+//            }
+//
+//            @Override
+//            public boolean match(Json json) {
+//                return regex("jbr:.*")
+//                        .match(json.value("uri"));
+//            }
+//
+//        });
         registerGenerator(new IRegExGenerator() { // Tanach type
             @Override
             public void generate(Json js) {
