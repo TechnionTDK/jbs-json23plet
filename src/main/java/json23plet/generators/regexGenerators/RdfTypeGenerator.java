@@ -45,102 +45,28 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
 
     @Override
     public void registerGenerators() {
+
         registerGenerator(new TypeRegEx("jbr:.*", OWL_C_THING));
-//        registerGenerator(new IRegExGenerator() { //Thing type
-//            @Override
-//            public void generate(Json js) {
-//                triplet()
-//                        .subject(js.value("uri"))
-//                        .predicate(RDF_P_TYPE)
-//                        .object(OWL_C_THING);
-//            }
-//
-//            @Override
-//            public boolean match(Json json) {
-//                return regex("jbr:.*")
-//                        .match(json.value("uri"));
-//            }
-//
-//        });
-        registerGenerator(new IRegExGenerator() { // Tanach type
-            @Override
-            public void generate(Json js) {
-                triplet()
-                        .subject(js.value("uri"))
-                        .predicate(RDF_P_TYPE)
-                        .object(JBO_C_TANACH);
-            }
+        registerGenerator(new TypeRegEx("jbr:tanach-.*", JBO_C_TANACH));
+        registerGenerator(new TypeRegEx("jbr:tanach-[1-5]-.*", JBO_C_TORAH));
+        registerGenerator(new TypeRegEx("jbr:tanach-[6-9]-.*|jbr:tanach-1[0-9]-.*|jbr:tanach-2[0-6]-.*", JBO_C_NEVIYIM));
+        registerGenerator(new TypeRegEx("jbr:tanach-2[7-9]-/*|jbr:tanach-3[0-9]-.*", JBO_C_KETUVIM));
 
-            @Override
-            public boolean match(Json json) {
-                    return regex("jbr:tanach-.*") //-(.*)-(\d+)-(\d+)-(\d+)
-                            .match(json.value("uri"));
-            }
-        });
-
-        registerGenerator(new IRegExGenerator() { // Torah type
-            @Override
-            public void generate(Json js) {
-                triplet()
-                        .subject(js.value("uri"))
-                        .predicate(RDF_P_TYPE)
-                        .object(JBO_C_TORAH);
-            }
-
-            @Override
-            public boolean match(Json json) {
-                return regex("jbr:tanach-[1-5]-\\d+-\\d+")
-                        .match(json.value("uri"));
-            }
-        });
-
-        registerGenerator(new IRegExGenerator() { // Neviyim type
-            @Override
-            public void generate(Json js) {
-                triplet()
-                        .subject(js.value("uri"))
-                        .predicate(RDF_P_TYPE)
-                        .object(JBO_C_NEVIYIM);
-            }
-
-            @Override
-            public boolean match(Json json) {
-                return regex("jbr:tanach-[6-9]-\\d+-\\d+" +
-                        "|jbr:tanach-1[0-9]-\\d+-\\d+" +
-                        "|jbr:tanach-2[0-6]-\\d+-\\d+")
-                        .match(json.value("uri"));
-            }
-        });
-
-        registerGenerator(new IRegExGenerator() { // Ketuvim type
-            @Override
-            public void generate(Json js) {
-                triplet()
-                        .subject(js.value("uri"))
-                        .predicate(RDF_P_TYPE)
-                        .object(JBO_C_KETUVIM);
-            }
-
-            @Override
-            public boolean match(Json json) {
-                return regex("jbr:tanach-2[7-9]-\\d+-\\d+|jbr:tanach-3[0-9]-\\d+-\\d+")
-                        .match(json.value("uri"));
-            }
-        });
-
-
-        registerGenerator(new IRegExGenerator() { // sefer type
+        registerGenerator(new IRegExGenerator() { // for <book> type
             String seferPosition ="";
-
             /*
                 In JbsOntology there is 39 different books.
                 Instead of writing a rule to each book, we iterating over the JboOntology using JboOntology.model
                 classes and use its jbo:position predicate to map between the json uri and the book name
+
+                Still you can do it by the naive way e.g:
+                registerGenerator(new TypeRegEx("jbr:tanach-1-.*", JBO_C_BERESHIT));
              */
             public void generate(Json js) {
                 for (OntClass c : model.listClasses().toList()) { // c holds the current class such as "Bereshit"
                     if (c.hasProperty(JBO_P_POSITION) //  c has property of jbo:position
                             && c.hasSuperClass(JBO_C_TANACH) // c has superclass of jbo:Tanach
+                            && !c.equals(JBO_C_TORAH) && !c.equals(JBO_C_NEVIYIM) && !c.equals(JBO_C_KETUVIM) // c is not one of them
                             && c.getProperty(JBO_P_POSITION).getObject().toString().equals(seferPosition)) { // c.position equals to the current uri position
                         triplet()
                                 .subject(js.value("uri"))
@@ -149,7 +75,6 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
                         return;
                     }
                 }
-
             }
 
             @Override
@@ -162,66 +87,14 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
             }
         });
 
-        registerGenerator(new IRegExGenerator() { // mishneTorah type
-            @Override
-            public void generate(Json js) {
-                triplet()
-                        .subject(js.value("uri"))
-                        .predicate(RDF_P_TYPE)
-                        .object(JBO_C_MISHNETORAH);
-                triplet()
-                        .subject(js.value("uri"))
-                        .predicate(RDF_P_TYPE)
-                        .object(JBO_C_SEFERHAMITZVOT);
-            }
+        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-.*", JBO_C_MISHNETORAH));
+        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-.*", JBO_C_SEFERHAMITZVOT));
 
-            @Override
-            public boolean match(Json json) {
-                return regex("jbr:seferhamitzvot-\\d+-\\d+")
-                        .match(json.value("uri"));
-            }
-        });
+        registerGenerator(new TypeRegEx("jbr:shmonakvatzim-.*", JBO_C_SIFREYRAVKUK));
+        registerGenerator(new TypeRegEx("jbr:shmonakvatzim-.*", JBO_C_SHEMONAKEVATZIM));
 
-
-        registerGenerator(new IRegExGenerator() { // shmonaKavatzim type
-            @Override
-            public void generate(Json js) {
-                triplet()
-                        .subject(js.value("uri"))
-                        .predicate(RDF_P_TYPE)
-                        .object(JBO_C_SIFREYRAVKUK);
-                triplet()
-                        .subject(js.value("uri"))
-                        .predicate(RDF_P_TYPE)
-                        .object(JBO_C_SHEMONAKEVATZIM);
-            }
-
-            @Override
-            public boolean match(Json json) {
-                return regex("jbr:shmonakvatzim-.*")
-                        .match(json.value("uri"));
-            }
-        });
-
-        registerGenerator(new IRegExGenerator() { // mesilatYesharim type
-            @Override
-            public void generate(Json js) {
-                triplet()
-                        .subject(js.value("uri"))
-                        .predicate(RDF_P_TYPE)
-                        .object(JBO_C_MESILATYESHARIM);
-                triplet()
-                        .subject(js.value("uri"))
-                        .predicate(RDF_P_TYPE)
-                        .object(JBO_C_SIFREYRAMCHAL);
-            }
-
-            @Override
-            public boolean match(Json json) {
-                return regex("jbr:mesilatyesharim-.*")
-                        .match(json.value("uri"));
-            }
-        });
+        registerGenerator(new TypeRegEx("jbr:mesilatyesharim-.*", JBO_C_MESILATYESHARIM));
+        registerGenerator(new TypeRegEx("jbr:mesilatyesharim-.*", JBO_C_SIFREYRAMCHAL));
     }
 
     @Override
