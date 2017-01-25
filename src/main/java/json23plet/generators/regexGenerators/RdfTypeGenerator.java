@@ -49,13 +49,9 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
 
             @Override
             public boolean match(Json json) {
-                try {
+
                     return regex("jbr:tanach-.*") //-(.*)-(\d+)-(\d+)-(\d+)
                             .match(json.value("uri"));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                return false;
             }
         });
 
