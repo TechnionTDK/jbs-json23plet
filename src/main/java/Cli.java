@@ -1,11 +1,11 @@
 /**
  * Created by Yaakov on 20/12/2016.
  */
-/**
- * Created by Yaakov on 20/12/2016.
- */
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -64,14 +64,18 @@ public class Cli {
             }
             if (line.hasOption("init")) {
                 init();
+                System.out.println("Initialization of json23plet has finished successfully");
             }
             if (line.hasOption("ontology")) {
                 String ontologyName = line.getOptionValue("ontology");
                 OntologyGenerator.generate(ontologyName);
+                System.out.println("Creating ontology has finished successfully");
+                System.out.println("Pay attention that after updating an existing ontology you might need to update the related generators");
             }
             if (line.hasOption("generate")) {
                 String[] generateOptions = line.getOptionValues("generate");
                 generate(generateOptions);
+                System.out.println("json23plet has successfully generated the ttl files");
             }
             if (line.hasOption("generateAll")) {
                 generateAll();
@@ -94,7 +98,7 @@ public class Cli {
         formatter.printHelp("json23plet", options);
     }
     private void init() throws IOException {
-        Json23plet.initJson23plet();
+        initJson23plet();
     }
     private void generate(String[] params) throws Exception {
         String gen = params[0];
@@ -116,10 +120,19 @@ public class Cli {
         String param = action.split("=")[0];
         String val = action.split("=")[1];
         switch (param) {
-            case "outputDir": GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR, val); break;
-            case "errorLevel": GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL, val); break;
-            case "genName": setGenConfig(params);
-            default:
+            case "outputDir":
+                GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR, val);
+                System.out.println("output directory has been set to " + val);
+                break;
+            case "errorLevel":
+                GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL, val);
+                System.out.println("error level has been set to " + val);
+                break;
+            case "genName":
+                setGenConfig(params);
+                System.out.println("added configuration successfully");
+                break;
+            default: System.out.println("no such configuration available\ncheck README.md again");
         }
     }
     private void setGenConfig(String[] params) {
@@ -142,5 +155,15 @@ public class Cli {
             }
         }
         GeneratorsUtils.setGenConfig(genName, inputPath, active);
+    }
+
+    public static void initJson23plet() {
+        String[] files = {Paths.get("ontologies", "json").toString(), Paths.get("ontologies", "ttl").toString(), Paths.get("src", "test", "testsFiles").toString()};
+        for (String file : files) {
+            if (!Files.exists(Paths.get(file))) {
+                System.out.println("Creating directory " + file);
+                new File(file).mkdirs();
+            }
+        }
     }
 }

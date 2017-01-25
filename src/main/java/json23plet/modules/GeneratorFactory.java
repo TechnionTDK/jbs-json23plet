@@ -20,9 +20,9 @@ import java.util.Map;
 public class GeneratorFactory {
 
     static public void generate(String gen, String jsonRoot, String outputDirRoot) throws IOException {
+        System.out.println("Activating " + gen + " on " + jsonRoot + "directory...");
         int totalWork = (int) Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).count();
         ProgressBar pb = new ProgressBar(totalWork);
-        System.out.println("Start process files");
         Files.find(Paths.get(jsonRoot), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
             if (FilenameUtils.getExtension(file.toString()).equals("json")) {
                 try {

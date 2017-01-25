@@ -20,14 +20,4 @@ public class Json23plet {
         new Cli(argv).parse();
     }
 
-    public static void initJson23plet() {
-        String[] files = {Paths.get("ontologies", "json").toString(), Paths.get("ontologies", "ttl").toString(), Paths.get("src", "test", "testsFiles").toString()};
-        for (String file : files) {
-            if (!Files.exists(Paths.get(file))) {
-                System.out.println("Creating directory " + file);
-                new File(file).mkdirs();
-            }
-        }
-    }
-
 }

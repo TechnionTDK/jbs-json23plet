@@ -565,66 +565,48 @@
     {
       "uri" : "jbo:mentions",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:domain" : "xsd:anyURI",
-      "rdfs:range" : "xsd:anyURI",
       "rdfs:label" : "mentions"
     },
 
     {
       "uri" : "jbo:interprets",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:domain" : "xsd:anyURI",
-      "rdfs:range" : "xsd:anyURI",
       "rdfs:label" : "interprets"
     },
 
     {
       "uri" : "jbo:content",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:domain" : "xsd:anyURI",
-      "rdfs:range" : "xsd:xstring",
       "rdfs:label" : "content"
     },
     {
       "uri" : "jbo:container",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:domain" : "xsd:anyURI",
-      "rdfs:range" : "xsd:anyURI",
       "rdfs:label" : "container"
     },
     {
       "uri" : "jbo:position",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:domain" : "xsd:anyURI",
-      "rdfs:range" : "xsd:integer",
       "rdfs:label" : "position"
     },
     {
       "uri" : "jbo:text",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:domain" : "xsd:anyURI",
-      "rdfs:range" : "xsd:xstring",
       "rdfs:label" : "text"
     },
     {
       "uri" : "jbo:textNikud",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:domain" : "xsd:anyURI",
-      "rdfs:range" : "xsd:xstring",
       "rdfs:label" : "textNikud"
     },
     {
       "uri" : "jbo:positionInPerek",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:domain" : "xsd:anyURI",
-      "rdfs:range" : "xsd:integer",
       "rdfs:label" : "positionInPerek"
     },
     {
       "uri" : "jbo:positionInParasha",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:domain" : "xsd:anyURI",
-      "rdfs:range" : "xsd:integer",
       "rdfs:label" : "positionInPerek"
     }
   ]

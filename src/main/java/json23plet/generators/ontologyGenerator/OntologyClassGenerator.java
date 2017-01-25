@@ -14,6 +14,10 @@ import org.apache.jena.rdf.model.Resource;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.nio.file.FileSystem;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,15 +42,19 @@ public class OntologyClassGenerator {
         createPredicatesComponent(oc);
 
         File file = new File(Paths.get("src", "main", "java").toString());
+        System.out.print("json23plet has created " + clssName + ".java file in ");
         om.build(file);
     }
 
     static private void createOntModelComponent(JDefinedClass oc, String clssName) {
+        JFieldVar paths = oc.field(JMod.PRIVATE | JMod.STATIC, Paths.class, "paths");
+        JFieldVar ontPath = oc.field(JMod.PUBLIC | JMod.STATIC, Path.class, "ontPath");
+        ontPath.init(JExpr.direct("Paths.get(\"ontologies\", \"ttl\", \"" + clssName + "\" + \".ttl\")"));
         JFieldVar model = oc.field(JMod.PUBLIC | JMod.STATIC, ModelFactory.class, "smodel");
 
         JFieldVar ontModel = oc.field(JMod.PUBLIC | JMod.STATIC, OntModel.class, "model");
-        ontModel.init(JExpr.direct("(OntModel) ((OntModel) ModelFactory.createOntologyModel()).read(\"" +
-                Paths.get("ontologies", "ttl", clssName + ".ttl") + "\")"));
+        ontModel.init(JExpr.direct("(OntModel) ((OntModel) ModelFactory.createOntologyModel()).read(" +
+                "ontPath.toString())"));
     }
 
     static private void createPrefixesComponent(JDefinedClass oc) {
