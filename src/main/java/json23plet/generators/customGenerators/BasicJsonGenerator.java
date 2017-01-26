@@ -21,6 +21,11 @@ public class BasicJsonGenerator extends Generator {
             e.printStackTrace();
         }
         GeneratorsUtils.generateBasicJsonForm("subjects");
-        DataPublisher.publish("", ".ttl", "TURTLE");
+        DataPublisher.publish("", "." + getID() + ".ttl", "TURTLE");
+    }
+
+    @Override
+    public String getID() {
+        return "basic";
     }
 }

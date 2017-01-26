@@ -5,4 +5,6 @@ package json23plet.generators.customGenerators;
  */
 abstract public class Generator {
     abstract public void generate();
+
+    abstract public String getID();
 }

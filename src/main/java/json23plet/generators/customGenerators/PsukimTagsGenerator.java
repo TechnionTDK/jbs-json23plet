@@ -33,6 +33,11 @@ public class PsukimTagsGenerator extends Generator {
                         .object(tag.value(URI));
             }
         }
-        DataPublisher.publish("", ".ttl", "TURTLE");
+        DataPublisher.publish("", "." + getID() + ".ttl", "TURTLE");
+    }
+
+    @Override
+    public String getID() {
+        return "psukimTags";
     }
 }

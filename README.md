@@ -11,31 +11,34 @@ A command-line tool for generating RDF triplets from Jsons input
 
 1. Run "./json23plet.sh -b" to build the json23plet project
 
-1. Run "git update-index --assume-unchanged config.json"
+1. Run "git update-index --assume-unchanged config.json". <br />
+this command will prevent from your local config.json to be pushed into the GitHub repository
 
 # Usage
 
 ##### Init the project directories
-* Run "./json23plet.sh -init
+* Run "./json23plet.sh -init <br />
+The -init command initiate the folders tree of the project.
 
 ##### Config the output root directory
-* Run "./json23plet.sh -config outputDir=\<myOutputDir\>"
+* Run "./json23plet.sh -config outputDir=myOutputDir" <br />
+This command initiate the root directory where the output will be generated.
 
 ##### Run single generator:
-* Run "./json23plet.sh -generate \<generatorName\> \<dataInputRootDir\>"
+* Run "./json23plet.sh -generate generatorName dataInputRootDir"
 * In case of using the basic generator (see [Json File Formats](README.md#json-files-format)). <br /> Run "./json23plet.sh -generate basic \<dataInputRootDir\>" 
 
 ##### Run multiple generators:
-1. [Config](README.md#add-configuration-for-a-new-generator) the generators that you want to run in jbs-json23plet/src/main/java/json23plet/generators/config.json
+1. [Config](README.md#add-configuration-for-a-new-generator) the generators that you want to run in jbs-json23plet/config.json
 1. Run "./json23plet.sh -generateAll"
 
 ##### Create a new generator:
-1. Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/main/java/json23plet/generators directory.<br /> For [regExGenerator](README.md#regexgenerator) drop it in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators directory
+1. Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/main/java/json23plet/generators/customGenerators directory.<br /> For [regExGenerator](README.md#regexgenerator) drop it in jbs-json23plet/src/main/java/json23plet/generators/regexGenerators directory
 1. Run "./json23plet.sh -b" to rebuild the json23plet project
 
 ##### Create a new ontology from a json file:
 1. Drop myOntology.json in jbs-json23plet/ontologies/json
-1. Run "./json23plet.sh -ontology \<myOntology\>"
+1. Run "./json23plet.sh -ontology myOntology"
 1. The myOntology.ttl file will be created in jbs-json23plet/ontologies/ttl
 1. The myOntology.java will be created in jbs-json23plet/src/main/java/json23plet/ontologies
 1. Run "./json23plet.sh -b" to rebuild the json23plet project
@@ -43,46 +46,57 @@ A command-line tool for generating RDF triplets from Jsons input
 Note: While changing an existing ontology, there might  be some generators that use the old ontology properties, if so you have to update them, otherwise the project wont build due to compilations errors.
 
 ##### Add configuration for a new generator
-* Run "./json23plet -config  genName=\<generatorName\> inputPath=\<MyInputPath\> active=\<activeState\>" (the \<activeState\> field gets either true or false)
+* Run "./json23plet -config  genName=generatorName inputPath=MyInputPath active=activeState" (the activeState field gets either true or false) <br />
+This command will create a new configuration for your generator in the jbs-json23plet/config.json file. <br />
+You can also edit it manually. 
 
 ##### Edit configuration for an existing generator
-1. Run "./json23plet -config genName=\<generatorName\> inputPath=\<MyInputPath\> active=\<activeState\>"
-1. The propertyName can be one of the following only: {name, input, active}
+1. Run "./json23plet -config genName=generatorName inputPath=MyInputPath active=activeState" <br />
+If a generator with this name is already exist the command will edit the generator fields, else it will create a new configuration.
 
 ##### Edit configuration of global setting
-1. Run "./json23plet -config outputDir=\<myOutputDir>\>" to set a new output directory
-1.  Run "./json23plet -config errorLevel=\<level>\>" to set a new errorLevel. <br /> ErrorLevel indicate eaht would happens if the validator facing an error: <br />
-    * none - Nothing will happen.
-    * info - The errors will display.
-    * stop - On error stop execution.
-    
-# Components
+1. Run "./json23plet -config outputDir=myOutputDir" to set a new output directory
+1.  Run "./json23plet -config errorLevel=level" to set a new errorLevel. <br /> ErrorLevel indicate eaht would happens if the validator facing an error: <br />
+    * low - Nothing will happen.
+    * medium - The errors will display.
+    * high - On error stop execution.
 
-### Ontologies
+# Ontologies
 To generate new ontology you should create ontology.json file. <br />
 the format of the json should be as described:
 
     {
-        "prefixes" : [ 
-            {   
-                "prefix" : yourPrefix,
-                "uri" : prefixUri
-            },
-            ...             
-        ]
-        "metadata" : [
+        "prefixes" : [
             {
-                "uri" : subjectUri,
-                property : object,
-                ...
+              "prefix" : "jbo",
+              "uri" : "http://jbs.technion.ac.il/ontology/"
+            },
+            {
+              "prefix" : "jbr",
+              "uri" : "http://jbs.technion.ac.il/resource/"
+            },
+            ...
+          ],
+          "metadata" : [
+            {
+              "uri" : "jbo:Tanach",
+              "rdf:type" : "owl:Class", //<----require predicate//
+              "rdfs:label" : "Tanach",
+              "rdfs:subClassOf" : "owl:Thing"
+              ...
             },
             ...
         ]
     }
-(See example in jbs-json23plet/ontologies/json/JbsOntology.json)
+(See example in jbs-json23plet/ontologies/json/JbsOntology.json) <br />
+The uri and rdf:type predicate are required.
 
 After you generate the ontology (using -ontology flag), an ontology.ttl file will be created in jbs-json23plet/ontologies/ttl, (and you can load it to your server).<br />
-Note: do not remove this file, because json23plet uses it to load your ontology while generate new ttl files in your project.<br />The ontology.java class file will be created in jbs-json23plet/src/main/java/json23plet/ontologies, this file contains some definitions of your ontology and can be used while writing a new generator.<br />
+
+Note: Do not remove this file, because json23plet uses it to load your ontology while generate new ttl files in your project.<br />The ontology.java class file will be created in jbs-json23plet/src/main/java/json23plet/ontologies, this file contains some definitions of your ontology and can be used while writing a new generator.<br />
+
+Note: After changing an existing ontology there might have some generators which are still using the old ontology definitions. If so you have to update them or you will get compilation errors.
+
 Note: you have to rebuild the project using "./json23plet.sh -b" command.
 
 ### Triplet
