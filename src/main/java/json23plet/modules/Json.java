@@ -28,11 +28,21 @@ public class Json {
 
         currentElement = root.get().getAsJsonObject();
     }
+
+    /**
+     * Return new Json object.
+     * @return New Json object.
+     */
     static public Json json() {
 
         return new Json();
     }
 
+    /**
+     * Get the value of a json key as list of Json objects.
+     * @param member: the json key name.
+     * @return the list pointed by the key as list of Json objects.
+     */
     public List<Json> getAsArray(String member) {
         List<Json> res = new ArrayList<Json>();
         for (JsonElement e : currentElement.getAsJsonArray(member)) {
@@ -41,21 +51,40 @@ public class Json {
         return res;
     }
 
+    /**
+     * Get the value of a json key as Json object.
+     * @param member: the json key name.
+     * @return the object pointed by the key as Json object.
+     */
     public Json getAsObject(String member) {
         currentElement = currentElement.getAsJsonObject(member);
         return this;
     }
 
+    /**
+     * Get the current Json object.
+     * @return Json object representing the current json.
+     */
     public Json getAsObject() {
         currentElement = currentElement.getAsJsonObject();
         return this;
     }
 
+    /**
+     * Get the primitive value of a json key as String.
+     * @param member: the json key name.
+     * @return primitive String pointed by the key.
+     */
     public String value(String member) {
 
         return currentElement.get(member).getAsString();
     }
 
+    /**
+     * Check if a Json has some key.
+     * @param member: the key to check if exist.
+     * @return true if exist false if not.
+     */
     public boolean has(String member) {
         return currentElement.has(member);
     }
@@ -69,6 +98,7 @@ public class Json {
         }
     }
 
+    
     public Map<String, Json> getAsDictionary() {
         Set<Map.Entry<String, JsonElement>> entries = currentElement
                 .entrySet();
@@ -88,6 +118,10 @@ public class Json {
         return res;
     }
 
+    /**
+     * Get all the json keys as List of Strings.
+     * @return List of Strings represents the json keys
+     */
     public List<String> getJsonKeys() {
         return currentElement
                 .entrySet()
