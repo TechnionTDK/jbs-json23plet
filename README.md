@@ -31,15 +31,21 @@ and run it through json23plet
 ## Background
 This project was devleoped as part of the JBS (Jewish Book Shelf) project in the [TDK lab](http://tdk.net.technion.ac.il/).
 
-# Usage
 
-##### Init the project directories
-* Run "./json23plet.sh -init <br />
-The -init command initiate the folders tree of the project.
+## json23plet commands
 
-##### Config the output root directory
-* Run "./json23plet.sh -config outputDir=myOutputDir" <br />
-This command initiate the root directory where the output will be generated.
+### Init the project directories
+The command initializes the direcories tree of the project
+
+      ./json23plet.sh -init
+
+### Config the output root directory
+The command sets up the output roor directory. <br />
+This setting will be saved in the config.json file. <br/>
+The input directories tree will be reflected in this directory.
+
+      ./json23plet.sh -config outputDir=myOutputDir
+
 
 ##### Run single generator:
 * Run "./json23plet.sh -generate generatorName dataInputRootDir"
