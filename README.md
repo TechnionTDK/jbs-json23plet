@@ -1,18 +1,27 @@
 # json23plet
 A command-line tool for generating RDF triplets from Jsons input
 
-# Installation
+## Getting Started
 
-1. Install maven on your machine. to do so, type mvn in your command line and follow instructions
+### Prerequisites
+Install maven on your machine.
+
+      apt-get install maven
+      
+### Installation
 
 1. Git clone jbs-json23plet repository to a directory
 
-1. Go into the jbs-json23plet directory
+         git clone git@github.com:TechnionTDK/jbs-json23plet.git
 
-1. Run "./json23plet.sh -b" to build the json23plet project
+1. Go into jbs-json23plet/ and build the project
 
-1. Run "git update-index --assume-unchanged config.json". <br />
-this command will prevent from your local config.json to be pushed into the GitHub repository
+         ./json23plet.sh -b
+      
+1. Untrack the configuration file from git
+
+         git update-index --assume-unchanged config.json
+   this command will prevent from your local config.json to be pushed into the GitHub repository
 
 # Usage
 
