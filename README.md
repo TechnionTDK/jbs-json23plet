@@ -24,7 +24,7 @@ Install maven on your machine.
    this command will prevent from your local config.json to be pushed into the GitHub repository
 
 ## What is this?
-json23plet is a linux command line tool to generate [RDF triplets](https://en.wikipedia.org/wiki/Resource_Description_Framework) in TURTLE(.ttl) format from json files.
+json23plet is a linux command line tool to generate [RDF triplets](https://en.wikipedia.org/wiki/Resource_Description_Framework) in TURTLE (.ttl) format from json files. <br/>
 You can write your own generators for your specific json format files and according to your own ontology
 and run it through json23plet
 
@@ -34,7 +34,7 @@ This project was devleoped as part of the JBS (Jewish Book Shelf) project in the
 ## json23plet components
 
 ### Ontologies
-To generate new ontology you should create ontology.json file. <br />
+To generate new ontology you should create ontology.json file. <br/>
 the format of the json should be as described:
 
     {
@@ -60,21 +60,67 @@ the format of the json should be as described:
             ...
         ]
     }
-(See example in jbs-json23plet/ontologies/json/JbsOntology.json) <br />
+(See example in jbs-json23plet/ontologies/json/JbsOntology.json) <br/>
 The uri and rdf:type predicate are required.
 
 To use your ontology you have to first generate it using:
 
       ./json23plet -ontology myOntology
       
-After generating an ontology.ttl file will be created in jbs-json23plet/ontologies/ttl, (and you can load it to your server). <br/>
-***Note:*** Do not remove this file, because json23plet uses it to load your ontology during generating new ttl files in your project.<br />The ontology.java class file will be created in jbs-json23plet/src/main/java/json23plet/ontologies, this file contains some definitions of your ontology and can be used during writing a new generator.<br />
+After generating an ontology.ttl file will be created in jbs-json23plet/ontologies/ttl, (and you can load it to your server).<br/>
+***Note:*** Do not remove this file, because json23plet uses it to load your ontology during generating new ttl files in your project.
 
-***Note:*** After changing an existing ontology there might have some generators which are still using the old ontology definitions. If so you have to update them or you will get compilation errors.
+The ontology.java class file will be created in jbs-json23plet/src/main/java/json23plet/ontologies, this file contains some definitions of your ontology and can be used during writing a new generator.<br/>
+
+***Note:*** After changing an existing ontology there might have some generators which are still using the old ontology definitions. If so, you have to update them or you will get compilation errors.
 
 Rebuild the project using:
 
       ./json23plet.sh -b
+
+### Json
+In order to write your own generator, you will need to use this component that helps you parsing the json file.<br />
+
+|Json method | arguments | outpu | Node Type Number | Node Class | Actual class | Abstract class |
+
+    Json
+    .json()
+    .getAsSomeObject(String) // might also be void, read the code.
+    
+(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java)
+
+### Generators
+By using this, you can generate a new RDF triplet file from your json file.
+
+#### Json files format
+Basically you can choose your own foramt and write your own generator for it ([as explained later](README.md#generators)).
+<br />However we recommend using the following format that avoids creating a new generator:
+
+    {
+        "subjects" : [
+            { "uri" : subjectUri,
+              Property : Object, // the object can be also list of objects : [object1, object2, ...] 
+              ...
+            },
+            ....
+        ]
+    }
+
+Using this format allow you to run "./json23plet.sh -generate basic \<dataInputRootDir\>" instead of creating your own generator.
+
+
+
+
+
+1. Write MyGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators directory.
+<br />the generator has to extend the generator class and implement the generate function:
+
+        public void generate();
+
+1. Run "./json23plet -b" to rebuild the project. 
+1. Run "./json23plet.sh -generate MyGenerator \<dataInputRootDir\>".
+ 
+(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java).
 
 ## json23plet commands
 
@@ -128,7 +174,6 @@ If a generator with this name is already exist the command will edit the generat
     * medium - The errors will display.
     * high - On error stop execution.
 
-# Ontologies
 
 
 ### Triplet
@@ -158,19 +203,7 @@ Basically you can choose your own foramt and write your own generator for it ([a
 
 Using this format allow you to run "./json23plet.sh -generate basic \<dataInputRootDir\>" instead of creating your own generator.
 
-### Generators
-Allows to generate a new ttl file from json file.<br />
-Using:
 
-1. Write MyGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators directory.
-<br />the generator has to extend the generator class and implement the generate function:
-
-        public void generate();
-
-1. Run "./json23plet -b" to rebuild the project. 
-1. Run "./json23plet.sh -generate MyGenerator \<dataInputRootDir\>".
- 
-(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java).
 
 ### Json
 In order to write your own generator, you will need to parse your json.<br />
