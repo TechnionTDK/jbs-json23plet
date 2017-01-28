@@ -7,7 +7,7 @@ A command-line tool for generating RDF triplets from Jsons input
 Install maven on your machine.
 
       apt-get install maven
-      
+
 ### Installation
 
 1. Git clone jbs-json23plet repository to a directory
@@ -22,6 +22,12 @@ Install maven on your machine.
 
          git update-index --assume-unchanged config.json
    this command will prevent from your local config.json to be pushed into the GitHub repository
+
+## What is this?
+json23plet is a linux command line tool to generate [RDF triplets](https://en.wikipedia.org/wiki/Resource_Description_Framework) in TURTLE(.ttl) format from json files.
+You can write your own generators for your specific json format files and according to your own ontology
+and run it through json23plet
+
 
 # Usage
 
