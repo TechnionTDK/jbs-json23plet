@@ -14,7 +14,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Created by yon_b on 28/11/16.
+ * Triplet component of json23plet
+ * Wraps Apache Jena API for clean and convenient generating triplet usage.
  */
 public class Triplet {
     static private ThreadLocal<OntModel> model = new ThreadLocal<>();
@@ -23,9 +24,15 @@ public class Triplet {
     private Property predicate = null;
     private RDFNode object = null;
 
+    /**
+     * Creates and returns an new object of Triplet.
+     *
+     * @return New object of Triplet.
+     */
     static public Triplet triplet() {
         return new Triplet();
     }
+
     static public void Init() {
         model.set(ModelFactory.createOntologyModel());
         try {
@@ -89,26 +96,46 @@ public class Triplet {
         }
         return uri.split(":")[1];
     }
+    /**
+     * Adds a subject to the triplet.
+     *
+     * @param sub The triplet's subject
+     * @return The triplet after adding the subject.
+     */
     public Triplet subject(String sub) {
         subject = ResourceFactory.createResource(getUri(sub) + getSuffix(sub));
         addStatement();
         return this;
     }
 
+    /** Adds a predicate to the triplet.
+    *
+    * @param pre The triplet's predicate
+    * @return The triplet after adding the predicate.
+    */
     public Triplet predicate(String pre) {
         predicate = ResourceFactory.createProperty(getUri(pre) + getSuffix(pre));
         addStatement();
         return this;
     }
-
+    /** Adds a predicate to the triplet.
+     *
+     * @param pre The triplet's predicate
+     * @return The triplet after adding the predicate.
+     */
     public Triplet predicate(Property pre) {
         predicate = pre;
         addStatement();
         return this;
     }
 
+    /** Adds na object to the triplet.
+     *
+     * @param obj The triplet's object
+     * @return The triplet after adding the object.
+     */
     public Triplet object(String obj) {
-        if (obj.contains(":") && isModelPrefix(obj.split(":")[0])) { //TODO: bug alert!!
+        if (obj.contains(":") && isModelPrefix(obj.split(":")[0])) {
             object = ResourceFactory.createResource(getUri(obj) + getSuffix(obj));
         } else {
             object = ResourceFactory.createPlainLiteral(obj);
@@ -116,6 +143,12 @@ public class Triplet {
         addStatement();
         return this;
     }
+
+    /** Adds an object to the triplet.
+     *
+     * @param obj The triplet's object
+     * @return The triplet after adding the object.
+     */
     public Triplet object(Resource obj) {
         object = obj;
         addStatement();
