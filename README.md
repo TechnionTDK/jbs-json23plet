@@ -81,8 +81,6 @@ Rebuild the project using:
 ### Json
 In order to write your own generator, you will need to use this component that helps you parsing the json file.<br />
 
-|Json method | arguments | outpu | Node Type Number | Node Class | Actual class | Abstract class |
-
     Json
     .json()
     .getAsSomeObject(String) // might also be void, read the code.
