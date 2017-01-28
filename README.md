@@ -31,6 +31,50 @@ and run it through json23plet
 ## Background
 This project was devleoped as part of the JBS (Jewish Book Shelf) project in the [TDK lab](http://tdk.net.technion.ac.il/).
 
+## json23plet components
+
+### Ontologies
+To generate new ontology you should create ontology.json file. <br />
+the format of the json should be as described:
+
+    {
+        "prefixes" : [
+            {
+              "prefix" : "jbo",
+              "uri" : "http://jbs.technion.ac.il/ontology/"
+            },
+            {
+              "prefix" : "jbr",
+              "uri" : "http://jbs.technion.ac.il/resource/"
+            },
+            ...
+          ],
+          "metadata" : [
+            {
+              "uri" : "jbo:Tanach",
+              "rdf:type" : "owl:Class", //<----required predicate//
+              "rdfs:label" : "Tanach",
+              "rdfs:subClassOf" : "owl:Thing"
+              ...
+            },
+            ...
+        ]
+    }
+(See example in jbs-json23plet/ontologies/json/JbsOntology.json) <br />
+The uri and rdf:type predicate are required.
+
+To use your ontology you have to first generate it using:
+
+      ./json23plet -ontology myOntology
+      
+After generating an ontology.ttl file will be created in jbs-json23plet/ontologies/ttl, (and you can load it to your server). <br/>
+***Note:*** Do not remove this file, because json23plet uses it to load your ontology during generating new ttl files in your project.<br />The ontology.java class file will be created in jbs-json23plet/src/main/java/json23plet/ontologies, this file contains some definitions of your ontology and can be used during writing a new generator.<br />
+
+***Note:*** After changing an existing ontology there might have some generators which are still using the old ontology definitions. If so you have to update them or you will get compilation errors.
+
+Rebuild the project using:
+
+      ./json23plet.sh -b
 
 ## json23plet commands
 
@@ -47,7 +91,7 @@ The input directories tree will be reflected in this directory.
       ./json23plet.sh -config outputDir=myOutputDir
 
 
-##### Run single generator:
+#### Run single generator:
 * Run "./json23plet.sh -generate generatorName dataInputRootDir"
 * In case of using the basic generator (see [Json File Formats](README.md#json-files-format)). <br /> Run "./json23plet.sh -generate basic \<dataInputRootDir\>" 
 
@@ -85,42 +129,7 @@ If a generator with this name is already exist the command will edit the generat
     * high - On error stop execution.
 
 # Ontologies
-To generate new ontology you should create ontology.json file. <br />
-the format of the json should be as described:
 
-    {
-        "prefixes" : [
-            {
-              "prefix" : "jbo",
-              "uri" : "http://jbs.technion.ac.il/ontology/"
-            },
-            {
-              "prefix" : "jbr",
-              "uri" : "http://jbs.technion.ac.il/resource/"
-            },
-            ...
-          ],
-          "metadata" : [
-            {
-              "uri" : "jbo:Tanach",
-              "rdf:type" : "owl:Class", //<----require predicate//
-              "rdfs:label" : "Tanach",
-              "rdfs:subClassOf" : "owl:Thing"
-              ...
-            },
-            ...
-        ]
-    }
-(See example in jbs-json23plet/ontologies/json/JbsOntology.json) <br />
-The uri and rdf:type predicate are required.
-
-After you generate the ontology (using -ontology flag), an ontology.ttl file will be created in jbs-json23plet/ontologies/ttl, (and you can load it to your server).<br />
-
-Note: Do not remove this file, because json23plet uses it to load your ontology while generate new ttl files in your project.<br />The ontology.java class file will be created in jbs-json23plet/src/main/java/json23plet/ontologies, this file contains some definitions of your ontology and can be used while writing a new generator.<br />
-
-Note: After changing an existing ontology there might have some generators which are still using the old ontology definitions. If so you have to update them or you will get compilation errors.
-
-Note: you have to rebuild the project using "./json23plet.sh -b" command.
 
 ### Triplet
 While creating a new generator you may use the Triplet class.<br />
