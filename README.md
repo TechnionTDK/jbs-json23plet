@@ -28,6 +28,8 @@ json23plet is a linux command line tool to generate [RDF triplets](https://en.wi
 You can write your own generators for your specific json format files and according to your own ontology
 and run it through json23plet
 
+## Background
+This project was devleoped as part of the JBS (Jewish Book Shelf) project in the [TDK lab](http://tdk.net.technion.ac.il/).
 
 # Usage
 
