@@ -58,368 +58,375 @@
       "rdfs:label" : "SifreyRamchal",
       "rdfs:subClassOf" : "owl:Thing"
     },
-	
+
 	{
-      "uri" : "jbo:Torah",
+      "uri" : "jbo:Pasuk",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Torah",
-      "rdfs:subClassOf" : "jbo:Tanach",
-	  "jbo:position" : "1"
+      "rdfs:label" : "Pasuk",
+      "rdfs:subClassOf" : "jbo:Tanach"
     },
-	
-	{
-      "uri" : "jbo:Neviyim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "Neviyim",
-      "rdfs:subClassOf" : "jbo:Tanach",
-	  "jbo:position" : "2"
-    },
-	
-	{
-      "uri" : "jbo:Ketuvim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "Ketuvim",
-      "rdfs:subClassOf" : "jbo:Tanach",
-	  "jbo:position" : "3"
-    },
-	
+
 	{
       "uri" : "jbo:PerushTanach",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "PerushTanach",
       "rdfs:subClassOf" : "jbo:Tanach"
     },
-
+	
 	{
-      "uri" : "jbo:Bereshit",
+      "uri" : "jbo:PasukTorah",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Bereshit",
-      "rdfs:subClassOf" : "jbo:Torah",
+      "rdfs:label" : "PasukTorah",
+      "rdfs:subClassOf" : "jbo:Pasuk",
 	  "jbo:position" : "1"
     },
 	
 	{
-      "uri" : "jbo:Shemot",
+      "uri" : "jbo:PasukNeviyim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Shemot",
-      "rdfs:subClassOf" : "jbo:Torah",
+      "rdfs:label" : "PasukNeviyim",
+      "rdfs:subClassOf" : "jbo:Pasuk",
 	  "jbo:position" : "2"
     },
-
+	
 	{
-      "uri" : "jbo:Vayikra",
+      "uri" : "jbo:PasukKetuvim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Vayikra",
-      "rdfs:subClassOf" : "jbo:Torah",
+      "rdfs:label" : "PasukKetuvim",
+      "rdfs:subClassOf" : "jbo:Pasuk",
 	  "jbo:position" : "3"
     },
 
 	{
-      "uri" : "jbo:Bamidbar",
+      "uri" : "jbo:PasukBereshit",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Bamidbar",
-      "rdfs:subClassOf" : "jbo:Torah",
+      "rdfs:label" : "PasukBereshit",
+      "rdfs:subClassOf" : "jbo:PasukTorah",
+	  "jbo:position" : "1"
+    },
+	
+	{
+      "uri" : "jbo:PasukShemot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PasukShemot",
+      "rdfs:subClassOf" : "jbo:PasukTorah",
+	  "jbo:position" : "2"
+    },
+
+	{
+      "uri" : "jbo:PasukVayikra",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PasukVayikra",
+      "rdfs:subClassOf" : "jbo:PasukTorah",
+	  "jbo:position" : "3"
+    },
+
+	{
+      "uri" : "jbo:PasukBamidbar",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PasukBamidbar",
+      "rdfs:subClassOf" : "jbo:PasukTorah",
 	  "jbo:position" : "4"
     },
 
 	{
-      "uri" : "jbo:Devarim",
+      "uri" : "jbo:PasukDevarim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Devarim",
-      "rdfs:subClassOf" : "jbo:Torah",
+      "rdfs:label" : "PasukDevarim",
+      "rdfs:subClassOf" : "jbo:PasukTorah",
 	  "jbo:position" : "5"
     },	
 
 	{
-      "uri" : "jbo:Yehoshua",
+      "uri" : "jbo:PasukYehoshua",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Yehoshua",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukYehoshua",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "6"
     },
 
 	{
-      "uri" : "jbo:Shoftim",
+      "uri" : "jbo:PasukShoftim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Shoftim",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukShoftim",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "7"
     },
 
 	{
-      "uri" : "jbo:ShemuelA",
+      "uri" : "jbo:PasukShemuelA",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "ShemuelA",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukShemuelA",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "8"
     },
 
 	{
-      "uri" : "jbo:ShemuelB",
+      "uri" : "jbo:PasukShemuelB",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "ShemuelB",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukShemuelB",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "9"
     },
 
 	{
-      "uri" : "jbo:MelachimA",
+      "uri" : "jbo:PasukMelachimA",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MelachimA",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukMelachimA",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "10"
     },
 
 	{
-      "uri" : "jbo:MelachimB",
+      "uri" : "jbo:PasukMelachimB",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MelachimB",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukMelachimB",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "11"
     },
 
 	{
-      "uri" : "jbo:Yeshaaya",
+      "uri" : "jbo:PasukYeshaaya",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Yeshaaya",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukYeshaaya",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "12"
     },
 
 	{
-      "uri" : "jbo:Yirmiya",
+      "uri" : "jbo:PasukYirmiya",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Yirmiya",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukYirmiya",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "13"
     },
 
 	{
-      "uri" : "jbo:Yechezkel",
+      "uri" : "jbo:PasukYechezkel",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Yechezkel",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukYechezkel",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "14"
     },
 
 	{
-      "uri" : "jbo:Hoshea",
+      "uri" : "jbo:PasukHoshea",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Hoshea",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukHoshea",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "15"
     },
 
 	{
-      "uri" : "jbo:Yoel",
+      "uri" : "jbo:PasukYoel",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Yoel",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukYoel",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "16"
     },
 
 	{
-      "uri" : "jbo:Amos",
+      "uri" : "jbo:PasukAmos",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Amos",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukAmos",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "17"
     },
 
 	{
-      "uri" : "jbo:Ovadya",
+      "uri" : "jbo:PasukOvadya",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Ovadya",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukOvadya",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "18"
     },
 
 	{
-      "uri" : "jbo:Yona",
+      "uri" : "jbo:PasukYona",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Yona",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukYona",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "19"
     },
 
 	{
-      "uri" : "jbo:Micha",
+      "uri" : "jbo:PasukMicha",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Micha",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukMicha",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "20"
     },
 
 	{
-      "uri" : "jbo:Nachum",
+      "uri" : "jbo:PasukNachum",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Nachum",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukNachum",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "21"
     },
 
 	{
-      "uri" : "jbo:Chavakuk",
+      "uri" : "jbo:PasukChavakuk",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Chavakuk",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukChavakuk",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "22"
     },
 
 	{
-      "uri" : "jbo:Tzefanya",
+      "uri" : "jbo:PasukTzefanya",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Tzefanya",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukTzefanya",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "23"
     },
 
 	{
-      "uri" : "jbo:Chagay",
+      "uri" : "jbo:PasukChagay",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Chagay",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukChagay",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "24"
     },
 
 	{
-      "uri" : "jbo:Zecharya",
+      "uri" : "jbo:PasukZecharya",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Zecharya",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukZecharya",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "25"
     },
 
 	{
-      "uri" : "jbo:Malachi",
+      "uri" : "jbo:PasukMalachi",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Malachi",
-      "rdfs:subClassOf" : "jbo:Neviyim",
+      "rdfs:label" : "PasukMalachi",
+      "rdfs:subClassOf" : "jbo:PasukNeviyim",
 	  "jbo:position" : "26"
     },
 
 	{
-      "uri" : "jbo:Tehilim",
+      "uri" : "jbo:PasukTehilim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Tehilim",
-      "rdfs:subClassOf" : "jbo:Ketuvim",
+      "rdfs:label" : "PasukTehilim",
+      "rdfs:subClassOf" : "jbo:PasukKetuvim",
 	  "jbo:position" : "27"
     },
 
 	{
-      "uri" : "jbo:Mishley",
+      "uri" : "jbo:PasukMishley",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Mishley",
-      "rdfs:subClassOf" : "jbo:Ketuvim",
+      "rdfs:label" : "PasukMishley",
+      "rdfs:subClassOf" : "jbo:PasukKetuvim",
 	  "jbo:position" : "28"
     },
 
 	{
-      "uri" : "jbo:Iyov",
+      "uri" : "jbo:PasukIyov",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Iyov",
-      "rdfs:subClassOf" : "jbo:Ketuvim",
+      "rdfs:label" : "PasukIyov",
+      "rdfs:subClassOf" : "jbo:PasukKetuvim",
 	  "jbo:position" : "29"
     },
 
 	{
-      "uri" : "jbo:ShirHashirim",
+      "uri" : "jbo:PasukShirHashirim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "ShirHashirim",
-      "rdfs:subClassOf" : "jbo:Ketuvim",
+      "rdfs:label" : "PasukShirHashirim",
+      "rdfs:subClassOf" : "jbo:PasukKetuvim",
 	  "jbo:position" : "30"
     },
 
 	{
-      "uri" : "jbo:Rut",
+      "uri" : "jbo:PasukRut",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Rut",
-      "rdfs:subClassOf" : "jbo:Ketuvim",
+      "rdfs:label" : "PasukRut",
+      "rdfs:subClassOf" : "jbo:PasukKetuvim",
 	  "jbo:position" : "31"
     },
 
 	{
-      "uri" : "jbo:Eycha",
+      "uri" : "jbo:PasukEycha",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Eycha",
-      "rdfs:subClassOf" : "jbo:Ketuvim",
+      "rdfs:label" : "PasukEycha",
+      "rdfs:subClassOf" : "jbo:PasukKetuvim",
 	  "jbo:position" : "32"
     },
 
 	{
-      "uri" : "jbo:Kohelet",
+      "uri" : "jbo:PasukKohelet",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Kohelet",
-      "rdfs:subClassOf" : "jbo:Ketuvim",
+      "rdfs:label" : "PasukKohelet",
+      "rdfs:subClassOf" : "jbo:PasukKetuvim",
 	  "jbo:position" : "33"
     },
 
 	{
-      "uri" : "jbo:Ester",
+      "uri" : "jbo:PasukEster",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Ester",
-      "rdfs:subClassOf" : "jbo:Ketuvim",
+      "rdfs:label" : "PasukEster",
+      "rdfs:subClassOf" : "jbo:PasukKetuvim",
 	  "jbo:position" : "34"
     },
 
 	{
-      "uri" : "jbo:Daniel",
+      "uri" : "jbo:PasukDaniel",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Daniel",
-      "rdfs:subClassOf" : "jbo:Ketuvim",
+      "rdfs:label" : "PasukDaniel",
+      "rdfs:subClassOf" : "jbo:PasukKetuvim",
 	  "jbo:position" : "35"
     },
 
 	{
-      "uri" : "jbo:Ezra",
+      "uri" : "jbo:PasukEzra",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Ezra",
-      "rdfs:subClassOf" : "jbo:Ketuvim",
+      "rdfs:label" : "PasukEzra",
+      "rdfs:subClassOf" : "jbo:PasukKetuvim",
 	  "jbo:position" : "36"
     },
 
 	{
-      "uri" : "jbo:Nechemya",
+      "uri" : "jbo:PasukNechemya",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Nechemya",
-      "rdfs:subClassOf" : "jbo:Ketuvim",
+      "rdfs:label" : "PasukNechemya",
+      "rdfs:subClassOf" : "jbo:PasukKetuvim",
 	  "jbo:position" : "37"
     },
 
 	{
-      "uri" : "jbo:DivreyHayamimA",
+      "uri" : "jbo:PasukDivreyHayamimA",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "DivreyHayamimA",
-      "rdfs:subClassOf" : "jbo:Ketuvim",
+      "rdfs:label" : "PasukDivreyHayamimA",
+      "rdfs:subClassOf" : "jbo:PasukKetuvim",
 	  "jbo:position" : "38"
     },
 
 	{
-      "uri" : "jbo:DivreyHayamimB",
+      "uri" : "jbo:PasukDivreyHayamimB",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "DivreyHayamimB",
-      "rdfs:subClassOf" : "jbo:Ketuvim",
+      "rdfs:label" : "PasukDivreyHayamimB",
+      "rdfs:subClassOf" : "jbo:PasukKetuvim",
 	  "jbo:position" : "39"
     },
 	
 	{
-      "uri" : "jbo:Rashi",
+      "uri" : "jbo:PerushRashi",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Rashi",
+      "rdfs:label" : "PerushRashi",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
-      "uri" : "jbo:SifteyChachamin",
+      "uri" : "jbo:PerushSifteyChachamin",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "SifteyChachamin",
+      "rdfs:label" : "PerushSifteyChachamin",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
-      "uri" : "jbo:Ramban",
+      "uri" : "jbo:PerushRamban",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Ramban",
+      "rdfs:label" : "PerushRamban",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
@@ -431,23 +438,23 @@
     },
 	
 	{
-      "uri" : "jbo:OrHachayim",
+      "uri" : "jbo:PerushOrHachayim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "OrHachayim",
+      "rdfs:label" : "PerushOrHachayim",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
-      "uri" : "jbo:RabiAvrahamIbnEzra",
+      "uri" : "jbo:PerushRabiAvrahamIbnEzra",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "RabiAvrahamIbnEzra",
+      "rdfs:label" : "PerushRabiAvrahamIbnEzra",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
-      "uri" : "jbo:BaalHaturim",
+      "uri" : "jbo:PerushBaalHaturim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "BaalHaturim",
+      "rdfs:label" : "PerushBaalHaturim",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
@@ -459,23 +466,23 @@
     },
 	
 	{
-      "uri" : "jbo:Seforno",
+      "uri" : "jbo:PerushSeforno",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Seforno",
+      "rdfs:label" : "PerushSeforno",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
-      "uri" : "jbo:KeliYekar",
+      "uri" : "jbo:PerushKeliYekar",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "KeliYekar",
+      "rdfs:label" : "PerushKeliYekar",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
-      "uri" : "jbo:DaatZekenim",
+      "uri" : "jbo:PerushDaatZekenim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "DaatZekenim",
+      "rdfs:label" : "PerushDaatZekenim",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
@@ -494,43 +501,43 @@
     },
 	
 	{
-      "uri" : "jbo:MetzudatDavid",
+      "uri" : "jbo:PerushMetzudatDavid",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MetzudatDavid",
+      "rdfs:label" : "PerushMetzudatDavid",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
-      "uri" : "jbo:MetzudatTziyon",
+      "uri" : "jbo:PerushMetzudatTziyon",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MetzudatTziyon",
+      "rdfs:label" : "PerushMetzudatTziyon",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
-      "uri" : "jbo:Ralbag",
+      "uri" : "jbo:PerushRalbag",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Ralbag",
+      "rdfs:label" : "PerushRalbag",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
-      "uri" : "jbo:Malbim",
+      "uri" : "jbo:PerushMalbim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Malbim",
+      "rdfs:label" : "PerushMalbim",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	{
-      "uri" : "jbo:MalbimBeurHainyan",
+      "uri" : "jbo:PerushMalbimBeurHainyan",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MalbimBeurHainyan",
+      "rdfs:label" : "PerushMalbimBeurHainyan",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
-      "uri" : "jbo:MalbimBeurHamilot",
+      "uri" : "jbo:PerushMalbimBeurHamilot",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MalbimBeurHamilot",
+      "rdfs:label" : "PerushMalbimBeurHamilot",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	

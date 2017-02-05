@@ -48,9 +48,9 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
 
         registerGenerator(new TypeRegEx("jbr:.*", OWL_C_THING));
         registerGenerator(new TypeRegEx("jbr:tanach-.*", JBO_C_TANACH));
-        registerGenerator(new TypeRegEx("jbr:tanach-[1-5]-.*", JBO_C_TORAH));
-        registerGenerator(new TypeRegEx("jbr:tanach-[6-9]-.*|jbr:tanach-1[0-9]-.*|jbr:tanach-2[0-6]-.*", JBO_C_NEVIYIM));
-        registerGenerator(new TypeRegEx("jbr:tanach-2[7-9]-.*|jbr:tanach-3[0-9]-.*", JBO_C_KETUVIM));
+        registerGenerator(new TypeRegEx("jbr:tanach-[1-5]-.*", JBO_C_PASUKTORAH));
+        registerGenerator(new TypeRegEx("jbr:tanach-[6-9]-.*|jbr:tanach-1[0-9]-.*|jbr:tanach-2[0-6]-.*", JBO_C_PASUKNEVIYIM));
+        registerGenerator(new TypeRegEx("jbr:tanach-2[7-9]-.*|jbr:tanach-3[0-9]-.*", JBO_C_PASUKKETUVIM));
 
         registerGenerator(new IRegExGenerator() { // for <book> type
             String seferPosition ="";
@@ -65,8 +65,8 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
             public void generate(Json js) {
                 for (OntClass c : model.listClasses().toList()) { // c holds the current class such as "Bereshit"
                     if (c.hasProperty(JBO_P_POSITION) //  c has property of jbo:position
-                            && c.hasSuperClass(JBO_C_TANACH) // c has superclass of jbo:Tanach
-                            && !c.equals(JBO_C_TORAH) && !c.equals(JBO_C_NEVIYIM) && !c.equals(JBO_C_KETUVIM) // c is not one of them
+                            && c.hasSuperClass(JBO_C_PASUK) // c has superclass of jbo:Tanach
+                            && !c.equals(JBO_C_PASUKTORAH) && !c.equals(JBO_C_PASUKNEVIYIM) && !c.equals(JBO_C_PASUKKETUVIM) // c is not one of them
                             && c.getProperty(JBO_P_POSITION).getObject().toString().equals(seferPosition)) { // c.position equals to the current uri position
                         triplet()
                                 .subject(js.value("uri"))
