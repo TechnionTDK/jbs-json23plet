@@ -57,8 +57,12 @@ public class AutoTest {
                         if ((new File(outputPath).exists())) {
                             new File(outputPath).delete();
                         }
-                        new File(f.toString())
-                                .renameTo(new File(outputPath));
+                        try {
+                            Files.move(new File(f.toString()).toPath(), new File(outputPath).toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+                            new File(f.toString()).delete();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     });
         } catch (IOException e) {
             e.printStackTrace();

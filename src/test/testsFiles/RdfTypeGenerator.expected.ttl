@@ -21,6 +21,6 @@ jbr:tanach-1-1-7  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Tanach , owl:Thing
 
 jbr:tanach-1-1-10  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Tanach , owl:Thing .
 
-jbr:tanach-1-1-5  a  jbo:Bereshit , jbo:Torah , jbo:Tanach , owl:Thing .
+jbr:tanach-1-1-5  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Tanach , owl:Thing .
 
-jbr:tanach-1-1-3  a  jbo:Bereshit , jbo:Torah , jbo:Tanach , owl:Thing .
+jbr:tanach-1-1-3  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Tanach , owl:Thing .
