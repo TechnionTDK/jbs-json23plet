@@ -157,7 +157,9 @@ public class Triplet {
 
     static public void Export(String path, String format) {
         try {
-            model.get().write(new FileWriter(path), format);
+            FileWriter file = new FileWriter(path);
+            model.get().write(file, format);
+            file.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

@@ -17,3 +17,5 @@ output*
 log/
 target/
 
+src/test/testsFiles/*output.ttl
+
