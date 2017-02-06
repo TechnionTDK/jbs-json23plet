@@ -49,13 +49,14 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
 
         registerGenerator(new TypeRegEx("jbr:.*", OWL_C_THING));
         registerGenerator(new TypeRegEx("jbr:tanach-.*", JBO_C_TANACH));
+        registerGenerator(new TypeRegEx("jbr:tanach-\\d+-\\d+-\\d+", JBO_C_PASUK));
         registerGenerator(new TypeRegEx("jbr:tanach-[1-5]-\\d+-\\d+", JBO_C_PASUKTORAH));
         registerGenerator(new TypeRegEx("jbr:tanach-[6-9]-\\d+-\\d+|jbr:tanach-1[0-9]-\\d+-\\d+|jbr:tanach-2[0-6]-\\d+-\\d+", JBO_C_PASUKNEVIYIM));
         registerGenerator(new TypeRegEx("jbr:tanach-2[7-9]-\\d+-\\d+|jbr:tanach-3[0-9]-\\d+-\\d+", JBO_C_PASUKKETUVIM));
 
-        registerGenerator(new TypeRegEx("jbr:tanach-\\d+", JBO_C_TANACHPACKAGE, JBO_C_SEFER));
-        registerGenerator(new TypeRegEx("jbr:tanach-\\d+-\\d+", JBO_C_TANACHPACKAGE, JBO_C_PEREK));
-        registerGenerator(new TypeRegEx("jbr:tanach-parasha-\\d+", JBO_C_TANACHPACKAGE, JBO_C_PARASHA));
+        registerGenerator(new TypeRegEx("jbr:tanach-\\d+", JBO_C_JBSPACKAGE, JBO_C_TANACHPACKAGE, JBO_C_SEFER));
+        registerGenerator(new TypeRegEx("jbr:tanach-\\d+-\\d+", JBO_C_JBSPACKAGE, JBO_C_TANACHPACKAGE, JBO_C_PEREK));
+        registerGenerator(new TypeRegEx("jbr:tanach-parasha-\\d+", JBO_C_JBSPACKAGE, JBO_C_TANACHPACKAGE, JBO_C_PARASHA));
 
         registerGenerator(new IRegExGenerator() { // for <book> type
             String seferPosition ="";

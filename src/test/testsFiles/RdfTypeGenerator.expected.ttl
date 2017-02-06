@@ -5,29 +5,29 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix jbr:   <http://jbs.technion.ac.il/resource/> .
 
-jbr:tanach-1-1-8  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Tanach , owl:Thing .
+jbr:tanach-1-1-8  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach , owl:Thing .
 
-jbr:tanach-1-1-1  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Tanach , owl:Thing .
+jbr:tanach-1-1-1  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach , owl:Thing .
 
-jbr:tanach-1-1-6  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Tanach , owl:Thing .
+jbr:tanach-1-1-6  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach , owl:Thing .
 
 jbr:tanach-parasha-54
-        a       jbo:Parasha , jbo:TanachPackage , jbo:Tanach , owl:Thing .
+        a       jbo:Parasha , jbo:TanachPackage , jbo:JbsPackage , jbo:Tanach , owl:Thing .
 
-jbr:tanach-1-1-4  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Tanach , owl:Thing .
+jbr:tanach-1-1-4  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach , owl:Thing .
 
-jbr:tanach-1-1-9  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Tanach , owl:Thing .
+jbr:tanach-1-1-9  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach , owl:Thing .
 
-jbr:tanach-12-13  a  jbo:Perek , jbo:TanachPackage , jbo:Tanach , owl:Thing .
+jbr:tanach-12-13  a  jbo:Perek , jbo:TanachPackage , jbo:JbsPackage , jbo:Tanach , owl:Thing .
 
-jbr:tanach-1  a  jbo:Sefer , jbo:TanachPackage , jbo:Tanach , owl:Thing .
+jbr:tanach-1  a  jbo:Sefer , jbo:TanachPackage , jbo:JbsPackage , jbo:Tanach , owl:Thing .
 
-jbr:tanach-1-1-2  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Tanach , owl:Thing .
+jbr:tanach-1-1-2  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach , owl:Thing .
 
-jbr:tanach-1-1-7  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Tanach , owl:Thing .
+jbr:tanach-1-1-7  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach , owl:Thing .
 
-jbr:tanach-1-1-10  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Tanach , owl:Thing .
+jbr:tanach-1-1-10  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach , owl:Thing .
 
-jbr:tanach-1-1-5  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Tanach , owl:Thing .
+jbr:tanach-1-1-5  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach , owl:Thing .
 
-jbr:tanach-1-1-3  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Tanach , owl:Thing .
+jbr:tanach-1-1-3  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach , owl:Thing .
