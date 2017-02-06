@@ -21,19 +21,20 @@ import static json23plet.ontologies.JbsOntology.*;
 public class RdfTypeGenerator extends BaseRegexGenerator {
     private class TypeRegEx implements IRegExGenerator {
         String regex;
-        Resource clazz;
+        Resource[] classes;
 
-        TypeRegEx(String regex, Resource clazz) {
+        TypeRegEx(String regex, Resource... classes) {
             this.regex = regex;
-            this.clazz = clazz;
+            this.classes = classes;
         }
 
         @Override
         public void generate(Json js) {
-            triplet()
+            for (Resource c : classes)
+                triplet()
                     .subject(js.value("uri"))
                     .predicate(RDF_P_TYPE)
-                    .object(clazz);
+                    .object(c);
         }
 
         @Override
@@ -48,9 +49,13 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
 
         registerGenerator(new TypeRegEx("jbr:.*", OWL_C_THING));
         registerGenerator(new TypeRegEx("jbr:tanach-.*", JBO_C_TANACH));
-        registerGenerator(new TypeRegEx("jbr:tanach-[1-5]-.*", JBO_C_PASUKTORAH));
-        registerGenerator(new TypeRegEx("jbr:tanach-[6-9]-.*|jbr:tanach-1[0-9]-.*|jbr:tanach-2[0-6]-.*", JBO_C_PASUKNEVIYIM));
-        registerGenerator(new TypeRegEx("jbr:tanach-2[7-9]-.*|jbr:tanach-3[0-9]-.*", JBO_C_PASUKKETUVIM));
+        registerGenerator(new TypeRegEx("jbr:tanach-[1-5]-\\d+-\\d+", JBO_C_PASUKTORAH));
+        registerGenerator(new TypeRegEx("jbr:tanach-[6-9]-\\d+-\\d+|jbr:tanach-1[0-9]-\\d+-\\d+|jbr:tanach-2[0-6]-\\d+-\\d+", JBO_C_PASUKNEVIYIM));
+        registerGenerator(new TypeRegEx("jbr:tanach-2[7-9]-\\d+-\\d+|jbr:tanach-3[0-9]-\\d+-\\d+", JBO_C_PASUKKETUVIM));
+
+        registerGenerator(new TypeRegEx("jbr:tanach-\\d+", JBO_C_TANACHPACKAGE, JBO_C_SEFER));
+        registerGenerator(new TypeRegEx("jbr:tanach-\\d+-\\d+", JBO_C_TANACHPACKAGE, JBO_C_PEREK));
+        registerGenerator(new TypeRegEx("jbr:tanach-parasha-\\d+", JBO_C_TANACHPACKAGE, JBO_C_PARASHA));
 
         registerGenerator(new IRegExGenerator() { // for <book> type
             String seferPosition ="";
