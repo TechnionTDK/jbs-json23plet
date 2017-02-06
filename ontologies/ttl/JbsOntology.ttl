@@ -47,6 +47,10 @@ jbo:PerushMalbimBeurHamilot
         rdfs:label       "PerushMalbimBeurHamilot" ;
         rdfs:subClassOf  jbo:PerushTanach .
 
+jbo:JbsPackage  a        owl:Class ;
+        rdfs:label       "JbsPackage" ;
+        rdfs:subClassOf  owl:Thing .
+
 jbo:PasukKohelet  a      owl:Class ;
         rdfs:label       "PasukKohelet" ;
         rdfs:subClassOf  jbo:PasukKetuvim ;
@@ -218,6 +222,10 @@ jbo:PasukHoshea  a       owl:Class ;
         rdfs:subClassOf  jbo:PasukNeviyim ;
         jbo:position     "15" .
 
+jbo:Perek  a             owl:Class ;
+        rdfs:label       "Perek" ;
+        rdfs:subClassOf  jbo:JbsPackage .
+
 jbo:PasukChavakuk  a     owl:Class ;
         rdfs:label       "PasukChavakuk" ;
         rdfs:subClassOf  jbo:PasukNeviyim ;
@@ -244,15 +252,15 @@ jbo:PerushRamban  a      owl:Class ;
         rdfs:label       "PerushRamban" ;
         rdfs:subClassOf  jbo:PerushTanach .
 
-jbo:PasukBereshit  a     owl:Class ;
-        rdfs:label       "PasukBereshit" ;
-        rdfs:subClassOf  jbo:PasukTorah ;
-        jbo:position     "1" .
-
 jbo:PasukTehilim  a      owl:Class ;
         rdfs:label       "PasukTehilim" ;
         rdfs:subClassOf  jbo:PasukKetuvim ;
         jbo:position     "27" .
+
+jbo:PasukBereshit  a     owl:Class ;
+        rdfs:label       "PasukBereshit" ;
+        rdfs:subClassOf  jbo:PasukTorah ;
+        jbo:position     "1" .
 
 jbo:PasukDevarim  a      owl:Class ;
         rdfs:label       "PasukDevarim" ;
@@ -293,6 +301,10 @@ jbo:PasukYechezkel  a    owl:Class ;
         rdfs:subClassOf  jbo:PasukNeviyim ;
         jbo:position     "14" .
 
+jbo:Sefer  a             owl:Class ;
+        rdfs:label       "Sefer" ;
+        rdfs:subClassOf  jbo:JbsPackage .
+
 jbo:PasukShemot  a       owl:Class ;
         rdfs:label       "PasukShemot" ;
         rdfs:subClassOf  jbo:PasukTorah ;
@@ -301,6 +313,10 @@ jbo:PasukShemot  a       owl:Class ;
 jbo:PerushRalbag  a      owl:Class ;
         rdfs:label       "PerushRalbag" ;
         rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:Parasha  a           owl:Class ;
+        rdfs:label       "Parasha" ;
+        rdfs:subClassOf  jbo:JbsPackage .
 
 jbo:PerushSifteyChachamin
         a                owl:Class ;
@@ -358,6 +374,10 @@ jbo:Tanach  a            owl:Class ;
 
 jbo:PerushTanach  a      owl:Class ;
         rdfs:label       "PerushTanach" ;
+        rdfs:subClassOf  jbo:Tanach .
+
+jbo:TanachPackage  a     owl:Class ;
+        rdfs:label       "TanachPackage" ;
         rdfs:subClassOf  jbo:Tanach .
 
 jbo:PerushDaatZekenim

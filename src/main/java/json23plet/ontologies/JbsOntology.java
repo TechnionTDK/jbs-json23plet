@@ -19,6 +19,10 @@ public class JbsOntology
     public static String JBR_PREFIX = "jbr";
     public static String JBO_URI = "http://jbs.technion.ac.il/ontology/";
     public static String JBR_URI = "http://jbs.technion.ac.il/resource/";
+    public static Resource JBO_C_JBSPACKAGE = (model.getOntClass(JBO_URI + "JbsPackage"));
+    public static Resource JBO_C_SEFER = (model.getOntClass(JBO_URI + "Sefer"));
+    public static Resource JBO_C_PARASHA = (model.getOntClass(JBO_URI + "Parasha"));
+    public static Resource JBO_C_PEREK = (model.getOntClass(JBO_URI + "Perek"));
     public static Resource JBO_C_TANACH = (model.getOntClass(JBO_URI + "Tanach"));
     public static Resource JBO_C_MISHNA = (model.getOntClass(JBO_URI + "Mishna"));
     public static Resource JBO_C_TALMUDBAVLI = (model.getOntClass(JBO_URI + "TalmudBavli"));
@@ -28,6 +32,7 @@ public class JbsOntology
     public static Resource JBO_C_SIFREYRAMCHAL = (model.getOntClass(JBO_URI + "SifreyRamchal"));
     public static Resource JBO_C_PASUK = (model.getOntClass(JBO_URI + "Pasuk"));
     public static Resource JBO_C_PERUSHTANACH = (model.getOntClass(JBO_URI + "PerushTanach"));
+    public static Resource JBO_C_TANACHPACKAGE = (model.getOntClass(JBO_URI + "TanachPackage"));
     public static Resource JBO_C_PASUKTORAH = (model.getOntClass(JBO_URI + "PasukTorah"));
     public static Resource JBO_C_PASUKNEVIYIM = (model.getOntClass(JBO_URI + "PasukNeviyim"));
     public static Resource JBO_C_PASUKKETUVIM = (model.getOntClass(JBO_URI + "PasukKetuvim"));

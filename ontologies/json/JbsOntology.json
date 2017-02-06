@@ -11,6 +11,34 @@
   ],
   "metadata" : [
     {
+      "uri" : "jbo:JbsPackage",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "JbsPackage",
+      "rdfs:subClassOf" : "owl:Thing"
+    },
+	
+    {
+      "uri" : "jbo:Sefer",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Sefer",
+      "rdfs:subClassOf" : "jbo:JbsPackage"
+    },
+	
+    {
+      "uri" : "jbo:Parasha",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Parasha",
+      "rdfs:subClassOf" : "jbo:JbsPackage"
+    },
+	
+    {
+      "uri" : "jbo:Perek",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Perek",
+      "rdfs:subClassOf" : "jbo:JbsPackage"
+    },
+	
+    {
       "uri" : "jbo:Tanach",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Tanach",
@@ -70,6 +98,13 @@
       "uri" : "jbo:PerushTanach",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "PerushTanach",
+      "rdfs:subClassOf" : "jbo:Tanach"
+    },
+		
+	{
+      "uri" : "jbo:TanachPackage",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "TanachPackage",
       "rdfs:subClassOf" : "jbo:Tanach"
     },
 	
