@@ -48,6 +48,20 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
     public void registerGenerators() {
 
         registerGenerator(new TypeRegEx("jbr:.*", OWL_C_THING));
+
+        registerTanachGenerators();
+
+        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-.*", JBO_C_MISHNETORAH));
+        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-.*", JBO_C_SEFERHAMITZVOT));
+
+        registerGenerator(new TypeRegEx("jbr:shmonakvatzim-.*", JBO_C_SIFREYRAVKUK));
+        registerGenerator(new TypeRegEx("jbr:shmonakvatzim-.*", JBO_C_SHEMONAKEVATZIM));
+
+        registerGenerator(new TypeRegEx("jbr:mesilatyesharim-.*", JBO_C_MESILATYESHARIM));
+        registerGenerator(new TypeRegEx("jbr:mesilatyesharim-.*", JBO_C_SIFREYRAMCHAL));
+    }
+
+    private void registerTanachGenerators() {
         registerGenerator(new TypeRegEx("jbr:tanach-.*", JBO_C_TANACH));
         registerGenerator(new TypeRegEx("jbr:tanach-\\d+-\\d+-\\d+", JBO_C_PASUK));
         registerGenerator(new TypeRegEx("jbr:tanach-[1-5]-\\d+-\\d+", JBO_C_PASUKTORAH));
@@ -93,14 +107,27 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
             }
         });
 
-        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-.*", JBO_C_MISHNETORAH));
-        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-.*", JBO_C_SEFERHAMITZVOT));
+        // mefarshim
+        String[] mefarshim = {"rashi", "ramban", "orhachaim", "ibnezra", "baalhaturim", "onkelos", "sforno", "kliyekar",
+                "daatzkenim", "metzudatdavid", "metzudattzion", "malbiminyan", "malbimmilot", "ralbag", "malbim"};
+        registerGenerator(new TypeRegEx("jbr:tanach-\\D+-\\d+-\\d+-\\d+", JBO_C_PERUSHTANACH)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-Rashi-\\d+-\\d+-\\d+", JBO_C_PERUSHRASHI)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-ramban-\\d+-\\d+-\\d+", JBO_C_PERUSHRAMBAN)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-orhachaim-\\d+-\\d+-\\d+", JBO_C_PERUSHORHACHAYIM)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-ibnezra-\\d+-\\d+-\\d+", JBO_C_PERUSHRABIAVRAHAMIBNEZRA)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-baalhaturim-\\d+-\\d+-\\d+", JBO_C_PERUSHBAALHATURIM)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-onkelos-\\d+-\\d+-\\d+", JBO_C_TARGUMONKELOS)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-sforno-\\d+-\\d+-\\d+", JBO_C_PERUSHSEFORNO)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-kliyekar-\\d+-\\d+-\\d+", JBO_C_PERUSHKELIYEKAR)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-daatzkenim-\\d+-\\d+-\\d+", JBO_C_PERUSHDAATZEKENIM)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-metzudatdavid-\\d+-\\d+-\\d+", JBO_C_PERUSHMETZUDATDAVID)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-metzudattzion-\\d+-\\d+-\\d+", JBO_C_PERUSHMETZUDATTZIYON)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-malbiminyan-\\d+-\\d+-\\d+", JBO_C_PERUSHMALBIMBEURHAINYAN)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-malbimmilot-\\d+-\\d+-\\d+", JBO_C_PERUSHMALBIMBEURHAMILOT)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-ralbag-\\d+-\\d+-\\d+", JBO_C_PERUSHRALBAG)); // \D matches non-digits
+        registerGenerator(new TypeRegEx("jbr:tanach-malbim-\\d+-\\d+-\\d+", JBO_C_PERUSHMALBIM)); // \D matches non-digits
+        // TODO Find a more elegant approach for the above
 
-        registerGenerator(new TypeRegEx("jbr:shmonakvatzim-.*", JBO_C_SIFREYRAVKUK));
-        registerGenerator(new TypeRegEx("jbr:shmonakvatzim-.*", JBO_C_SHEMONAKEVATZIM));
-
-        registerGenerator(new TypeRegEx("jbr:mesilatyesharim-.*", JBO_C_MESILATYESHARIM));
-        registerGenerator(new TypeRegEx("jbr:mesilatyesharim-.*", JBO_C_SIFREYRAMCHAL));
     }
 
     @Override
