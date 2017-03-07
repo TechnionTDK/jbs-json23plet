@@ -82,6 +82,15 @@ To do so you need to [config](README.md#add-configuration-for-a-new-generator) y
 
 
 ##### Create a new generator:
+***This is not a command but a basic part of working with the Json23plet tool***
+Json23plet allows you to write and deploy your own generator for more unique json formats. <br/>
+*To do so*:
+Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/main/java/json23plet/generators/customGenerators directory.<br/> For [regExGenerator](README.md#regexgenerator) drop it in jbs-json23plet/src/main/java/json23plet/generators/regexGenerators directory and rebuild the project using:
+            
+            ./json23plet.sh -b
+            
+Now you can [run](README.md#Run a single generator) your generator as decribed above
+
 1. Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/main/java/json23plet/generators/customGenerators directory.<br /> For [regExGenerator](README.md#regexgenerator) drop it in jbs-json23plet/src/main/java/json23plet/generators/regexGenerators directory
 1. Run "./json23plet.sh -b" to rebuild the json23plet project
 
