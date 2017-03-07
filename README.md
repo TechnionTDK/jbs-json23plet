@@ -65,14 +65,17 @@ The input directories tree will be reflected in this directory.
 The command run recursively a specific [generator](README.md#generators) on a specific input directory (or a specific single file)
 
       ./json23plet.sh -generate generatorName dataInputRootDir
-      ./json23plet.sh -generate generatorName (inputFile.json)
+      (./json23plet.sh -generate generatorName inputFile.json)
 In case of using the [basic](README.md#json-files-format) generator, specify "basic" as the generator
       
       ./json23plet.sh -generate basic dataInputRootDir
 
 ##### Run multiple generators:
-1. [Config](README.md#add-configuration-for-a-new-generator) the generators that you want to run in jbs-json23plet/config.json
-1. Run "./json23plet.sh -generateAll"
+Json23plet allows you to config a scheme of running multiple different generators on diffrent directories (or files). <br/>
+To do so you need to [config](README.md#add-configuration-for-a-new-generator) your scheme and run:
+      
+      ./json23plet.sh -generateAll
+
 
 ##### Create a new generator:
 1. Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/main/java/json23plet/generators/customGenerators directory.<br /> For [regExGenerator](README.md#regexgenerator) drop it in jbs-json23plet/src/main/java/json23plet/generators/regexGenerators directory
