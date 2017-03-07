@@ -38,6 +38,14 @@ We recommend you to develop and edit files in the project on linux machine, as w
 We recommed to use [IntelliJ IDEA](https://www.jetbrains.com/idea/) on developing, but you can also usr [Eclipse](https://www.eclipse.org/downloads/) or any other IDE you prefer, but our guide is on IntelliJ only.
 
 #### IntelliJ Guid
+* **Clone the repository** <br/>
+     Go to File->New->Project From Version Control->GitHub, Fill the details of this repository and click "Clone". <br/>
+
+* **Configure the arguments** <br/>
+     1. Right click on src/main/java->Mark Directory as->Sources Root
+     1. Build The project
+     1. Right click on src/main/java/Json23plet.java->Create 'Json23plet.main()' and configure your input
+     1. Run or Debug
 
 
 
