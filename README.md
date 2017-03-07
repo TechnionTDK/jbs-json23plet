@@ -120,10 +120,10 @@ The command allow you to config a single generator in the scheme, of course, you
 
 ##### Edit configuration of global setting
 Json23plet use some [setting](README.me#globalsetting) while runnig.
-* Config output dir [(see here)](README.me#config-the-output-root-directory) run:
+* To config output dir run:
       
             ./json23plet -config outputDir=myOutputDir
-* Config [error level](README.me#jsonvalidator) run:
+* To config error level run:
 
             ./json23plet -config errorLevel=level
  Errors checked on the json file while generating, the action on error depeneds on errorLevel: 
