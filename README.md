@@ -95,13 +95,13 @@ Now you can [run](README.md#run-a-single-generator) your generator as decribed a
 Json23plet using the same logic to generate ontology.ttl files, that means that to generate new ontology you just have to define it in a json file and run the json23plet ontology generator.
 
 1. Define the ontology in myOntology.json in [this](README.md#ontologies) format
-1. To create the ontology run
+1. To create the ontology run:
 
             ./json23plet.sh -ontology myOntology
 
-      an myOntology.ttl file will be created in jbs-json23plet/ontologies/ttl, you can load this file to your server.<br/>
-      an myOntology.java will be created in jbs-json23plet/src/main/java/json23plet/ontologies, this class contains some of         the ontology metadata and allow you to include them in your generators.
-1. Rebuild using
+      an myOntology.ttl file will be created in **jbs-json23plet/ontologies/ttl**, you can load this file to your server.<br/>
+      an myOntology.java will be created in **jbs-json23plet/src/main/java/json23plet/ontologies**, this class contains some       of the ontology metadata and allow you to include them in your generators.
+1. Rebuild using:
 
             ./json23plet.sh -b 
 
