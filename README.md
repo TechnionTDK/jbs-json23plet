@@ -107,7 +107,7 @@ Json23plet using the same logic to generate ontology.ttl files, that means that 
 
 ***Note***: While changing an existing ontology, there might  be some generators that use the old ontology.java properties, if so you have to update them, otherwise the project wont build due to compilations errors.
 
-##### Add configuration for a new generator
+##### Add&Edit configuration for a new generator
 As [mentioned](README.md#run-multiple-generators) above, you can config a scheme of run.<br/>
 The command allow you to config a single generator in the scheme, of course, you can update the schema manually.
 
@@ -118,18 +118,19 @@ The command allow you to config a single generator in the scheme, of course, you
 * To config manually:<br/>
   Go to **jbs-json23plet/config.json** and set the fileds manually
 
-##### Edit configuration for an existing generator
-1. Run "./json23plet -config genName=generatorName inputPath=MyInputPath active=activeState" <br />
-If a generator with this name is already exist the command will edit the generator fields, else it will create a new configuration.
-
 ##### Edit configuration of global setting
-1. Run "./json23plet -config outputDir=myOutputDir" to set a new output directory
-1.  Run "./json23plet -config errorLevel=level" to set a new errorLevel. <br /> ErrorLevel indicate eaht would happens if the validator facing an error: <br />
-    * low - Nothing will happen.
-    * medium - The errors will display.
-    * high - On error stop execution.
+Json23plet use some [setting](README.me#globalsetting) while runnig.
+* Config output dir ([see here])(README.me#config-the-output-root-directory) run:
+      
+            ./json23plet -config outputDir=myOutputDir
+* Config [error level](README.me#jsonvalidator) run:
 
-
+            ./json23plet -config errorLevel=level
+ Errors checked on the json file while generating, the action on error depeneds on errorLevel: 
+ * low - nothing happen
+ * medium - error will display while detected
+ * high - on error json23plet will stop
+ 
 ## json23plet components
 
 ### Ontologies
