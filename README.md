@@ -1,6 +1,14 @@
 # json23plet
 A command-line tool for generating RDF triplets from Jsons input
 
+## What is this?
+json23plet is a linux command line tool to generate [RDF triplets](https://en.wikipedia.org/wiki/Resource_Description_Framework) in TURTLE (.ttl) format from json files. <br/>
+You can write your own generators for your specific json format files and according to your own ontology
+and run it through json23plet
+
+## Background
+This project was devleoped as part of the JBS (Jewish Book Shelf) project in the [TDK lab](http://tdk.net.technion.ac.il/).
+
 ## Getting Started
 
 ### Prerequisites
@@ -22,14 +30,16 @@ Install maven on your machine.
 
          git update-index --assume-unchanged config.json
    this command will prevent from your local config.json to be pushed into the GitHub repository
+   
+## Working with windows
+We recommend you to develop and edit files in the project on linux machine, as where the project developed, but it can be also done on windows machines.
 
-## What is this?
-json23plet is a linux command line tool to generate [RDF triplets](https://en.wikipedia.org/wiki/Resource_Description_Framework) in TURTLE (.ttl) format from json files. <br/>
-You can write your own generators for your specific json format files and according to your own ontology
-and run it through json23plet
+### IDE 
+We recommed to use [IntelliJ IDEA](https://www.jetbrains.com/idea/) on developing, but you can also usr [Eclipse](https://www.eclipse.org/downloads/) or any other IDE you prefer, but our guide is on IntelliJ only.
 
-## Background
-This project was devleoped as part of the JBS (Jewish Book Shelf) project in the [TDK lab](http://tdk.net.technion.ac.il/).
+#### IntelliJ Guid
+
+
 
 ## json23plet components
 
