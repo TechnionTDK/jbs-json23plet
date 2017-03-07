@@ -133,10 +133,19 @@ Json23plet use some [setting](README.me#globalsetting) while runnig.
 
 ## Development and maintenance
 In this section we will review the code components for future maintenance.<br/>
-See the [code documentation](https://techniontdk.github.io/jbs-json23plet/)
+See the [code documentation](https://techniontdk.github.io/jbs-json23plet/).
+
 ### Ontologies
-To generate new ontology you should create ontology.json file. <br/>
-the format of the json should be as described:
+Source code:
+      
+      src/main/java/json23plet/generators/ontologyGenerator/OntologyClassGenerator.java
+      src/main/java/json23plet/generators/ontologyGenerator/OntologyGenerator.java
+      src/main/java/json23plet/generators/ontologyGenerator/OntologyTTLGenerator.java
+      
+As mentioned before json23plet handle ontologies on thw same way of regular json data. we worte a speiceal ontology generator which have two purpose:
+1. create the ttl's files of the ontology. thos are the files you will load to your server.
+1. create a java class which will allow you to referece to your ontology definitions as java objects.
+The generator require the ontology in a very specific format:<br/>
 
     {
         "prefixes" : [
@@ -161,17 +170,17 @@ the format of the json should be as described:
             ...
         ]
     }
-(See example in jbs-json23plet/ontologies/json/JbsOntology.json) <br/>
-The uri and rdf:type predicate are required.
+(The uri and rdf:type predicate are required).
 
-To use your ontology you have to first generate it using:
+#### Usege
+Drop your ontology.json file in *jbs-json23plet/ontologies/json* and run:
 
       ./json23plet -ontology myOntology
       
-After generating an ontology.ttl file will be created in jbs-json23plet/ontologies/ttl, (and you can load it to your server).<br/>
-***Note:*** Do not remove this file, because json23plet uses it to load your ontology during generating new ttl files in your project.
+After generating an ontology.ttl file will be created in *jbs-json23plet/ontologies/ttl*, (and you can load it to your server).<br/>
+**Note:** Do not remove this file, because json23plet uses it to load your ontology during generating new ttl files in your project.
 
-The ontology.java class file will be created in jbs-json23plet/src/main/java/json23plet/ontologies, this file contains some definitions of your ontology and can be used during writing a new generator.<br/>
+The ontology.java class file will be created in *jbs-json23plet/src/main/java/json23plet/ontologies*, this file contains some definitions of your ontology and can be used during writing a new generator.<br/>
 
 ***Note:*** After changing an existing ontology there might have some generators which are still using the old ontology definitions. If so, you have to update them or you will get compilation errors.
 
