@@ -65,7 +65,7 @@ The input directories tree will be reflected in this directory.
 
       ./json23plet.sh -config outputDir=myOutputDir
 
-#### Run a single generator:
+#### Run a single generator
 The command run recursively a specific [generator](README.md#generators) on a specific input directory (or a specific single file)
 
       ./json23plet.sh -generate generatorName dataInputRootDir
@@ -74,14 +74,14 @@ In case of using the [basic](README.md#json-files-format) generator, specify "ba
       
       ./json23plet.sh -generate basic dataInputRootDir
 
-##### Run multiple generators:
+##### Run multiple generators
 Json23plet allows you to config a scheme of running multiple different generators on diffrent directories (or files). <br/>
 To do so you need to [config](README.md#add-configuration-for-a-new-generator) your scheme and run:
       
       ./json23plet.sh -generateAll
 
 
-##### Create and install a new generator:
+##### Create and install a new generator
 ***This is not a command but a basic part of working with the Json23plet tool***
 Json23plet allows you to write and deploy your own generator for more unique json formats. <br/>
 *To do so*:<br/>
@@ -91,7 +91,7 @@ Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/
             
 Now you can [run](README.md#run-a-single-generator) your generator as decribed above
 
-##### Create and update an ontology:
+##### Create and update an ontology
 Json23plet using the same logic to generate ontology.ttl files, that means that to generate new ontology you just have to define it in a json file and run the json23plet ontology generator.
 
 1. Define the ontology in myOntology.json in [this](README.md#ontologies) format
@@ -108,9 +108,15 @@ Json23plet using the same logic to generate ontology.ttl files, that means that 
 ***Note***: While changing an existing ontology, there might  be some generators that use the old ontology.java properties, if so you have to update them, otherwise the project wont build due to compilations errors.
 
 ##### Add configuration for a new generator
-* Run "./json23plet -config  genName=generatorName inputPath=MyInputPath active=activeState" (the activeState field gets either true or false) <br />
-This command will create a new configuration for your generator in the jbs-json23plet/config.json file. <br />
-You can also edit it manually. 
+As [mentioned](README.md#run-multiple-generators) above, you can config a scheme of run.<br/>
+The command allow you to config a single generator in the scheme, of course, you can update the schema manually.
+
+* To config via commandline run:
+
+            ./json23plet -config  genName=generatorName inputPath=MyInputPath active=activeState
+ (the activeState field gets either true or false depends on the current scheme)
+* To config manually:<br/>
+  Go to **jbs-json23plet/config.json** and set the fileds manually
 
 ##### Edit configuration for an existing generator
 1. Run "./json23plet -config genName=generatorName inputPath=MyInputPath active=activeState" <br />
