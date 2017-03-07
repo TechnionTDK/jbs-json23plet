@@ -135,6 +135,11 @@ Json23plet use some [setting](README.me#globalsetting) while runnig.
 In this section we will review the code components for future maintenance.<br/>
 See the [code documentation](https://techniontdk.github.io/jbs-json23plet/).
 
+### Overview
+json23plet is simply an engine which know to run user defined generators. <br/>
+Generator is a piece of code that know (with some usege of our modules) to generate RDF triplets from json file.<br/>
+After the generator finished the engine print the results to an output with the same name as the origin one.
+
 ### Ontologies
 Source code:
       
@@ -189,6 +194,10 @@ Rebuild the project using:
       ./json23plet.sh -b
 
 ### Json
+Source code:
+
+      src/main/java/json23plet/modules/Json.java
+
 In order to write your own generator, you will need to use this component that helps you parsing the json file.<br />
 
     Json
