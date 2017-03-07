@@ -91,7 +91,7 @@ Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/
             
 Now you can [run](README.md#run-a-single-generator) your generator as decribed above
 
-##### Create ontology:
+##### Create and update an ontology:
 Json23plet using the same logic to generate ontology.ttl files, that means that to generate new ontology you just have to define it in a json file and run the json23plet ontology generator.
 
 1. Define the ontology in myOntology.json in [this](README.md#ontologies) format
