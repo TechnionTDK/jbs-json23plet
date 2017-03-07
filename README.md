@@ -120,7 +120,7 @@ The command allow you to config a single generator in the scheme, of course, you
 
 ##### Edit configuration of global setting
 Json23plet use some [setting](README.me#globalsetting) while runnig.
-* Config output dir ([see here])(README.me#config-the-output-root-directory) run:
+* Config output dir [(see here)](README.me#config-the-output-root-directory) run:
       
             ./json23plet -config outputDir=myOutputDir
 * Config [error level](README.me#jsonvalidator) run:
