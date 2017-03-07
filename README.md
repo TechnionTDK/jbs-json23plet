@@ -130,9 +130,10 @@ Json23plet use some [setting](README.me#globalsetting) while runnig.
  * low - nothing happen
  * medium - error will display while detected
  * high - on error json23plet will stop
- 
-## json23plet components
 
+## Development and maintenance
+In this section we will review the code components for future maintenance.<br/>
+See the [code documentation](https://techniontdk.github.io/jbs-json23plet/)
 ### Ontologies
 To generate new ontology you should create ontology.json file. <br/>
 the format of the json should be as described:
