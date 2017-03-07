@@ -61,9 +61,14 @@ The input directories tree will be reflected in this directory.
 
       ./json23plet.sh -config outputDir=myOutputDir
 
-#### Run single generator:
-* Run "./json23plet.sh -generate generatorName dataInputRootDir"
-* In case of using the basic generator (see [Json File Formats](README.md#json-files-format)). <br /> Run "./json23plet.sh -generate basic \<dataInputRootDir\>" 
+#### Run a single generator:
+The command run recursively a specific [generator](README.md#generators) on a specific input directory (or a specific single file)
+
+      ./json23plet.sh -generate generatorName dataInputRootDir
+      ./json23plet.sh -generate generatorName (inputFile.json)
+In case of using the [basic](README.md#json-files-format) generator, specify "basic" as the generator
+      
+      ./json23plet.sh -generate basic dataInputRootDir
 
 ##### Run multiple generators:
 1. [Config](README.md#add-configuration-for-a-new-generator) the generators that you want to run in jbs-json23plet/config.json
