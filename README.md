@@ -49,6 +49,10 @@ We recommed to use [IntelliJ IDEA](https://www.jetbrains.com/idea/) while develo
 
 ## json23plet commands
 
+### Build the project
+
+      ./json23plet.sh -b
+      
 ### Init the project directories
 The command initializes the direcories tree of the project
 
