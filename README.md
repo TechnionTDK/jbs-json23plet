@@ -81,24 +81,31 @@ To do so you need to [config](README.md#add-configuration-for-a-new-generator) y
       ./json23plet.sh -generateAll
 
 
-##### Create a new generator:
+##### Create and install a new generator:
 ***This is not a command but a basic part of working with the Json23plet tool***
 Json23plet allows you to write and deploy your own generator for more unique json formats. <br/>
-*To do so*:
-Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/main/java/json23plet/generators/customGenerators directory.<br/> For [regExGenerator](README.md#regexgenerator) drop it in jbs-json23plet/src/main/java/json23plet/generators/regexGenerators directory and rebuild the project using:
+*To do so*:<br/>
+Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/main/java/json23plet/generators/customGenerators directory.<br/> For [regExGenerator](README.md#regexgenerator) drop it in jbs-json23plet/src/main/java/json23plet/generators/regexGenerators directory.<br/> Rebuild the project using:
             
-            ./json23plet.sh -b
+      ./json23plet.sh -b
             
 Now you can [run](README.md#run-a-single-generator) your generator as decribed above
 
-##### Create a new ontology from a json file:
-1. Drop myOntology.json in jbs-json23plet/ontologies/json
-1. Run "./json23plet.sh -ontology myOntology"
-1. The myOntology.ttl file will be created in jbs-json23plet/ontologies/ttl
-1. The myOntology.java will be created in jbs-json23plet/src/main/java/json23plet/ontologies
-1. Run "./json23plet.sh -b" to rebuild the json23plet project
+##### Create ontology:
+Json23plet using the same logic to generate ontology.ttl files, that means that to generate new ontology you just have to define it in a json file and run the json23plet ontology generator.
 
-Note: While changing an existing ontology, there might  be some generators that use the old ontology properties, if so you have to update them, otherwise the project wont build due to compilations errors.
+1. Define the ontology in myOntology.json in [this](README.md#ontologies) format
+1. To create the ontology run
+
+            ./json23plet.sh -ontology myOntology
+
+      an myOntology.ttl file will be created in jbs-json23plet/ontologies/ttl, you can load this file to your server.<br/>
+      an myOntology.java will be created in jbs-json23plet/src/main/java/json23plet/ontologies, this class contains some of         the ontology metadata and allow you to include them in your generators.
+1. Rebuild using
+
+            ./json23plet.sh -b 
+
+***Note***: While changing an existing ontology, there might  be some generators that use the old ontology.java properties, if so you have to update them, otherwise the project wont build due to compilations errors.
 
 ##### Add configuration for a new generator
 * Run "./json23plet -config  genName=generatorName inputPath=MyInputPath active=activeState" (the activeState field gets either true or false) <br />
