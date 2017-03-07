@@ -35,7 +35,7 @@ Install maven on your machine.
 We recommend you to develop and edit files in the project on linux machine, as where the project developed, but it can be also done on windows machines.
 
 ### IDE 
-We recommed to use [IntelliJ IDEA](https://www.jetbrains.com/idea/) on developing, but you can also usr [Eclipse](https://www.eclipse.org/downloads/) or any other IDE you prefer, but our guide is on IntelliJ only.
+We recommed to use [IntelliJ IDEA](https://www.jetbrains.com/idea/) while developing, but you can also use [Eclipse](https://www.eclipse.org/downloads/) or any other IDE you prefer, but our guide is on IntelliJ only.
 
 #### IntelliJ Guid
 * **Clone the repository** <br/>
@@ -47,6 +47,56 @@ We recommed to use [IntelliJ IDEA](https://www.jetbrains.com/idea/) on developin
      1. Right click on src/main/java/Json23plet.java->Create 'Json23plet.main()' and configure your input
      1. Run or Debug
 
+## json23plet commands
+
+### Init the project directories
+The command initializes the direcories tree of the project
+
+      ./json23plet.sh -init
+
+### Config the output root directory
+The command sets up the output roor directory. <br />
+This setting will be saved in the config.json file. <br/>
+The input directories tree will be reflected in this directory.
+
+      ./json23plet.sh -config outputDir=myOutputDir
+
+#### Run single generator:
+* Run "./json23plet.sh -generate generatorName dataInputRootDir"
+* In case of using the basic generator (see [Json File Formats](README.md#json-files-format)). <br /> Run "./json23plet.sh -generate basic \<dataInputRootDir\>" 
+
+##### Run multiple generators:
+1. [Config](README.md#add-configuration-for-a-new-generator) the generators that you want to run in jbs-json23plet/config.json
+1. Run "./json23plet.sh -generateAll"
+
+##### Create a new generator:
+1. Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/main/java/json23plet/generators/customGenerators directory.<br /> For [regExGenerator](README.md#regexgenerator) drop it in jbs-json23plet/src/main/java/json23plet/generators/regexGenerators directory
+1. Run "./json23plet.sh -b" to rebuild the json23plet project
+
+##### Create a new ontology from a json file:
+1. Drop myOntology.json in jbs-json23plet/ontologies/json
+1. Run "./json23plet.sh -ontology myOntology"
+1. The myOntology.ttl file will be created in jbs-json23plet/ontologies/ttl
+1. The myOntology.java will be created in jbs-json23plet/src/main/java/json23plet/ontologies
+1. Run "./json23plet.sh -b" to rebuild the json23plet project
+
+Note: While changing an existing ontology, there might  be some generators that use the old ontology properties, if so you have to update them, otherwise the project wont build due to compilations errors.
+
+##### Add configuration for a new generator
+* Run "./json23plet -config  genName=generatorName inputPath=MyInputPath active=activeState" (the activeState field gets either true or false) <br />
+This command will create a new configuration for your generator in the jbs-json23plet/config.json file. <br />
+You can also edit it manually. 
+
+##### Edit configuration for an existing generator
+1. Run "./json23plet -config genName=generatorName inputPath=MyInputPath active=activeState" <br />
+If a generator with this name is already exist the command will edit the generator fields, else it will create a new configuration.
+
+##### Edit configuration of global setting
+1. Run "./json23plet -config outputDir=myOutputDir" to set a new output directory
+1.  Run "./json23plet -config errorLevel=level" to set a new errorLevel. <br /> ErrorLevel indicate eaht would happens if the validator facing an error: <br />
+    * low - Nothing will happen.
+    * medium - The errors will display.
+    * high - On error stop execution.
 
 
 ## json23plet components
@@ -137,60 +187,6 @@ Using this format allow you to run "./json23plet.sh -generate basic \<dataInputR
 1. Run "./json23plet.sh -generate MyGenerator \<dataInputRootDir\>".
  
 (See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java).
-
-## json23plet commands
-
-### Init the project directories
-The command initializes the direcories tree of the project
-
-      ./json23plet.sh -init
-
-### Config the output root directory
-The command sets up the output roor directory. <br />
-This setting will be saved in the config.json file. <br/>
-The input directories tree will be reflected in this directory.
-
-      ./json23plet.sh -config outputDir=myOutputDir
-
-
-#### Run single generator:
-* Run "./json23plet.sh -generate generatorName dataInputRootDir"
-* In case of using the basic generator (see [Json File Formats](README.md#json-files-format)). <br /> Run "./json23plet.sh -generate basic \<dataInputRootDir\>" 
-
-##### Run multiple generators:
-1. [Config](README.md#add-configuration-for-a-new-generator) the generators that you want to run in jbs-json23plet/config.json
-1. Run "./json23plet.sh -generateAll"
-
-##### Create a new generator:
-1. Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/main/java/json23plet/generators/customGenerators directory.<br /> For [regExGenerator](README.md#regexgenerator) drop it in jbs-json23plet/src/main/java/json23plet/generators/regexGenerators directory
-1. Run "./json23plet.sh -b" to rebuild the json23plet project
-
-##### Create a new ontology from a json file:
-1. Drop myOntology.json in jbs-json23plet/ontologies/json
-1. Run "./json23plet.sh -ontology myOntology"
-1. The myOntology.ttl file will be created in jbs-json23plet/ontologies/ttl
-1. The myOntology.java will be created in jbs-json23plet/src/main/java/json23plet/ontologies
-1. Run "./json23plet.sh -b" to rebuild the json23plet project
-
-Note: While changing an existing ontology, there might  be some generators that use the old ontology properties, if so you have to update them, otherwise the project wont build due to compilations errors.
-
-##### Add configuration for a new generator
-* Run "./json23plet -config  genName=generatorName inputPath=MyInputPath active=activeState" (the activeState field gets either true or false) <br />
-This command will create a new configuration for your generator in the jbs-json23plet/config.json file. <br />
-You can also edit it manually. 
-
-##### Edit configuration for an existing generator
-1. Run "./json23plet -config genName=generatorName inputPath=MyInputPath active=activeState" <br />
-If a generator with this name is already exist the command will edit the generator fields, else it will create a new configuration.
-
-##### Edit configuration of global setting
-1. Run "./json23plet -config outputDir=myOutputDir" to set a new output directory
-1.  Run "./json23plet -config errorLevel=level" to set a new errorLevel. <br /> ErrorLevel indicate eaht would happens if the validator facing an error: <br />
-    * low - Nothing will happen.
-    * medium - The errors will display.
-    * high - On error stop execution.
-
-
 
 ### Triplet
 While creating a new generator you may use the Triplet class.<br />
