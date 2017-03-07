@@ -89,10 +89,7 @@ Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/
             
             ./json23plet.sh -b
             
-Now you can [run](README.md#Run a single generator) your generator as decribed above
-
-1. Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/main/java/json23plet/generators/customGenerators directory.<br /> For [regExGenerator](README.md#regexgenerator) drop it in jbs-json23plet/src/main/java/json23plet/generators/regexGenerators directory
-1. Run "./json23plet.sh -b" to rebuild the json23plet project
+Now you can [run](README.md#run-a-single-generator) your generator as decribed above
 
 ##### Create a new ontology from a json file:
 1. Drop myOntology.json in jbs-json23plet/ontologies/json
