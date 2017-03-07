@@ -197,8 +197,9 @@ Rebuild the project using:
 Source code:
 
       src/main/java/json23plet/modules/Json.java
-Json is a module for parsing json files. json23plet engine assume you using this tool, but its not a duty - you can use your own json parser but we highly recommend you to use this module.<be/>
-The engine load staticly (per thread) the current working json file. and you can access (in your generator) to the parsed file via json23plet.Json module.
+Json is a module for parsing json files.<br/>
+json23plet engine assume you using this tool, but its not a duty - you can use your own json parser but we highly recommend you to use this module.<be/>
+The engine load staticly (per thread) the current working json file, and you can access (in your generator) to the parsed file via Json module.
 
 #### Usege
 
@@ -207,7 +208,19 @@ The engine load staticly (per thread) the current working json file. and you can
     .getAsSOmeObject("property") // read the code documentation foe more details.
 
 ### Generators
+As mentioned above, json23plet know to take a specific user generator and run it.
 By using this, you can generate a new RDF triplet file from your json file.
+
+#### Usege
+Write your own generator, a generator is typically lokks like as described:
+
+      for (Json j : json().getAsArray(propertyOfJsonArray)) {
+            triplet()
+                  .subject(j.value("uri"))
+                  .predicate(j.value("key"))
+                  .object(s); // s is an object in ontology.java class
+      }
+In this example we loaded the parsed json file and for each json in the list we create one triplet.
 
 #### Json files format
 Basically you can choose your own foramt and write your own generator for it ([as explained later](README.md#generators)).
