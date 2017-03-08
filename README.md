@@ -252,7 +252,7 @@ By using this, you can generate a new RDF triplet file from your json file.
 2. Drop your generator in:
        
             src/main/java/json23plet/generators
- 3. Rebuild using:
+3. Rebuild using:
  
             ./json23plet.sh -b
 And now you can run your new generator.
