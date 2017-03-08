@@ -239,22 +239,30 @@ As mentioned above, json23plet know to take a specific user generator and run it
 By using this, you can generate a new RDF triplet file from your json file.
 
 #### Usege
-Write your own generator, a generator is typically lokks like as described:
+1. Write your own generator, a generator have to extends *Generator* class and to implament the *generate* function.<br/>
+      The code of *generate* is typically looks like this:
 
-      for (Json j : json().getAsArray(propertyOfJsonArray)) {
-            triplet()
-                  .subject(j.value("uri"))
-                  .predicate(j.value("key"))
-                  .object(s); // s is an object in ontology.java class
-      }
-In this example we loaded the parsed json file and for each json in the list we create one triplet.
+            for (Json j : json().getAsArray(propertyOfJsonArray)) {
+                  triplet()
+                        .subject(j.value("uri"))
+                        .predicate(j.value("key"))
+                        .object(s); // s is an object in ontology.java class
+            }
+      (In this example we loaded the parsed json file and for each json in the list we create one triplet).<br />
+2. Drop your generator in:
+       
+            src/main/java/json23plet/generators
+ 3. Rebuild using:
+ 
+            ./json23plet.sh -b
+And now you can run your new generator.
 
 ### The basic generator
 Source code:
 
       src/main/java/json23plet/generators/customGenerators/BasicJsonGenerator.java
 
-To simplify the using' and to avoid creating new generator for each type of json we build the BasicJsonGenerator.<br\>
+To simplify the using and to avoid creating new generator for each type of json we build the BasicJsonGenerator.<br\>
 This generator assume you created a json files with a specific format, and by activating it on thos files it will generate a triplets generically and independently on their content.
 
 #### Usege
@@ -274,59 +282,6 @@ To use the basic generator you have to create your json in the following format:
 Now simply run:
 
       ./json23plet.sh -generate basic inputDir
-
-
-
-
-1. Write MyGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators directory.
-<br />the generator has to extend the generator class and implement the generate function:
-
-        public void generate();
-
-1. Run "./json23plet -b" to rebuild the project. 
-1. Run "./json23plet.sh -generate MyGenerator \<dataInputRootDir\>".
- 
-(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java).
-
-### Triplet
-While creating a new generator you may use the Triplet class.<br />
-Each triplet represents a triplet in your rdf model<br /> 
-Use as follow:
-
-    Triplet
-    .triplet()
-    .subject("subjectUri")
-    .preficate(Predicate) // taken from yourOntology.java class might be also uri.
-    .object(Resource) // taken from yourOntology.java class might be also uri.
-
-### Json files format
-Basically you can choose your own foramt and write your own generator for it ([as explained later](README.md#generators)).
-<br />However we recommend using the following format that avoids creating a new generator:
-
-    {
-        "subjects" : [
-            { "uri" : subjectUri,
-              Property : Object, // the object can be also list of objects : [object1, object2, ...] 
-              ...
-            },
-            ....
-        ]
-    }
-
-Using this format allow you to run "./json23plet.sh -generate basic \<dataInputRootDir\>" instead of creating your own generator.
-
-
-
-### Json
-In order to write your own generator, you will need to parse your json.<br />
-Our library knows to load your json file and therefore it simplifies the usage compared to other libraries (as Gson or Jackson).<br />
-Using as follow:
-
-    Json
-    .json()
-    .getAsSomeObject(String) // might also be void, read the code.
-    
-(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java)
 
 ### JsonValidator
 A library to validate your json before you generate triplets from it.<br />
