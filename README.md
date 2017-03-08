@@ -208,7 +208,19 @@ The engine load staticly (per thread) the current working json file, and you can
     .json() // return the current working file already parsed.
     .getAsSOmeObject("property") // read the code documentation foe more details.
 
+### Triplet
+The Triplet module is a simple wrraper for the papche jena library.<br/>
+json23plet's engine load an RDF model before calling your generator and allow you to add triplets to that model using the Triplet module.
 
+#### Uses
+
+    Triplet
+    .triplet()
+    .subject("subjectUri")
+    .preficate(Predicate) // taken from Ontology.java class might be also uri.
+    .object(Resource) // taken from Ontology.java class might be also uri.
+    
+    
 ### Generators
 As mentioned above, json23plet know to take a specific user generator and run it.
 By using this, you can generate a new RDF triplet file from your json file.
@@ -224,18 +236,6 @@ Write your own generator, a generator is typically lokks like as described:
       }
 In this example we loaded the parsed json file and for each json in the list we create one triplet.
 
-### Triplet
-The Triplet module is a simple wrraper for the papche jena library.<br/>
-json23plet's engine load an RDF model before calling your generator and allow you to add triplets to that model using the Triplet module.
-
-#### Uses
-
-    Triplet
-    .triplet()
-    .subject("subjectUri")
-    .preficate(Predicate) // taken from Ontology.java class might be also uri.
-    .object(Resource) // taken from Ontology.java class might be also uri.
-    
 #### Json files format
 Basically you can choose your own foramt and write your own generator for it ([as explained later](README.md#generators)).
 <br />However we recommend using the following format that avoids creating a new generator:
