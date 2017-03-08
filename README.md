@@ -209,6 +209,9 @@ The engine load staticly (per thread) the current working json file, and you can
     .getAsSOmeObject("property") // read the code documentation foe more details.
 
 ### Triplet
+Source code:
+
+      src/main/java/json23plet/modules/Triplet.java 
 The Triplet module is a simple wrraper for the papche jena library.<br/>
 json23plet's engine load an RDF model before calling your generator and allow you to add triplets to that model using the Triplet module.
 
@@ -220,7 +223,17 @@ json23plet's engine load an RDF model before calling your generator and allow yo
     .preficate(Predicate) // taken from Ontology.java class might be also uri.
     .object(Resource) // taken from Ontology.java class might be also uri.
     
-    
+### Regex
+Source code:
+
+      src/main/java/json23plet/modules/Regex.java
+A simple implemantion of java regex.
+
+#### Usege
+      
+      regex(a.*) // load the regex
+        .match("abc") // check if the string match to the regex.
+
 ### Generators
 As mentioned above, json23plet know to take a specific user generator and run it.
 By using this, you can generate a new RDF triplet file from your json file.
@@ -236,9 +249,17 @@ Write your own generator, a generator is typically lokks like as described:
       }
 In this example we loaded the parsed json file and for each json in the list we create one triplet.
 
-#### Json files format
-Basically you can choose your own foramt and write your own generator for it ([as explained later](README.md#generators)).
-<br />However we recommend using the following format that avoids creating a new generator:
+### The basic generator
+Source code:
+
+      src/main/java/json23plet/generators/customGenerators/BasicJsonGenerator.java
+
+To simplify the using' and to avoid creating new generator for each type of json we build the BasicJsonGenerator.<br\>
+This generator assume you created a json files with a specific format, and by activating it on thos files it will generate a triplets generically and independently on their content.
+
+#### Usege
+##### Json files format
+To use the basic generator you have to create your json in the following format:
 
     {
         "subjects" : [
@@ -250,8 +271,9 @@ Basically you can choose your own foramt and write your own generator for it ([a
         ]
     }
 
-Using this format allow you to run "./json23plet.sh -generate basic \<dataInputRootDir\>" instead of creating your own generator.
+Now simply run:
 
+      ./json23plet.sh -generate basic inputDir
 
 
 
