@@ -137,8 +137,10 @@ See the [code documentation](https://techniontdk.github.io/jbs-json23plet/).
 
 ### Overview
 json23plet is simply an engine which know to run user defined generators. <br/>
+It uses reflaction, static loading files and the Apache jena library.<br/>
 Generator is a piece of code that know (with some usege of our modules) to generate RDF triplets from json file.<br/>
-After the generator finished the engine print the results to an output with the same name as the origin one.
+By specify your generator name, jsob23plet uses relaction to find it and activate it on the input directory. <br/>
+We also supply some modules to work with json23plet comfortably and with simpler way.
 
 ### Ontologies
 Source code:
