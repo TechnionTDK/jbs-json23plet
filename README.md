@@ -286,8 +286,8 @@ As mentioned, json23plet runs a specific generator given by the generator name.
 This allows TO generate new RDF triplet filed from json files.
 
 #### Usage example
-1. Write your own generator, a generator have to extends *Generator* class and to implament the *generate* function.<br/>
-      The code of *generate* is typically looks like this:
+1. Write your own generator, a generator has to extend `Generator` class and implement the `generate` method.<br/>
+      The `generate` code typically looks like this:
 
             for (Json j : json().getAsArray(propertyOfJsonArray)) {
                   triplet()
@@ -295,14 +295,11 @@ This allows TO generate new RDF triplet filed from json files.
                         .predicate(j.value("key"))
                         .object(s); // s is an object in ontology.java class
             }
-      (In this example we loaded the parsed json file and for each json in the list we create one triplet).<br />
-2. Drop your generator in:
-       
-            src/main/java/json23plet/generators
-3. Rebuild using:
+      (In this example we loaded the parsed json file and for each json in the list we create one triplet).<br/>
+1. Drop the `generator.java` in `src/main/java/json23plet/generators` 
+1. Rebuild the tool by using
  
             ./json23plet.sh -b
-And now you can run your new generator.
 
 ### The basic generator
 Source code:
