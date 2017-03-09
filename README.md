@@ -14,24 +14,24 @@ This project was devleoped as part of the JBS (Jewish Book Shelf) project in the
 ### Prerequisites
 Install maven on your machine.
 
-      apt-get install maven
+    apt-get install maven
 
 ### Installation
 
 1. Git clone jbs-json23plet repository to a directory
 
-         git clone git@github.com:TechnionTDK/jbs-json23plet.git
+        git clone git@github.com:TechnionTDK/jbs-json23plet.git
 
 1. Go into jbs-json23plet/ and build the project
 
-         ./json23plet.sh -b
+        ./json23plet.sh -b
       
 1. Untrack the configuration file from git
 
-         git update-index --assume-unchanged config.json
+        git update-index --assume-unchanged config.json
    this command will prevent from your local config.json to be pushed into the GitHub repository
    
-## Working with windows
+## Working on Windows machine
 We recommend you to develop and edit files in the project on linux machine, as where the project developed, but it can be also done on windows machines.
 
 ### IDE 
@@ -205,7 +205,7 @@ The generator require the ontology in a very specific format:<br/>
     }
 (The uri and rdf:type predicate are required).
 
-#### Usege
+#### Usage
 Drop your ontology.json file in *jbs-json23plet/ontologies/json* and run:
 
       ./json23plet -ontology myOntology
@@ -229,7 +229,7 @@ Json is a module for parsing json files.<br/>
 json23plet engine assume you using this tool, but its not a duty - you can use your own json parser but we highly recommend you to use this module.<be/>
 The engine load staticly (per thread) the current working json file, and you can access (in your generator) to the parsed file via Json module.
 
-#### Usege
+#### Usage
 
     Json
     .json() // return the current working file already parsed.
@@ -242,7 +242,7 @@ Source code:
 The Triplet module is a simple wrraper for the papche jena library.<br/>
 json23plet's engine load an RDF model before calling your generator and allow you to add triplets to that model using the Triplet module.
 
-#### Usege
+#### Usage
 
     Triplet
     .triplet()
@@ -256,7 +256,7 @@ Source code:
       src/main/java/json23plet/modules/Regex.java
 A simple implemantion of java regex.
 
-#### Usege
+#### Usage
       
       regex(a.*) // load the regex
         .match("abc") // check if the string match to the regex.
@@ -272,7 +272,7 @@ As described earlier the output reflect the input directory recursively, json23p
 As mentioned above, json23plet know to take a specific user generator and run it.
 By using this, you can generate a new RDF triplet file from your json file.
 
-#### Usege
+#### Usage
 1. Write your own generator, a generator have to extends *Generator* class and to implament the *generate* function.<br/>
       The code of *generate* is typically looks like this:
 
@@ -299,7 +299,7 @@ Source code:
 To simplify the using and to avoid creating new generator for each type of json we build the BasicJsonGenerator.<br/>
 This generator assume you created a json files with a specific format, and by activating it on thos files it will generate a triplets generically and independently on their content.
 
-#### Usege
+#### Usage
 ##### Json files format
 To use the basic generator you have to create your json in the following format:
 
