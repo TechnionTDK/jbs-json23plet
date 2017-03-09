@@ -235,7 +235,7 @@ The generator requires the ontology json to be in a very specific format:<br/>
         ./json23plet.sh -b
 
 ### Json
-Source code files:
+Source code file:
 
       src/main/java/json23plet/modules/Json.java
 Json is a module for parsing json files.<br/>
@@ -249,13 +249,13 @@ The engine loads staticly (per thread) the current working json file, and it can
     .getAsSomeObject("property") // read the code documentation for more details.
 
 ### Triplet
-Source code :
+Source code file:
 
       src/main/java/json23plet/modules/Triplet.java 
-The Triplet module is a simple wrraper for the papche jena library.<br/>
-json23plet's engine load an RDF model before calling your generator and allow you to add triplets to that model using the Triplet module.
+The Triplet module is a simple wrraper for the [Apache Jena library](https://jena.apache.org/).<br/>
+json23plet engine loads an RDF model before callingthe generator and allows adding statements to that model by using the Triplet module.
 
-#### Usage
+#### Usage example
 
     Triplet
     .triplet()
@@ -263,29 +263,29 @@ json23plet's engine load an RDF model before calling your generator and allow yo
     .preficate(Predicate) // taken from Ontology.java class might be also uri.
     .object(Resource) // taken from Ontology.java class might be also uri.
     
-### Regex
-Source code:
+### Regex 
+Source code file:
 
       src/main/java/json23plet/modules/Regex.java
-A simple implemantion of java regex.
+A simple implemantion of wrraper to java regex.
 
-#### Usage
+#### Usage example
       
       regex(a.*) // load the regex
-        .match("abc") // check if the string match to the regex.
+      .match("abc") // check if the string match to the regex.
 
 ### DataPublisher
-Source code:
+Source code file:
 
       src/main/java/json23plet/modules/DataPublisher.java
-A simple module to publish rdf module into file.
-As described earlier the output reflect the input directory recursively, json23plet init the DataPublisher before calling to your generator, by using the DataPublisher.publish function you specify the output file extenstions and format.
+A simple module to publish RDF model into ttl file.
+As described the output directory reflects the input directory, the tool inits the DataPublisher before calling the generators. 
 
 ### Generators
-As mentioned above, json23plet know to take a specific user generator and run it.
-By using this, you can generate a new RDF triplet file from your json file.
+As mentioned, json23plet runs a specific generator given by the generator name.
+This allows TO generate new RDF triplet filed from json files.
 
-#### Usage
+#### Usage example
 1. Write your own generator, a generator have to extends *Generator* class and to implament the *generate* function.<br/>
       The code of *generate* is typically looks like this:
 
