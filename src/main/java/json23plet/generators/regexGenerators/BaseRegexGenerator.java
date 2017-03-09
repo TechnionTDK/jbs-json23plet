@@ -26,7 +26,7 @@ public abstract class BaseRegexGenerator {
 
     /**
      * Register new IRegexGenerator to the generatorsList.
-     * @param rgen - the IRegexGenerator to register.
+     * @param rgen  the IRegexGenerator to register.
      */
     public void registerGenerator(IRegexGenerator rgen) {
         generatorsList.add(rgen);
@@ -34,7 +34,7 @@ public abstract class BaseRegexGenerator {
 
     /**
      * Define the way we get the json's to work on from your json file (using the Json module).
-     * @return A list of Json - contains the json's to eotk on.
+     * @return A list of Json  contains the json's to eotk on.
      */
 
     public abstract List<Json> getJsonsToGenerate();

@@ -8,13 +8,13 @@ import json23plet.modules.Json;
 public interface IRegexGenerator {
     /**
      * Generate a Json object
-     * @param js - the Json to process
+     * @param js the Json to process
      */
     public void generate(Json js);
 
     /**
      * Define match rule to Json object.
-     * @param js - the Json to check the match
+     * @param js the Json to check the match
      * @return true if the Json match, false otherwise.
      */
     public boolean match(Json js);

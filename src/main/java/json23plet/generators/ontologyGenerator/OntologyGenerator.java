@@ -6,6 +6,10 @@ import java.io.PrintStream;
  * Created by yon_b on 13/12/16.
  */
 public class OntologyGenerator {
+    /**
+     * Generate the ontology class and the ontology ttl.
+     * @param ontName
+     */
     static public void generate(String ontName) {
         try {
             OntologyTTLGenerator.generate(ontName);

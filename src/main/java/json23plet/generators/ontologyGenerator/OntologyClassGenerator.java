@@ -30,6 +30,12 @@ public class OntologyClassGenerator {
     static JCodeModel om = new JCodeModel();
     static JPackage op = om._package("json23plet.ontologies");
 
+    /**
+     * Generate a new class represent an ontology.
+     * @param clssName the className of (usually the ontology name).
+     * @throws JClassAlreadyExistsException
+     * @throws IOException
+     */
     static public void generate(String clssName) throws JClassAlreadyExistsException, IOException {
         Json.Init(Paths.get("ontologies", "json", clssName + ".json").toString());
         JDefinedClass oc = op._class(clssName);

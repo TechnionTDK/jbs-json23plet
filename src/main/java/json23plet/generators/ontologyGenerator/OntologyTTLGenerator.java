@@ -17,6 +17,10 @@ import static json23plet.modules.Triplet.addNSprefix;
  * Created by yon_b on 03/12/16.
  */
 public class OntologyTTLGenerator {
+    /**
+     * Generate the ontology ttl file.
+     * @param ontName the name of the ontology file.
+     */
     static public void generate(String ontName) {
         Triplet.Init();
         Json.Init(Paths.get("ontologies", "json", ontName + ".json").toString());

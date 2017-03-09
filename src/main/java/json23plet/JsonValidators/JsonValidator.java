@@ -32,7 +32,7 @@ public abstract class JsonValidator {
     /**
      * Define the way we get the json's to work on from your json file (using the Json module).
      * @param jsonRoot a Json object to define how to work on it.
-     * @return A list of Json - contains the json's to work on.
+     * @return A list of Json contains the json's to work on.
      */
     public abstract List<Json> getJsonsToValidate(Json jsonRoot);
 
