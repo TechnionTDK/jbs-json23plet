@@ -25,57 +25,42 @@ Install [Maven](https://maven.apache.org/) on your machine.
 1. Go into jbs-json23plet/ and build the project
 
         ./json23plet.sh -b
+   this command will call `mvn install`
       
 1. Untrack the configuration file from git
 
         git update-index --assume-unchanged config.json
-   this command will prevent from your local config.json to be pushed into the GitHub repository
-   
-## Devlopment enviorment
-It's prefered to devolpe and use the tool on a Linux machine where you can run the tool through the command line.<br\>
-Working on windows requires an IDE.
-
-### Devloping with an IDE 
-It's recommeded to use [IntelliJ IDEA](https://www.jetbrains.com/idea/) and our guide will focus on it.
-
-### Getting started with Intellij
-* *Clone the repository*<br/>
-     Go to File->New->Project From Version Control->GitHub, Fill `git@github.com:TechnionTDK/jbs-json23plet.git` in the repository field and click on `Clone`.<br/>
-
-* *Configure tool arguments*<br/>
-     1. Right click on src/main/java->Mark Directory as->Sources Root
-     1. Build The project
-     1. Right click on src/main/java/Json23plet.java->Create 'Json23plet.main()' and configure the tool arguments
-     1. Run or Debug the tool
+   this command will prevent from your local `config.json` to be untracked from the GitHub repository
 
 ## json23plet commands
 
-### Build the project
+### Building the tool
 
       ./json23plet.sh -b
+this command will call `mvn install`
       
-### Init the project directories
+### Initialize the project directories
 The command initializes the direcories tree of the project
 
       ./json23plet.sh -init
+this command creates `ontologies/json`, `ontologies/ttl` and `src/test/testsFiles` directories. During running, the tool assumes those directories exist.
 
-### Config the output root directory
-The command sets up the output roor directory. <br />
-This setting will be saved in the config.json file. <br/>
-The input directories tree will be reflected in this directory.
+### Configuring the output root directory
+The command sets up the output root directory and saves it in `config.json` file.<br/>
+The input directories tree will be reflected in this directory and will have an identical directory structure.
 
       ./json23plet.sh -config outputDir=myOutputDir
 
-#### Run a single generator
-The command run recursively a specific [generator](README.md#generators) on a specific input directory (or a specific single file)
+#### Running a single generator
+The command runs a specific [generator](README.md#generators) on a specific input directory (or a specific single file) recursively.
 
       ./json23plet.sh -generate generatorName dataInputRootDir
       (./json23plet.sh -generate generatorName inputFile.json)
-In case of using the [basic](README.md#json-files-format) generator, specify "basic" as the generator
+In case of using the [basic](README.md#the-basic-generator) generator, specify `basic` as the generator name
       
       ./json23plet.sh -generate basic dataInputRootDir
 
-##### Run multiple generators
+##### Running multiple generators
 Json23plet allows you to config a scheme of running multiple different generators on diffrent directories (or files). <br/>
 To do so you need to [config](README.md#add&edit-configuration-for-a-new-generator) your scheme and run:
       
@@ -146,6 +131,7 @@ The default configurations are:
           "generators": [] // configuration scheme to run multile generators
         }
       }
+      
 ## Testing
 We build a simple and efficient testing framework.
 to test your generator do as follow:
@@ -157,7 +143,25 @@ To run the Tests simply rebuild the project using:
 
       ./json23plet.sh -b 
 and maven will run the tests.<br/>
-If you wish only to run the tests pleses see this [guid](http://junit.sourceforge.net/doc/faq/faq.htm#running_4) 
+If you wish only to run the tests pleses see this [guide](http://junit.sourceforge.net/doc/faq/faq.htm#running_4)
+
+## Devlopment enviorment
+It's prefered to devolpe and use the tool on a Linux machine where you can run the tool through the command line.<br\>
+Working on windows requires an IDE.
+
+### Devloping with an IDE 
+It's recommeded to use [IntelliJ IDEA](https://www.jetbrains.com/idea/) and our guide will focus on it.
+
+### Getting started with Intellij
+* *Clone the repository*<br/>
+     Go to File->New->Project From Version Control->GitHub, Fill `git@github.com:TechnionTDK/jbs-json23plet.git` in the repository field and click on `Clone`.<br/>
+
+* *Configure tool arguments*<br/>
+     1. Right click on src/main/java->Mark Directory as->Sources Root
+     1. Build The project
+     1. Right click on src/main/java/Json23plet.java->Create 'Json23plet.main()' and configure the tool arguments
+     1. Run or Debug the tool
+
 
 ## Development and maintenance
 In this section we will review the code components for future maintenance.<br/>
