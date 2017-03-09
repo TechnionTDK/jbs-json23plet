@@ -69,6 +69,7 @@ To do so you need to [configure your scheme](README.md#addedit-configuration-for
 
 ### Create and install a new generator
 ***This is not a command but a basic part of working with the Json23plet tool***
+
 json23plet allows you to write and deploy your own generator for unique json formats.<br/>
 *To do so:*<br/>
 * Create your [generator](README.md#generators) and drop it in `src/main/java/json23plet/generators/customGenerators` directory.<br/>
@@ -77,18 +78,18 @@ json23plet allows you to write and deploy your own generator for unique json for
 
         ./json23plet.sh -b
             
-* Now you can [run](README.md#run-a-single-generator) your generator as decribed above
+* Now you can [run](README.md#run-a-single-generator) your generator.
 
-##### Create and update an ontology
-Json23plet using the same logic to generate ontology.ttl files, that means that to generate new ontology you just have to define it in a json file and run the json23plet ontology generator.
+### Create and update an ontology
+json23plet uses the same logic to generate ontology.ttl files. Therefore, to generate a new ontology it's required to define a json file with the ontolgy and run the json23plet ontology generator.
 
-1. Define the ontology in myOntology.json in [this](README.md#ontologies) format
+1. Define the ontology in myOntology.json by using [this format](README.md#ontologies)
 1. To create the ontology run:
 
             ./json23plet.sh -ontology myOntology
 
-      an myOntology.ttl file will be created in **jbs-json23plet/ontologies/ttl**, you can load this file to your server.<br/>
-      an myOntology.java will be created in **jbs-json23plet/src/main/java/json23plet/ontologies**, this class contains some       of the ontology metadata and allow you to include them in your generators.
+    a `myOntology.ttl` file will be created in `ontologies/ttl`.<br/>
+    a generated class `myOntology.java` will be created in `src/main/java/json23plet/ontologies`, this class represents the ontology as a java object which allows you using it in a convenient way.
 1. Rebuild using:
 
             ./json23plet.sh -b 
