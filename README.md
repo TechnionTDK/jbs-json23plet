@@ -117,10 +117,10 @@ The command allow you to config a single generator in the scheme, of course, you
  (the activeState field gets either true or false depends on the current scheme)
 * To config manually:<br/>
   Go to **jbs-json23plet/config.json** and set the fileds manually
-See also [setting](README.me#json23plet-configuration).
+See also [setting](README.md#json23plet-configuration).
 
 ##### Edit configuration of global setting
-Json23plet use some [setting](README.me#json23plet-configuration) while runnig.
+Json23plet use some [setting](README.md#json23plet-configuration) while runnig.
 * To config output dir run:
       
             ./json23plet -config outputDir=myOutputDir
@@ -150,7 +150,8 @@ We build a simple and efficient testing framework.
 to test your generator do as follow:
 
 1. Add myGenerator.input.json to jbs-json23plet/src/test/testsFiles 
-1. Add myGenerator.expected.ttl to jbs-json23plet/src/test/testsFiles 
+1. Add myGenerator.expected.ttl to jbs-json23plet/src/test/testsFiles
+
 To run the Tests simply rebuild the project using:
 
       ./json23plet.sh -b 
@@ -333,7 +334,7 @@ a regex generator checks for every json object of the input if it match to some 
 1. Drop your generator in **src/main/java/json23plet/generators/regexGenerators** and rebuild using:
 
             ./json23plet.sh -b
-Now you can run your generaote the same [way](README.me#run-a-single-generator) as regular generators.
+Now you can run your generaote the same [way](README.md#run-a-single-generator) as regular generators.
       
 ### JsonValidator
 Source code:
@@ -341,7 +342,7 @@ Source code:
       src/main/java/json23plet/JsonValidators/JsonValidator.java
       src/main/java/json23plet/JsonValidators/IJsonValidator.java
 To validate your jsons before generate them we build a framework that allow you to define and implement any validation you wish in a simple way.
-It technolify is much like the [regexGenerators](README.me#regexgenertor).
+It technolify is much like the [regexGenerators](README.md#regexgenertor).
 
 #### Build a jsonValidator
 1. Create your myValidator class, the class have to extends the JsonValidator class.
@@ -352,7 +353,7 @@ The action performed on error detection depends on errorLevel (define in *config
 * low - nothing happen
 * medium - error will display while detected
 * high - on error json23plet will stop
-To set the error level see [here](README.me#edit-configuration-of-global-setting)
+To set the error level see [here](README.md#edit-configuration-of-global-setting)
 
 #### Usage
 A tipically use will look like this:
