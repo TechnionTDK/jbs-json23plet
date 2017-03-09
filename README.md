@@ -302,38 +302,39 @@ This allows TO generate new RDF triplet filed from json files.
             ./json23plet.sh -b
 
 ### The basic generator
-Source code:
+Source code file:
 
       src/main/java/json23plet/generators/customGenerators/BasicJsonGenerator.java
 
-To simplify the using and to avoid creating new generator for each type of json we build the BasicJsonGenerator.<br/>
-This generator assume you created a json files with a specific format, and by activating it on thos files it will generate a triplets generically and independently on their content.
+To simplify using the tool and to avoid creating a new generator for each type of json file, the tool has a `BasicJsonGenerator`.<br/>
+This generator assumes the json file has a specific format, and by activating it on this file it will generate triplets generically without any more knowledge about the json file format.
 
-#### Usage
-##### Json files format
-To use the basic generator you have to create your json in the following format:
+#### Basic Json files format
+To use the basic generator you have to create the json file in the following format:
 
     {
         "subjects" : [
             { "uri" : subjectUri,
-              Property : Object, // the object can be also list of objects : [object1, object2, ...] 
+              Property1 : Object1, // the object can be also list of objects : [object1, object2, ...] ,
+              Property2 : Object2, // the object can be also list of objects : [object1, object2, ...] 
               ...
             },
             ....
         ]
     }
 
-Now simply run:
+#### Usage example
+simply run:
 
       ./json23plet.sh -generate basic inputDir
 
 ### RegexGenerator
-Source code:
+Source code files:
 
       src/main/java/json23plet/generators/regexGenerators/BaseRegexGenerator.java
       src/main/java/json23plet/generators/regexGenerators/IRegExGenerator.java
-The basic generator is a powerfool  and generic tool for every data you wish to generate, but sometimes some jsons needs a special treatment.<br/>
-One possible solution is to write a speicial generator that will handle thos cases, but we developed a much comfortable framework to do it.<br/>
+The basic generator is a powerfool and generic tool for every data you wish to generate, but sometimes some jsons needs a special treatment.<br/>
+One possible solution is to write a speicial generator that will handle those cases, but the tool has an easiest way doing it by using this module.<br/>
 Lets start with an example:<br/>
 Assume we want that every triplet who its uri starts with "jbr:tanach*" will also contains the [rdf:type, jbo:Tanach] triplet, the regexGenerator framework allow you to do that easily.<br/>
 a regex generator checks for every json object of the input if it match to some rule, and if so he process it and creating a new triplet for this json object.<br/>
