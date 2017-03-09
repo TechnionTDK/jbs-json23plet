@@ -13,13 +13,24 @@ public class DataPublisher {
     static ThreadLocal<String> tsInputRootDir = new ThreadLocal<>();
     static ThreadLocal<String> tsOutputRootDirDir = new ThreadLocal<>();
 
+    /**
+     * Init the module with the current file, This function called by GeneratorFactory class.
+     * @param inputFilePath the current file we work on.
+     * @param inputRootDirPath the input root dir as passed by the command line.
+     * @param outputRootDirPath the output root dir as config in the config.json file.
+     */
     static public void Init(String inputFilePath, String inputRootDirPath, String outputRootDirPath) {
         tsInputPath.set(inputFilePath);
         tsInputRootDir.set(inputRootDirPath);
         tsOutputRootDirDir.set(outputRootDirPath);
     }
 
-
+    /**
+     * Publish the data in the root corresponded path
+     * @param dir an additional directory level to add above the file.
+     * @param fileExt the extension of the file.
+     * @param format the format of the file (usually TURTLE).
+     */
     static public void publish(String dir, String fileExt, String format) {
         String currentOutputPath = getOutputPath(dir, fileExt);
         new File(new File(currentOutputPath).getParent()).mkdirs();

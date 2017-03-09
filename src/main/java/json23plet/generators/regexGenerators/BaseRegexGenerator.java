@@ -17,15 +17,38 @@ import java.util.stream.Collectors;
 public abstract class BaseRegexGenerator {
 
     List<IRegExGenerator> generatorsList = new ArrayList<>();
+
+    /**
+     * An abstract function, force the user to register generators of type
+     * IRegexGeneraotrs to the current regexGenerator.
+     */
     public abstract void registerGenerators();
 
+    /**
+     * Register new IRegexGenerator to the generatorsList.
+     * @param rgen - the IRegexGenerator to register.
+     */
     public void registerGenerator(IRegExGenerator rgen) {
         generatorsList.add(rgen);
     }
+
+    /**
+     * Define the way we get the json's to work on from your json file (using the Json module).
+     * @return A list of Json - contains the json's to eotk on.
+     */
+
     public abstract List<Json> getJsonsToGenerate();
 
+    /**
+     * Define the id of your regexGenerator, this ID associated with the output file name.
+     * @return The ID of this regexGenerator
+     */
     public abstract String getID();
 
+    /**
+     * The json23plet engine will search after this function and call it. this is the main
+     * function of any generator.
+     */
     public abstract void generate();
 
     private List<Object> getRegExGenerators() throws IOException {
@@ -44,7 +67,11 @@ public abstract class BaseRegexGenerator {
 
     }
 
-    protected void _generate() {
+    /**
+     * Activate the list of IRegexGenerators on the Json's lists.
+     * Any regexGenerator have to call this function inside its generate function.
+     */
+    void _generate() {
         for (IRegExGenerator rgen : generatorsList) {
             for (Json js : getJsonsToGenerate()) {
                 if (rgen.match(js)) {

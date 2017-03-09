@@ -17,15 +17,39 @@ import static json23plet.generators.GeneratorsUtils.getGlobalSettingProp;
 
 public abstract class JsonValidator {
     List<IJsonValidator> validatorsList = new ArrayList<>();
+    /**
+     * An abstract function, force the user to register generators of type
+     * IJsonValidator to the current JsonValidator.
+     */
     public abstract void registerValidators();
 
+    /**
+     * Define the way we get the json's to work on from your json file (using the Json module).
+     * @return A list of Json contains the json's to work on.
+     */
     public abstract List<Json> getJsonsToValidate();
+
+    /**
+     * Define the way we get the json's to work on from your json file (using the Json module).
+     * @param jsonRoot a Json object to define how to work on it.
+     * @return A list of Json - contains the json's to work on.
+     */
     public abstract List<Json> getJsonsToValidate(Json jsonRoot);
 
+    /**
+     * Register new IJsonValidator to the generatorsList.
+     * @param v  the IJsonValidator to register.
+     */
     public void registerValidator(IJsonValidator v) {
         validatorsList.add(v);
     }
 
+    /**
+     * Validate all json's files recursively of a given directory..
+     * @param jsonPath path to the directory.
+     * @throws IOException
+     * @throws JsonValidatorException
+     */
     public void validate(String jsonPath) throws IOException, JsonValidatorException {
         if(new File(jsonPath).isFile()) {
             validateSingleJson(jsonPath);
@@ -41,6 +65,12 @@ public abstract class JsonValidator {
 
 
     }
+
+    /**
+     * Validate a single json file given by path.
+     * @param jsonPath path to the json file.
+     * @throws JsonValidatorException
+     */
     public void validateSingleJson(String jsonPath) throws JsonValidatorException {
         String errorLevel = getGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL);
         Json.Init(jsonPath);
@@ -52,6 +82,11 @@ public abstract class JsonValidator {
         }
     }
 
+    /**
+     * Validate a full Json object (given as root)
+     * @param jsonRoot the Json represent the root of the json file.
+     * @throws JsonValidatorException
+     */
     public void validateSingleJson(Json jsonRoot) throws JsonValidatorException {
         for (Json j : getJsonsToValidate(jsonRoot)) {
             for (IJsonValidator v : validatorsList) {
@@ -60,6 +95,12 @@ public abstract class JsonValidator {
         }
     }
 
+    /**
+     * Validate single Json object
+     * @param json the object to validate
+     * @return true if valid, false otherwise
+     * @throws JsonValidatorException
+     */
     public boolean validateSingleJsonObject(Json json) throws JsonValidatorException {
         String errorLevel = getGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL);
         for (IJsonValidator v : validatorsList) {
@@ -69,12 +110,21 @@ public abstract class JsonValidator {
         }
         return true;
     }
+
+    /**
+     * A JsonValidator exception
+     */
     public class JsonValidatorException extends Exception {
         JsonValidatorException(String msg) {
             System.err.println(msg);
             System.exit(1);
         }
     }
+
+    /**
+     * Define the behavior on validation error.
+     * @param messege
+     */
     public void onError(String messege) {
         String errorLevel = getGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL);
         switch (errorLevel) {

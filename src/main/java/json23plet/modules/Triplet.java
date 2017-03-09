@@ -33,6 +33,12 @@ public class Triplet {
         return new Triplet();
     }
 
+    /**
+     * Initialize the current apache jena model.
+     * this function load all the ontologies in the
+     * src/main/java/json23plet/ontologies directory.
+     * This function called by GeneratorFactory class before loading the current generator.
+     */
     static public void Init() {
         model.set(ModelFactory.createOntologyModel());
         try {
@@ -77,6 +83,11 @@ public class Triplet {
         }
     }
 
+    /**
+     * Add namespace prefix to the current model.
+     * @param prefix the prefix to the namespace (e.g jbo).
+     * @param uri the actual uri prefix.
+     */
     static public void addNSprefix(String prefix, String uri) {
         model.get().setNsPrefix(prefix,uri);
     }
@@ -155,6 +166,11 @@ public class Triplet {
         return this;
     }
 
+    /**
+     * Export the data to file in path.
+     * @param path the path to the output file.
+     * @param format the format of the file (usually TURTLE).
+     */
     static public void Export(String path, String format) {
         try {
             FileWriter file = new FileWriter(path);
@@ -167,6 +183,11 @@ public class Triplet {
     static private boolean isModelPrefix(String obj) {
         return model.get().getNsPrefixMap().containsKey(obj);
     }
+
+    /**
+     * Clean the current model.
+     * called by GeneratorFactory
+     */
     static public void Close() {
         model.get().close();
     }

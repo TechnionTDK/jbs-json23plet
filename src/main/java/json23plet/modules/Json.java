@@ -13,6 +13,11 @@ import java.util.stream.Collectors;
 public class Json {
     static private ThreadLocal<JsonElement> root = new ThreadLocal<JsonElement>();
 
+    /**
+     * While generating a generic json some values might create as {"obj":value}
+     * this property represent it.
+     * see example at src/main/java/json23plet/generators/GeneratorsUtils.java
+     */
     static public String PRIMITIVE_KEY = "obj";
 
     protected JsonObject currentElement;
@@ -89,6 +94,11 @@ public class Json {
         return currentElement.has(member);
     }
 
+    /**
+     * Init the class to parse the current json file.
+     * This function used by GeneratorFactory.
+     * @param path path to the json file.
+     */
     static public void Init(String path) {
         JsonParser jp = new JsonParser();
         try {
@@ -98,7 +108,10 @@ public class Json {
         }
     }
 
-    
+    /**
+     * Get the current json as dictionary of (property, value) pairs.
+     * @return dictionary represent the json.
+     */
     public Map<String, Json> getAsDictionary() {
         Set<Map.Entry<String, JsonElement>> entries = currentElement
                 .entrySet();
@@ -110,6 +123,11 @@ public class Json {
         return res;
     }
 
+    /**
+     * Get the values of strings list (e.g {key: [str1, str2]})
+     * @param member the key name.
+     * @return list of the strings (e.g [str1, str2])
+     */
     public List<String> getAsStringArray(String member) {
         List<String> res = new ArrayList<>();
         for (JsonElement j : currentElement.get(member).getAsJsonArray()) {
@@ -130,14 +148,26 @@ public class Json {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Check if the current value is array.
+     * @return true if array, false if not.
+     */
     public boolean isArray() {
         return currentElement.get(PRIMITIVE_KEY).isJsonArray();
     }
 
+    /**
+     * Check if the current value is a primitive.
+     * @return true if primitive, false if not.
+     */
     public boolean isPrimitive() {
         return currentElement.isJsonPrimitive();
     }
 
+    /**
+     * Get the Json as string.
+     * @return Json as string.
+     */
     public String toString() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(currentElement);
