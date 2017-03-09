@@ -141,17 +141,17 @@ json23plet uses some [settings](README.md#json23plet-configuration) while runnig
             ./json23plet -config errorLevel=level
  
 ## Testing
-We build a simple and efficient testing framework.
+json23plet has a simple and efficient testing framework.
 to test your generator do as follow:
 
-1. Add myGenerator.input.json to jbs-json23plet/src/test/testsFiles 
-1. Add myGenerator.expected.ttl to jbs-json23plet/src/test/testsFiles
+1. Add myGenerator.input.json to `src/test/testsFiles`
+1. Add myGenerator.expected.ttl to `src/test/testsFiles`
 
-To run the Tests simply rebuild the project using:
+To run the tests rebuild the project using:
 
       ./json23plet.sh -b 
-and maven will run the tests.<br/>
-If you wish only to run the tests pleses see this [guide](http://junit.sourceforge.net/doc/faq/faq.htm#running_4)
+maven will run the tests.<br/>
+It also possible to run the tests without rebuild as explained in this [guide](http://junit.sourceforge.net/doc/faq/faq.htm#running_4)
 
 ## Devlopment enviorment
 It's prefered to devolpe and use the tool on a Linux machine where you can run the tool through the command line.<br\>
