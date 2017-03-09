@@ -76,7 +76,7 @@ In case of using the [basic](README.md#json-files-format) generator, specify "ba
 
 ##### Run multiple generators
 Json23plet allows you to config a scheme of running multiple different generators on diffrent directories (or files). <br/>
-To do so you need to [config](README.md#add-configuration-for-a-new-generator) your scheme and run:
+To do so you need to [config](README.md#add&edit-configuration-for-a-new-generator) your scheme and run:
       
       ./json23plet.sh -generateAll
 
@@ -117,9 +117,10 @@ The command allow you to config a single generator in the scheme, of course, you
  (the activeState field gets either true or false depends on the current scheme)
 * To config manually:<br/>
   Go to **jbs-json23plet/config.json** and set the fileds manually
+See also [setting](README.me#json23plet-configuration).
 
 ##### Edit configuration of global setting
-Json23plet use some [setting](README.me#globalsetting) while runnig.
+Json23plet use some [setting](README.me#json23plet-configuration) while runnig.
 * To config output dir run:
       
             ./json23plet -config outputDir=myOutputDir
@@ -130,6 +131,31 @@ Json23plet use some [setting](README.me#globalsetting) while runnig.
  * low - nothing happen
  * medium - error will display while detected
  * high - on error json23plet will stop
+ 
+## Json23plet configuration
+Json23plet have some configuration, all defined in *config.json* file.<br/>
+The default configurations are:
+
+      {
+        "setting": {
+          "globalSetting": {
+            "genOutputDir": "output", // the output root dir
+            "errorLevel": "low" 
+          },
+          "generators": [] // configuration scheme to run multile generators
+        }
+      }
+## Testing
+We build a simple and efficient testing framework.
+to test your generator do as follow:
+
+1. Add myGenerator.input.json to jbs-json23plet/src/test/testsFiles 
+1. Add myGenerator.expected.ttl to jbs-json23plet/src/test/testsFiles 
+To run the Tests simply rebuild the project using:
+
+      ./json23plet.sh -b 
+and maven will run the tests.<br/>
+If you wish only to run the tests pleses see this [guid](http://junit.sourceforge.net/doc/faq/faq.htm#running_4) 
 
 ## Development and maintenance
 In this section we will review the code components for future maintenance.<br/>
@@ -269,7 +295,7 @@ Source code:
 
       src/main/java/json23plet/generators/customGenerators/BasicJsonGenerator.java
 
-To simplify the using and to avoid creating new generator for each type of json we build the BasicJsonGenerator.<br\>
+To simplify the using and to avoid creating new generator for each type of json we build the BasicJsonGenerator.<br/>
 This generator assume you created a json files with a specific format, and by activating it on thos files it will generate a triplets generically and independently on their content.
 
 #### Usege
@@ -291,69 +317,64 @@ Now simply run:
       ./json23plet.sh -generate basic inputDir
 
 ### RegexGenerator
+Source code:
+
+      src/main/java/json23plet/generators/regexGenerators/BaseRegexGenerator.java
+      src/main/java/json23plet/generators/regexGenerators/IRegExGenerator.java
 The basic generator is a powerfool  and generic tool for every data you wish to generate, but sometimes some jsons needs a special treatment.<br/>
 One possible solution is to write a speicial generator that will handle thos cases, but we developed a much comfortable framework to do it.<br/>
 Lets start with an example:<br/>
 Assume we want that every triplet who its uri starts with "jbr:tanach*" will also contains the [rdf:type, jbo:Tanach] triplet, the regexGenerator framework allow you to do that easily.<br/>
 a regex generator checks for every json object of the input if it match to some rule, and if so he process it and creating a new triplet for this json object.<br/>
 
-####
+#### Build a regex generator
+1. Build myRegexGeneraor class, the class have to extends the BaseRegexGenerator class.
+1. Implemant the abstruct methods as describe in the  [code documentation](https://techniontdk.github.io/jbs-json23plet/).
+1. Drop your generator in **src/main/java/json23plet/generators/regexGenerators** and rebuild using:
 
+            ./json23plet.sh -b
+Now you can run your generaote the same [way](README.me#run-a-single-generator) as regular generators.
       
-In case that you want to add triplets for a specific json object (e.g. for adding rdf:type to all jbr-tanach\* json objects)<br />
-For this purpose we created a component called RegExGenerator:<br />
-It allows you to activate a series of rules on a selected json objects.<br />
-Each RegExGenerator contains the following:
-
-1. Set of rules (implements of IRegExGenerator interface)
-1. Function that defines how to get the json objects to work on
-1. Getter function that defines the generator name
-
-##### Creating a new RegExGenerator:
-
-1. Create MyRegExGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators directory, the generator have to extend BaseRegExGenerator class.
-1. Create rules and assign them
-1. Implement the generator function (including your validation etc.)
-1. Run "json23plet.sh -b" to rebuild the project
-1. Run "./json23plet.sh -generate MyRegExGenerator \<dataInputRootDir\>"
-
-(See Example in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators/RdfTypeGenerator.java)
-
 ### JsonValidator
-A library to validate your json before you generate triplets from it.<br />
-Each validator is build from "registerdValidators" (rules) and two getters to get the json data from the file or the Json object.<br />
-To create your own validator do as follow:
+Source code:
 
-1. Create yourValidator.java class which extend JsonValidator class and drop it in jbs-json23plet/src/main/java/json23plet/JsonValidators/
-1. Call your validator before you generate triplets as follow:
+      src/main/java/json23plet/JsonValidators/JsonValidator.java
+      src/main/java/json23plet/JsonValidators/IJsonValidator.java
+To validate your jsons before generate them we build a framework that allow you to define and implement any validation you wish in a simple way.
+It technolify is much like the [regexGenerators](README.me#regexgenertor).
 
-        JsonValidator v = new MyValidator();
+#### Build a jsonValidator
+1. Create your myValidator class, the class have to extends the JsonValidator class.
+1. Implemant the abstruct methods as describe in the  [code documentation](https://techniontdk.github.io/jbs-json23plet/).
+
+#### Error level
+The action performed on error detection depends on errorLevel (define in *config.json*):<br/>
+* low - nothing happen
+* medium - error will display while detected
+* high - on error json23plet will stop
+To set the error level see [here](README.me#edit-configuration-of-global-setting)
+
+#### Usage
+A tipically use will look like this:
+
+      public void generate() {
+        JsonValidator v = new PsukimTagsValidator();
         v.registerValidators();
-        v.validateSingleJson(Json.json());
-        
-(See example at jbs-json23plet/src/main/java/json23plet/generators/ExampleGenerator.java)
-
-* You can choose your errorLevel:
-    1. none - nothing happens.
-    1. info - will print each uri that has an EROOR
-    1. stop - stop the execution if error detected.
-
-    To set the error level run "./json23plet -config -setGlobal errorLevel \<errorLevel\>"
-    rator.java)
-
-
-
-
-### Testing
-The tool contains an auto testing framwork.
-For testing your generator do as follow:
-
-1. Add myGenerator.input.json to jbs-json23plet/src/test/testsFiles 
-1. Add myGenerator.expected.ttl to jbs-json23plet/src/test/testsFiles 
-1. Run AutoTest
- 
-
- 
-
-
-
+        try {
+            v.validateSingleJson(Json.json());
+        } catch (JsonValidator.JsonValidatorException e) {
+            e.printStackTrace();
+        }
+        for (Json j : json().getAsArray("subjects")) {
+            String subjectUri = j.value(URI);
+            for (Json tag : j.getAsArray("tags")) {
+                triplet()
+                        .subject(subjectUri)
+                        .predicate(JBO_P_MENTIONS)
+                        .object(tag.value(URI));
+            }
+        }
+        DataPublisher.publish("", "." + getID() + ".ttl", "TURTLE");
+    }
+Here we validate our json file before generating it.<br/>
+As described in the  [code documentation](https://techniontdk.github.io/jbs-json23plet/) you can also validate only one json object each time.
