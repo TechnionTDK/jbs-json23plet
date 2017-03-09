@@ -221,7 +221,7 @@ The generator requires the ontology json to be in a very specific format:<br/>
 #### Usage
 * Drop your `myOntology.json` file in `ontologies/json` and run:
 
-      ./json23plet -ontology myOntology
+        ./json23plet -ontology myOntology
       
   After generating an `myOntology.ttl` file will be created in `ontologies/ttl`.<br/>
   ***Note:*** Do not remove this file, because json23plet uses it to load the ontology during generating new ttl files in the project.
@@ -232,7 +232,7 @@ The generator requires the ontology json to be in a very specific format:<br/>
 
 * Rebuild the project using:
 
-      ./json23plet.sh -b
+        ./json23plet.sh -b
 
 ### Json
 Source code:
