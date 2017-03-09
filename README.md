@@ -215,7 +215,7 @@ Source code:
 The Triplet module is a simple wrraper for the papche jena library.<br/>
 json23plet's engine load an RDF model before calling your generator and allow you to add triplets to that model using the Triplet module.
 
-#### Uses
+#### Usege
 
     Triplet
     .triplet()
@@ -233,6 +233,13 @@ A simple implemantion of java regex.
       
       regex(a.*) // load the regex
         .match("abc") // check if the string match to the regex.
+
+### DataPublisher
+Source code:
+
+      src/main/java/json23plet/modules/DataPublisher.java
+A simple module to publish rdf module into file.
+As described earlier the output reflect the input directory recursively, json23plet init the DataPublisher before calling to your generator, by using the DataPublisher.publish function you specify the output file extenstions and format.
 
 ### Generators
 As mentioned above, json23plet know to take a specific user generator and run it.
