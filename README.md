@@ -356,18 +356,18 @@ To validate the json input files before generating triplets from them, the tool 
 It's mechanisem is much like the [regexGenerators](README.md#regexgenertor).
 
 #### Build a jsonValidator
-1. Create your myValidator class, the class have to extends the JsonValidator class.
-1. Implemant the abstruct methods as describe in the  [code documentation](https://techniontdk.github.io/jbs-json23plet/).
+1. Create `myValidator` class, the class has to extend the `JsonValidator` class.
+1. Implement the abstract methods as describe in the [code documentation](https://techniontdk.github.io/jbs-json23plet/).
 
 #### Error level
-The action performed on error detection depends on errorLevel (define in *config.json*):<br/>
-* low - nothing happen
-* medium - error will display while detected
-* high - on error json23plet will stop
-To set the error level see [here](README.md#edit-configuration-of-global-setting)
+The action that the tool operates on error detection depends on `errorLevel` value (which is defined in `config.json`):<br/>
+* `low` - ignore
+* `medium` - display the error
+* `high` - stop running
+To set the error level [see here](README.md#edit-configuration-of-global-setting)
 
-#### Usage
-A tipically use will look like this:
+#### Usage example
+A tipically usage will look like this:
 
       public void generate() {
         JsonValidator v = new PsukimTagsValidator();
@@ -388,5 +388,5 @@ A tipically use will look like this:
         }
         DataPublisher.publish("", "." + getID() + ".ttl", "TURTLE");
     }
-Here we validate our json file before generating it.<br/>
+In the example we validate our json file before generating it.<br/>
 As described in the  [code documentation](https://techniontdk.github.io/jbs-json23plet/) you can also validate only one json object each time.
