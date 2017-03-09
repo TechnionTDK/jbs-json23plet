@@ -74,8 +74,8 @@ json23plet allows you to write and deploy your own generator for unique json for
 * Create your [generator](README.md#generators) and drop it in `src/main/java/json23plet/generators/customGenerators` directory.<br/>
 * For [regexGenerator](README.md#regexgenerator) drop it in `src/main/java/json23plet/generators/regexGenerators` directory.<br/>
 * Rebuild the project using:
-            
-      ./json23plet.sh -b
+
+        ./json23plet.sh -b
             
 * Now you can [run](README.md#run-a-single-generator) your generator as decribed above
 
