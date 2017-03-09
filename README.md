@@ -176,10 +176,10 @@ In this section we will review the code components for future maintenance.<br/>
 See the [code documentation](https://techniontdk.github.io/jbs-json23plet/).
 
 ### Overview
-json23plet is simply an engine which know to run user defined generators. <br/>
-It uses reflaction, static loading files and the Apache jena library.<br/>
-By specify your generator name, jsob23plet uses relaction to find it and activate it on the input directory. <br/>
-We also supply some modules to work with json23plet comfortably and with simpler way.
+json23plet is an engine which runs user defined generators. <br/>
+It uses reflection, the Apache jena library and loads file staticly.<br/>
+By specifing a generator name, the tool uses reflection mechanisem to activate the generator on the input directory. <br/>
+The tool contains some modules which simplify the work with it.
 
 ### Ontologies
 Source code:
