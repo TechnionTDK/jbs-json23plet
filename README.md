@@ -218,7 +218,7 @@ The generator requires the ontology json to be in a very specific format:<br/>
     }
 (The uri and rdf:type predicates are required).
 
-#### Usage
+#### Usage example
 * Drop your `myOntology.json` file in `ontologies/json` and run:
 
         ./json23plet -ontology myOntology
@@ -235,21 +235,21 @@ The generator requires the ontology json to be in a very specific format:<br/>
         ./json23plet.sh -b
 
 ### Json
-Source code:
+Source code files:
 
       src/main/java/json23plet/modules/Json.java
 Json is a module for parsing json files.<br/>
-json23plet engine assume you using this tool, but its not a duty - you can use your own json parser but we highly recommend you to use this module.<be/>
-The engine load staticly (per thread) the current working json file, and you can access (in your generator) to the parsed file via Json module.
+json23plet engine assumes using this module, but it's not a duty.<br/>
+The engine loads staticly (per thread) the current working json file, and it can be accessed (in the generator) as a parsed json through Json module.
 
-#### Usage
+#### Usage example
 
     Json
     .json() // return the current working file already parsed.
-    .getAsSOmeObject("property") // read the code documentation foe more details.
+    .getAsSomeObject("property") // read the code documentation for more details.
 
 ### Triplet
-Source code:
+Source code :
 
       src/main/java/json23plet/modules/Triplet.java 
 The Triplet module is a simple wrraper for the papche jena library.<br/>
