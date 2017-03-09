@@ -32,20 +32,21 @@ Install [Maven](https://maven.apache.org/) on your machine.
    this command will prevent from your local config.json to be pushed into the GitHub repository
    
 ## Devlopment enviorment
-We recommend to develop on a Linux machine which is the main target of this tool. Although, you can be also done on windows machines.
+It's prefered to devolpe and use the tool on a Linux machine where you can run the tool through the command line.<br\>
+Working on windows requires an IDE.
 
-### IDE 
-We recommed to use [IntelliJ IDEA](https://www.jetbrains.com/idea/) while developing, but you can also use [Eclipse](https://www.eclipse.org/downloads/) or any other IDE you prefer, but our guide is on IntelliJ only.
+### Devloping with an IDE 
+It's recommeded to use [IntelliJ IDEA](https://www.jetbrains.com/idea/) and our guide will focus on it.
 
-#### IntelliJ Guid
-* **Clone the repository** <br/>
-     Go to File->New->Project From Version Control->GitHub, Fill the details of this repository and click "Clone". <br/>
+### Getting started with Intellij
+* *Clone the repository*<br/>
+     Go to File->New->Project From Version Control->GitHub, Fill `git@github.com:TechnionTDK/jbs-json23plet.git` in the repository field and click on `Clone`.<br/>
 
-* **Configure the arguments** <br/>
+* *Configure tool arguments*<br/>
      1. Right click on src/main/java->Mark Directory as->Sources Root
      1. Build The project
-     1. Right click on src/main/java/Json23plet.java->Create 'Json23plet.main()' and configure your input
-     1. Run or Debug
+     1. Right click on src/main/java/Json23plet.java->Create 'Json23plet.main()' and configure the tool arguments
+     1. Run or Debug the tool
 
 ## json23plet commands
 
