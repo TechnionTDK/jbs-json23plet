@@ -32,6 +32,20 @@ Install [Maven](https://maven.apache.org/) on your machine.
         git update-index --assume-unchanged config.json
    this command will prevent from your local `config.json` to be untracked from the GitHub repository
 
+## Json23plet configuration
+Json23plet has some configurations, all defined in `config.json` file.<br/>
+The default configurations are:
+
+      {
+        "setting": {
+          "globalSetting": {
+            "genOutputDir": "output", // the output root dir
+            "errorLevel": "low" 
+          },
+          "generators": [] // configuration scheme to run multile generators
+        }
+      }
+      
 ## json23plet commands
 
 ### Build the tool
@@ -116,33 +130,16 @@ this command will add the following lines to the `config.json` file:
 Be aware that it possible to update the schema manually.
 For more infomartion [setting](README.md#json23plet-configuration).
 
-##### Edit configuration of global setting
-Json23plet use some [setting](README.md#json23plet-configuration) while runnig.
-* To config output dir run:
+### Edit configuration of global setting
+json23plet uses some [settings](README.md#json23plet-configuration) while runnig.
+* To configure output dir run:
       
             ./json23plet -config outputDir=myOutputDir
-* To config error level run:
+  
+* To configure [error level](README.md#jsonvalidator) run:
 
             ./json23plet -config errorLevel=level
- Errors checked on the json file while generating, the action on error depeneds on errorLevel: 
- * low - nothing happen
- * medium - error will display while detected
- * high - on error json23plet will stop
  
-## Json23plet configuration
-Json23plet have some configuration, all defined in *config.json* file.<br/>
-The default configurations are:
-
-      {
-        "setting": {
-          "globalSetting": {
-            "genOutputDir": "output", // the output root dir
-            "errorLevel": "low" 
-          },
-          "generators": [] // configuration scheme to run multile generators
-        }
-      }
-      
 ## Testing
 We build a simple and efficient testing framework.
 to test your generator do as follow:
