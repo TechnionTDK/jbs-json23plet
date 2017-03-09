@@ -335,25 +335,25 @@ Source code files:
       src/main/java/json23plet/generators/regexGenerators/IRegExGenerator.java
 The basic generator is a powerfool and generic tool for every data you wish to generate, but sometimes some jsons needs a special treatment.<br/>
 One possible solution is to write a speicial generator that will handle those cases, but the tool has an easiest way doing it by using this module.<br/>
-Lets start with an example:<br/>
-Assume we want that every triplet who its uri starts with "jbr:tanach*" will also contains the [rdf:type, jbo:Tanach] triplet, the regexGenerator framework allow you to do that easily.<br/>
-a regex generator checks for every json object of the input if it match to some rule, and if so he process it and creating a new triplet for this json object.<br/>
+Let start with an example:<br/>
+Assume we want that every json object which it's `uri` starts with `"jbr":"tanach"` will have a triplet with `rdf:type, jbo:Tanach` triplet, the regexGenerator framework allows you to do that easily.<br/>
+a regex generator checks for every json object in the input if it matchs to the rule, and if so, it adds the appropriate triplet to the model.
 
 #### Build a regex generator
-1. Build myRegexGeneraor class, the class have to extends the BaseRegexGenerator class.
-1. Implemant the abstruct methods as describe in the  [code documentation](https://techniontdk.github.io/jbs-json23plet/).
-1. Drop your generator in **src/main/java/json23plet/generators/regexGenerators** and rebuild using:
+1. Build myRegexGeneraor class, the class has to extends the BaseRegexGenerator class.
+1. Implement the abstract methods as describe in the  [code documentation](https://techniontdk.github.io/jbs-json23plet/).
+1. Drop your generator in `src/main/java/json23plet/generators/regexGenerators` and rebuild the tool by:
 
             ./json23plet.sh -b
-Now you can run your generaote the same [way](README.md#run-a-single-generator) as regular generators.
+1. run the generator in the [regular way](README.md#run-a-single-generator).
       
 ### JsonValidator
-Source code:
+Source code files:
 
       src/main/java/json23plet/JsonValidators/JsonValidator.java
       src/main/java/json23plet/JsonValidators/IJsonValidator.java
-To validate your jsons before generate them we build a framework that allow you to define and implement any validation you wish in a simple way.
-It technolify is much like the [regexGenerators](README.md#regexgenertor).
+To validate the json input files before generating triplets from them, the tool contains a framework that allows to define and implement any validation in a simple way.
+It's mechanisem is much like the [regexGenerators](README.md#regexgenertor).
 
 #### Build a jsonValidator
 1. Create your myValidator class, the class have to extends the JsonValidator class.
