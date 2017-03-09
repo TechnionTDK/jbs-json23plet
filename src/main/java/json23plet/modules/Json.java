@@ -45,7 +45,7 @@ public class Json {
 
     /**
      * Get the value of a json key as list of Json objects.
-     * @param member: the json key name.
+     * @param member the json key name.
      * @return the list pointed by the key as list of Json objects.
      */
     public List<Json> getAsArray(String member) {
@@ -58,7 +58,7 @@ public class Json {
 
     /**
      * Get the value of a json key as Json object.
-     * @param member: the json key name.
+     * @param member the json key name.
      * @return the object pointed by the key as Json object.
      */
     public Json getAsObject(String member) {
@@ -77,7 +77,7 @@ public class Json {
 
     /**
      * Get the primitive value of a json key as String.
-     * @param member: the json key name.
+     * @param member the json key name.
      * @return primitive String pointed by the key.
      */
     public String value(String member) {
@@ -87,7 +87,7 @@ public class Json {
 
     /**
      * Check if a Json has some key.
-     * @param member: the key to check if exist.
+     * @param member the key to check if exist.
      * @return true if exist false if not.
      */
     public boolean has(String member) {
