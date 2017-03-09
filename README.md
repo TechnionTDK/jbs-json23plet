@@ -154,7 +154,7 @@ maven will run the tests.<br/>
 It also possible to run the tests without rebuild as explained in this [guide](http://junit.sourceforge.net/doc/faq/faq.htm#running_4)
 
 ## Devlopment enviorment
-It's prefered to devolpe and use the tool on a Linux machine where you can run the tool through the command line.<br\>
+It's prefered to devolpe and use the tool on a Linux machine where you can run the tool through the command line.<br/>
 Working on windows requires an IDE.
 
 ### Devloping with an IDE 
