@@ -283,6 +283,35 @@ Now simply run:
 
       ./json23plet.sh -generate basic inputDir
 
+### RegexGenerator
+The basic generator is a powerfool  and generic tool for every data you wish to generate, but sometimes some jsons needs a special treatment.<br/>
+One possible solution is to write a speicial generator that will handle thos cases, but we developed a much comfortable framework to do it.<br/>
+Lets start with an example:<br/>
+Assume we want that every triplet who its uri starts with "jbr:tanach*" will also contains the [rdf:type, jbo:Tanach] triplet, the regexGenerator framework allow you to do that easily.<br/>
+a regex generator checks for every json object of the input if it match to some rule, and if so he process it and creating a new triplet for this json object.<br/>
+
+####
+
+      
+In case that you want to add triplets for a specific json object (e.g. for adding rdf:type to all jbr-tanach\* json objects)<br />
+For this purpose we created a component called RegExGenerator:<br />
+It allows you to activate a series of rules on a selected json objects.<br />
+Each RegExGenerator contains the following:
+
+1. Set of rules (implements of IRegExGenerator interface)
+1. Function that defines how to get the json objects to work on
+1. Getter function that defines the generator name
+
+##### Creating a new RegExGenerator:
+
+1. Create MyRegExGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators directory, the generator have to extend BaseRegExGenerator class.
+1. Create rules and assign them
+1. Implement the generator function (including your validation etc.)
+1. Run "json23plet.sh -b" to rebuild the project
+1. Run "./json23plet.sh -generate MyRegExGenerator \<dataInputRootDir\>"
+
+(See Example in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators/RdfTypeGenerator.java)
+
 ### JsonValidator
 A library to validate your json before you generate triplets from it.<br />
 Each validator is build from "registerdValidators" (rules) and two getters to get the json data from the file or the Json object.<br />
@@ -303,34 +332,9 @@ To create your own validator do as follow:
     1. stop - stop the execution if error detected.
 
     To set the error level run "./json23plet -config -setGlobal errorLevel \<errorLevel\>"
-    
-### Regex
-A lite component to create a java regex.<br />
-Example of usage:
+    rator.java)
 
-    regex("jbr:tanach-(.*)-(\\d+)-(\\d+)-(\\d+)")
-    .match(json.value("uri"))
-(See Example in jbs-json23plet/src/main/java/json23plet/generators/regexGenerators/RdfTypeGenerator.java)
 
-### RegexGenerator
-In case that you want to add triplets for a specific json object (e.g. for adding rdf:type to all jbr-tanach\* json objects)<br />
-For this purpose we created a component called RegExGenerator:<br />
-It allows you to activate a series of rules on a selected json objects.<br />
-Each RegExGenerator contains the following:
-
-1. Set of rules (implements of IRegExGenerator interface)
-1. Function that defines how to get the json objects to work on
-1. Getter function that defines the generator name
-
-##### Creating a new RegExGenerator:
-
-1. Create MyRegExGenerator.java class and drop it in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators directory, the generator have to extend BaseRegExGenerator class.
-1. Create rules and assign them
-1. Implement the generator function (including your validation etc.)
-1. Run "json23plet.sh -b" to rebuild the project
-1. Run "./json23plet.sh -generate MyRegExGenerator \<dataInputRootDir\>"
-
-(See Example in jbs-json23plet/src/main/java/json23plet/generators/regExGenerators/RdfTypeGenerator.java)
 
 
 ### Testing
