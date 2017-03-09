@@ -19,7 +19,7 @@ import static json23plet.ontologies.JbsOntology.*;
  * Created by yon_b on 02/01/17.
  */
 public class RdfTypeGenerator extends BaseRegexGenerator {
-    private class TypeRegEx implements IRegExGenerator {
+    private class TypeRegEx implements IRegexGenerator {
         String regex;
         Resource[] classes;
 
@@ -72,7 +72,7 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         registerGenerator(new TypeRegEx("jbr:tanach-\\d+-\\d+", JBO_C_JBSPACKAGE, JBO_C_TANACHPACKAGE, JBO_C_PEREK));
         registerGenerator(new TypeRegEx("jbr:tanach-parasha-\\d+", JBO_C_JBSPACKAGE, JBO_C_TANACHPACKAGE, JBO_C_PARASHA));
 
-        registerGenerator(new IRegExGenerator() { // for <book> type
+        registerGenerator(new IRegexGenerator() { // for <book> type
             String seferPosition ="";
             /*
                 In JbsOntology there is 39 different books.

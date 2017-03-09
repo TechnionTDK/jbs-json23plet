@@ -5,7 +5,7 @@ import json23plet.modules.Json;
 /**
  * Created by yon_b on 02/01/17.
  */
-public interface IRegExGenerator {
+public interface IRegexGenerator {
     /**
      * Generate a Json object
      * @param js - the Json to process

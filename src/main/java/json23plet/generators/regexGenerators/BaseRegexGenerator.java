@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
  */
 public abstract class BaseRegexGenerator {
 
-    List<IRegExGenerator> generatorsList = new ArrayList<>();
+    List<IRegexGenerator> generatorsList = new ArrayList<>();
 
     /**
      * An abstract function, force the user to register generators of type
@@ -28,7 +28,7 @@ public abstract class BaseRegexGenerator {
      * Register new IRegexGenerator to the generatorsList.
      * @param rgen - the IRegexGenerator to register.
      */
-    public void registerGenerator(IRegExGenerator rgen) {
+    public void registerGenerator(IRegexGenerator rgen) {
         generatorsList.add(rgen);
     }
 
@@ -72,7 +72,7 @@ public abstract class BaseRegexGenerator {
      * Any regexGenerator have to call this function inside its generate function.
      */
     void _generate() {
-        for (IRegExGenerator rgen : generatorsList) {
+        for (IRegexGenerator rgen : generatorsList) {
             for (Json js : getJsonsToGenerate()) {
                 if (rgen.match(js)) {
                     rgen.generate(js);
