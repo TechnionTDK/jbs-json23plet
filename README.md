@@ -62,7 +62,7 @@ In case of using the [basic](README.md#the-basic-generator) generator, specify `
 
 ### Run multiple generators
 Json23plet allows you to config a scheme of running multiple different generators on diffrent directories (or files). <br/>
-To do so you need to [configure your scheme](README.md#addedit-configuration-for-a-new-generator) and run this command.
+To do so you need to [configure your scheme](README.md#add-and-edit-configuration-for-a-generator) and run this command.
       
       ./json23plet.sh -generateAll
 
@@ -94,19 +94,27 @@ json23plet uses the same logic to generate ontology.ttl files. Therefore, to gen
 
             ./json23plet.sh -b 
 
-***Note***: While changing an existing ontology, there might  be some generators that use the old ontology.java properties, if so you have to update them, otherwise the project wont build due to compilations errors.
+***Note:*** While changing an existing ontology, there might be some generators that use the old `ontology.java` properties. Therefore, be aware to compilation errors.
 
-##### Add&Edit configuration for a new generator
-As [mentioned](README.md#run-multiple-generators) above, you can config a scheme of run.<br/>
-The command allow you to config a single generator in the scheme, of course, you can update the schema manually.
+### Add and edit configuration for a generator
+When runnig the `generateAll` command, the tool will run all the configured generators in the `config.json` file.<br/>
+For example to add(remove) a generator named `myGen` to the scheme of `generateAll` use:
 
-* To config via commandline run:
-
-            ./json23plet -config  genName=generatorName inputPath=MyInputPath active=activeState
- (the activeState field gets either true or false depends on the current scheme)
-* To config manually:<br/>
-  Go to **jbs-json23plet/config.json** and set the fileds manually
-See also [setting](README.md#json23plet-configuration).
+        
+        ./json23plet -config  genName=myGen inputPath=MyGenInputPath active=true(false)
+this command will add the following lines to the `config.json` file:
+       
+       {
+          "generators": [
+                            {
+                                "genName": "myGen",
+                                "inputPath":"myGenINputPath",
+                                "active": "true"("false")
+                            }
+                        ] 
+      }
+Be aware that it possible to update the schema manually.
+For more infomartion [setting](README.md#json23plet-configuration).
 
 ##### Edit configuration of global setting
 Json23plet use some [setting](README.md#json23plet-configuration) while runnig.
