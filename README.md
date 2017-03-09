@@ -34,7 +34,7 @@ Install [Maven](https://maven.apache.org/) on your machine.
 
 ## json23plet commands
 
-### Building the tool
+### Build the tool
 
       ./json23plet.sh -b
 this command will call `mvn install`
@@ -45,13 +45,13 @@ The command initializes the direcories tree of the project
       ./json23plet.sh -init
 this command creates `ontologies/json`, `ontologies/ttl` and `src/test/testsFiles` directories. During running, the tool assumes those directories exist.
 
-### Configuring the output root directory
+### Configure the output root directory
 The command sets up the output root directory and saves it in `config.json` file.<br/>
 The input directories tree will be reflected in this directory and will have an identical directory structure.
 
       ./json23plet.sh -config outputDir=myOutputDir
 
-#### Running a single generator
+### Run a single generator
 The command runs a specific [generator](README.md#generators) on a specific input directory (or a specific single file) recursively.
 
       ./json23plet.sh -generate generatorName dataInputRootDir
@@ -60,22 +60,24 @@ In case of using the [basic](README.md#the-basic-generator) generator, specify `
       
       ./json23plet.sh -generate basic dataInputRootDir
 
-##### Running multiple generators
+### Run multiple generators
 Json23plet allows you to config a scheme of running multiple different generators on diffrent directories (or files). <br/>
-To do so you need to [config](README.md#add&edit-configuration-for-a-new-generator) your scheme and run:
+To do so you need to [configure your scheme](README.md#addedit-configuration-for-a-new-generator) and run this command.
       
       ./json23plet.sh -generateAll
 
 
-##### Create and install a new generator
+### Create and install a new generator
 ***This is not a command but a basic part of working with the Json23plet tool***
-Json23plet allows you to write and deploy your own generator for more unique json formats. <br/>
-*To do so*:<br/>
-Create your [generator](README.md#generators) and drop it in jbs-json23plet/src/main/java/json23plet/generators/customGenerators directory.<br/> For [regExGenerator](README.md#regexgenerator) drop it in jbs-json23plet/src/main/java/json23plet/generators/regexGenerators directory.<br/> Rebuild the project using:
+json23plet allows you to write and deploy your own generator for unique json formats.<br/>
+*To do so:*<br/>
+* Create your [generator](README.md#generators) and drop it in `src/main/java/json23plet/generators/customGenerators` directory.<br/>
+* For [regexGenerator](README.md#regexgenerator) drop it in `src/main/java/json23plet/generators/regexGenerators` directory.<br/>
+* Rebuild the project using:
             
       ./json23plet.sh -b
             
-Now you can [run](README.md#run-a-single-generator) your generator as decribed above
+* Now you can [run](README.md#run-a-single-generator) your generator as decribed above
 
 ##### Create and update an ontology
 Json23plet using the same logic to generate ontology.ttl files, that means that to generate new ontology you just have to define it in a json file and run the json23plet ontology generator.
