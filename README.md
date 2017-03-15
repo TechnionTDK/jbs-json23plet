@@ -30,7 +30,7 @@ Install [Maven](https://maven.apache.org/) on your machine.
 1. Untrack the configuration file from git.
 
         git update-index --assume-unchanged config.json
-   This command will prevent your local `config.json` from being untracked from the GitHub repository.
+   This command will make your local `config.json` untracked from the GitHub repository.
 
 ## Json23plet configuration
 Json23plet has some configurations, all defined in `config.json` file.<br/>
