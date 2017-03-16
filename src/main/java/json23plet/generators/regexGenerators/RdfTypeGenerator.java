@@ -80,8 +80,10 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
                 JBO_C_AMUDBECHOROT, JBO_C_AMUDARACHIN, JBO_C_AMUDTEMURA, JBO_C_AMUDKERITUT, JBO_C_AMUDMEILA,
                 JBO_C_AMUDTAMID, JBO_C_AMUDNIDA};
 
-        for (int i = 0; i < masachtot.length; i++)
-            registerGenerator(new TypeRegEx("jbr:bavli-" + i+1 + "-.*", JBO_C_AMUDBAVLI, masachtot[i]));
+        for (int i = 0; i < masachtot.length; i++) {
+            int masechetNum = i + 1;
+            registerGenerator(new TypeRegEx("jbr:bavli-" + masechetNum + "-\\d+-\\d+", JBO_C_AMUDBAVLI, masachtot[i]));
+        }
 
         // TODO add packages
     }
