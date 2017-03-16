@@ -50,15 +50,40 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         registerGenerator(new TypeRegEx("jbr:.*", OWL_C_THING));
 
         registerTanachGenerators();
+        registerBavliGenerators();
+        registerMishneTorahGenerators();
 
-        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-.*", JBO_C_MISHNETORAH));
-        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-.*", JBO_C_SEFERHAMITZVOT));
+
 
         registerGenerator(new TypeRegEx("jbr:shmonakvatzim-.*", JBO_C_SIFREYRAVKUK));
         registerGenerator(new TypeRegEx("jbr:shmonakvatzim-.*", JBO_C_SHEMONAKEVATZIM));
 
         registerGenerator(new TypeRegEx("jbr:mesilatyesharim-.*", JBO_C_MESILATYESHARIM));
         registerGenerator(new TypeRegEx("jbr:mesilatyesharim-.*", JBO_C_SIFREYRAMCHAL));
+    }
+
+    private void registerMishneTorahGenerators() {
+        // TODO complete...
+        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-.*", JBO_C_MISHNETORAH));
+        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-.*", JBO_C_SEFERHAMITZVOT));
+    }
+
+    private void registerBavliGenerators() {
+        registerGenerator(new TypeRegEx("jbr:bavli-.*", JBO_C_TALMUDBAVLI));
+
+        Resource[] masachtot = {JBO_C_AMUDBERACHOT, JBO_C_AMUDSHABAT, JBO_C_AMUDERUVIN, JBO_C_AMUDPESACHIM, JBO_C_AMUDROSHHASHANA,
+                JBO_C_AMUDYOMA, JBO_C_AMUDSUKA, JBO_C_AMUDBETZA, JBO_C_AMUDTAANIT, JBO_C_AMUDMEGILA,
+                JBO_C_AMUDMOEDKATAN, JBO_C_AMUDCHAGIGA, JBO_C_AMUDYEVAMOT, JBO_C_AMUDKETUVOT, JBO_C_AMUDNEDARIM,
+                JBO_C_AMUDNAZIR, JBO_C_AMUDSOTA, JBO_C_AMUDGITIN, JBO_C_AMUDKIDUSHIN, JBO_C_AMUDBAVAKAMA,
+                JBO_C_AMUDBAVAMETZIA, JBO_C_AMUDBAVABATRA, JBO_C_AMUDSANHEDRIN, JBO_C_AMUDMAKOT, JBO_C_AMUDSHEVUOT,
+                JBO_C_AMUDAVODAZARA, JBO_C_AMUDHORAYOT, JBO_C_AMUDZEVACHIM, JBO_C_AMUDMENACHOT, JBO_C_AMUDCHULIN,
+                JBO_C_AMUDBECHOROT, JBO_C_AMUDARACHIN, JBO_C_AMUDTEMURA, JBO_C_AMUDKERITUT, JBO_C_AMUDMEILA,
+                JBO_C_AMUDTAMID, JBO_C_AMUDNIDA};
+
+        for (int i = 0; i < masachtot.length; i++)
+            registerGenerator(new TypeRegEx("jbr:bavli-" + i+1 + "-.*", masachtot[i]));
+
+        // TODO add packages
     }
 
     private void registerTanachGenerators() {

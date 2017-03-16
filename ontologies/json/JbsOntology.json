@@ -58,7 +58,280 @@
       "rdfs:label" : "TalmudBavli",
       "rdfs:subClassOf" : "owl:Thing"
     },
-	
+
+    {
+      "uri" : "jbo:AmudBavli",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudBavli",
+      "rdfs:subClassOf" : "jbo:TalmudBavli"
+    },
+
+    {
+      "uri" : "jbo:BavliPackage",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "BavliPackage",
+      "rdfs:subClassOf" : "jbo:TalmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudBerachot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudBerachot",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudShabat",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudShabat",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudEruvin",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudEruvin",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudPesachim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudPesachim",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudRoshHashana",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudRoshHashana",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudYoma",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudYoma",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudSuka",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudSuka",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudBetza",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudBetza",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudTaanit",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudTaanit",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudMegila",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudMegila",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudMoedKatan",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudMoedKatan",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudChagiga",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudChagiga",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudYevamot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudYevamot",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudKetuvot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudKetuvot",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudNedarim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudNedarim",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudNazir",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudNazir",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudSota",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudSota",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudGitin",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudGitin",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudKidushin",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudKidushin",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudBavaKama",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudBavaKama",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudBavaMetzia",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudBavaMetzia",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudBavaBatra",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudBavaBatra",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudSanhedrin",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudSanhedrin",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudMakot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudMakot",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudShevuot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudShevuot",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudAvodaZara",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudAvodaZara",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudHorayot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudHorayot",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudZevachim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudZevachim",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudMenachot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudMenachot",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudChulin",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudChulin",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudBechorot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudBechorot",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudArachin",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudArachin",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudTemura",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudTemura",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudKeritut",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudKeritut",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudMeila",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudMeila",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudTamid",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudTamid",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
+    {
+      "uri" : "jbo:AmudNida",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "AmudNida",
+      "rdfs:subClassOf" : "jbo:AmudBavli"
+    },
+
     {
       "uri" : "jbo:MishneTorah",
       "rdf:type" : "owl:Class",
