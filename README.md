@@ -40,7 +40,8 @@ The default configurations are:
         "setting": {
           "globalSetting": {
             "genOutputDir": "output", // the output root dir
-            "errorLevel": "low" 
+            "errorLevel": "low"
+            "genInputDir": "input" // the default input dir
           },
           "generators": [] // configuration scheme to run multile generators
         }
@@ -65,6 +66,11 @@ The input directories tree will be reflected in this directory and will have an 
 
       ./json23plet.sh -config outputDir=myOutputDir
 
+### Configure the default input directory
+The command sets up the default input directory and saves it in `config.json` file.<br/>
+
+      ./json23plet.sh -config genInputDir=myInpuputDir
+
 ### Run a single generator
 The command runs a specific [generator](README.md#generators) on a specific input directory (or a specific single file) recursively.
 
@@ -73,6 +79,11 @@ The command runs a specific [generator](README.md#generators) on a specific inpu
 If you are using the [basic](README.md#the-basic-generator) generator, specify `basic` as the generator name.
       
       ./json23plet.sh -generate basic dataInputRootDir
+      
+This command can be used without specifying the input directory.
+
+      ./json23plet.sh -generate generatorName
+This command runs `generatorName` on the default input directory that was [configured](README.md#configure-the-default-input-directory).
 
 ### Run multiple generators
 Json23plet enables you to configure a scheme of running multiple different generators on diffrent directories (or files). <br/>
