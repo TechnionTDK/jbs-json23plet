@@ -1,9 +1,20 @@
 {
   "setting": {
     "globalSetting": {
-      "genOutputDir": "output",
-      "errorLevel": "low"
+      "errorLevel": "low",
+      "genOutputDir": "/home/omishali.loc/jbs/ttl/"
     },
-    "generators": []
+    "generators": [
+      {
+        "name": "RdfTypeGenerator",
+        "input": "/home/omishali.loc/jbs/jbs-text",
+        "active": "true"
+      },
+      {
+        "name": "BasicJsonGenerator",
+        "input": "/home/omishali.loc/jbs/jbs-text",
+        "active": "true"
+      }
+    ]
   }
 }
