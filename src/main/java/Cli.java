@@ -15,6 +15,7 @@ import json23plet.generators.ontologyGenerator.OntologyGenerator;
 import org.apache.commons.cli.*;
 
 import static json23plet.generators.GeneratorsUtils.GLOBAL_SETTING_ERROR_LEVEL;
+import static json23plet.generators.GeneratorsUtils.GLOBAL_SETTING_GEN_INPUT_DIR;
 import static json23plet.generators.GeneratorsUtils.GLOBAL_SETTING_GEN_OUTPUTDIR;
 
 public class Cli {
@@ -87,10 +88,12 @@ public class Cli {
         }
         catch (ParseException e) {
             log.log(Level.SEVERE, "Parsing failed.  Reason: " + e.getMessage());
+            e.printStackTrace();
             help();
         }
         catch (Exception e) {
             log.log(Level.SEVERE, e.getMessage());
+            e.printStackTrace();
         }
     }
     private void help() {
@@ -105,7 +108,14 @@ public class Cli {
         if (gen.equals("basic")) {
             gen = "BasicJsonGenerator";
         }
-        GeneratorFactory.generate(gen, params[1], GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR));
+        String inputDir = GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_INPUT_DIR);
+        if (inputDir.equals("") && params.length == 1) {
+            throw new Exception("No input dir specified");
+        }
+        if (inputDir.equals("")) {
+            inputDir = params[1];
+        }
+        GeneratorFactory.generate(gen, inputDir, GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR));
     }
     private void generateAll() throws Exception {
         String outputDir = GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR);
@@ -115,7 +125,7 @@ public class Cli {
         GeneratorFactory.activateAllConfigGenerators(outputDir);
     }
 
-    private void config(String[] params) {
+    private void config(String[] params) throws IOException {
         String action = params[0];
         String param = action.split("=")[0];
         String val = action.split("=")[1];
@@ -128,6 +138,10 @@ public class Cli {
                 GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL, val);
                 System.out.println("error level has been set to " + val);
                 break;
+            case "genInputDir":
+                GeneratorsUtils.setGlobalSettingProp(GLOBAL_SETTING_GEN_INPUT_DIR, val);
+                System.out.println("input dir has been set to " + val);
+                break;
             case "genName":
                 setGenConfig(params);
                 System.out.println("added configuration successfully");
@@ -135,7 +149,7 @@ public class Cli {
             default: System.out.println("no such configuration available\ncheck README.md again");
         }
     }
-    private void setGenConfig(String[] params) {
+    private void setGenConfig(String[] params) throws IOException {
         if (params.length < 2) {
             return;
         }

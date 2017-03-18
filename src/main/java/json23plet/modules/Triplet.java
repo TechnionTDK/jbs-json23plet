@@ -7,7 +7,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
@@ -39,43 +41,35 @@ public class Triplet {
      * src/main/java/json23plet/ontologies directory.
      * This function called by GeneratorFactory class before loading the current generator.
      */
-    static public void Init() {
+    static public void Init() throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         model.set(ModelFactory.createOntologyModel());
-        try {
-            Files.find(Paths.get("src", "main", "java", "json23plet", "ontologies"), 999, (p, bfa) -> bfa.isRegularFile()).forEach(file -> {
-                try {
-                    Class genClass = Class.forName("json23plet.ontologies." + file.getFileName().toString().replace(".java",""));
-                    Constructor ctor = genClass.getConstructor();
-                    Object instance = ctor.newInstance(null);
+        List<Path> paths = Files.find(Paths.get("src", "main", "java", "json23plet", "ontologies"), 999, (p, bfa) -> bfa.isRegularFile()).collect(Collectors.toList());
+        for (Path file: paths) {
+                Class genClass = Class.forName("json23plet.ontologies." + file.getFileName().toString().replace(".java",""));
+                Constructor ctor = genClass.getConstructor();
+                Object instance = ctor.newInstance(null);
 
-                    List<Field> perfixes =  Arrays.stream(genClass.getDeclaredFields())
-                            .filter(f -> f.getName().contains("PREFIX"))
-                            .collect(Collectors.toList());
+                List<Field> perfixes =  Arrays.stream(genClass.getDeclaredFields())
+                        .filter(f -> f.getName().contains("PREFIX"))
+                        .collect(Collectors.toList());
 
-                    List<Field> uris =  Arrays.stream(genClass.getDeclaredFields())
-                            .filter(f -> f.getName().contains("URI"))
-                            .collect(Collectors.toList());
+                List<Field> uris =  Arrays.stream(genClass.getDeclaredFields())
+                        .filter(f -> f.getName().contains("URI"))
+                        .collect(Collectors.toList());
 
-                    for (Field f : perfixes) {
-                        String uri = uris
-                                .stream()
-                                .filter(u -> u.getName()
-                                        .split("_")[0]
-                                        .equals(f.getName().split("_")[0]))
-                                .collect(Collectors.toList())
-                                .get(0)
-                                .get(new Object())
-                                .toString();
-                        addNSprefix(f.get(new Object()).toString(), uri);
-                    }
-
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
+                for (Field f : perfixes) {
+                    String uri = uris
+                            .stream()
+                            .filter(u -> u.getName()
+                                    .split("_")[0]
+                                    .equals(f.getName().split("_")[0]))
+                            .collect(Collectors.toList())
+                            .get(0)
+                            .get(new Object())
+                            .toString();
+                    addNSprefix(f.get(new Object()).toString(), uri);
                 }
-            });
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        };
     }
     private void addStatement() {
         if (subject != null && predicate != null && object != null) {
@@ -171,14 +165,10 @@ public class Triplet {
      * @param path the path to the output file.
      * @param format the format of the file (usually TURTLE).
      */
-    static public void Export(String path, String format) {
-        try {
-            FileWriter file = new FileWriter(path);
-            model.get().write(file, format);
-            file.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+    static public void Export(String path, String format) throws IOException {
+        FileWriter file = new FileWriter(path);
+        model.get().write(file, format);
+        file.close();
     }
     static private boolean isModelPrefix(String obj) {
         return model.get().getNsPrefixMap().containsKey(obj);

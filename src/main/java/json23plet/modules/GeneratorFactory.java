@@ -36,7 +36,10 @@ public class GeneratorFactory {
 
                     }
                 } catch (Exception e) {
-                    System.out.println(e.getMessage());
+                    System.out.println("\nerror while generating file: " + file.toString());
+                    System.out.println("please check your json file or run /json23plet -config errorLevel=medium\n" +
+                                        "and then ./json23plet -generate <generatorName> <" + file.toString() + ">");
+                    e.printStackTrace();
                 }
             }
                 pb.update();
@@ -65,7 +68,7 @@ public class GeneratorFactory {
         Triplet.Close();
     }
 
-    static private void activateSingleRegExGeneratorSingleFile(String reGenName, String input) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    static private void activateSingleRegExGeneratorSingleFile(String reGenName, String input) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, IOException {
         Triplet.Init();
         Json.Init(input);
         Class reClass = Class.forName("json23plet.generators.regexGenerators." + reGenName);

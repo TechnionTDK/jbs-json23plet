@@ -6,6 +6,7 @@ import json23plet.modules.Json;
 import org.apache.jena.ontology.OntClass;
 import org.apache.jena.rdf.model.Resource;
 
+import java.io.IOException;
 import java.util.List;
 
 import static json23plet.modules.Json.json;
@@ -168,14 +169,10 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
     }
 
     @Override
-    public void generate() {
+    public void generate() throws IOException {
         JsonValidator v = new OntologyValidator();
         v.registerValidators();
-        try {
-            v.validateSingleJson(Json.json());
-        } catch (JsonValidator.JsonValidatorException e) {
-            e.printStackTrace();
-        }
+        v.validateSingleJson(Json.json());
         super._generate();
     }
 }

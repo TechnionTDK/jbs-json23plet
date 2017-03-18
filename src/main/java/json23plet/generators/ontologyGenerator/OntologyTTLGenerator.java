@@ -5,6 +5,8 @@ import json23plet.generators.GeneratorsUtils;
 import json23plet.modules.Json;
 import json23plet.modules.Triplet;
 
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Paths;
 import java.util.Map;
 
@@ -21,7 +23,7 @@ public class OntologyTTLGenerator {
      * Generate the ontology ttl file.
      * @param ontName the name of the ontology file.
      */
-    static public void generate(String ontName) {
+    static public void generate(String ontName) throws NoSuchMethodException, IOException, InstantiationException, IllegalAccessException, InvocationTargetException, ClassNotFoundException {
         Triplet.Init();
         Json.Init(Paths.get("ontologies", "json", ontName + ".json").toString());
 

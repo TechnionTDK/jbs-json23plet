@@ -49,13 +49,13 @@ public abstract class BaseRegexGenerator {
      * The json23plet engine will search after this function and call it. this is the main
      * function of any generator.
      */
-    public abstract void generate();
+    public abstract void generate() throws IOException;
 
-    private List<Object> getRegExGenerators() throws IOException {
-        return Files.find(Paths.get("src", "main", "java", "json23plet", "generators", "regExGenerator"), 999, (p, bfa) -> bfa.isRegularFile())
+    private List<Object> getRegexGenerators() throws IOException {
+        return Files.find(Paths.get("src", "main", "java", "json23plet", "generators", "regexGenerator"), 999, (p, bfa) -> bfa.isRegularFile())
                 .map(file -> {
                     try {
-                        Class reClass = Class.forName("json23plet.generators.regExGenerator." + file.getFileName().toString().replace(".java", ""));
+                        Class reClass = Class.forName("json23plet.generators.regexGenerator." + file.getFileName().toString().replace(".java", ""));
                         Constructor ctor = reClass.getConstructor();
                         return (ctor.newInstance(null));
                     } catch (Exception e) {
@@ -71,7 +71,7 @@ public abstract class BaseRegexGenerator {
      * Activate the list of IRegexGenerators on the Json's lists.
      * Any regexGenerator have to call this function inside its generate function.
      */
-    void _generate() {
+    void _generate() throws IOException {
         for (IRegexGenerator rgen : generatorsList) {
             for (Json js : getJsonsToGenerate()) {
                 if (rgen.match(js)) {
