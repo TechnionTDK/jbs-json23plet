@@ -41,7 +41,7 @@ The default configurations are:
           "globalSetting": {
             "genOutputDir": "output", // the output root dir
             "errorLevel": "low"
-            "genInputDir": "input" // the default input dir
+            "genInputDir": "" 
           },
           "generators": [] // configuration scheme to run multile generators
         }
