@@ -40,7 +40,7 @@ The default configurations are:
         "setting": {
           "globalSetting": {
             "genOutputDir": "output", // the output root dir
-            "errorLevel": "low"
+            "errorLevel": "low",
             "genInputDir": "" 
           },
           "generators": [] // configuration scheme to run multile generators
