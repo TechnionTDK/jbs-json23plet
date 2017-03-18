@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +29,7 @@ public class GeneratorsUtils {
     public static String GLOBAL_SETTING_GEN_OUTPUTDIR = "genOutputDir";
     public static String GLOBAL_SETTING = "globalSetting";
     public static String GLOBAL_SETTING_ERROR_LEVEL = "errorLevel";
+    public static String GLOBAL_SETTING_GEN_INPUT_DIR = "genInputDir";
     public static String URI = "uri";
     static String SETTING_PROP = "setting";
     static JsonElement root;
@@ -53,7 +55,7 @@ public class GeneratorsUtils {
     }
 
 
-    static public void setNewGeneratorConfiguration(String genName, String input, String active) {
+    static public void setNewGeneratorConfiguration(String genName, String input, String active) throws IOException {
         JsonElement newGen = new JsonObject();
         newGen.getAsJsonObject()
                 .addProperty(GENERATOR_NAME_PROP, genName);
@@ -65,7 +67,7 @@ public class GeneratorsUtils {
         dispose();
     }
 
-    static public void setGenConfig(String genName, String inputPath, String active) {
+    static public void setGenConfig(String genName, String inputPath, String active) throws IOException {
         for (JsonElement e : root.getAsJsonObject().get(SETTING_PROP).getAsJsonObject().getAsJsonArray(GENERATOR_PROP)) {
             if (e.getAsJsonObject().get(GENERATOR_NAME_PROP).getAsString().equals(genName)) {
                 if (!inputPath.equals("")) {
@@ -91,7 +93,7 @@ public class GeneratorsUtils {
                 .getAsString();
     }
 
-    static public void setGlobalSettingProp(String propName, String newVal) {
+    static public void setGlobalSettingProp(String propName, String newVal) throws IOException {
         setNewValToJsonElement(root
                                 .getAsJsonObject()
                                 .get(SETTING_PROP)
@@ -100,48 +102,63 @@ public class GeneratorsUtils {
                                     propName, newVal);
     }
 
-    static private void setNewValToJsonElement(JsonElement e, String propName, String newVal) {
+    static private void setNewValToJsonElement(JsonElement e, String propName, String newVal) throws IOException {
         e.getAsJsonObject().remove(propName);
         e.getAsJsonObject().addProperty(propName, newVal);
         dispose();
     }
 
-    static void dispose() {
-        try {
+    static void dispose() throws IOException {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String jsonFile = gson.toJson(root);
             FileWriter file = new FileWriter(jsonConfigPath);
             file.write(jsonFile);
             file.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
     }
     static public void generateBasicJsonForm(String propOfJsonString) {
         for (Json j : json().getAsArray(propOfJsonString)) {
-            Map<String, Json> mapJson = j.getAsDictionary();
-            String uri = mapJson.get("uri").value(PRIMITIVE_KEY);
-            for (String key : mapJson.keySet()) {
-                try {
-                    if (key.equals("uri")) continue;
-                    if (mapJson.get(key).isArray()) {
-                        for (String s : mapJson.get(key).getAsStringArray(PRIMITIVE_KEY)) {
+            try {
+                Map<String, Json> mapJson = j.getAsDictionary();
+                String uri = mapJson.get("uri").value(PRIMITIVE_KEY);
+                for (String key : mapJson.keySet()) {
+                    try {
+                        if (key.equals("uri")) continue;
+                        if (mapJson.get(key).isArray()) {
+                            for (String s : mapJson.get(key).getAsStringArray(PRIMITIVE_KEY)) {
+                                triplet()
+                                        .subject(uri)
+                                        .predicate(key)
+                                        .object(s);
+                            }
+                        } else {
                             triplet()
                                     .subject(uri)
                                     .predicate(key)
-                                    .object(s);
+                                    .object(mapJson.get(key).value(PRIMITIVE_KEY));
                         }
-                    } else {
-                        triplet()
-                                .subject(uri)
-                                .predicate(key)
-                                .object(mapJson.get(key).value(PRIMITIVE_KEY));
-                    }
-                } catch (Exception e) {
+                    } catch (Exception e) {
+                        onError("ERROR while activating basic generator, the json is:\n" + j.toString());
 
+                    }
                 }
+            }  catch (Exception e) {
+                System.err.println("ERROR while activating basic generator, the json is:\n" + j.toString());
+                throw e;
             }
         }
+    }
+    static void onError(String errorMassage) {
+        String errorLevel = getGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL);
+                        switch (errorLevel) {
+                            case "low":
+                                break;
+                            case "medium":
+                                System.err.println(errorMassage);
+                                break;
+                            case "high":
+                                System.err.println(errorMassage);
+                                System.exit(1);
+                            default:
+                        }
     }
 }
