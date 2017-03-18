@@ -142,8 +142,7 @@ public class GeneratorsUtils {
                     }
                 }
             }  catch (Exception e) {
-                System.err.println("ERROR while activating basic generator, the json is:\n" + j.toString() +
-                "\n and error is: " + e.toString());
+                System.err.println("ERROR while activating basic generator, the json is:\n" + j.toString());
                 throw e;
             }
         }

@@ -36,10 +36,9 @@ public class GeneratorFactory {
 
                     }
                 } catch (Exception e) {
-                    System.out.println("\nerror while generating file: " + file.toString());
+                    System.out.println("\nERROR while generating file: " + file.toString());
                     System.out.println("please check your json file or run /json23plet -config errorLevel=medium\n" +
                                         "and then ./json23plet -generate <generatorName> <" + file.toString() + ">");
-                    e.printStackTrace();
                 }
             }
                 pb.update();

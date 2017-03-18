@@ -88,12 +88,10 @@ public class Cli {
         }
         catch (ParseException e) {
             log.log(Level.SEVERE, "Parsing failed.  Reason: " + e.getMessage());
-            e.printStackTrace();
             help();
         }
         catch (Exception e) {
             log.log(Level.SEVERE, e.getMessage());
-            e.printStackTrace();
         }
     }
     private void help() {
