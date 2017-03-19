@@ -3,6 +3,7 @@ package json23plet.modules;
 
 import com.google.gson.*;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -99,13 +100,9 @@ public class Json {
      * This function used by GeneratorFactory.
      * @param path path to the json file.
      */
-    static public void Init(String path) {
+    static public void Init(String path) throws FileNotFoundException {
         JsonParser jp = new JsonParser();
-        try {
-            root.set(jp.parse(new FileReader(path)));
-        }catch(Exception e) {
-            System.out.println(e.getMessage());
-        }
+        root.set(jp.parse(new FileReader(path)));
     }
 
     /**

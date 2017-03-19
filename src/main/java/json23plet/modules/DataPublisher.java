@@ -3,6 +3,7 @@ package json23plet.modules;
 import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Paths;
 
 /**
@@ -31,7 +32,7 @@ public class DataPublisher {
      * @param fileExt the extension of the file.
      * @param format the format of the file (usually TURTLE).
      */
-    static public void publish(String dir, String fileExt, String format) {
+    static public void publish(String dir, String fileExt, String format) throws IOException {
         String currentOutputPath = getOutputPath(dir, fileExt);
         new File(new File(currentOutputPath).getParent()).mkdirs();
         Triplet.Export(currentOutputPath, format);
