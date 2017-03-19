@@ -145,5 +145,8 @@ public class JbsOntology
     public static Property JBO_P_TEXT = (model.getOntProperty(JBO_URI + "text"));
     public static Property JBO_P_TEXTNIKUD = (model.getOntProperty(JBO_URI + "textNikud"));
     public static Property JBO_P_POSITIONINPEREK = (model.getOntProperty(JBO_URI + "positionInPerek"));
+    public static Property JBO_P_MASECHET = (model.getOntProperty(JBO_URI + "masechet"));
+    public static Property JBO_P_PEREK = (model.getOntProperty(JBO_URI + "perek"));
+    public static Property JBO_P_MEFARESH = (model.getOntProperty(JBO_URI + "mefaresh"));
     public static Property JBO_P_POSITIONINPARASHA = (model.getOntProperty(JBO_URI + "positionInParasha"));
 }

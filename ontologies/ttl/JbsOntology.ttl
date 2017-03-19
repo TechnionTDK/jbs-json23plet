@@ -336,6 +336,9 @@ jbo:AmudSanhedrin  a     owl:Class ;
         rdfs:label       "AmudSanhedrin" ;
         rdfs:subClassOf  jbo:AmudBavli .
 
+jbo:perek  a        owl:ObjectProperty ;
+        rdfs:label  "perek" .
+
 jbo:AmudMegila  a        owl:Class ;
         rdfs:label       "AmudMegila" ;
         rdfs:subClassOf  jbo:AmudBavli .
@@ -507,6 +510,9 @@ jbo:AmudMeila  a         owl:Class ;
         rdfs:label       "AmudMeila" ;
         rdfs:subClassOf  jbo:AmudBavli .
 
+jbo:mefaresh  a     owl:ObjectProperty ;
+        rdfs:label  "mefaresh" .
+
 jbo:PasukOvadya  a       owl:Class ;
         rdfs:label       "PasukOvadya" ;
         rdfs:subClassOf  jbo:PasukNeviyim ;
@@ -557,3 +563,6 @@ jbo:SifreyRamchal  a     owl:Class ;
 jbo:ShemonaKevatzim  a   owl:Class ;
         rdfs:label       "ShemonaKevatzim" ;
         rdfs:subClassOf  jbo:SifreyRavKuk .
+
+jbo:masechet  a     owl:ObjectProperty ;
+        rdfs:label  "masechet" .
