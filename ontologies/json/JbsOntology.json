@@ -920,6 +920,21 @@
       "rdfs:label" : "positionInPerek"
     },
     {
+      "uri" : "jbo:masechet",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:label" : "masechet"
+    },
+    {
+      "uri" : "jbo:perek",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:label" : "perek"
+    },
+    {
+      "uri" : "jbo:mefaresh",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:label" : "mefaresh"
+    },
+    {
       "uri" : "jbo:positionInParasha",
       "rdf:type" : "owl:ObjectProperty",
       "rdfs:label" : "positionInPerek"
