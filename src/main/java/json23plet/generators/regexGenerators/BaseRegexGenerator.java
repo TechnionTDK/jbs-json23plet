@@ -74,10 +74,16 @@ public abstract class BaseRegexGenerator {
     void _generate() throws IOException {
         for (IRegexGenerator rgen : generatorsList) {
             for (Json js : getJsonsToGenerate()) {
-                if (rgen.match(js)) {
-                    rgen.generate(js);
+                try {
+                    if (rgen.match(js)) {
+                        rgen.generate(js);
 
+                    }
+                } catch (Exception e) {
+                    System.err.println("ERROR while activating basic generator, the json is:\n" + js.toString());
+                    throw e;
                 }
+
             }
             DataPublisher.publish("", "." + getID() + ".ttl", "TURTLE");
         }
