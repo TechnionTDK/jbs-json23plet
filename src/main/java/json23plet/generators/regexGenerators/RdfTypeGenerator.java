@@ -64,9 +64,28 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
     }
 
     private void registerMishneTorahGenerators() {
-        // TODO complete...
+        registerGenerator(new TypeRegEx("jbr:mishnetorah-.*", JBO_C_MISHNETORAH));
         registerGenerator(new TypeRegEx("jbr:seferhamitzvot-.*", JBO_C_MISHNETORAH));
-        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-.*", JBO_C_SEFERHAMITZVOT));
+
+        // sefer hamitzvot
+        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-\\d+-\\d+", JBO_C_MITZVASEFERHAMITZVOT));
+        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-3-\\d+", JBO_C_MITZVATASESEFERHAMITZVOT));
+        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-4-\\d+", JBO_C_MITZVATLOTAASESEFERHAMITZVOT));
+
+        // register halachot based on sefarim
+        Resource[] sefarim = {JBO_C_HALACHASEFERHAMADA, JBO_C_HALACHASEFERAHAVA, JBO_C_HALACHASEFERZEMANIM, JBO_C_HALACHASEFERNASHIM,
+                JBO_C_HALACHASEFERKEDUSHA, JBO_C_HALACHASEFERHAFLAA, JBO_C_HALACHASEFERZERAIM, JBO_C_HALACHASEFERAVODA, JBO_C_HALACHASEFERKORBANOT,
+                JBO_C_HALACHASEFERTAHARA, JBO_C_HALACHASEFERNEZIKIN, JBO_C_HALACHASEFERKINYAN, JBO_C_HALACHASEFERMISHPATIM, JBO_C_HALACHASEFERSHOFTIM};
+
+        for (int i = 0; i < sefarim.length; i++) {
+            int seferNum = i + 1;
+            registerGenerator(new TypeRegEx("jbr:mishnetorah-" + seferNum + "-\\d+-\\d+-\\d+", JBO_C_HALACHAMISHNETORAH, sefarim[i]));
+        }
+
+        // register mishne torah packages
+        registerGenerator(new TypeRegEx("jbr:mishnetorah-\\d+", JBO_C_MISHNETORAHPACKAGE, JBO_C_SEFER));
+        registerGenerator(new TypeRegEx("jbr:mishnetorah-\\d+-\\d+", JBO_C_MISHNETORAHPACKAGE)); // currently no JBO class
+        registerGenerator(new TypeRegEx("jbr:mishnetorah-\\d+-\\d+-\\d+", JBO_C_MISHNETORAHPACKAGE, JBO_C_PEREK));
     }
 
     private void registerBavliGenerators() {
