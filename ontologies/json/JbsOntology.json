@@ -375,10 +375,52 @@
     },
 
     {
+      "uri" : "jbo:PerushMishneTorah",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushMishneTorah",
+      "rdfs:subClassOf" : "jbo:MishneTorah"
+    },
+
+    {
+      "uri" : "jbo:PerushPerush",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushPerush",
+      "rdfs:subClassOf" : "jbo:PerushMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:PerushKesefMishne",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushKesefMishne",
+      "rdfs:subClassOf" : "jbo:PerushMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:PerushLechemMishne",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushLechemMishne",
+      "rdfs:subClassOf" : "jbo:PerushMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:PerushRaabad",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushRaabad",
+      "rdfs:subClassOf" : "jbo:PerushMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:PerushMagidMishne",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushMagidMishne",
+      "rdfs:subClassOf" : "jbo:PerushMishneTorah"
+    },
+
+    {
       "uri" : "jbo:HalachaSeferHamada",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferHamada",
-      "rdfs:subClassOf" : "jbo:MishneTorah"
+      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
     },
 
     {
