@@ -92,6 +92,7 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         registerGenerator(new TypeRegEx("jbr:mishnetorah-kesefmishne-\\d+-\\d+-\\d+-\\d+", JBO_C_PERUSHMISHNETORAH, JBO_C_PERUSHKESEFMISHNE));
         registerGenerator(new TypeRegEx("jbr:mishnetorah-lechemmishne-\\d+-\\d+-\\d+-\\d+", JBO_C_PERUSHMISHNETORAH, JBO_C_PERUSHLECHEMMISHNE));
         registerGenerator(new TypeRegEx("jbr:mishnetorah-raabad-\\d+-\\d+-\\d+-\\d+", JBO_C_PERUSHMISHNETORAH, JBO_C_PERUSHRAABAD));
+        registerGenerator(new TypeRegEx("jbr:mishnetorah-magidmishne-\\d+-\\d+-\\d+-\\d+", JBO_C_PERUSHMISHNETORAH, JBO_C_PERUSHMAGIDMISHNE));
     }
 
     private void registerBavliGenerators() {
