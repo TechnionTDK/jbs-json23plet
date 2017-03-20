@@ -71,6 +71,12 @@ public class JbsOntology
     public static Resource JBO_C_MITZVATASESEFERHAMITZVOT = (model.getOntClass(JBO_URI + "MitzvatAseSeferHamitzvot"));
     public static Resource JBO_C_MITZVATLOTAASESEFERHAMITZVOT = (model.getOntClass(JBO_URI + "MitzvatLoTaaseSeferHamitzvot"));
     public static Resource JBO_C_HALACHAMISHNETORAH = (model.getOntClass(JBO_URI + "HalachaMishneTorah"));
+    public static Resource JBO_C_PERUSHMISHNETORAH = (model.getOntClass(JBO_URI + "PerushMishneTorah"));
+    public static Resource JBO_C_PERUSHPERUSH = (model.getOntClass(JBO_URI + "PerushPerush"));
+    public static Resource JBO_C_PERUSHKESEFMISHNE = (model.getOntClass(JBO_URI + "PerushKesefMishne"));
+    public static Resource JBO_C_PERUSHLECHEMMISHNE = (model.getOntClass(JBO_URI + "PerushLechemMishne"));
+    public static Resource JBO_C_PERUSHRAABAD = (model.getOntClass(JBO_URI + "PerushRaabad"));
+    public static Resource JBO_C_PERUSHMAGIDMISHNE = (model.getOntClass(JBO_URI + "PerushMagidMishne"));
     public static Resource JBO_C_HALACHASEFERHAMADA = (model.getOntClass(JBO_URI + "HalachaSeferHamada"));
     public static Resource JBO_C_HALACHASEFERAHAVA = (model.getOntClass(JBO_URI + "HalachaSeferAhava"));
     public static Resource JBO_C_HALACHASEFERZEMANIM = (model.getOntClass(JBO_URI + "HalachaSeferZemanim"));

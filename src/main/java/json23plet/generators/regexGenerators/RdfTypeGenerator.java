@@ -86,6 +86,12 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         registerGenerator(new TypeRegEx("jbr:mishnetorah-\\d+", JBO_C_MISHNETORAHPACKAGE, JBO_C_SEFER));
         registerGenerator(new TypeRegEx("jbr:mishnetorah-\\d+-\\d+", JBO_C_MISHNETORAHPACKAGE)); // currently no JBO class
         registerGenerator(new TypeRegEx("jbr:mishnetorah-\\d+-\\d+-\\d+", JBO_C_MISHNETORAHPACKAGE, JBO_C_PEREK));
+
+        // register mishne torah mefarshim
+        registerGenerator(new TypeRegEx("jbr:mishnetorah-perush-\\d+-\\d+-\\d+-\\d+", JBO_C_PERUSHMISHNETORAH, JBO_C_PERUSHPERUSH));
+        registerGenerator(new TypeRegEx("jbr:mishnetorah-kesefmishne-\\d+-\\d+-\\d+-\\d+", JBO_C_PERUSHMISHNETORAH, JBO_C_PERUSHKESEFMISHNE));
+        registerGenerator(new TypeRegEx("jbr:mishnetorah-lechemmishne-\\d+-\\d+-\\d+-\\d+", JBO_C_PERUSHMISHNETORAH, JBO_C_PERUSHLECHEMMISHNE));
+        registerGenerator(new TypeRegEx("jbr:mishnetorah-raabad-\\d+-\\d+-\\d+-\\d+", JBO_C_PERUSHMISHNETORAH, JBO_C_PERUSHRAABAD));
     }
 
     private void registerBavliGenerators() {
