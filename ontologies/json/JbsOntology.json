@@ -338,7 +338,140 @@
       "rdfs:label" : "MishneTorah",
       "rdfs:subClassOf" : "owl:Thing"
     },
-	
+
+    {
+      "uri" : "jbo:MishneTorahPackage",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "MishneTorahPackage",
+      "rdfs:subClassOf" : "jbo:MishneTorah"
+    },
+
+    {
+      "uri" : "jbo:MitzvaSeferHamitzvot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "MitzvaSeferHamitzvot",
+      "rdfs:subClassOf" : "jbo:MishneTorah"
+    },
+
+    {
+      "uri" : "jbo:MitzvatAseSeferHamitzvot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "MitzvatAseSeferHamitzvot",
+      "rdfs:subClassOf" : "jbo:MitzvaSeferHamitzvot"
+    },
+
+    {
+      "uri" : "jbo:MitzvatLoTaaseSeferHamitzvot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "MitzvatLoTaaseSeferHamitzvot",
+      "rdfs:subClassOf" : "jbo:MitzvaSeferHamitzvot"
+    },
+
+    {
+      "uri" : "jbo:HalachaMishneTorah",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaMishneTorah",
+      "rdfs:subClassOf" : "jbo:MishneTorah"
+    },
+
+    {
+      "uri" : "jbo:HalachaSeferHamada",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaSeferHamada",
+      "rdfs:subClassOf" : "jbo:MishneTorah"
+    },
+
+    {
+      "uri" : "jbo:HalachaSeferAhava",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaSeferAhava",
+      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:HalachaSeferZemanim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaSeferZemanim",
+      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:HalachaSeferNashim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaSeferNashim",
+      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:HalachaSeferKedusha",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaSeferKedusha",
+      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:HalachaSeferHaflaa",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaSeferHaflaa",
+      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:HalachaSeferZeraim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaSeferZeraim",
+      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:HalachaSeferAvoda",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaSeferAvoda",
+      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:HalachaSeferKorbanot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaSeferKorbanot",
+      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:HalachaSeferTahara",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaSeferTahara",
+      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:HalachaSeferNezikin",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaSeferNezikin",
+      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:HalachaSeferKinyan",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaSeferKinyan",
+      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:HalachaSeferMishpatim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaSeferMishpatim",
+      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+    },
+
+    {
+      "uri" : "jbo:HalachaSeferShoftim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaSeferShoftim",
+      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+    },
+
     {
       "uri" : "jbo:ShulchanAruch",
       "rdf:type" : "owl:Class",
@@ -847,13 +980,6 @@
       "rdf:type" : "owl:Class",
       "rdfs:label" : "PerushMalbimBeurHamilot",
       "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:SeferHamitzvot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "SeferHamitzvot",
-      "rdfs:subClassOf" : "jbo:MishneTorah"
     },
 	
 	{
