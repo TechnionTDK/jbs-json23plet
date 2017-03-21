@@ -15,9 +15,6 @@ import java.io.IOException;
  */
 public class BasicJsonGenerator extends Generator {
     public void generate() throws IOException {
-        JsonValidator v = new OntologyValidator();
-        v.registerValidators();
-        v.validateSingleJson(Json.json());
         GeneratorsUtils.generateBasicJsonForm("subjects");
         DataPublisher.publish("", "." + getID() + ".ttl", "TURTLE");
     }
