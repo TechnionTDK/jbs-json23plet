@@ -200,7 +200,6 @@ Source code:
       src/main/java/json23plet/generators/ontologyGenerator/OntologyClassGenerator.java
       src/main/java/json23plet/generators/ontologyGenerator/OntologyGenerator.java
       src/main/java/json23plet/generators/ontologyGenerator/OntologyTTLGenerator.java 
-[code documentation](https://techniontdk.github.io/jbs-json23plet/json23plet/generators/ontologyGenerator/package-summary.html)
 As mentioned before, json23plet generates ontologies in the same way of regular json data. The tool contains a special ontology generator which has two purposes:
 
 1. Create the ttl files of the ontology.
@@ -253,7 +252,6 @@ The generator requires the ontology json to be in a very specific format:<br/>
 Source code file:
 
       src/main/java/json23plet/modules/Json.java
-[code documentation](https://techniontdk.github.io/jbs-json23plet/json23plet/modules/Json.html)
 Json is a module for parsing json files.<br/>
 json23plet engine assumes that you use this module, but it's not a mandatory.<br/>
 The engine loads statically (per thread) the current working json file, and it can be accessed (in the generator) as a parsed json through Json module.
@@ -268,7 +266,6 @@ The engine loads statically (per thread) the current working json file, and it c
 Source code file:
 
       src/main/java/json23plet/modules/Triplet.java
-[code documentation](https://techniontdk.github.io/jbs-json23plet/json23plet/modules/Triplet.html)
 The Triplet module is a simple wrapper for the [Apache Jena library](https://jena.apache.org/).<br/>
 json23plet engine loads an RDF model before calling the generator and enables adding statements to that model by using the Triplet module.
 
@@ -284,7 +281,6 @@ json23plet engine loads an RDF model before calling the generator and enables ad
 Source code file:
 
       src/main/java/json23plet/modules/Regex.java
-[code documentation](https://techniontdk.github.io/jbs-json23plet/json23plet/modules/Regex.html)
 A simple implementation of wrapper to java regex
 
 #### Usage example
@@ -296,7 +292,6 @@ A simple implementation of wrapper to java regex
 Source code file:
 
       src/main/java/json23plet/modules/DataPublisher.java
-[code documentation](https://techniontdk.github.io/jbs-json23plet/json23plet/modules/DataPublisher.html)
 A simple module to publish RDF model into ttl file
 
 As described, the output directory reflects the input directory. The tool initiates the DataPublisher before calling the generators. 
@@ -325,7 +320,6 @@ This enables generating new RDF triplet filed from json files.
 Source code file:
 
       src/main/java/json23plet/generators/customGenerators/BasicJsonGenerator.java
-[code documentation](https://techniontdk.github.io/jbs-json23plet/json23plet/generators/customGenerators/BasicJsonGenerator.html)
 To simplify using the tool and to avoid creating a new generator for each type of json file, the tool has a `BasicJsonGenerator`.<br/>
 This generator assumes the json file has a specific format, and by activating it on this file it will generate triplets generically without any more knowledge about the json file format.
 
@@ -353,7 +347,6 @@ Source code files:
 
       src/main/java/json23plet/generators/regexGenerators/BaseRegexGenerator.java
       src/main/java/json23plet/generators/regexGenerators/IRegExGenerator.java
-[code documentation](https://techniontdk.github.io/jbs-json23plet/json23plet/generators/regexGenerators/package-summary.html)
 The basic generator is a powerful and generic tool for any data you wish to generate, but sometimes some jsons need special treatment.<br/>
 One possible solution is to write a special generator that will handle those cases, but the tool has an easier way to do it by using this module.<br/>
 Let's start with an example:<br/>
@@ -373,7 +366,6 @@ Source code files:
 
       src/main/java/json23plet/JsonValidators/JsonValidator.java
       src/main/java/json23plet/JsonValidators/IJsonValidator.java
-[code documentation](https://techniontdk.github.io/jbs-json23plet/json23plet/JsonValidators/package-summary.html)
 To validate the json input files before generating triplets from them, the tool contains a framework that enables defining and implementing any validation in a simple way.
 Its mechanism is much like the [regexGenerators](README.md#regexgenertor).
 
