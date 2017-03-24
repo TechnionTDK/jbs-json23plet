@@ -32,6 +32,9 @@ Install [Maven](https://maven.apache.org/) on your machine.
         git update-index --assume-unchanged config.json
    This command will make your local `config.json` untracked from the GitHub repository.
 
+
+# Using the tool
+
 ## Json23plet configuration
 Json23plet has some configurations, all defined in `config.json` file.<br/>
 The default configurations are:
@@ -46,8 +49,8 @@ The default configurations are:
           "generators": [] // configuration scheme to run multile generators
         }
       }
-      
-## json23plet commands
+
+## commnd line commands
 
 ### Build the tool
 
@@ -92,20 +95,6 @@ Json23plet enables you to configure a scheme of running multiple different gener
 To do so, you need to [configure your scheme](README.md#add-and-edit-configuration-for-a-generator) and run this command:
       
       ./json23plet.sh -generateAll
-
-
-### Create and install a new generator
-***This is not a command but a basic part of working with the Json23plet tool***
-
-json23plet enables you to write and deploy your own generator for unique json formats.<br/>
-*To do so:*<br/>
-* Create your [generator](README.md#generators) and drop it in `src/main/java/json23plet/generators/customGenerators` directory.<br/>
-* For [regexGenerator](README.md#regexgenerator), drop it in `src/main/java/json23plet/generators/regexGenerators` directory.<br/>
-* Rebuild the project using:
-
-        ./json23plet.sh -b
-            
-* Now you can [run](README.md#run-a-single-generator) your generator.
 
 ### Create and update an ontology
 json23plet uses the same logic to generate ontology.ttl files. Therefore, to generate a new ontology it's required to define a json file with the ontolgy and run the json23plet ontology generator.
@@ -299,6 +288,17 @@ As described, the output directory reflects the input directory. The tool initia
 ### Generators
 As mentioned, json23plet runs a specific generator given by the generator name.
 This enables generating new RDF triplet filed from json files.
+
+### Create and install a new generator
+json23plet enables you to write and deploy your own generator for unique json formats.<br/>
+*To do so:*<br/>
+* Create your [generator](README.md#generators) and drop it in `src/main/java/json23plet/generators/customGenerators` directory.<br/>
+* For [regexGenerator](README.md#regexgenerator), drop it in `src/main/java/json23plet/generators/regexGenerators` directory.<br/>
+* Rebuild the project using:
+
+        ./json23plet.sh -b
+            
+* Now you can [run](README.md#run-a-single-generator) your generator.
 
 #### Usage example
 1. Write your own generator. A generator needs to extend `Generator` class and implement the `generate` method.<br/>
