@@ -160,6 +160,13 @@ To run the tests, rebuild the project using:
 maven will run the tests.<br/>
 It is also possible to run the tests without rebuild as explained in this [guide](http://junit.sourceforge.net/doc/faq/faq.htm#running_4).
 
+# Developer guide
+
+## Table of contents
+* [Development enviorment](README.md#development-enviorment)
+* [Development and maintenance](README.md#development-and-maintenance)
+* [Code documentation](https://techniontdk.github.io/jbs-json23plet/)
+
 ## Development enviorment
 It's preferred to develope and use the tool on a Linux machine where you can run the tool through the command line.<br/>
 Working on Windows requires an IDE.
@@ -176,8 +183,6 @@ It's recommeded to use [IntelliJ IDEA](https://www.jetbrains.com/idea/), and our
      1. Build the project
      1. Right click src/main/java/Json23plet.java->Create 'Json23plet.main()' and configure the tool arguments.
      1. Run or debug the tool.
-
-# Developer Guide
 
 ## Development and maintenance
 In this section, we will review the code components for future maintenance.<br/>
