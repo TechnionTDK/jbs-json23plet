@@ -9,7 +9,12 @@ and run it through json23plet.
 ## Background
 This tool was devleoped as part of the JBS (Jewish Book Shelf) project in the [TDK lab](http://tdk.net.technion.ac.il/).
 
-# Getting Started
+## Table of contents
+* [Getting started](README.md#getting-started)
+* [Using the tool](README.md#using-the-tool)
+* [Developer guide](README.md#developer-guide)
+
+# Getting started
 
 ## Prerequisites
 Install [Maven](https://maven.apache.org/) on your machine.
@@ -46,7 +51,7 @@ The default configurations are:
             "errorLevel": "low",
             "genInputDir": "" 
           },
-          "generators": [] // configuration scheme to run multile generators
+          "generators": [] // configuration scheme to run multiple generators
         }
       }
 
@@ -124,7 +129,7 @@ This command will add the following lines to the `config.json` file:
           "generators": [
                             {
                                 "genName": "myGen",
-                                "inputPath":"myGenINputPath",
+                                "inputPath":"myGenInputPath",
                                 "active": "true"("false")
                             }
                         ] 
@@ -172,6 +177,7 @@ It's recommeded to use [IntelliJ IDEA](https://www.jetbrains.com/idea/), and our
      1. Right click src/main/java/Json23plet.java->Create 'Json23plet.main()' and configure the tool arguments.
      1. Run or debug the tool.
 
+# Developer Guide
 
 ## Development and maintenance
 In this section, we will review the code components for future maintenance.<br/>
