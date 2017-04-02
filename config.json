@@ -2,8 +2,8 @@
   "setting": {
     "globalSetting": {
       "genOutputDir": "/home/omishali.loc/jbs/ttl/",
-      "errorLevel": "low",
-      "genInputDir": ""
+      "genInputDir": "/home/omishali.loc/jbs/jbs-text",
+      "errorLevel": "low"
     },
     "generators": [
       {
