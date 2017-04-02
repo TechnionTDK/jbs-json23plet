@@ -87,18 +87,24 @@ public class OntologyClassGenerator {
                 .stream()
                 .filter(obj ->
                         obj
-                        .getAsDictionary()
-                        .get("rdf:type")
-                        .value(PRIMITIVE_KEY)
-                        .equals("owl:Class")
+                                .getAsDictionary()
+                                .get("rdf:type")
+                                .value(PRIMITIVE_KEY)
+                                .equals("owl:Class")
                 )
                 .collect(Collectors.toList());
 
-
+        String uri_ontology = "";
+        for (Json j : json().getAsArray("prefixes")) {
+            if(j.value("uri").contains("/ontology/")) {
+                uri_ontology = j.value("prefix").toUpperCase() + "_" + "URI";
+                break;
+            }
+        }
         for (Json j : resourceList) {
             String uri = j.getAsDictionary().get("uri").value(PRIMITIVE_KEY);
             JFieldVar clss = oc.field(JMod.PUBLIC | JMod.STATIC, Resource.class, getClassFiledName(uri));
-            clss.init(JExpr.direct("model.getOntClass(JBO_URI + \"" + uri.split(":")[1] +"\")"));
+            clss.init(JExpr.direct("model.getOntClass(" + uri_ontology + " + \"" + uri.split(":")[1] +"\")"));
 
         }
 
@@ -110,17 +116,24 @@ public class OntologyClassGenerator {
                 .stream()
                 .filter(obj ->
                         obj
-                        .getAsDictionary()
-                        .get("rdf:type")
-                        .value(PRIMITIVE_KEY)
-                        .equals("owl:ObjectProperty")
+                                .getAsDictionary()
+                                .get("rdf:type")
+                                .value(PRIMITIVE_KEY)
+                                .equals("owl:ObjectProperty")
                 )
                 .collect(Collectors.toList());
 
+        String uri_ontology = "";
+        for (Json j : json().getAsArray("prefixes")) {
+            if(j.value("uri").contains("/ontology/")) {
+                uri_ontology = j.value("prefix").toUpperCase() + "_" + "URI";
+                break;
+            }
+        }
         for (Json j : propList) {
             String uri = j.getAsDictionary().get("uri").value(PRIMITIVE_KEY);
             JFieldVar clss = oc.field(JMod.PUBLIC | JMod.STATIC, Property.class, getPredicateFiledName(uri));
-            clss.init(JExpr.direct("model.getOntProperty(JBO_URI + \"" + uri.split(":")[1] +"\")"));
+            clss.init(JExpr.direct("model.getOntProperty(" + uri_ontology + " + \"" + uri.split(":")[1] +"\")"));
 
         }
 

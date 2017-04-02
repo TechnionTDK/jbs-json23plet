@@ -195,7 +195,7 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
 
     @Override
     public void generate() throws IOException {
-        JsonValidator v = new OntologyValidator();
+        JsonValidator v = new OntologyValidator("JbsOntology");
         v.registerValidators();
         v.validateSingleJson(Json.json());
         super._generate();

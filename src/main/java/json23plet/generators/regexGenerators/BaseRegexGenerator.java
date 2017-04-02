@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static json23plet.generators.GeneratorsUtils.onError;
+
 /**
  * Created by yon_b on 02/01/17.
  */
@@ -80,7 +82,7 @@ public abstract class BaseRegexGenerator {
 
                     }
                 } catch (Exception e) {
-                    System.err.println("ERROR while activating basic generator, the json is:\n" + js.toString());
+                    onError("ERROR while activating basic generator, the json is:\n" + js.toString());
                     throw e;
                 }
 

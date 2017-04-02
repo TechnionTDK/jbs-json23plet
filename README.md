@@ -9,7 +9,12 @@ and run it through json23plet.
 ## Background
 This tool was devleoped as part of the JBS (Jewish Book Shelf) project in the [TDK lab](http://tdk.net.technion.ac.il/).
 
-# Getting Started
+## Table of contents
+* [Getting started](README.md#getting-started)
+* [Using the tool](README.md#using-the-tool)
+* [Developer guide](README.md#developer-guide)
+
+# Getting started
 
 ## Prerequisites
 Install [Maven](https://maven.apache.org/) on your machine.
@@ -32,6 +37,9 @@ Install [Maven](https://maven.apache.org/) on your machine.
         git update-index --assume-unchanged config.json
    This command will make your local `config.json` untracked from the GitHub repository.
 
+
+# Using the tool
+
 ## Json23plet configuration
 Json23plet has some configurations, all defined in `config.json` file.<br/>
 The default configurations are:
@@ -43,11 +51,11 @@ The default configurations are:
             "errorLevel": "low",
             "genInputDir": "" 
           },
-          "generators": [] // configuration scheme to run multile generators
+          "generators": [] // configuration scheme to run multiple generators
         }
       }
-      
-## json23plet commands
+
+## commnd line commands
 
 ### Build the tool
 
@@ -93,20 +101,6 @@ To do so, you need to [configure your scheme](README.md#add-and-edit-configurati
       
       ./json23plet.sh -generateAll
 
-
-### Create and install a new generator
-***This is not a command but a basic part of working with the Json23plet tool***
-
-json23plet enables you to write and deploy your own generator for unique json formats.<br/>
-*To do so:*<br/>
-* Create your [generator](README.md#generators) and drop it in `src/main/java/json23plet/generators/customGenerators` directory.<br/>
-* For [regexGenerator](README.md#regexgenerator), drop it in `src/main/java/json23plet/generators/regexGenerators` directory.<br/>
-* Rebuild the project using:
-
-        ./json23plet.sh -b
-            
-* Now you can [run](README.md#run-a-single-generator) your generator.
-
 ### Create and update an ontology
 json23plet uses the same logic to generate ontology.ttl files. Therefore, to generate a new ontology it's required to define a json file with the ontolgy and run the json23plet ontology generator.
 
@@ -135,7 +129,7 @@ This command will add the following lines to the `config.json` file:
           "generators": [
                             {
                                 "genName": "myGen",
-                                "inputPath":"myGenINputPath",
+                                "inputPath":"myGenInputPath",
                                 "active": "true"("false")
                             }
                         ] 
@@ -166,6 +160,13 @@ To run the tests, rebuild the project using:
 maven will run the tests.<br/>
 It is also possible to run the tests without rebuild as explained in this [guide](http://junit.sourceforge.net/doc/faq/faq.htm#running_4).
 
+# Developer guide
+
+## Table of contents
+* [Development enviorment](README.md#development-enviorment)
+* [Development and maintenance](README.md#development-and-maintenance)
+* [Code documentation](https://techniontdk.github.io/jbs-json23plet/)
+
 ## Development enviorment
 It's preferred to develope and use the tool on a Linux machine where you can run the tool through the command line.<br/>
 Working on Windows requires an IDE.
@@ -183,7 +184,6 @@ It's recommeded to use [IntelliJ IDEA](https://www.jetbrains.com/idea/), and our
      1. Right click src/main/java/Json23plet.java->Create 'Json23plet.main()' and configure the tool arguments.
      1. Run or debug the tool.
 
-
 ## Development and maintenance
 In this section, we will review the code components for future maintenance.<br/>
 See the [code documentation](https://techniontdk.github.io/jbs-json23plet/).
@@ -199,8 +199,7 @@ Source code:
       
       src/main/java/json23plet/generators/ontologyGenerator/OntologyClassGenerator.java
       src/main/java/json23plet/generators/ontologyGenerator/OntologyGenerator.java
-      src/main/java/json23plet/generators/ontologyGenerator/OntologyTTLGenerator.java
-      
+      src/main/java/json23plet/generators/ontologyGenerator/OntologyTTLGenerator.java 
 As mentioned before, json23plet generates ontologies in the same way of regular json data. The tool contains a special ontology generator which has two purposes:
 
 1. Create the ttl files of the ontology.
@@ -266,7 +265,7 @@ The engine loads statically (per thread) the current working json file, and it c
 ### Triplet
 Source code file:
 
-      src/main/java/json23plet/modules/Triplet.java 
+      src/main/java/json23plet/modules/Triplet.java
 The Triplet module is a simple wrapper for the [Apache Jena library](https://jena.apache.org/).<br/>
 json23plet engine loads an RDF model before calling the generator and enables adding statements to that model by using the Triplet module.
 
@@ -301,6 +300,17 @@ As described, the output directory reflects the input directory. The tool initia
 As mentioned, json23plet runs a specific generator given by the generator name.
 This enables generating new RDF triplet filed from json files.
 
+### Create and install a new generator
+json23plet enables you to write and deploy your own generator for unique json formats.<br/>
+*To do so:*<br/>
+* Create your [generator](README.md#generators) and drop it in `src/main/java/json23plet/generators/customGenerators` directory.<br/>
+* For [regexGenerator](README.md#regexgenerator), drop it in `src/main/java/json23plet/generators/regexGenerators` directory.<br/>
+* Rebuild the project using:
+
+        ./json23plet.sh -b
+            
+* Now you can [run](README.md#run-a-single-generator) your generator.
+
 #### Usage example
 1. Write your own generator. A generator needs to extend `Generator` class and implement the `generate` method.<br/>
       The `generate` code typically looks like this:
@@ -321,7 +331,6 @@ This enables generating new RDF triplet filed from json files.
 Source code file:
 
       src/main/java/json23plet/generators/customGenerators/BasicJsonGenerator.java
-
 To simplify using the tool and to avoid creating a new generator for each type of json file, the tool has a `BasicJsonGenerator`.<br/>
 This generator assumes the json file has a specific format, and by activating it on this file it will generate triplets generically without any more knowledge about the json file format.
 
@@ -357,7 +366,7 @@ A regex generator checks for every json object in the input if it matchs to the 
 
 #### Build a regex generator
 1. Build myRegexGeneraor class, the class needs to extend the BaseRegexGenerator class.
-1. Implement the abstract methods as described in the  [code documentation](https://techniontdk.github.io/jbs-json23plet/).
+1. Implement the abstract methods as described in the [code documentation](https://techniontdk.github.io/jbs-json23plet/json23plet/generators/regexGenerators/BaseRegexGenerator.html).
 1. Drop your generator in `src/main/java/json23plet/generators/regexGenerators` and rebuild the tool by:
 
             ./json23plet.sh -b
@@ -373,7 +382,7 @@ Its mechanism is much like the [regexGenerators](README.md#regexgenertor).
 
 #### Build a jsonValidator
 1. Create `myValidator` class, the class has to extend the `JsonValidator` class.
-1. Implement the abstract methods as describe in the [code documentation](https://techniontdk.github.io/jbs-json23plet/).
+1. Implement the abstract methods as describe in the [code documentation](https://techniontdk.github.io/jbs-json23plet/json23plet/JsonValidators/JsonValidator.html).
 
 #### Error level
 The action that the tool operates on error detection depends on `errorLevel` value (which is defined in `config.json`):<br/>
@@ -409,4 +418,4 @@ A typical usage looks like this:
         DataPublisher.publish("", "." + getID() + ".ttl", "TURTLE");
     }
 In the example, we validate our json file before generating it.<br/>
-As described in the  [code documentation](https://techniontdk.github.io/jbs-json23plet/), you can also validate only one json object each time.
+As described in the [code documentation](https://techniontdk.github.io/jbs-json23plet/json23plet/JsonValidators/JsonValidator.html), you can also validate only one json object each time.
