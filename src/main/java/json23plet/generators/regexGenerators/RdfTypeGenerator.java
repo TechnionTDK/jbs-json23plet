@@ -53,7 +53,7 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         registerTanachGenerators();
         registerBavliGenerators();
         registerMishneTorahGenerators();
-
+        registerShulchanAruchGenerators();
 
 
         registerGenerator(new TypeRegEx("jbr:shmonakvatzim-.*", JBO_C_SIFREYRAVKUK));
@@ -61,6 +61,15 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
 
         registerGenerator(new TypeRegEx("jbr:mesilatyesharim-.*", JBO_C_MESILATYESHARIM));
         registerGenerator(new TypeRegEx("jbr:mesilatyesharim-.*", JBO_C_SIFREYRAMCHAL));
+    }
+
+    private void registerShulchanAruchGenerators() {
+        registerGenerator(new TypeRegEx("jbr:shulchanaruch-.*", JBO_C_SHULCHANARUCH));
+        registerGenerator(new TypeRegEx("jbr:shulchanaruch-\\d+-\\d+-\\d+", JBO_C_HALACHASHULCHANARUCH));
+        registerGenerator(new TypeRegEx("jbr:shulchanaruch-1-\\d+-\\d+", JBO_C_HALACHAORACHCHAIM));
+        registerGenerator(new TypeRegEx("jbr:shulchanaruch-2-\\d+-\\d+", JBO_C_HALACHAYOREDEA));
+        registerGenerator(new TypeRegEx("jbr:shulchanaruch-3-\\d+-\\d+", JBO_C_HALACHAEVENHAEZER));
+        registerGenerator(new TypeRegEx("jbr:shulchanaruch-4-\\d+-\\d+", JBO_C_HALACHACHOSHENMISHPAT));
     }
 
     private void registerMishneTorahGenerators() {

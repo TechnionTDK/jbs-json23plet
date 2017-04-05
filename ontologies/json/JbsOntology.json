@@ -520,6 +520,41 @@
       "rdfs:label" : "ShulchanAruch",
       "rdfs:subClassOf" : "owl:Thing"
     },
+
+    {
+      "uri" : "jbo:HalachaShulchanAruch",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaShulchanAruch",
+      "rdfs:subClassOf" : "owl:ShulchanAruch"
+    },
+
+    {
+      "uri" : "jbo:HalachaOrachChaim",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaOrachChaim",
+      "rdfs:subClassOf" : "owl:HalachaShulchanAruch"
+    },
+
+    {
+      "uri" : "jbo:HalachaYoreDea",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaYoreDea",
+      "rdfs:subClassOf" : "owl:HalachaShulchanAruch"
+    },
+
+    {
+      "uri" : "jbo:HalachaEvenHaezer",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaEvenHaezer",
+      "rdfs:subClassOf" : "owl:HalachaShulchanAruch"
+    },
+
+    {
+      "uri" : "jbo:HalachaChoshenMishpat",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "HalachaChoshenMishpat",
+      "rdfs:subClassOf" : "owl:HalachaShulchanAruch"
+    },
 	
     {
       "uri" : "jbo:SifreyRavKuk",
