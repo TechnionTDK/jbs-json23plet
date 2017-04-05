@@ -92,6 +92,11 @@ public class JbsOntology
     public static Resource JBO_C_HALACHASEFERMISHPATIM = (model.getOntClass(JBO_URI + "HalachaSeferMishpatim"));
     public static Resource JBO_C_HALACHASEFERSHOFTIM = (model.getOntClass(JBO_URI + "HalachaSeferShoftim"));
     public static Resource JBO_C_SHULCHANARUCH = (model.getOntClass(JBO_URI + "ShulchanAruch"));
+    public static Resource JBO_C_HALACHASHULCHANARUCH = (model.getOntClass(JBO_URI + "HalachaShulchanAruch"));
+    public static Resource JBO_C_HALACHAORACHCHAIM = (model.getOntClass(JBO_URI + "HalachaOrachChaim"));
+    public static Resource JBO_C_HALACHAYOREDEA = (model.getOntClass(JBO_URI + "HalachaYoreDea"));
+    public static Resource JBO_C_HALACHAEVENHAEZER = (model.getOntClass(JBO_URI + "HalachaEvenHaezer"));
+    public static Resource JBO_C_HALACHACHOSHENMISHPAT = (model.getOntClass(JBO_URI + "HalachaChoshenMishpat"));
     public static Resource JBO_C_SIFREYRAVKUK = (model.getOntClass(JBO_URI + "SifreyRavKuk"));
     public static Resource JBO_C_SIFREYRAMCHAL = (model.getOntClass(JBO_URI + "SifreyRamchal"));
     public static Resource JBO_C_PASUK = (model.getOntClass(JBO_URI + "Pasuk"));
