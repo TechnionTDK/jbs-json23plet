@@ -142,12 +142,12 @@ public class GeneratorsUtils {
                     }
                 }
             }  catch (Exception e) {
-                System.err.println("ERROR while activating basic generator, the json is:\n" + j.toString());
+                onError("ERROR while activating basic generator, the json is:\n" + j.toString());
                 throw e;
             }
         }
     }
-    static void onError(String errorMassage) {
+    static public void onError(String errorMassage) {
         String errorLevel = getGlobalSettingProp(GLOBAL_SETTING_ERROR_LEVEL);
                         switch (errorLevel) {
                             case "low":

@@ -17,25 +17,29 @@ import static json23plet.generators.GeneratorsUtils.getGlobalSettingProp;
  * Created by yon_b on 02/01/17.
  */
 public class OntologyValidator extends  JsonValidator{
+    String jbsOntName;
+    public OntologyValidator(String ontology) {
+        this.jbsOntName = ontology;
+    }
     @Override
     public void registerValidators() {
         registerValidator(new IJsonValidator() {
-            String jbsOntName = "JbsOntology";
+            //            String jbsOntName = "JbsOntology";
             OntModel model = (OntModel) ModelFactory.createOntologyModel().read(Paths.get("ontologies", "ttl", jbsOntName + ".ttl").toString());
             @Override
             public boolean JsonValidate(Json obj) {
                 List<String> JbsKeys = model.listAllOntProperties()
-                .toList()
-                .stream()
-                .map(p -> model.getNsURIPrefix(p.getNameSpace()) + ":" + p.getLocalName())
-                .collect(Collectors.toList());
-                JbsKeys.addAll(
-                model
-                        .listClasses()
                         .toList()
                         .stream()
-                        .map(c -> model.getNsURIPrefix(c.getNameSpace()) + ":" + c.getLocalName())
-                        .collect(Collectors.toList())
+                        .map(p -> model.getNsURIPrefix(p.getNameSpace()) + ":" + p.getLocalName())
+                        .collect(Collectors.toList());
+                JbsKeys.addAll(
+                        model
+                                .listClasses()
+                                .toList()
+                                .stream()
+                                .map(c -> model.getNsURIPrefix(c.getNameSpace()) + ":" + c.getLocalName())
+                                .collect(Collectors.toList())
                 );
                 JbsKeys.add("uri");
                 boolean valid = obj
