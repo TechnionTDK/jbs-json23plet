@@ -171,26 +171,17 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         });
 
         // mefarshim
-        String[] mefarshim = {"rashi", "ramban", "orhachaim", "ibnezra", "baalhaturim", "onkelos", "sforno", "kliyekar",
-                "daatzkenim", "metzudatdavid", "metzudattzion", "malbiminyan", "malbimmilot", "ralbag", "malbim"};
         registerGenerator(new TypeRegEx("jbr:tanach-\\D+-\\d+-\\d+-\\d+", JBO_C_PERUSHTANACH)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-Rashi-\\d+-\\d+-\\d+", JBO_C_PERUSHRASHI)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-ramban-\\d+-\\d+-\\d+", JBO_C_PERUSHRAMBAN)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-orhachaim-\\d+-\\d+-\\d+", JBO_C_PERUSHORHACHAYIM)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-ibnezra-\\d+-\\d+-\\d+", JBO_C_PERUSHRABIAVRAHAMIBNEZRA)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-baalhaturim-\\d+-\\d+-\\d+", JBO_C_PERUSHBAALHATURIM)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-onkelos-\\d+-\\d+-\\d+", JBO_C_TARGUMONKELOS)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-sforno-\\d+-\\d+-\\d+", JBO_C_PERUSHSEFORNO)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-kliyekar-\\d+-\\d+-\\d+", JBO_C_PERUSHKELIYEKAR)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-daatzkenim-\\d+-\\d+-\\d+", JBO_C_PERUSHDAATZEKENIM)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-metzudatdavid-\\d+-\\d+-\\d+", JBO_C_PERUSHMETZUDATDAVID)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-metzudattzion-\\d+-\\d+-\\d+", JBO_C_PERUSHMETZUDATTZIYON)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-malbiminyan-\\d+-\\d+-\\d+", JBO_C_PERUSHMALBIMBEURHAINYAN)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-malbimmilot-\\d+-\\d+-\\d+", JBO_C_PERUSHMALBIMBEURHAMILOT)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-ralbag-\\d+-\\d+-\\d+", JBO_C_PERUSHRALBAG)); // \D matches non-digits
-        registerGenerator(new TypeRegEx("jbr:tanach-malbim-\\d+-\\d+-\\d+", JBO_C_PERUSHMALBIM)); // \D matches non-digits
-        // TODO Find a more elegant approach for the above
 
+        String[] mefarshim = {"rashi", "ramban", "orhachaim", "ibnezra", "baalhaturim", "onkelos", "sforno", "kliyekar",
+                "yonatan", "sifteychachamim", "midrashraba", "daatzkenim", "metzudatdavid", "metzudattzion", "malbiminyan",
+                "malbimmilot", "ralbag", "malbim"};
+        Resource[] resources = {JBO_C_PERUSHRASHI, JBO_C_PERUSHRAMBAN, JBO_C_PERUSHORHACHAYIM, JBO_C_PERUSHIBNEZRA, JBO_C_PERUSHBAALHATURIM, JBO_C_TARGUMONKELOS,
+                JBO_C_PERUSHSEFORNO, JBO_C_PERUSHKELIYEKAR, JBO_C_TARGUMYONATAN, JBO_C_PERUSHSIFTEYCHACHAMIM, JBO_C_PERUSHMISHNETORAH, JBO_C_PERUSHDAATZEKENIM,
+                JBO_C_PERUSHMETZUDATDAVID, JBO_C_PERUSHMETZUDATTZIYON, JBO_C_PERUSHMALBIMBEURHAINYAN, JBO_C_PERUSHMALBIMBEURHAMILOT, JBO_C_PERUSHRALBAG, JBO_C_PERUSHMALBIM};
+
+        for(int index=0; index<mefarshim.length;index++)
+            registerGenerator(new TypeRegEx("jbr:tanach-" + mefarshim[index] + "-\\d+-\\d+-\\d+", resources[index]));
     }
 
     @Override

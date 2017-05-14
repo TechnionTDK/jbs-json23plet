@@ -147,11 +147,6 @@ jbo:AmudRoshHashana  a   owl:Class ;
         rdfs:label       "AmudRoshHashana" ;
         rdfs:subClassOf  jbo:AmudBavli .
 
-jbo:PerushRabiAvrahamIbnEzra
-        a                owl:Class ;
-        rdfs:label       "PerushRabiAvrahamIbnEzra" ;
-        rdfs:subClassOf  jbo:PerushTanach .
-
 jbo:PerushRaabad  a      owl:Class ;
         rdfs:label       "PerushRaabad" ;
         rdfs:subClassOf  jbo:PerushMishneTorah .
@@ -164,6 +159,11 @@ jbo:PasukKohelet  a      owl:Class ;
 jbo:AmudNedarim  a       owl:Class ;
         rdfs:label       "AmudNedarim" ;
         rdfs:subClassOf  jbo:AmudBavli .
+
+jbo:PerushSifteyChachamim
+        a                owl:Class ;
+        rdfs:label       "PerushSifteyChachamim" ;
+        rdfs:subClassOf  jbo:PerushTanach .
 
 jbo:PerushMalbim  a      owl:Class ;
         rdfs:label       "PerushMalbim" ;
@@ -442,11 +442,6 @@ jbo:PasukNechemya  a     owl:Class ;
         rdfs:subClassOf  jbo:PasukKetuvim ;
         jbo:position     "37" .
 
-jbo:PerushSifteyChachamin
-        a                owl:Class ;
-        rdfs:label       "PerushSifteyChachamin" ;
-        rdfs:subClassOf  jbo:PerushTanach .
-
 jbo:interprets  a   owl:ObjectProperty ;
         rdfs:label  "interprets" .
 
@@ -521,6 +516,10 @@ jbo:MitzvatAseSeferHamitzvot
         a                owl:Class ;
         rdfs:label       "MitzvatAseSeferHamitzvot" ;
         rdfs:subClassOf  jbo:MitzvaSeferHamitzvot .
+
+jbo:PerushIbnEzra  a     owl:Class ;
+        rdfs:label       "PerushIbnEzra" ;
+        rdfs:subClassOf  jbo:PerushTanach .
 
 jbo:AmudBavaKama  a      owl:Class ;
         rdfs:label       "AmudBavaKama" ;
