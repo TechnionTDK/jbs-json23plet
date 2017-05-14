@@ -145,11 +145,11 @@ public class JbsOntology
     public static Resource JBO_C_PASUKDIVREYHAYAMIMA = (model.getOntClass(JBO_URI + "PasukDivreyHayamimA"));
     public static Resource JBO_C_PASUKDIVREYHAYAMIMB = (model.getOntClass(JBO_URI + "PasukDivreyHayamimB"));
     public static Resource JBO_C_PERUSHRASHI = (model.getOntClass(JBO_URI + "PerushRashi"));
-    public static Resource JBO_C_PERUSHSIFTEYCHACHAMIN = (model.getOntClass(JBO_URI + "PerushSifteyChachamin"));
+    public static Resource JBO_C_PERUSHSIFTEYCHACHAMIM = (model.getOntClass(JBO_URI + "PerushSifteyChachamim"));
     public static Resource JBO_C_PERUSHRAMBAN = (model.getOntClass(JBO_URI + "PerushRamban"));
     public static Resource JBO_C_TARGUMYONATAN = (model.getOntClass(JBO_URI + "TargumYonatan"));
     public static Resource JBO_C_PERUSHORHACHAYIM = (model.getOntClass(JBO_URI + "PerushOrHachayim"));
-    public static Resource JBO_C_PERUSHRABIAVRAHAMIBNEZRA = (model.getOntClass(JBO_URI + "PerushRabiAvrahamIbnEzra"));
+    public static Resource JBO_C_PERUSHIBNEZRA = (model.getOntClass(JBO_URI + "PerushIbnEzra"));
     public static Resource JBO_C_PERUSHBAALHATURIM = (model.getOntClass(JBO_URI + "PerushBaalHaturim"));
     public static Resource JBO_C_TARGUMONKELOS = (model.getOntClass(JBO_URI + "TargumOnkelos"));
     public static Resource JBO_C_PERUSHSEFORNO = (model.getOntClass(JBO_URI + "PerushSeforno"));

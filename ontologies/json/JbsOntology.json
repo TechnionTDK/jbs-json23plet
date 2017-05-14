@@ -935,9 +935,9 @@
     },
 	
 	{
-      "uri" : "jbo:PerushSifteyChachamin",
+      "uri" : "jbo:PerushSifteyChachamim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushSifteyChachamin",
+      "rdfs:label" : "PerushSifteyChachamim",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
@@ -963,9 +963,9 @@
     },
 	
 	{
-      "uri" : "jbo:PerushRabiAvrahamIbnEzra",
+      "uri" : "jbo:PerushIbnEzra",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushRabiAvrahamIbnEzra",
+      "rdfs:label" : "PerushIbnEzra",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
