@@ -124,6 +124,8 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         // TODO add packages
 
         // mefarshim
+        registerGenerator(new TypeRegEx("jbr:bavli-\\D+-\\d+-\\d+-\\d+", JBO_C_PERUSHBAVLI)); // \D matches non-digits
+
         String[] mefarshim = {"rashi", "tosafot", "rashbam"};
         Resource[] resources = {JBO_C_PERUSHBAVLIRASHI, JBO_C_PERUSHBAVLITOSAFOT, JBO_C_PERUSHBAVLIRASHBAM};
 
