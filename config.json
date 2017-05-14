@@ -1,10 +1,26 @@
 {
   "setting": {
     "globalSetting": {
-      "genOutputDir": "output",
+      "genOutputDir": "/home/omishali.loc/jbs/ttl/",
       "errorLevel": "low",
-      "genInputDir": ""
+      "genInputDir": "/home/omishali.loc/jbs/jbs-text"
     },
-    "generators": []
+    "generators": [
+      {
+        "name": "RdfTypeGenerator",
+        "input": "/home/omishali.loc/jbs/jbs-text",
+        "active": "true"
+      },
+      {
+        "name": "BasicJsonGenerator",
+        "input": "/home/omishali.loc/jbs/jbs-text",
+        "active": "true"
+      },
+      {
+        "name": "PsukimTagsGenerator",
+        "input": "/home/omishali.loc/jbst/jbs-text-tagged",
+        "active": "true"
+      },
+    ]
   }
 }
