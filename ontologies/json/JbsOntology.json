@@ -100,6 +100,14 @@
       "rdfs:label" : "PerushBavliRashbam",
       "rdfs:subClassOf" : "jbo:PerushBavli"
     },
+
+    {
+      "uri" : "jbo:PerushBavliRan",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushBavliRan",
+      "rdfs:subClassOf" : "jbo:PerushBavli"
+    },
+
     {
       "uri" : "jbo:AmudBerachot",
       "rdf:type" : "owl:Class",

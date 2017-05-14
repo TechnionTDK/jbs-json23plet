@@ -723,6 +723,10 @@ jbo:PasukChagay  a       owl:Class ;
         rdfs:subClassOf  jbo:PasukNeviyim ;
         jbo:position     "24" .
 
+jbo:PerushBavliRan  a    owl:Class ;
+        rdfs:label       "PerushBavliRan" ;
+        rdfs:subClassOf  jbo:PerushBavli .
+
 jbo:AmudMoedKatan  a     owl:Class ;
         rdfs:label       "AmudMoedKatan" ;
         rdfs:subClassOf  jbo:AmudBavli .
