@@ -2,8 +2,8 @@
   "setting": {
     "globalSetting": {
       "genOutputDir": "/home/omishali.loc/jbs/ttl/",
-      "genInputDir": "/home/omishali.loc/jbs/jbs-text",
-      "errorLevel": "low"
+      "errorLevel": "low",
+      "genInputDir": "/home/omishali.loc/jbs/jbs-text"
     },
     "generators": [
       {
@@ -15,7 +15,12 @@
         "name": "BasicJsonGenerator",
         "input": "/home/omishali.loc/jbs/jbs-text",
         "active": "true"
-      }
+      },
+      {
+        "name": "PsukimTagsGenerator",
+        "input": "/home/omishali.loc/jbst/jbs-text-tagged",
+        "active": "true"
+      },
     ]
   }
 }
