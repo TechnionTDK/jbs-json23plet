@@ -28,6 +28,10 @@ public class JbsOntology
     public static Resource JBO_C_TALMUDBAVLI = (model.getOntClass(JBO_URI + "TalmudBavli"));
     public static Resource JBO_C_AMUDBAVLI = (model.getOntClass(JBO_URI + "AmudBavli"));
     public static Resource JBO_C_BAVLIPACKAGE = (model.getOntClass(JBO_URI + "BavliPackage"));
+    public static Resource JBO_C_PERUSHBAVLI = (model.getOntClass(JBO_URI + "PerushBavli"));
+    public static Resource JBO_C_PERUSHBAVLIRASHI = (model.getOntClass(JBO_URI + "PerushBavliRashi"));
+    public static Resource JBO_C_PERUSHBAVLITOSAFOT = (model.getOntClass(JBO_URI + "PerushBavliTosafot"));
+    public static Resource JBO_C_PERUSHBAVLIRASHBAM = (model.getOntClass(JBO_URI + "PerushBavliRashbam"));
     public static Resource JBO_C_AMUDBERACHOT = (model.getOntClass(JBO_URI + "AmudBerachot"));
     public static Resource JBO_C_AMUDSHABAT = (model.getOntClass(JBO_URI + "AmudShabat"));
     public static Resource JBO_C_AMUDERUVIN = (model.getOntClass(JBO_URI + "AmudEruvin"));
