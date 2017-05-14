@@ -74,6 +74,33 @@
     },
 
     {
+      "uri" : "jbo:PerushBavli",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushBavli",
+      "rdfs:subClassOf" : "jbo:TalmudBavli"
+    },
+
+    {
+      "uri" : "jbo:PerushBavliRashi",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushBavliRashi",
+      "rdfs:subClassOf" : "jbo:PerushBavli"
+    },
+
+    {
+      "uri" : "jbo:PerushBavliTosafot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushBavliTosafot",
+      "rdfs:subClassOf" : "jbo:PerushBavli"
+    },
+
+    {
+      "uri" : "jbo:PerushBavliRashbam",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "PerushBavliRashbam",
+      "rdfs:subClassOf" : "jbo:PerushBavli"
+    },
+    {
       "uri" : "jbo:AmudBerachot",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "AmudBerachot",

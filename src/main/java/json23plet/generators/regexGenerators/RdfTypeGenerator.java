@@ -122,6 +122,13 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         }
 
         // TODO add packages
+
+        // mefarshim
+        String[] mefarshim = {"rashi", "tosafot", "rashbam"};
+        Resource[] resources = {JBO_C_PERUSHBAVLIRASHI, JBO_C_PERUSHBAVLITOSAFOT, JBO_C_PERUSHBAVLIRASHBAM};
+
+        for(int index=0; index<mefarshim.length;index++)
+            registerGenerator(new TypeRegEx("jbr:bavli-" + mefarshim[index] + "-\\d+-\\d+-\\d+", resources[index]));
     }
 
     private void registerTanachGenerators() {
@@ -177,7 +184,7 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
                 "yonatan", "sifteychachamim", "midrashraba", "daatzkenim", "metzudatdavid", "metzudattzion", "malbiminyan",
                 "malbimmilot", "ralbag", "malbim"};
         Resource[] resources = {JBO_C_PERUSHRASHI, JBO_C_PERUSHRAMBAN, JBO_C_PERUSHORHACHAYIM, JBO_C_PERUSHIBNEZRA, JBO_C_PERUSHBAALHATURIM, JBO_C_TARGUMONKELOS,
-                JBO_C_PERUSHSEFORNO, JBO_C_PERUSHKELIYEKAR, JBO_C_TARGUMYONATAN, JBO_C_PERUSHSIFTEYCHACHAMIM, JBO_C_PERUSHMISHNETORAH, JBO_C_PERUSHDAATZEKENIM,
+                JBO_C_PERUSHSEFORNO, JBO_C_PERUSHKELIYEKAR, JBO_C_TARGUMYONATAN, JBO_C_PERUSHSIFTEYCHACHAMIM, JBO_C_MIDRASHRABA, JBO_C_PERUSHDAATZEKENIM,
                 JBO_C_PERUSHMETZUDATDAVID, JBO_C_PERUSHMETZUDATTZIYON, JBO_C_PERUSHMALBIMBEURHAINYAN, JBO_C_PERUSHMALBIMBEURHAMILOT, JBO_C_PERUSHRALBAG, JBO_C_PERUSHMALBIM};
 
         for(int index=0; index<mefarshim.length;index++)
