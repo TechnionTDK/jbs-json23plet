@@ -1176,6 +1176,24 @@
       "uri" : "jbo:positionInParasha",
       "rdf:type" : "owl:ObjectProperty",
       "rdfs:label" : "positionInPerek"
+    },
+
+    {
+      "uri" : "jbo:source",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:label" : "source"
+    },
+
+    {
+      "uri" : "jbo:target",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:label" : "target"
+    },
+
+    {
+      "uri" : "jbo:span",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:label" : "target"
     }
   ]
 }

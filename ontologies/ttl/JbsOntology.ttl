@@ -695,6 +695,9 @@ jbo:PerushMishneTorah
         rdfs:label       "PerushMishneTorah" ;
         rdfs:subClassOf  jbo:MishneTorah .
 
+jbo:target  a       owl:ObjectProperty ;
+        rdfs:label  "target" .
+
 jbo:AmudPesachim  a      owl:Class ;
         rdfs:label       "AmudPesachim" ;
         rdfs:subClassOf  jbo:AmudBavli .
@@ -730,3 +733,9 @@ jbo:PerushBavliRan  a    owl:Class ;
 jbo:AmudMoedKatan  a     owl:Class ;
         rdfs:label       "AmudMoedKatan" ;
         rdfs:subClassOf  jbo:AmudBavli .
+
+jbo:span  a         owl:ObjectProperty ;
+        rdfs:label  "target" .
+
+jbo:source  a       owl:ObjectProperty ;
+        rdfs:label  "source" .

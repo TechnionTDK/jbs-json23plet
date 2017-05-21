@@ -183,4 +183,7 @@ public class JbsOntology
     public static Property JBO_P_PEREK = (model.getOntProperty(JBO_URI + "perek"));
     public static Property JBO_P_MEFARESH = (model.getOntProperty(JBO_URI + "mefaresh"));
     public static Property JBO_P_POSITIONINPARASHA = (model.getOntProperty(JBO_URI + "positionInParasha"));
+    public static Property JBO_P_SOURCE = (model.getOntProperty(JBO_URI + "source"));
+    public static Property JBO_P_TARGET = (model.getOntProperty(JBO_URI + "target"));
+    public static Property JBO_P_SPAN = (model.getOntProperty(JBO_URI + "span"));
 }
