@@ -55,7 +55,7 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         registerMishneTorahGenerators();
         registerShulchanAruchGenerators();
 
-        registerGenerator(new TypeRegEx("jbr:mention__.*", JBO_C_MENTION));
+        //registerGenerator(new TypeRegEx("jbr:mention__.*", JBO_C_MENTION)); // inserted into the generator
 
         registerGenerator(new TypeRegEx("jbr:shmonakvatzim-.*", JBO_C_SIFREYRAVKUK));
         registerGenerator(new TypeRegEx("jbr:shmonakvatzim-.*", JBO_C_SHEMONAKEVATZIM));

@@ -46,6 +46,10 @@ public class MentionGenerator extends Generator {
                         .subject(mentionUri)
                         .predicate(JBO_P_SPAN)
                         .object(tag.value("span"));
+                triplet()
+                        .subject(mentionUri)
+                        .predicate(RDF_P_TYPE)
+                        .object(JBO_C_MENTION);
             }
 
             for (String mentionUri : numOfMEntions.keySet())
