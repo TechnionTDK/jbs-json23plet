@@ -1194,6 +1194,12 @@
       "uri" : "jbo:span",
       "rdf:type" : "owl:ObjectProperty",
       "rdfs:label" : "target"
+    },
+
+    {
+      "uri" : "jbo:numOfMentions",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:label" : "numOfMentions"
     }
   ]
 }

@@ -474,6 +474,9 @@ jbo:HalachaSeferMishpatim
         rdfs:label       "HalachaSeferMishpatim" ;
         rdfs:subClassOf  jbo:HalachaMishneTorah .
 
+jbo:numOfMentions  a  owl:ObjectProperty ;
+        rdfs:label  "numOfMentions" .
+
 jbo:TargumOnkelos  a     owl:Class ;
         rdfs:label       "TargumOnkelos" ;
         rdfs:subClassOf  jbo:PerushTanach .

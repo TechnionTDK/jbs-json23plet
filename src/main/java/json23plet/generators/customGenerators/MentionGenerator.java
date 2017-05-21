@@ -6,6 +6,8 @@ import json23plet.modules.DataPublisher;
 import json23plet.modules.Json;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import static json23plet.generators.GeneratorsUtils.URI;
 import static json23plet.modules.Json.json;
@@ -23,12 +25,15 @@ public class MentionGenerator extends Generator {
         v.validateSingleJson(Json.json());
 
         for (Json j : json().getAsArray("subjects")) {
+            Map<String, Integer>  numOfMEntions = new HashMap<>();
             String subjectUri = j.value(URI);
             String subjectId = subjectUri.split(":")[1];
+
             for (Json tag : j.getAsArray("tags")) {
                 String tagUri = tag.value(URI);
                 String tagId = tagUri.split(":")[1];
-                String mentionUri = "jbr:" + subjectId + "__" + tagId;
+                String mentionUri = "jbr:mention__" + subjectId + "__" + tagId;
+                updateNumOfMentions(numOfMEntions, mentionUri);
                 triplet()
                         .subject(mentionUri)
                         .predicate(JBO_P_SOURCE)
@@ -42,8 +47,18 @@ public class MentionGenerator extends Generator {
                         .predicate(JBO_P_SPAN)
                         .object(tag.value("span"));
             }
+
+            for (String mentionUri : numOfMEntions.keySet())
+                triplet()
+                        .subject(mentionUri)
+                        .predicate(JBO_P_NUMOFMENTIONS)
+                        .object(model.createTypedLiteral(numOfMEntions.get(mentionUri)).asResource());
         }
         DataPublisher.publish("", "." + getID() + ".ttl", "TURTLE");
+    }
+
+    private void updateNumOfMentions(Map<String, Integer> numOfMEntions, String tagUri) {
+        numOfMEntions.put(tagUri, numOfMEntions.getOrDefault(tagUri, 0) +  1);
     }
 
     @Override

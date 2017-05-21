@@ -186,4 +186,5 @@ public class JbsOntology
     public static Property JBO_P_SOURCE = (model.getOntProperty(JBO_URI + "source"));
     public static Property JBO_P_TARGET = (model.getOntProperty(JBO_URI + "target"));
     public static Property JBO_P_SPAN = (model.getOntProperty(JBO_URI + "span"));
+    public static Property JBO_P_NUMOFMENTIONS = (model.getOntProperty(JBO_URI + "numOfMentions"));
 }
