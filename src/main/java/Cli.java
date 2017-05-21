@@ -106,13 +106,18 @@ public class Cli {
         if (gen.equals("basic")) {
             gen = "BasicJsonGenerator";
         }
-        String inputDir = GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_INPUT_DIR);
-        if (inputDir.equals("") && params.length == 1) {
+
+        String inputDir = "";
+
+        if (params.length > 1) // user has specified an input dir
+            inputDir = params[1];
+        else
+            inputDir = GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_INPUT_DIR);
+
+        if (inputDir.equals("")) {
             throw new Exception("No input dir specified");
         }
-        if (inputDir.equals("")) {
-            inputDir = params[1];
-        }
+
         GeneratorFactory.generate(gen, inputDir, GeneratorsUtils.getGlobalSettingProp(GLOBAL_SETTING_GEN_OUTPUTDIR));
     }
     private void generateAll() throws Exception {
