@@ -53,7 +53,6 @@ public class MentionGenerator extends Generator {
                         .subject(mentionUri)
                         .predicate(JBO_P_NUMOFMENTIONS)
                         .object(numOfMEntions.get(mentionUri).toString());
-            //model.createTypedLiteral(numOfMEntions.get(mentionUri)).asResource()
         }
         DataPublisher.publish("", "." + getID() + ".ttl", "TURTLE");
     }

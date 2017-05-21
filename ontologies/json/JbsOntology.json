@@ -46,6 +46,13 @@
     },
 
     {
+      "uri" : "jbo:Mention",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Mention",
+      "rdfs:subClassOf" : "owl:Thing"
+    },
+
+    {
       "uri" : "jbo:Mishna",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Mishna",

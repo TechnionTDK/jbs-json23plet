@@ -160,6 +160,10 @@ jbo:AmudNedarim  a       owl:Class ;
         rdfs:label       "AmudNedarim" ;
         rdfs:subClassOf  jbo:AmudBavli .
 
+jbo:Mention  a           owl:Class ;
+        rdfs:label       "Mention" ;
+        rdfs:subClassOf  owl:Thing .
+
 jbo:PerushSifteyChachamim
         a                owl:Class ;
         rdfs:label       "PerushSifteyChachamim" ;
