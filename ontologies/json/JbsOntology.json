@@ -1292,6 +1292,12 @@
       "uri" : "jbo:numOfMentions",
       "rdf:type" : "owl:ObjectProperty",
       "rdfs:label" : "numOfMentions"
+    },
+
+    {
+      "uri" : "jbo:within",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:label" : "within"
     }
   ]
 }

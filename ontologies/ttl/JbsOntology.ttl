@@ -383,6 +383,9 @@ jbo:PasukTorah  a        owl:Class ;
         rdfs:subClassOf  jbo:Pasuk ;
         jbo:position     "1" .
 
+jbo:within  a       owl:ObjectProperty ;
+        rdfs:label  "within" .
+
 jbo:PerushMetzudatDavid
         a                owl:Class ;
         rdfs:label       "PerushMetzudatDavid" ;
