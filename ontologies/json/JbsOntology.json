@@ -53,6 +53,13 @@
     },
 
     {
+      "uri" : "jbo:Halacha",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "Halacha",
+      "rdfs:subClassOf" : "owl:Thing"
+    },
+
+    {
       "uri" : "jbo:Chasidut",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Mishna",
@@ -456,7 +463,7 @@
       "uri" : "jbo:MishneTorah",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "MishneTorah",
-      "rdfs:subClassOf" : "owl:Thing"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
@@ -638,7 +645,7 @@
       "uri" : "jbo:ShulchanAruch",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "ShulchanAruch",
-      "rdfs:subClassOf" : "owl:Thing"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {

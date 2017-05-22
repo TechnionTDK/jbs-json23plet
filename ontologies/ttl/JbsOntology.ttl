@@ -192,7 +192,7 @@ jbo:AmudBerachot  a      owl:Class ;
 
 jbo:MishneTorah  a       owl:Class ;
         rdfs:label       "MishneTorah" ;
-        rdfs:subClassOf  owl:Thing .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:AmudEruvin  a        owl:Class ;
         rdfs:label       "AmudEruvin" ;
@@ -476,6 +476,10 @@ jbo:PasukDivreyHayamimA
         rdfs:subClassOf  jbo:PasukKetuvim ;
         jbo:position     "38" .
 
+jbo:Halacha  a           owl:Class ;
+        rdfs:label       "Halacha" ;
+        rdfs:subClassOf  owl:Thing .
+
 jbo:AmudShabat  a        owl:Class ;
         rdfs:label       "AmudShabat" ;
         rdfs:subClassOf  jbo:AmudBavli .
@@ -640,7 +644,7 @@ jbo:AmudHorayot  a       owl:Class ;
 
 jbo:ShulchanAruch  a     owl:Class ;
         rdfs:label       "ShulchanAruch" ;
-        rdfs:subClassOf  owl:Thing .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:PasukYehoshua  a     owl:Class ;
         rdfs:label       "PasukYehoshua" ;
