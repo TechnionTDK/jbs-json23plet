@@ -49,6 +49,10 @@ public class MentionGenerator extends Generator {
                 triplet()
                         .subject(mentionUri)
                         .predicate(RDF_P_TYPE)
+                        .object(OWL_C_THING);
+                triplet()
+                        .subject(mentionUri)
+                        .predicate(RDF_P_TYPE)
                         .object(JBO_C_MENTION);
             }
 
