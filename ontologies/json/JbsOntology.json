@@ -23,6 +23,13 @@
       "rdfs:label" : "Sefer",
       "rdfs:subClassOf" : "jbo:JbsPackage"
     },
+
+    {
+      "uri" : "jbo:Seder",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "סדר",
+      "rdfs:subClassOf" : "jbo:JbsPackage"
+    },
 	
     {
       "uri" : "jbo:Parasha",
@@ -35,6 +42,13 @@
       "uri" : "jbo:Perek",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "Perek",
+      "rdfs:subClassOf" : "jbo:JbsPackage"
+    },
+
+    {
+      "uri" : "jbo:Masechet",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "מסכת",
       "rdfs:subClassOf" : "jbo:JbsPackage"
     },
 	
@@ -76,71 +90,22 @@
     {
       "uri" : "jbo:Mishna",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Mishna",
+      "rdfs:label" : "משנה",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
-      "uri" : "jbo:SederZeraim",
+      "uri" : "jbo:Mishnaya",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "SederZeraim",
-      "rdfs:subClassOf" : "jbo:Mishna"
-    },
-
-    {
-      "uri" : "jbo:SederMoed",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "SederMoed",
-      "rdfs:subClassOf" : "jbo:Mishna"
-    },
-
-    {
-      "uri" : "jbo:SederNashim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "SederNashim",
-      "rdfs:subClassOf" : "jbo:Mishna"
-    },
-
-    {
-      "uri" : "jbo:SederNezikin",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "SederNezikin",
-      "rdfs:subClassOf" : "jbo:Mishna"
-    },
-
-    {
-      "uri" : "jbo:SederKadashim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "SederKadashim",
-      "rdfs:subClassOf" : "jbo:Mishna"
-    },
-
-    {
-      "uri" : "jbo:SederTaharot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "SederTaharot",
+      "rdfs:label" : "משניה",
       "rdfs:subClassOf" : "jbo:Mishna"
     },
 
     {
       "uri" : "jbo:PerushMishna",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushMishna",
+      "rdfs:label" : "פירוש המשנה",
       "rdfs:subClassOf" : "jbo:Mishna"
-    },
-
-    {
-      "uri" : "jbo:PerushBartanura",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushBartanura",
-      "rdfs:subClassOf" : "jbo:PerushMishna"
-    },
-
-    {
-      "uri" : "jbo:PerushYomTov",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushYomTov",
-      "rdfs:subClassOf" : "jbo:PerushMishna"
     },
 
 

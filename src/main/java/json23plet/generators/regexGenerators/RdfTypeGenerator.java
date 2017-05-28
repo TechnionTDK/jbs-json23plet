@@ -73,17 +73,10 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
 
     private void registerMishnaGenerators() {
         registerGenerator(new TypeRegEx("jbr:mishna-.*", JBO_C_MISHNA));
-        registerGenerator(new TypeRegEx("jbr:mishna-1-\\d+-\\d+-\\d+", JBO_C_SEDERZERAIM));
-        registerGenerator(new TypeRegEx("jbr:mishna-2-\\d+-\\d+-\\d+", JBO_C_SEDERMOED));
-        registerGenerator(new TypeRegEx("jbr:mishna-3-\\d+-\\d+-\\d+", JBO_C_SEDERNASHIM));
-        registerGenerator(new TypeRegEx("jbr:mishna-4-\\d+-\\d+-\\d+", JBO_C_SEDERNEZIKIN));
-        registerGenerator(new TypeRegEx("jbr:mishna-5-\\d+-\\d+-\\d+", JBO_C_SEDERKADASHIM));
-        registerGenerator(new TypeRegEx("jbr:mishna-6-\\d+-\\d+-\\d+", JBO_C_SEDERTAHAROT));
-
-        // Perush Mishna
         registerGenerator(new TypeRegEx("jbr:mishna-\\D+-\\d+-\\d+-\\d+-\\d+", JBO_C_PERUSHMISHNA));
-        registerGenerator(new TypeRegEx("jbr:mishna-yomtov-\\d+-\\d+-\\d+-\\d+", JBO_C_PERUSHYOMTOV));
-        registerGenerator(new TypeRegEx("jbr:mishna-bartanura-\\d+-\\d+-\\d+-\\d+", JBO_C_PERUSHBARTANURA));
+        registerGenerator(new TypeRegEx("jbr:mishna-\\d+", JBO_C_SEDER));
+        registerGenerator(new TypeRegEx("jbr:mishna-\\d+-\\d+", JBO_C_MASECHET));
+        registerGenerator(new TypeRegEx("jbr:mishna-\\d+-\\d+-\\d+", JBO_C_PEREK));
     }
 
     private void registerShulchanAruchGenerators() {
