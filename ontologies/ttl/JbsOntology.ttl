@@ -703,7 +703,7 @@ jbo:PasukTzefanya  a     owl:Class ;
         jbo:position     "23" .
 
 jbo:Chasidut  a          owl:Class ;
-        rdfs:label       "Mishna" ;
+        rdfs:label       "Chasidut" ;
         rdfs:subClassOf  owl:Thing .
 
 jbo:PasukMelachimB  a    owl:Class ;

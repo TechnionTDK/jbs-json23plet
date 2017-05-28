@@ -73,6 +73,7 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
 
     private void registerMishnaGenerators() {
         registerGenerator(new TypeRegEx("jbr:mishna-.*", JBO_C_MISHNA));
+        registerGenerator(new TypeRegEx("jbr:mishna-\\d+-\\d+-\\d+-\\d+-\\d+", JBO_C_MISHNAYA));
         registerGenerator(new TypeRegEx("jbr:mishna-\\D+-\\d+-\\d+-\\d+-\\d+", JBO_C_PERUSHMISHNA));
         registerGenerator(new TypeRegEx("jbr:mishna-\\d+", JBO_C_SEDER));
         registerGenerator(new TypeRegEx("jbr:mishna-\\d+-\\d+", JBO_C_MASECHET));

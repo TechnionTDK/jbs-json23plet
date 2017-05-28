@@ -76,7 +76,7 @@
     {
       "uri" : "jbo:Chasidut",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Mishna",
+      "rdfs:label" : "Chasidut",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
