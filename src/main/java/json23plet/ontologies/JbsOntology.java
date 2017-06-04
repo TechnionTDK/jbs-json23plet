@@ -27,7 +27,7 @@ public class JbsOntology
     public static Resource JBO_C_MASECHET = (model.getOntClass(JBO_URI + "Masechet"));
     public static Resource JBO_C_TANACH = (model.getOntClass(JBO_URI + "Tanach"));
     public static Resource JBO_C_MENTION = (model.getOntClass(JBO_URI + "Mention"));
-    public static Resource JBO_C_HALACHA = (model.getOntClass(JBO_URI + "Halacha"));
+    public static Resource JBO_C_SIFREYHALACHA = (model.getOntClass(JBO_URI + "SifreyHalacha"));
     public static Resource JBO_C_CHASIDUT = (model.getOntClass(JBO_URI + "Chasidut"));
     public static Resource JBO_C_LIKUTEYMOHARAN = (model.getOntClass(JBO_URI + "LikuteyMoharan"));
     public static Resource JBO_C_MISHNA = (model.getOntClass(JBO_URI + "Mishna"));
@@ -83,7 +83,7 @@ public class JbsOntology
     public static Resource JBO_C_MITZVASEFERHAMITZVOT = (model.getOntClass(JBO_URI + "MitzvaSeferHamitzvot"));
     public static Resource JBO_C_MITZVATASESEFERHAMITZVOT = (model.getOntClass(JBO_URI + "MitzvatAseSeferHamitzvot"));
     public static Resource JBO_C_MITZVATLOTAASESEFERHAMITZVOT = (model.getOntClass(JBO_URI + "MitzvatLoTaaseSeferHamitzvot"));
-    public static Resource JBO_C_HALACHAMISHNETORAH = (model.getOntClass(JBO_URI + "HalachaMishneTorah"));
+    public static Resource JBO_C_HALACHA = (model.getOntClass(JBO_URI + "Halacha"));
     public static Resource JBO_C_PERUSHMISHNETORAH = (model.getOntClass(JBO_URI + "PerushMishneTorah"));
     public static Resource JBO_C_PERUSHPERUSH = (model.getOntClass(JBO_URI + "PerushPerush"));
     public static Resource JBO_C_PERUSHKESEFMISHNE = (model.getOntClass(JBO_URI + "PerushKesefMishne"));
@@ -105,7 +105,6 @@ public class JbsOntology
     public static Resource JBO_C_HALACHASEFERMISHPATIM = (model.getOntClass(JBO_URI + "HalachaSeferMishpatim"));
     public static Resource JBO_C_HALACHASEFERSHOFTIM = (model.getOntClass(JBO_URI + "HalachaSeferShoftim"));
     public static Resource JBO_C_SHULCHANARUCH = (model.getOntClass(JBO_URI + "ShulchanAruch"));
-    public static Resource JBO_C_HALACHASHULCHANARUCH = (model.getOntClass(JBO_URI + "HalachaShulchanAruch"));
     public static Resource JBO_C_HALACHAORACHCHAIM = (model.getOntClass(JBO_URI + "HalachaOrachChaim"));
     public static Resource JBO_C_HALACHAYOREDEA = (model.getOntClass(JBO_URI + "HalachaYoreDea"));
     public static Resource JBO_C_HALACHAEVENHAEZER = (model.getOntClass(JBO_URI + "HalachaEvenHaezer"));

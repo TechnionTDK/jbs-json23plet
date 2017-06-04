@@ -67,9 +67,9 @@
     },
 
     {
-      "uri" : "jbo:Halacha",
+      "uri" : "jbo:SifreyHalacha",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Halacha",
+      "rdfs:label" : "ספרי הלכה",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
@@ -427,8 +427,8 @@
     {
       "uri" : "jbo:MishneTorah",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MishneTorah",
-      "rdfs:subClassOf" : "jbo:Halacha"
+      "rdfs:label" : "משנה תורה",
+      "rdfs:subClassOf" : "jbo:SifreyHalacha"
     },
 
     {
@@ -460,10 +460,10 @@
     },
 
     {
-      "uri" : "jbo:HalachaMishneTorah",
+      "uri" : "jbo:Halacha",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaMishneTorah",
-      "rdfs:subClassOf" : "jbo:MishneTorah"
+      "rdfs:label" : "הלכה",
+      "rdfs:subClassOf" : ["jbo:MishneTorah", "jbo:ShulchanAruch"]
     },
 
     {
@@ -512,140 +512,133 @@
       "uri" : "jbo:HalachaSeferHamada",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferHamada",
-      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaSeferAhava",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferAhava",
-      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaSeferZemanim",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferZemanim",
-      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaSeferNashim",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferNashim",
-      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaSeferKedusha",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferKedusha",
-      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaSeferHaflaa",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferHaflaa",
-      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaSeferZeraim",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferZeraim",
-      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaSeferAvoda",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferAvoda",
-      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaSeferKorbanot",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferKorbanot",
-      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaSeferTahara",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferTahara",
-      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaSeferNezikin",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferNezikin",
-      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaSeferKinyan",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferKinyan",
-      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaSeferMishpatim",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferMishpatim",
-      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaSeferShoftim",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaSeferShoftim",
-      "rdfs:subClassOf" : "jbo:HalachaMishneTorah"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:ShulchanAruch",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "ShulchanAruch",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaShulchanAruch",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaShulchanAruch",
-      "rdfs:subClassOf" : "jbo:ShulchanAruch"
+      "rdfs:label" : "שולחן ערוך",
+      "rdfs:subClassOf" : "jbo:SifreyHalacha"
     },
 
     {
       "uri" : "jbo:HalachaOrachChaim",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaOrachChaim",
-      "rdfs:subClassOf" : "jbo:HalachaShulchanAruch"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaYoreDea",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaYoreDea",
-      "rdfs:subClassOf" : "jbo:HalachaShulchanAruch"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaEvenHaezer",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaEvenHaezer",
-      "rdfs:subClassOf" : "jbo:HalachaShulchanAruch"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:HalachaChoshenMishpat",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "HalachaChoshenMishpat",
-      "rdfs:subClassOf" : "jbo:HalachaShulchanAruch"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 	
     {

@@ -22,7 +22,7 @@ jbo:PasukShoftim  a      owl:Class ;
 jbo:HalachaSeferHamada
         a                owl:Class ;
         rdfs:label       "HalachaSeferHamada" ;
-        rdfs:subClassOf  jbo:HalachaMishneTorah .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:MitzvatLoTaaseSeferHamitzvot
         a                owl:Class ;
@@ -56,7 +56,7 @@ jbo:PasukShirHashirim
 jbo:HalachaOrachChaim
         a                owl:Class ;
         rdfs:label       "HalachaOrachChaim" ;
-        rdfs:subClassOf  jbo:HalachaShulchanAruch .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:textNikud  a    owl:ObjectProperty ;
         rdfs:label  "textNikud" .
@@ -96,7 +96,7 @@ jbo:PasukMicha  a        owl:Class ;
 jbo:HalachaSeferKedusha
         a                owl:Class ;
         rdfs:label       "HalachaSeferKedusha" ;
-        rdfs:subClassOf  jbo:HalachaMishneTorah .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:Mishna  a            owl:Class ;
         rdfs:label       "משנה" ;
@@ -109,7 +109,7 @@ jbo:Pasuk  a             owl:Class ;
 jbo:HalachaSeferNezikin
         a                owl:Class ;
         rdfs:label       "HalachaSeferNezikin" ;
-        rdfs:subClassOf  jbo:HalachaMishneTorah .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:PasukDaniel  a       owl:Class ;
         rdfs:label       "PasukDaniel" ;
@@ -124,7 +124,7 @@ jbo:PasukYeshaaya  a     owl:Class ;
 jbo:HalachaSeferTahara
         a                owl:Class ;
         rdfs:label       "HalachaSeferTahara" ;
-        rdfs:subClassOf  jbo:HalachaMishneTorah .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:PerushMagidMishne
         a                owl:Class ;
@@ -183,8 +183,8 @@ jbo:AmudBerachot  a      owl:Class ;
         rdfs:subClassOf  jbo:AmudBavli .
 
 jbo:MishneTorah  a       owl:Class ;
-        rdfs:label       "MishneTorah" ;
-        rdfs:subClassOf  jbo:Halacha .
+        rdfs:label       "משנה תורה" ;
+        rdfs:subClassOf  jbo:SifreyHalacha .
 
 jbo:AmudEruvin  a        owl:Class ;
         rdfs:label       "AmudEruvin" ;
@@ -225,7 +225,7 @@ jbo:PasukVayikra  a      owl:Class ;
 jbo:HalachaSeferNashim
         a                owl:Class ;
         rdfs:label       "HalachaSeferNashim" ;
-        rdfs:subClassOf  jbo:HalachaMishneTorah .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:PerushDaatZekenim
         a                owl:Class ;
@@ -250,7 +250,7 @@ jbo:text  a         owl:ObjectProperty ;
 jbo:HalachaSeferHaflaa
         a                owl:Class ;
         rdfs:label       "HalachaSeferHaflaa" ;
-        rdfs:subClassOf  jbo:HalachaMishneTorah .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:PerushRamban  a      owl:Class ;
         rdfs:label       "PerushRamban" ;
@@ -266,7 +266,7 @@ jbo:mefaresh  a     owl:ObjectProperty ;
 jbo:HalachaChoshenMishpat
         a                owl:Class ;
         rdfs:label       "HalachaChoshenMishpat" ;
-        rdfs:subClassOf  jbo:HalachaShulchanAruch .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:AmudShevuot  a       owl:Class ;
         rdfs:label       "AmudShevuot" ;
@@ -307,7 +307,7 @@ jbo:MishneTorahPackage
 jbo:HalachaSeferZemanim
         a                owl:Class ;
         rdfs:label       "HalachaSeferZemanim" ;
-        rdfs:subClassOf  jbo:HalachaMishneTorah .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:PasukEzra  a         owl:Class ;
         rdfs:label       "PasukEzra" ;
@@ -342,7 +342,7 @@ jbo:PasukYona  a         owl:Class ;
 jbo:HalachaSeferShoftim
         a                owl:Class ;
         rdfs:label       "HalachaSeferShoftim" ;
-        rdfs:subClassOf  jbo:HalachaMishneTorah .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:PerushBaalHaturim
         a                owl:Class ;
@@ -372,7 +372,7 @@ jbo:AmudTamid  a         owl:Class ;
 jbo:HalachaSeferKorbanot
         a                owl:Class ;
         rdfs:label       "HalachaSeferKorbanot" ;
-        rdfs:subClassOf  jbo:HalachaMishneTorah .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:PasukTorah  a        owl:Class ;
         rdfs:label       "PasukTorah" ;
@@ -401,11 +401,6 @@ jbo:PerushMalbimBeurHamilot
         rdfs:label       "PerushMalbimBeurHamilot" ;
         rdfs:subClassOf  jbo:PerushTanach .
 
-jbo:HalachaMishneTorah
-        a                owl:Class ;
-        rdfs:label       "HalachaMishneTorah" ;
-        rdfs:subClassOf  jbo:MishneTorah .
-
 jbo:SifreyRavKuk  a      owl:Class ;
         rdfs:label       "SifreyRavKuk" ;
         rdfs:subClassOf  owl:Thing .
@@ -417,7 +412,7 @@ jbo:PerushRalbag  a      owl:Class ;
 jbo:HalachaSeferAhava
         a                owl:Class ;
         rdfs:label       "HalachaSeferAhava" ;
-        rdfs:subClassOf  jbo:HalachaMishneTorah .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:PerushKeliYekar  a   owl:Class ;
         rdfs:label       "PerushKeliYekar" ;
@@ -442,7 +437,7 @@ jbo:PasukMelachimA  a    owl:Class ;
 jbo:HalachaSeferKinyan
         a                owl:Class ;
         rdfs:label       "HalachaSeferKinyan" ;
-        rdfs:subClassOf  jbo:HalachaMishneTorah .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:AmudAvodaZara  a     owl:Class ;
         rdfs:label       "AmudAvodaZara" ;
@@ -476,8 +471,8 @@ jbo:PasukDivreyHayamimA
         jbo:position     "38" .
 
 jbo:Halacha  a           owl:Class ;
-        rdfs:label       "Halacha" ;
-        rdfs:subClassOf  owl:Thing .
+        rdfs:label       "הלכה" ;
+        rdfs:subClassOf  jbo:ShulchanAruch , jbo:MishneTorah .
 
 jbo:AmudShabat  a        owl:Class ;
         rdfs:label       "AmudShabat" ;
@@ -491,7 +486,7 @@ jbo:PerushBavliTosafot
 jbo:HalachaSeferMishpatim
         a                owl:Class ;
         rdfs:label       "HalachaSeferMishpatim" ;
-        rdfs:subClassOf  jbo:HalachaMishneTorah .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:numOfMentions  a  owl:ObjectProperty ;
         rdfs:label  "numOfMentions" .
@@ -524,7 +519,7 @@ jbo:PerushBavli  a       owl:Class ;
 jbo:HalachaEvenHaezer
         a                owl:Class ;
         rdfs:label       "HalachaEvenHaezer" ;
-        rdfs:subClassOf  jbo:HalachaShulchanAruch .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:Sefer  a             owl:Class ;
         rdfs:label       "Sefer" ;
@@ -537,7 +532,7 @@ jbo:AmudTaanit  a        owl:Class ;
 jbo:HalachaSeferZeraim
         a                owl:Class ;
         rdfs:label       "HalachaSeferZeraim" ;
-        rdfs:subClassOf  jbo:HalachaMishneTorah .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:PasukShemuelA  a     owl:Class ;
         rdfs:label       "PasukShemuelA" ;
@@ -546,7 +541,7 @@ jbo:PasukShemuelA  a     owl:Class ;
 
 jbo:HalachaYoreDea  a    owl:Class ;
         rdfs:label       "HalachaYoreDea" ;
-        rdfs:subClassOf  jbo:HalachaShulchanAruch .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:MesilatYesharim  a   owl:Class ;
         rdfs:label       "MesilatYesharim" ;
@@ -638,8 +633,12 @@ jbo:AmudHorayot  a       owl:Class ;
         rdfs:subClassOf  jbo:AmudBavli .
 
 jbo:ShulchanAruch  a     owl:Class ;
-        rdfs:label       "ShulchanAruch" ;
-        rdfs:subClassOf  jbo:Halacha .
+        rdfs:label       "שולחן ערוך" ;
+        rdfs:subClassOf  jbo:SifreyHalacha .
+
+jbo:SifreyHalacha  a     owl:Class ;
+        rdfs:label       "ספרי הלכה" ;
+        rdfs:subClassOf  owl:Thing .
 
 jbo:PasukYehoshua  a     owl:Class ;
         rdfs:label       "PasukYehoshua" ;
@@ -662,11 +661,6 @@ jbo:TargumYonatan  a     owl:Class ;
         rdfs:label       "TargumYonatan" ;
         rdfs:subClassOf  jbo:PerushTanach .
 
-jbo:HalachaShulchanAruch
-        a                owl:Class ;
-        rdfs:label       "HalachaShulchanAruch" ;
-        rdfs:subClassOf  jbo:ShulchanAruch .
-
 jbo:AmudKeritut  a       owl:Class ;
         rdfs:label       "AmudKeritut" ;
         rdfs:subClassOf  jbo:AmudBavli .
@@ -682,7 +676,7 @@ jbo:content  a      owl:ObjectProperty ;
 jbo:HalachaSeferAvoda
         a                owl:Class ;
         rdfs:label       "HalachaSeferAvoda" ;
-        rdfs:subClassOf  jbo:HalachaMishneTorah .
+        rdfs:subClassOf  jbo:Halacha .
 
 jbo:AmudSanhedrin  a     owl:Class ;
         rdfs:label       "AmudSanhedrin" ;
