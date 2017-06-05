@@ -19,7 +19,7 @@ public class JbsOntology
     public static String JBR_PREFIX = "jbr";
     public static String JBO_URI = "http://jbs.technion.ac.il/ontology/";
     public static String JBR_URI = "http://jbs.technion.ac.il/resource/";
-    public static Resource JBO_C_JBSCONTAINER = (model.getOntClass(JBO_URI + "JbsContainer"));
+    public static Resource JBO_C_CONTAINER = (model.getOntClass(JBO_URI + "Container"));
     public static Resource JBO_C_SEFER = (model.getOntClass(JBO_URI + "Sefer"));
     public static Resource JBO_C_SEDER = (model.getOntClass(JBO_URI + "Seder"));
     public static Resource JBO_C_PARASHA = (model.getOntClass(JBO_URI + "Parasha"));
@@ -37,6 +37,7 @@ public class JbsOntology
     public static Resource JBO_C_LIKUTEYMOHARAN = (model.getOntClass(JBO_URI + "LikuteyMoharan"));
     public static Resource JBO_C_MISHNA = (model.getOntClass(JBO_URI + "Mishna"));
     public static Resource JBO_C_MISHNAYA = (model.getOntClass(JBO_URI + "Mishnaya"));
+    public static Resource JBO_C_MISHNACONTAINER = (model.getOntClass(JBO_URI + "MishnaContainer"));
     public static Resource JBO_C_PERUSHMISHNA = (model.getOntClass(JBO_URI + "PerushMishna"));
     public static Resource JBO_C_TALMUDBAVLI = (model.getOntClass(JBO_URI + "TalmudBavli"));
     public static Resource JBO_C_AMUDBAVLI = (model.getOntClass(JBO_URI + "AmudBavli"));

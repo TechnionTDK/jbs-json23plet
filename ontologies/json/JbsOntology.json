@@ -11,9 +11,9 @@
   ],
   "metadata" : [
     {
-      "uri" : "jbo:JbsContainer",
+      "uri" : "jbo:Container",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "JbsContainer",
+      "rdfs:label" : "Container",
       "rdfs:subClassOf" : "owl:Thing"
     },
 	
@@ -21,56 +21,56 @@
       "uri" : "jbo:Sefer",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "ספר",
-      "rdfs:subClassOf" : "jbo:JbsContainer"
+      "rdfs:subClassOf" : "jbo:Container"
     },
 
     {
       "uri" : "jbo:Seder",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "סדר",
-      "rdfs:subClassOf" : "jbo:JbsContainer"
+      "rdfs:subClassOf" : "jbo:Container"
     },
 	
     {
       "uri" : "jbo:Parasha",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "פרשה",
-      "rdfs:subClassOf" : "jbo:JbsContainer"
+      "rdfs:subClassOf" : "jbo:Container"
     },
 	
     {
       "uri" : "jbo:Perek",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "פרק",
-      "rdfs:subClassOf" : "jbo:JbsContainer"
+      "rdfs:subClassOf" : "jbo:Container"
     },
 
     {
       "uri" : "jbo:Masechet",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "מסכת",
-      "rdfs:subClassOf" : "jbo:JbsContainer"
+      "rdfs:subClassOf" : "jbo:Container"
     },
 
     {
       "uri" : "jbo:Chelek",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "חלק",
-      "rdfs:subClassOf" : "jbo:JbsContainer"
+      "rdfs:subClassOf" : "jbo:Container"
     },
 
     {
       "uri" : "jbo:Halachot",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "הלכות",
-      "rdfs:subClassOf" : "jbo:JbsContainer"
+      "rdfs:subClassOf" : "jbo:Container"
     },
 
     {
       "uri" : "jbo:Siman",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "סימן",
-      "rdfs:subClassOf" : "jbo:JbsContainer"
+      "rdfs:subClassOf" : "jbo:Container"
     },
 	
     {
@@ -83,7 +83,8 @@
     {
       "uri" : "jbo:Machashava",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "מחשבה",
+      "rdfs:label" : "מחשבה@he",
+      "rdfs:label" : "Machashava@en",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
@@ -133,6 +134,13 @@
       "uri" : "jbo:Mishnaya",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "משניה",
+      "rdfs:subClassOf" : "jbo:Mishna"
+    },
+
+    {
+      "uri" : "jbo:MishnaContainer",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "MishnaContainer",
       "rdfs:subClassOf" : "jbo:Mishna"
     },
 
@@ -513,70 +521,70 @@
     {
       "uri" : "jbo:mentions",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "mentions"
+      "rdfs:label" : "מזכיר"
     },
 
     {
       "uri" : "jbo:explains",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "explains"
+      "rdfs:label" : "מבאר"
     },
 
     {
       "uri" : "jbo:position",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "position"
+      "rdfs:label" : "מיקום"
     },
     {
       "uri" : "jbo:text",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "text"
+      "rdfs:label" : "טקסט"
     },
     {
       "uri" : "jbo:textNikud",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "textNikud"
+      "rdfs:label" : "טקסט מנוקד"
     },
     {
       "uri" : "jbo:positionInPerek",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "positionInPerek"
+      "rdfs:label" : "מיקום בפרק"
     },
 
     {
       "uri" : "jbo:positionInParasha",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "positionInPerek"
+      "rdfs:label" : "מיקום בפרשה"
     },
 
     {
       "uri" : "jbo:source",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "source"
+      "rdfs:label" : "מקור"
     },
 
     {
       "uri" : "jbo:target",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "target"
+      "rdfs:label" : "יעד"
     },
 
     {
       "uri" : "jbo:span",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "target"
+      "rdfs:label" : "פרישה"
     },
 
     {
       "uri" : "jbo:numOfMentions",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "numOfMentions"
+      "rdfs:label" : "מספר איזכורים"
     },
 
     {
       "uri" : "jbo:within",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "within"
+      "rdfs:label" : "נמצא בתוך"
     }
   ]
 }

@@ -60,9 +60,6 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         registerChasidutGenerators();
 
         //registerGenerator(new TypeRegEx("jbr:mention__.*", JBO_C_MENTION)); // inserted into the generator
-
-
-
     }
 
     private void registerMusarGenerators() {
@@ -82,24 +79,25 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         registerGenerator(new TypeRegEx("jbr:mishna-.*", JBO_C_MISHNA));
         registerGenerator(new TypeRegEx("jbr:mishna-\\d+-\\d+-\\d+-\\d+", JBO_C_MISHNAYA));
         registerGenerator(new TypeRegEx("jbr:mishna-\\D+-\\d+-\\d+-\\d+-\\d+", JBO_C_PERUSHMISHNA));
-        registerGenerator(new TypeRegEx("jbr:mishna-\\d+", JBO_C_SEDER));
-        registerGenerator(new TypeRegEx("jbr:mishna-\\d+-\\d+", JBO_C_MASECHET));
-        registerGenerator(new TypeRegEx("jbr:mishna-\\d+-\\d+-\\d+", JBO_C_PEREK));
+        registerGenerator(new TypeRegEx("jbr:mishna-\\d+", JBO_C_CONTAINER, JBO_C_MISHNACONTAINER, JBO_C_SEDER));
+        registerGenerator(new TypeRegEx("jbr:mishna-\\d+-\\d+", JBO_C_CONTAINER, JBO_C_MISHNACONTAINER, JBO_C_MASECHET));
+        registerGenerator(new TypeRegEx("jbr:mishna-\\d+-\\d+-\\d+", JBO_C_CONTAINER, JBO_C_MISHNACONTAINER, JBO_C_PEREK));
     }
 
     private void registerShulchanAruchGenerators() {
         registerGenerator(new TypeRegEx("jbr:shulchanaruch-.*", JBO_C_HALACHA, JBO_C_SHULCHANARUCH));
-        registerGenerator(new TypeRegEx("jbr:shulchanaruch-\\d+-\\d+-\\d+", JBO_C_HALACHA));
-        registerGenerator(new TypeRegEx("jbr:shulchanaruch-\\d+", JBO_C_JBSCONTAINER, JBO_C_CHELEK));
-        registerGenerator(new TypeRegEx("jbr:shulchanaruch-halachot-\\d+-\\d+", JBO_C_JBSCONTAINER, JBO_C_HALACHOT));
-        registerGenerator(new TypeRegEx("jbr:shulchanaruch-\\d+-\\d+", JBO_C_JBSCONTAINER, JBO_C_SIMAN));
+        registerGenerator(new TypeRegEx("jbr:shulchanaruch-\\d+-\\d+-\\d+", JBO_C_HALACHASHULCHANARUCH));
+        registerGenerator(new TypeRegEx("jbr:shulchanaruch-\\d+", JBO_C_CONTAINER, JBO_C_CHELEK));
+        registerGenerator(new TypeRegEx("jbr:shulchanaruch-halachot-\\d+-\\d+", JBO_C_CONTAINER, JBO_C_HALACHOT));
+        registerGenerator(new TypeRegEx("jbr:shulchanaruch-\\d+-\\d+", JBO_C_CONTAINER, JBO_C_SIMAN));
     }
 
     private void registerMishneTorahGenerators() {
         registerGenerator(new TypeRegEx("jbr:mishnetorah-.*", JBO_C_HALACHA, JBO_C_MISHNETORAH));
-        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-.*", JBO_C_HALACHA, JBO_C_MISHNETORAH, JBO_C_SEFERHAMITZVOT));
+        registerGenerator(new TypeRegEx("jbr:mishnetorah-\\d+-\\d+-\\d+-\\d+", JBO_C_HALACHAMISHNETORAH));
 
         // sefer hamitzvot
+        registerGenerator(new TypeRegEx("jbr:seferhamitzvot-.*", JBO_C_HALACHA, JBO_C_MISHNETORAH, JBO_C_SEFERHAMITZVOT));
         registerGenerator(new TypeRegEx("jbr:seferhamitzvot-3-\\d+", JBO_C_MITZVATASE));
         registerGenerator(new TypeRegEx("jbr:seferhamitzvot-4-\\d+", JBO_C_MITZVATLOTAASE));
 
@@ -114,9 +112,9 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
 //        }
 
         // register mishne torah containers
-        registerGenerator(new TypeRegEx("jbr:mishnetorah-\\d+", JBO_C_JBSCONTAINER, JBO_C_MISHNETORAHCONTAINER, JBO_C_SEFER));
-        registerGenerator(new TypeRegEx("jbr:mishnetorah-\\d+-\\d+", JBO_C_JBSCONTAINER, JBO_C_MISHNETORAHCONTAINER, JBO_C_HALACHOT)); // currently no JBO class
-        registerGenerator(new TypeRegEx("jbr:mishnetorah-\\d+-\\d+-\\d+", JBO_C_JBSCONTAINER, JBO_C_MISHNETORAHCONTAINER, JBO_C_PEREK));
+        registerGenerator(new TypeRegEx("jbr:mishnetorah-\\d+", JBO_C_CONTAINER, JBO_C_MISHNETORAHCONTAINER, JBO_C_SEFER));
+        registerGenerator(new TypeRegEx("jbr:mishnetorah-\\d+-\\d+", JBO_C_CONTAINER, JBO_C_MISHNETORAHCONTAINER, JBO_C_HALACHOT)); // currently no JBO class
+        registerGenerator(new TypeRegEx("jbr:mishnetorah-\\d+-\\d+-\\d+", JBO_C_CONTAINER, JBO_C_MISHNETORAHCONTAINER, JBO_C_PEREK));
 
         // register mishne torah mefarshim
         registerGenerator(new TypeRegEx("jbr:mishnetorah-perush-\\d+-\\d+-\\d+-\\d+", JBO_C_PERUSHMISHNETORAH, JBO_C_PERUSHPERUSH));
@@ -128,10 +126,11 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
 
     private void registerBavliGenerators() {
         registerGenerator(new TypeRegEx("jbr:bavli-.*", JBO_C_TALMUDBAVLI));
+        registerGenerator(new TypeRegEx("jbr:bavli-\\d+-\\d+-\\d+", JBO_C_AMUDBAVLI));
 
         // add containers
-        registerGenerator(new TypeRegEx("jbr:bavli-\\d+", JBO_C_JBSCONTAINER, JBO_C_BAVLICONTAINER, JBO_C_MASECHET));
-        registerGenerator(new TypeRegEx("jbr:bavli-perek-\\d+-\\d+", JBO_C_JBSCONTAINER, JBO_C_BAVLICONTAINER, JBO_C_PEREK));
+        registerGenerator(new TypeRegEx("jbr:bavli-\\d+", JBO_C_CONTAINER, JBO_C_BAVLICONTAINER, JBO_C_MASECHET));
+        registerGenerator(new TypeRegEx("jbr:bavli-perek-\\d+-\\d+", JBO_C_CONTAINER, JBO_C_BAVLICONTAINER, JBO_C_PEREK));
 
         // mefarshim
         registerGenerator(new TypeRegEx("jbr:bavli-\\D+-\\d+-\\d+-\\d+", JBO_C_PERUSHBAVLI)); // \D matches non-digits
@@ -150,9 +149,9 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         registerGenerator(new TypeRegEx("jbr:tanach-[6-9]-\\d+-\\d+|jbr:tanach-1[0-9]-\\d+-\\d+|jbr:tanach-2[0-6]-\\d+-\\d+", JBO_C_PASUKNEVIYIM));
         registerGenerator(new TypeRegEx("jbr:tanach-2[7-9]-\\d+-\\d+|jbr:tanach-3[0-9]-\\d+-\\d+", JBO_C_PASUKKETUVIM));
 
-        registerGenerator(new TypeRegEx("jbr:tanach-\\d+", JBO_C_JBSCONTAINER, JBO_C_TANACHCONTAINER, JBO_C_SEFER));
-        registerGenerator(new TypeRegEx("jbr:tanach-\\d+-\\d+", JBO_C_JBSCONTAINER, JBO_C_TANACHCONTAINER, JBO_C_PEREK));
-        registerGenerator(new TypeRegEx("jbr:tanach-parasha-\\d+", JBO_C_JBSCONTAINER, JBO_C_TANACHCONTAINER, JBO_C_PARASHA));
+        registerGenerator(new TypeRegEx("jbr:tanach-\\d+", JBO_C_CONTAINER, JBO_C_TANACHCONTAINER, JBO_C_SEFER));
+        registerGenerator(new TypeRegEx("jbr:tanach-\\d+-\\d+", JBO_C_CONTAINER, JBO_C_TANACHCONTAINER, JBO_C_PEREK));
+        registerGenerator(new TypeRegEx("jbr:tanach-parasha-\\d+", JBO_C_CONTAINER, JBO_C_TANACHCONTAINER, JBO_C_PARASHA));
 
         registerGenerator(new IRegexGenerator() { // for <book> type
             String seferPosition ="";
