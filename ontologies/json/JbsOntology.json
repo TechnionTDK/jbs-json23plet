@@ -11,79 +11,114 @@
   ],
   "metadata" : [
     {
-      "uri" : "jbo:JbsPackage",
+      "uri" : "jbo:JbsContainer",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "JbsPackage",
+      "rdfs:label" : "JbsContainer",
       "rdfs:subClassOf" : "owl:Thing"
     },
 	
     {
       "uri" : "jbo:Sefer",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Sefer",
-      "rdfs:subClassOf" : "jbo:JbsPackage"
+      "rdfs:label" : "ספר",
+      "rdfs:subClassOf" : "jbo:JbsContainer"
     },
 
     {
       "uri" : "jbo:Seder",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "סדר",
-      "rdfs:subClassOf" : "jbo:JbsPackage"
+      "rdfs:subClassOf" : "jbo:JbsContainer"
     },
 	
     {
       "uri" : "jbo:Parasha",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Parasha",
-      "rdfs:subClassOf" : "jbo:JbsPackage"
+      "rdfs:label" : "פרשה",
+      "rdfs:subClassOf" : "jbo:JbsContainer"
     },
 	
     {
       "uri" : "jbo:Perek",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Perek",
-      "rdfs:subClassOf" : "jbo:JbsPackage"
+      "rdfs:label" : "פרק",
+      "rdfs:subClassOf" : "jbo:JbsContainer"
     },
 
     {
       "uri" : "jbo:Masechet",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "מסכת",
-      "rdfs:subClassOf" : "jbo:JbsPackage"
+      "rdfs:subClassOf" : "jbo:JbsContainer"
+    },
+
+    {
+      "uri" : "jbo:Chelek",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "חלק",
+      "rdfs:subClassOf" : "jbo:JbsContainer"
+    },
+
+    {
+      "uri" : "jbo:Halachot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "הלכות",
+      "rdfs:subClassOf" : "jbo:JbsContainer"
+    },
+
+    {
+      "uri" : "jbo:Siman",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "סימן",
+      "rdfs:subClassOf" : "jbo:JbsContainer"
     },
 	
     {
       "uri" : "jbo:Tanach",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Tanach",
+      "rdfs:label" : "תנ\"ך",
+      "rdfs:subClassOf" : "owl:Thing"
+    },
+
+    {
+      "uri" : "jbo:Machashava",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "מחשבה",
+      "rdfs:subClassOf" : "owl:Thing"
+    },
+
+    {
+      "uri" : "jbo:Musar",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "מוסר",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
       "uri" : "jbo:Mention",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Mention",
+      "rdfs:label" : "איזכור",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
-      "uri" : "jbo:SifreyHalacha",
+      "uri" : "jbo:Halacha",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספרי הלכה",
+      "rdfs:label" : "הלכה",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
       "uri" : "jbo:Chasidut",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Chasidut",
+      "rdfs:label" : "חסידות",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
       "uri" : "jbo:LikuteyMoharan",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "LikuteyMoharan",
+      "rdfs:label" : "ליקוטי מוהר\"ן",
       "rdfs:subClassOf" : "jbo:Chasidut"
     },
 
@@ -104,7 +139,7 @@
     {
       "uri" : "jbo:PerushMishna",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "פירוש המשנה",
+      "rdfs:label" : "פירוש משנה",
       "rdfs:subClassOf" : "jbo:Mishna"
     },
 
@@ -112,574 +147,196 @@
     {
       "uri" : "jbo:TalmudBavli",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "TalmudBavli",
+      "rdfs:label" : "תלמוד בבלי",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
       "uri" : "jbo:AmudBavli",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudBavli",
+      "rdfs:label" : "עמוד בבלי",
       "rdfs:subClassOf" : "jbo:TalmudBavli"
     },
 
     {
-      "uri" : "jbo:BavliPackage",
+      "uri" : "jbo:BavliContainer",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "BavliPackage",
+      "rdfs:label" : "BavliContainer",
       "rdfs:subClassOf" : "jbo:TalmudBavli"
     },
 
     {
       "uri" : "jbo:PerushBavli",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushBavli",
+      "rdfs:label" : "פירוש בבלי",
       "rdfs:subClassOf" : "jbo:TalmudBavli"
     },
 
     {
       "uri" : "jbo:PerushBavliRashi",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushBavliRashi",
+      "rdfs:label" : "רש\"י בבלי",
       "rdfs:subClassOf" : "jbo:PerushBavli"
     },
 
     {
       "uri" : "jbo:PerushBavliTosafot",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushBavliTosafot",
+      "rdfs:label" : "תוספות",
       "rdfs:subClassOf" : "jbo:PerushBavli"
     },
 
     {
       "uri" : "jbo:PerushBavliRashbam",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushBavliRashbam",
+      "rdfs:label" : "רשב\"ם בבלי",
       "rdfs:subClassOf" : "jbo:PerushBavli"
     },
 
     {
       "uri" : "jbo:PerushBavliRan",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushBavliRan",
+      "rdfs:label" : "הר\"ן בבלי",
       "rdfs:subClassOf" : "jbo:PerushBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudBerachot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudBerachot",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudShabat",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudShabat",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudEruvin",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudEruvin",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudPesachim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudPesachim",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudRoshHashana",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudRoshHashana",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudYoma",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudYoma",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudSuka",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudSuka",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudBetza",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudBetza",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudTaanit",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudTaanit",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudMegila",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudMegila",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudMoedKatan",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudMoedKatan",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudChagiga",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudChagiga",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudYevamot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudYevamot",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudKetuvot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudKetuvot",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudNedarim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudNedarim",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudNazir",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudNazir",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudSota",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudSota",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudGitin",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudGitin",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudKidushin",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudKidushin",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudBavaKama",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudBavaKama",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudBavaMetzia",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudBavaMetzia",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudBavaBatra",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudBavaBatra",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudSanhedrin",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudSanhedrin",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudMakot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudMakot",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudShevuot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudShevuot",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudAvodaZara",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudAvodaZara",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudHorayot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudHorayot",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudZevachim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudZevachim",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudMenachot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudMenachot",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudChulin",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudChulin",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudBechorot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudBechorot",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudArachin",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudArachin",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudTemura",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudTemura",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudKeritut",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudKeritut",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudMeila",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudMeila",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudTamid",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudTamid",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
-    },
-
-    {
-      "uri" : "jbo:AmudNida",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "AmudNida",
-      "rdfs:subClassOf" : "jbo:AmudBavli"
     },
 
     {
       "uri" : "jbo:MishneTorah",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "משנה תורה",
-      "rdfs:subClassOf" : "jbo:SifreyHalacha"
+      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
-      "uri" : "jbo:MishneTorahPackage",
+      "uri" : "jbo:MishneTorahContainer",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MishneTorahPackage",
+      "rdfs:label" : "MishneTorahContainer",
       "rdfs:subClassOf" : "jbo:MishneTorah"
     },
 
     {
-      "uri" : "jbo:MitzvaSeferHamitzvot",
+      "uri" : "jbo:SeferHamitzvot",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MitzvaSeferHamitzvot",
+      "rdfs:label" : "ספר המצוות",
       "rdfs:subClassOf" : "jbo:MishneTorah"
     },
 
     {
-      "uri" : "jbo:MitzvatAseSeferHamitzvot",
+      "uri" : "jbo:MitzvatAse",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MitzvatAseSeferHamitzvot",
-      "rdfs:subClassOf" : "jbo:MitzvaSeferHamitzvot"
+      "rdfs:label" : "מצוות עשה",
+      "rdfs:subClassOf" : "jbo:SeferHamitzvot"
     },
 
     {
-      "uri" : "jbo:MitzvatLoTaaseSeferHamitzvot",
+      "uri" : "jbo:MitzvatLoTaase",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MitzvatLoTaaseSeferHamitzvot",
-      "rdfs:subClassOf" : "jbo:MitzvaSeferHamitzvot"
+      "rdfs:label" : "מצוות לא תעשה",
+      "rdfs:subClassOf" : "jbo:SeferHamitzvot"
     },
 
     {
-      "uri" : "jbo:Halacha",
+      "uri" : "jbo:HalachaMishneTorah",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "הלכה",
-      "rdfs:subClassOf" : ["jbo:MishneTorah", "jbo:ShulchanAruch"]
+      "rdfs:label" : "הלכה משנה תורה",
+      "rdfs:subClassOf" : "jbo:MishneTorah"
     },
 
     {
       "uri" : "jbo:PerushMishneTorah",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushMishneTorah",
+      "rdfs:label" : "פירוש משנה תורה",
       "rdfs:subClassOf" : "jbo:MishneTorah"
     },
 
     {
       "uri" : "jbo:PerushPerush",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushPerush",
+      "rdfs:label" : "פירוש פירוש",
       "rdfs:subClassOf" : "jbo:PerushMishneTorah"
     },
 
     {
       "uri" : "jbo:PerushKesefMishne",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushKesefMishne",
+      "rdfs:label" : "כסף משנה",
       "rdfs:subClassOf" : "jbo:PerushMishneTorah"
     },
 
     {
       "uri" : "jbo:PerushLechemMishne",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushLechemMishne",
+      "rdfs:label" : "לחם משנה",
       "rdfs:subClassOf" : "jbo:PerushMishneTorah"
     },
 
     {
       "uri" : "jbo:PerushRaabad",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushRaabad",
+      "rdfs:label" : "השגות הראב\"ד",
       "rdfs:subClassOf" : "jbo:PerushMishneTorah"
     },
 
     {
       "uri" : "jbo:PerushMagidMishne",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushMagidMishne",
+      "rdfs:label" : "מגיד משנה",
       "rdfs:subClassOf" : "jbo:PerushMishneTorah"
-    },
-
-    {
-      "uri" : "jbo:HalachaSeferHamada",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaSeferHamada",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaSeferAhava",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaSeferAhava",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaSeferZemanim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaSeferZemanim",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaSeferNashim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaSeferNashim",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaSeferKedusha",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaSeferKedusha",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaSeferHaflaa",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaSeferHaflaa",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaSeferZeraim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaSeferZeraim",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaSeferAvoda",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaSeferAvoda",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaSeferKorbanot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaSeferKorbanot",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaSeferTahara",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaSeferTahara",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaSeferNezikin",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaSeferNezikin",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaSeferKinyan",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaSeferKinyan",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaSeferMishpatim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaSeferMishpatim",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaSeferShoftim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaSeferShoftim",
-      "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
       "uri" : "jbo:ShulchanAruch",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "שולחן ערוך",
-      "rdfs:subClassOf" : "jbo:SifreyHalacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaOrachChaim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaOrachChaim",
       "rdfs:subClassOf" : "jbo:Halacha"
     },
 
     {
-      "uri" : "jbo:HalachaYoreDea",
+      "uri" : "jbo:HalachaShulchanAruch",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaYoreDea",
-      "rdfs:subClassOf" : "jbo:Halacha"
+      "rdfs:label" : "הלכה שולחן ערוך",
+      "rdfs:subClassOf" : "jbo:ShulchanAruch"
     },
 
     {
-      "uri" : "jbo:HalachaEvenHaezer",
+      "uri" : "jbo:PerushShulchanAruch",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaEvenHaezer",
-      "rdfs:subClassOf" : "jbo:Halacha"
+      "rdfs:label" : "פירוש שולחן ערוך",
+      "rdfs:subClassOf" : "jbo:ShulchanAruch"
     },
 
     {
-      "uri" : "jbo:HalachaChoshenMishpat",
+      "uri" : "jbo:HaravKuk",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "HalachaChoshenMishpat",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-	
-    {
-      "uri" : "jbo:SifreyRavKuk",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "SifreyRavKuk",
-      "rdfs:subClassOf" : "owl:Thing"
-    },
-	
-    {
-      "uri" : "jbo:SifreyRamchal",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "SifreyRamchal",
-      "rdfs:subClassOf" : "owl:Thing"
+      "rdfs:label" : "הרב קוק",
+      "rdfs:subClassOf" : "jbo:Machashava"
     },
 
 	{
       "uri" : "jbo:Pasuk",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Pasuk",
+      "rdfs:label" : "פסוק",
       "rdfs:subClassOf" : "jbo:Tanach"
     },
 
 	{
       "uri" : "jbo:PerushTanach",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushTanach",
+      "rdfs:label" : "פירוש תנ\"ך",
       "rdfs:subClassOf" : "jbo:Tanach"
     },
 		
 	{
-      "uri" : "jbo:TanachPackage",
+      "uri" : "jbo:TanachContainer",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "TanachPackage",
+      "rdfs:label" : "TanachContainer",
       "rdfs:subClassOf" : "jbo:Tanach"
     },
 	
 	{
       "uri" : "jbo:PasukTorah",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukTorah",
+      "rdfs:label" : "פסוק תורה",
       "rdfs:subClassOf" : "jbo:Pasuk",
 	  "jbo:position" : "1"
     },
@@ -687,7 +344,7 @@
 	{
       "uri" : "jbo:PasukNeviyim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukNeviyim",
+      "rdfs:label" : "פסוק נביאים",
       "rdfs:subClassOf" : "jbo:Pasuk",
 	  "jbo:position" : "2"
     },
@@ -695,474 +352,162 @@
 	{
       "uri" : "jbo:PasukKetuvim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukKetuvim",
+      "rdfs:label" : "פסוק כתובים",
       "rdfs:subClassOf" : "jbo:Pasuk",
 	  "jbo:position" : "3"
-    },
-
-	{
-      "uri" : "jbo:PasukBereshit",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukBereshit",
-      "rdfs:subClassOf" : "jbo:PasukTorah",
-	  "jbo:position" : "1"
-    },
-	
-	{
-      "uri" : "jbo:PasukShemot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukShemot",
-      "rdfs:subClassOf" : "jbo:PasukTorah",
-	  "jbo:position" : "2"
-    },
-
-	{
-      "uri" : "jbo:PasukVayikra",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukVayikra",
-      "rdfs:subClassOf" : "jbo:PasukTorah",
-	  "jbo:position" : "3"
-    },
-
-	{
-      "uri" : "jbo:PasukBamidbar",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukBamidbar",
-      "rdfs:subClassOf" : "jbo:PasukTorah",
-	  "jbo:position" : "4"
-    },
-
-	{
-      "uri" : "jbo:PasukDevarim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukDevarim",
-      "rdfs:subClassOf" : "jbo:PasukTorah",
-	  "jbo:position" : "5"
-    },	
-
-	{
-      "uri" : "jbo:PasukYehoshua",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukYehoshua",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "6"
-    },
-
-	{
-      "uri" : "jbo:PasukShoftim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukShoftim",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "7"
-    },
-
-	{
-      "uri" : "jbo:PasukShemuelA",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukShemuelA",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "8"
-    },
-
-	{
-      "uri" : "jbo:PasukShemuelB",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukShemuelB",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "9"
-    },
-
-	{
-      "uri" : "jbo:PasukMelachimA",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukMelachimA",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "10"
-    },
-
-	{
-      "uri" : "jbo:PasukMelachimB",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukMelachimB",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "11"
-    },
-
-	{
-      "uri" : "jbo:PasukYeshaaya",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukYeshaaya",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "12"
-    },
-
-	{
-      "uri" : "jbo:PasukYirmiya",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukYirmiya",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "13"
-    },
-
-	{
-      "uri" : "jbo:PasukYechezkel",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukYechezkel",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "14"
-    },
-
-	{
-      "uri" : "jbo:PasukHoshea",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukHoshea",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "15"
-    },
-
-	{
-      "uri" : "jbo:PasukYoel",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukYoel",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "16"
-    },
-
-	{
-      "uri" : "jbo:PasukAmos",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukAmos",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "17"
-    },
-
-	{
-      "uri" : "jbo:PasukOvadya",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukOvadya",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "18"
-    },
-
-	{
-      "uri" : "jbo:PasukYona",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukYona",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "19"
-    },
-
-	{
-      "uri" : "jbo:PasukMicha",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukMicha",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "20"
-    },
-
-	{
-      "uri" : "jbo:PasukNachum",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukNachum",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "21"
-    },
-
-	{
-      "uri" : "jbo:PasukChavakuk",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukChavakuk",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "22"
-    },
-
-	{
-      "uri" : "jbo:PasukTzefanya",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukTzefanya",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "23"
-    },
-
-	{
-      "uri" : "jbo:PasukChagay",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukChagay",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "24"
-    },
-
-	{
-      "uri" : "jbo:PasukZecharya",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukZecharya",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "25"
-    },
-
-	{
-      "uri" : "jbo:PasukMalachi",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukMalachi",
-      "rdfs:subClassOf" : "jbo:PasukNeviyim",
-	  "jbo:position" : "26"
-    },
-
-	{
-      "uri" : "jbo:PasukTehilim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukTehilim",
-      "rdfs:subClassOf" : "jbo:PasukKetuvim",
-	  "jbo:position" : "27"
-    },
-
-	{
-      "uri" : "jbo:PasukMishley",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukMishley",
-      "rdfs:subClassOf" : "jbo:PasukKetuvim",
-	  "jbo:position" : "28"
-    },
-
-	{
-      "uri" : "jbo:PasukIyov",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukIyov",
-      "rdfs:subClassOf" : "jbo:PasukKetuvim",
-	  "jbo:position" : "29"
-    },
-
-	{
-      "uri" : "jbo:PasukShirHashirim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukShirHashirim",
-      "rdfs:subClassOf" : "jbo:PasukKetuvim",
-	  "jbo:position" : "30"
-    },
-
-	{
-      "uri" : "jbo:PasukRut",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukRut",
-      "rdfs:subClassOf" : "jbo:PasukKetuvim",
-	  "jbo:position" : "31"
-    },
-
-	{
-      "uri" : "jbo:PasukEycha",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukEycha",
-      "rdfs:subClassOf" : "jbo:PasukKetuvim",
-	  "jbo:position" : "32"
-    },
-
-	{
-      "uri" : "jbo:PasukKohelet",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukKohelet",
-      "rdfs:subClassOf" : "jbo:PasukKetuvim",
-	  "jbo:position" : "33"
-    },
-
-	{
-      "uri" : "jbo:PasukEster",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukEster",
-      "rdfs:subClassOf" : "jbo:PasukKetuvim",
-	  "jbo:position" : "34"
-    },
-
-	{
-      "uri" : "jbo:PasukDaniel",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukDaniel",
-      "rdfs:subClassOf" : "jbo:PasukKetuvim",
-	  "jbo:position" : "35"
-    },
-
-	{
-      "uri" : "jbo:PasukEzra",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukEzra",
-      "rdfs:subClassOf" : "jbo:PasukKetuvim",
-	  "jbo:position" : "36"
-    },
-
-	{
-      "uri" : "jbo:PasukNechemya",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukNechemya",
-      "rdfs:subClassOf" : "jbo:PasukKetuvim",
-	  "jbo:position" : "37"
-    },
-
-	{
-      "uri" : "jbo:PasukDivreyHayamimA",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukDivreyHayamimA",
-      "rdfs:subClassOf" : "jbo:PasukKetuvim",
-	  "jbo:position" : "38"
-    },
-
-	{
-      "uri" : "jbo:PasukDivreyHayamimB",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "PasukDivreyHayamimB",
-      "rdfs:subClassOf" : "jbo:PasukKetuvim",
-	  "jbo:position" : "39"
     },
 	
 	{
       "uri" : "jbo:PerushRashi",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushRashi",
+      "rdfs:label" : "רש\"י תורה",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:PerushSifteyChachamim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushSifteyChachamim",
+      "rdfs:label" : "שפתי חכמים",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:PerushRamban",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushRamban",
+      "rdfs:label" : "רמב\"ן תורה",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:TargumYonatan",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "TargumYonatan",
+      "rdfs:label" : "תרגום יונתן",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:PerushOrHachayim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushOrHachayim",
+      "rdfs:label" : "אור החיים הקדוש",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:PerushIbnEzra",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushIbnEzra",
+      "rdfs:label" : "הראב\"ע",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:PerushBaalHaturim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushBaalHaturim",
+      "rdfs:label" : "בעל הטורים",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:TargumOnkelos",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "TargumOnkelos",
+      "rdfs:label" : "אונקלוס",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:PerushSeforno",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushSeforno",
+      "rdfs:label" : "ספורנו",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:PerushKeliYekar",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushKeliYekar",
+      "rdfs:label" : "כלי יקר",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:PerushDaatZekenim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushDaatZekenim",
+      "rdfs:label" : "דעת זקנים",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:MidrashRaba",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MidrashRaba",
+      "rdfs:label" : "מדרש רבה",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:MidrashTanchuma",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MidrashTanchuma",
+      "rdfs:label" : "מדרש תנחומא",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:PerushMetzudatDavid",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushMetzudatDavid",
+      "rdfs:label" : "מצודת דוד",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:PerushMetzudatTziyon",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushMetzudatTziyon",
+      "rdfs:label" : "מצודת ציון",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:PerushRalbag",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushRalbag",
+      "rdfs:label" : "רלב\"ג",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:PerushMalbim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushMalbim",
+      "rdfs:label" : "מלבי\"ם",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	{
       "uri" : "jbo:PerushMalbimBeurHainyan",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushMalbimBeurHainyan",
+      "rdfs:label" : "מלבי\"ם ביאור העניין",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:PerushMalbimBeurHamilot",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "PerushMalbimBeurHamilot",
+      "rdfs:label" : "מלבי\"ם ביאור המילות",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	
 	{
       "uri" : "jbo:ShemonaKevatzim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "ShemonaKevatzim",
-      "rdfs:subClassOf" : "jbo:SifreyRavKuk"
+      "rdfs:label" : "שמונה קבצים",
+      "rdfs:subClassOf" : "jbo:HaravKuk"
     },
 	
 	{
       "uri" : "jbo:Orot",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Orot",
-      "rdfs:subClassOf" : "jbo:SifreyRavKuk"
+      "rdfs:label" : "אורות",
+      "rdfs:subClassOf" : "jbo:HaravKuk"
     },
 	
 	{
       "uri" : "jbo:MesilatYesharim",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MesilatYesharim",
-      "rdfs:subClassOf" : "jbo:SifreyRamchal"
+      "rdfs:label" : "מסילת ישרים",
+      "rdfs:subClassOf" : "jbo:Musar"
     },
 	
     {
@@ -1172,21 +517,11 @@
     },
 
     {
-      "uri" : "jbo:interprets",
+      "uri" : "jbo:explains",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "interprets"
+      "rdfs:label" : "explains"
     },
 
-    {
-      "uri" : "jbo:content",
-      "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "content"
-    },
-    {
-      "uri" : "jbo:container",
-      "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "container"
-    },
     {
       "uri" : "jbo:position",
       "rdf:type" : "owl:ObjectProperty",
@@ -1207,21 +542,7 @@
       "rdf:type" : "owl:ObjectProperty",
       "rdfs:label" : "positionInPerek"
     },
-    {
-      "uri" : "jbo:masechet",
-      "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "masechet"
-    },
-    {
-      "uri" : "jbo:perek",
-      "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "perek"
-    },
-    {
-      "uri" : "jbo:mefaresh",
-      "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "mefaresh"
-    },
+
     {
       "uri" : "jbo:positionInParasha",
       "rdf:type" : "owl:ObjectProperty",
