@@ -12,15 +12,15 @@ jbr:tanach-1-1-1  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach
 jbr:tanach-1-1-6  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach , owl:Thing .
 
 jbr:tanach-parasha-54
-        a       jbo:Parasha , jbo:TanachPackage , jbo:JbsPackage , jbo:Tanach , owl:Thing .
+        a       jbo:Parasha , jbo:TanachContainer , jbo:JbsContainer , jbo:Tanach , owl:Thing .
 
 jbr:tanach-1-1-4  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach , owl:Thing .
 
 jbr:tanach-1-1-9  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach , owl:Thing .
 
-jbr:tanach-12-13  a  jbo:Perek , jbo:TanachPackage , jbo:JbsPackage , jbo:Tanach , owl:Thing .
+jbr:tanach-12-13  a  jbo:Perek , jbo:TanachContainer , jbo:JbsContainer , jbo:Tanach , owl:Thing .
 
-jbr:tanach-1  a  jbo:Sefer , jbo:TanachPackage , jbo:JbsPackage , jbo:Tanach , owl:Thing .
+jbr:tanach-1  a  jbo:Sefer , jbo:TanachContainer , jbo:JbsContainer , jbo:Tanach , owl:Thing .
 
 jbr:tanach-1-1-2  a  jbo:PasukBereshit , jbo:PasukTorah , jbo:Pasuk , jbo:Tanach , owl:Thing .
 

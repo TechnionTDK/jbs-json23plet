@@ -67,7 +67,6 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
 
     private void registerMusarGenerators() {
         registerGenerator(new TypeRegEx("jbr:mesilatyesharim-.*", JBO_C_MUSAR, JBO_C_MESILATYESHARIM));
-
     }
 
     private void registerMachashavaGenerators() {
