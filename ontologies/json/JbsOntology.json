@@ -83,8 +83,7 @@
     {
       "uri" : "jbo:Machashava",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "מחשבה@he",
-      "rdfs:label" : "Machashava@en",
+      "rdfs:label" : "מחשבה",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
@@ -317,6 +316,13 @@
       "uri" : "jbo:HaravKuk",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "הרב קוק",
+      "rdfs:subClassOf" : "jbo:Machashava"
+    },
+
+    {
+      "uri" : "jbo:DerashotHaran",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "דרשות הר\"ן",
       "rdfs:subClassOf" : "jbo:Machashava"
     },
 

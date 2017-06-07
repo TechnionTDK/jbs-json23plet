@@ -18,6 +18,10 @@ jbo:PerushSeforno  a     owl:Class ;
         rdfs:label       "ספורנו" ;
         rdfs:subClassOf  jbo:PerushTanach .
 
+jbo:DerashotHaran  a     owl:Class ;
+        rdfs:label       "דרשות הר\"ן" ;
+        rdfs:subClassOf  jbo:Machashava .
+
 jbo:PerushKeliYekar  a   owl:Class ;
         rdfs:label       "כלי יקר" ;
         rdfs:subClassOf  jbo:PerushTanach .
@@ -96,7 +100,7 @@ jbo:ShulchanAruch  a     owl:Class ;
         rdfs:subClassOf  jbo:Halacha .
 
 jbo:Machashava  a        owl:Class ;
-        rdfs:label       "Machashava@en" ;
+        rdfs:label       "מחשבה" ;
         rdfs:subClassOf  owl:Thing .
 
 jbo:Chasidut  a          owl:Class ;

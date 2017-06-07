@@ -63,6 +63,7 @@ public class JbsOntology
     public static Resource JBO_C_HALACHASHULCHANARUCH = (model.getOntClass(JBO_URI + "HalachaShulchanAruch"));
     public static Resource JBO_C_PERUSHSHULCHANARUCH = (model.getOntClass(JBO_URI + "PerushShulchanAruch"));
     public static Resource JBO_C_HARAVKUK = (model.getOntClass(JBO_URI + "HaravKuk"));
+    public static Resource JBO_C_DERASHOTHARAN = (model.getOntClass(JBO_URI + "DerashotHaran"));
     public static Resource JBO_C_PASUK = (model.getOntClass(JBO_URI + "Pasuk"));
     public static Resource JBO_C_PERUSHTANACH = (model.getOntClass(JBO_URI + "PerushTanach"));
     public static Resource JBO_C_TANACHCONTAINER = (model.getOntClass(JBO_URI + "TanachContainer"));
