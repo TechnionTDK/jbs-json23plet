@@ -192,7 +192,7 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         // mefarshim
         registerGenerator(new TypeRegEx("jbr:tanach-\\D+-\\d+-\\d+-\\d+", JBO_C_PERUSHTANACH)); // \D matches non-digits
 
-        String[] mefarshim = {"rashi", "ramban", "orhachaim", "ibnezra", "baalhaturim", "onkelos", "sforno", "kliyekar",
+        String[] mefarshim = {"rashi", "ramban", "orhachaim", "ibnezra", "baalhaturim", "onkelos", "sforno", "keliyekar",
                 "yonatan", "sifteychachamim", "midrashraba", "daatzkenim", "metzudatdavid", "metzudattzion", "malbiminyan",
                 "malbimmilot", "ralbag", "malbim"};
         Resource[] resources = {JBO_C_PERUSHRASHI, JBO_C_PERUSHRAMBAN, JBO_C_PERUSHORHACHAYIM, JBO_C_PERUSHIBNEZRA, JBO_C_PERUSHBAALHATURIM, JBO_C_TARGUMONKELOS,
