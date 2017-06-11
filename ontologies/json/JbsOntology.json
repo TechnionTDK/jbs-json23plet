@@ -374,7 +374,7 @@
 	{
       "uri" : "jbo:PerushRashi",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "רש\"י תורה",
+      "rdfs:label" : "רש\"י תנ\"ך",
       "rdfs:subClassOf" : "jbo:PerushTanach"
     },
 	

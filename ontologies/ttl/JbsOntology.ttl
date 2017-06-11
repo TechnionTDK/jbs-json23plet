@@ -212,7 +212,7 @@ jbo:PerushBavliTosafot
         rdfs:subClassOf  jbo:PerushBavli .
 
 jbo:PerushRashi  a       owl:Class ;
-        rdfs:label       "רש\"י תורה" ;
+        rdfs:label       "רש\"י תנ\"ך" ;
         rdfs:subClassOf  jbo:PerushTanach .
 
 jbo:PerushIbnEzra  a     owl:Class ;
