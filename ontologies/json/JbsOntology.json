@@ -81,6 +81,332 @@
     },
 
     {
+      "uri" : "jbo:Book",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "תנ\"ך",
+      "rdfs:subClassOf" : "owl:Thing"
+    },
+
+    {
+      "uri" : "jbo:TanachBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "תנ\"ך",
+      "rdfs:subClassOf" : "jbo:Book"
+    },
+
+    {
+      "uri" : "jbo:BereshitBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר בראשית",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "1"
+    },
+
+    {
+      "uri" : "jbo:ShemotBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר שמות",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "2"
+    },
+
+    {
+      "uri" : "jbo:VayikraBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר ויקרא",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "3"
+    },
+
+    {
+      "uri" : "jbo:BamidbarBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר במדבר",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "4"
+    },
+
+    {
+      "uri" : "jbo:DevarimBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר דברים",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "5"
+    },
+
+    {
+      "uri" : "jbo:YehoshuaBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר יהושע",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "6"
+    },
+
+    {
+      "uri" : "jbo:ShoftimBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר שופטים",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "7"
+    },
+
+    {
+      "uri" : "jbo:ShemuelABook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר שמואל א",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "8"
+    },
+
+    {
+      "uri" : "jbo:ShemuelBBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר שמואל ב",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "9"
+    },
+
+    {
+      "uri" : "jbo:MelachimABook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר מלכים א",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "10"
+    },
+
+    {
+      "uri" : "jbo:MelachimBBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר מלכים ב",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "11"
+    },
+
+    {
+      "uri" : "jbo:YeshaayaBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר ישעיה",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "12"
+    },
+
+    {
+      "uri" : "jbo:YirmiyaBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר ירמיה",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "13"
+    },
+
+    {
+      "uri" : "jbo:YechezkelBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר יחזקאל",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "14"
+    },
+
+    {
+      "uri" : "jbo:HosheaBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר הושע",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "15"
+    },
+
+    {
+      "uri" : "jbo:YoelBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר יואל",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "16"
+    },
+
+    {
+      "uri" : "jbo:AmosBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר עמוס",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "17"
+    },
+
+    {
+      "uri" : "jbo:OvadyaBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר עובדיה",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "18"
+    },
+
+    {
+      "uri" : "jbo:YonaBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר מלכים א",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "19"
+    },
+
+    {
+      "uri" : "jbo:MichaBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר מיכה",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "20"
+    },
+
+    {
+      "uri" : "jbo:NachumBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר נחום",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "21"
+    },
+
+    {
+      "uri" : "jbo:ChavakukBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר חבקוק",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "22"
+    },
+
+    {
+      "uri" : "jbo:TzefanyaBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר צפניה",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "23"
+    },
+
+    {
+      "uri" : "jbo:ChagayBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר חגי",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "24"
+    },
+
+    {
+      "uri" : "jbo:ZecharyaBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר זכריה",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "25"
+    },
+
+    {
+      "uri" : "jbo:MalachiBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר מלאכי",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "26"
+    },
+
+    {
+      "uri" : "jbo:TehilimBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר תהילים",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "27"
+    },
+
+    {
+      "uri" : "jbo:MishleyBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר משלי",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "28"
+    },
+
+    {
+      "uri" : "jbo:IyovBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר איוב",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "29"
+    },
+
+    {
+      "uri" : "jbo:ShirHashirimBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "שיר השירים",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "30"
+    },
+
+    {
+      "uri" : "jbo:RutBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "מגילת רות",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "31"
+    },
+
+    {
+      "uri" : "jbo:EychaBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "מגילת איכה",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "32"
+    },
+
+    {
+      "uri" : "jbo:KoheletBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "קהלת",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "33"
+    },
+
+    {
+      "uri" : "jbo:EsterBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "מגילת אסתר",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "34"
+    },
+
+    {
+      "uri" : "jbo:DanielBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר דניאל",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "35"
+    },
+
+    {
+      "uri" : "jbo:EzraBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר עזרא",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "36"
+    },
+
+    {
+      "uri" : "jbo:NechemyaBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר נחמיה",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "37"
+    },
+
+    {
+      "uri" : "jbo:DivreyHayamimABook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר דברי הימים א",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "38"
+    },
+
+    {
+      "uri" : "jbo:DivreyHayamimBBook",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר דברי הימים ב",
+      "rdfs:subClassOf" : "jbo:TanachBook",
+      "jbo:position" : "39"
+    },
+
+    {
       "uri" : "jbo:Machashava",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "מחשבה",

@@ -154,6 +154,22 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         registerGenerator(new TypeRegEx("jbr:tanach-\\d+-\\d+", JBO_C_CONTAINER, JBO_C_TANACHCONTAINER, JBO_C_PEREK));
         registerGenerator(new TypeRegEx("jbr:tanach-parasha-\\d+", JBO_C_CONTAINER, JBO_C_TANACHCONTAINER, JBO_C_PARASHA));
 
+        // register all Tabach books
+        Resource[] books = {JBO_C_BERESHITBOOK, JBO_C_SHEMOTBOOK, JBO_C_VAYIKRABOOK, JBO_C_BAMIDBARBOOK, JBO_C_DEVARIMBOOK,
+                JBO_C_YEHOSHUABOOK, JBO_C_SHOFTIMBOOK, JBO_C_SHEMUELABOOK, JBO_C_SHEMUELBBOOK, JBO_C_MELACHIMABOOK,
+                JBO_C_MELACHIMBBOOK, JBO_C_YESHAAYABOOK, JBO_C_YIRMIYABOOK, JBO_C_YECHEZKELBOOK, JBO_C_HOSHEABOOK,
+                JBO_C_YOELBOOK, JBO_C_AMOSBOOK, JBO_C_OVADYABOOK, JBO_C_YONABOOK, JBO_C_MICHABOOK,
+                JBO_C_NACHUMBOOK, JBO_C_CHAVAKUKBOOK, JBO_C_TZEFANYABOOK, JBO_C_CHAGAYBOOK, JBO_C_ZECHARYABOOK,
+                JBO_C_MALACHIBOOK, JBO_C_TEHILIMBOOK, JBO_C_MISHLEYBOOK, JBO_C_IYOVBOOK, JBO_C_SHIRHASHIRIMBOOK,
+                JBO_C_RUTBOOK, JBO_C_EYCHABOOK, JBO_C_KOHELETBOOK, JBO_C_ESTERBOOK, JBO_C_DANIELBOOK,
+                JBO_C_EZRABOOK, JBO_C_NECHEMYABOOK, JBO_C_DIVREYHAYAMIMABOOK, JBO_C_DIVREYHAYAMIMBBOOK};
+
+        for (int i = 0; i < books.length; i++) {
+            int bookNum = i + 1;
+            registerGenerator(new TypeRegEx("jbr:tanach-" + bookNum, JBO_C_BOOK, JBO_C_TANACHBOOK, books[i]));
+        }
+
+
         registerGenerator(new IRegexGenerator() { // for <book> type
             String seferPosition ="";
             /*

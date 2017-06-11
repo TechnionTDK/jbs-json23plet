@@ -35,19 +35,55 @@ jbo:PasukKetuvim  a      owl:Class ;
         rdfs:subClassOf  jbo:Pasuk ;
         jbo:position     "3" .
 
+jbo:YoelBook  a          owl:Class ;
+        rdfs:label       "ספר יואל" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "16" .
+
 jbo:PerushMishneTorah
         a                owl:Class ;
         rdfs:label       "פירוש משנה תורה" ;
         rdfs:subClassOf  jbo:MishneTorah .
+
+jbo:NachumBook  a        owl:Class ;
+        rdfs:label       "ספר נחום" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "21" .
+
+jbo:RutBook  a           owl:Class ;
+        rdfs:label       "מגילת רות" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "31" .
 
 jbo:PerushMalbimBeurHamilot
         a                owl:Class ;
         rdfs:label       "מלבי\"ם ביאור המילות" ;
         rdfs:subClassOf  jbo:PerushTanach .
 
+jbo:DivreyHayamimABook
+        a                owl:Class ;
+        rdfs:label       "ספר דברי הימים א" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "38" .
+
+jbo:TzefanyaBook  a      owl:Class ;
+        rdfs:label       "ספר צפניה" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "23" .
+
 jbo:Container  a         owl:Class ;
         rdfs:label       "Container" ;
         rdfs:subClassOf  owl:Thing .
+
+jbo:BamidbarBook  a      owl:Class ;
+        rdfs:label       "ספר במדבר" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "4" .
+
+jbo:ChavakukBook  a      owl:Class ;
+        rdfs:label       "ספר חבקוק" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "22" .
 
 jbo:PerushMetzudatDavid
         a                owl:Class ;
@@ -58,9 +94,20 @@ jbo:LikuteyMoharan  a    owl:Class ;
         rdfs:label       "ליקוטי מוהר\"ן" ;
         rdfs:subClassOf  jbo:Chasidut .
 
+jbo:DivreyHayamimBBook
+        a                owl:Class ;
+        rdfs:label       "ספר דברי הימים ב" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "39" .
+
 jbo:Masechet  a          owl:Class ;
         rdfs:label       "מסכת" ;
         rdfs:subClassOf  jbo:Container .
+
+jbo:AmosBook  a          owl:Class ;
+        rdfs:label       "ספר עמוס" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "17" .
 
 jbo:PasukNeviyim  a      owl:Class ;
         rdfs:label       "פסוק נביאים" ;
@@ -70,6 +117,16 @@ jbo:PasukNeviyim  a      owl:Class ;
 jbo:PerushPerush  a      owl:Class ;
         rdfs:label       "פירוש פירוש" ;
         rdfs:subClassOf  jbo:PerushMishneTorah .
+
+jbo:VayikraBook  a       owl:Class ;
+        rdfs:label       "ספר ויקרא" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "3" .
+
+jbo:DanielBook  a        owl:Class ;
+        rdfs:label       "ספר דניאל" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "35" .
 
 jbo:text  a         owl:ObjectProperty ;
         rdfs:label  "טקסט" .
@@ -82,35 +139,59 @@ jbo:PerushMetzudatTziyon
 jbo:positionInPerek  a  owl:ObjectProperty ;
         rdfs:label  "מיקום בפרק" .
 
+jbo:EzraBook  a          owl:Class ;
+        rdfs:label       "ספר עזרא" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "36" .
+
 jbo:PerushShulchanAruch
         a                owl:Class ;
         rdfs:label       "פירוש שולחן ערוך" ;
         rdfs:subClassOf  jbo:ShulchanAruch .
 
-jbo:Musar  a             owl:Class ;
-        rdfs:label       "מוסר" ;
-        rdfs:subClassOf  owl:Thing .
+jbo:YirmiyaBook  a       owl:Class ;
+        rdfs:label       "ספר ירמיה" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "13" .
 
 jbo:Halacha  a           owl:Class ;
         rdfs:label       "הלכה" ;
+        rdfs:subClassOf  owl:Thing .
+
+jbo:Book  a              owl:Class ;
+        rdfs:label       "תנ\"ך" ;
+        rdfs:subClassOf  owl:Thing .
+
+jbo:Musar  a             owl:Class ;
+        rdfs:label       "מוסר" ;
         rdfs:subClassOf  owl:Thing .
 
 jbo:ShulchanAruch  a     owl:Class ;
         rdfs:label       "שולחן ערוך" ;
         rdfs:subClassOf  jbo:Halacha .
 
-jbo:Machashava  a        owl:Class ;
-        rdfs:label       "מחשבה" ;
-        rdfs:subClassOf  owl:Thing .
+jbo:EychaBook  a         owl:Class ;
+        rdfs:label       "מגילת איכה" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "32" .
 
 jbo:Chasidut  a          owl:Class ;
         rdfs:label       "חסידות" ;
+        rdfs:subClassOf  owl:Thing .
+
+jbo:Machashava  a        owl:Class ;
+        rdfs:label       "מחשבה" ;
         rdfs:subClassOf  owl:Thing .
 
 jbo:PerushBaalHaturim
         a                owl:Class ;
         rdfs:label       "בעל הטורים" ;
         rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:MishleyBook  a       owl:Class ;
+        rdfs:label       "ספר משלי" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "28" .
 
 jbo:HaravKuk  a          owl:Class ;
         rdfs:label       "הרב קוק" ;
@@ -123,6 +204,16 @@ jbo:PerushKesefMishne
         a                owl:Class ;
         rdfs:label       "כסף משנה" ;
         rdfs:subClassOf  jbo:PerushMishneTorah .
+
+jbo:ShoftimBook  a       owl:Class ;
+        rdfs:label       "ספר שופטים" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "7" .
+
+jbo:MichaBook  a         owl:Class ;
+        rdfs:label       "ספר מיכה" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "20" .
 
 jbo:HalachaMishneTorah
         a                owl:Class ;
@@ -152,6 +243,11 @@ jbo:Orot  a              owl:Class ;
 jbo:mentions  a     owl:ObjectProperty ;
         rdfs:label  "מזכיר" .
 
+jbo:OvadyaBook  a        owl:Class ;
+        rdfs:label       "ספר עובדיה" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "18" .
+
 jbo:source  a       owl:ObjectProperty ;
         rdfs:label  "מקור" .
 
@@ -159,17 +255,17 @@ jbo:PerushOrHachayim  a  owl:Class ;
         rdfs:label       "אור החיים הקדוש" ;
         rdfs:subClassOf  jbo:PerushTanach .
 
-jbo:MitzvatLoTaase  a    owl:Class ;
-        rdfs:label       "מצוות לא תעשה" ;
-        rdfs:subClassOf  jbo:SeferHamitzvot .
+jbo:PerushRaabad  a      owl:Class ;
+        rdfs:label       "השגות הראב\"ד" ;
+        rdfs:subClassOf  jbo:PerushMishneTorah .
 
 jbo:MitzvatAse  a        owl:Class ;
         rdfs:label       "מצוות עשה" ;
         rdfs:subClassOf  jbo:SeferHamitzvot .
 
-jbo:PerushRaabad  a      owl:Class ;
-        rdfs:label       "השגות הראב\"ד" ;
-        rdfs:subClassOf  jbo:PerushMishneTorah .
+jbo:MitzvatLoTaase  a    owl:Class ;
+        rdfs:label       "מצוות לא תעשה" ;
+        rdfs:subClassOf  jbo:SeferHamitzvot .
 
 jbo:target  a       owl:ObjectProperty ;
         rdfs:label  "יעד" .
@@ -178,29 +274,44 @@ jbo:MesilatYesharim  a   owl:Class ;
         rdfs:label       "מסילת ישרים" ;
         rdfs:subClassOf  jbo:Musar .
 
-jbo:Mishnaya  a          owl:Class ;
-        rdfs:label       "משניה" ;
-        rdfs:subClassOf  jbo:Mishna .
+jbo:ShirHashirimBook  a  owl:Class ;
+        rdfs:label       "שיר השירים" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "30" .
 
-jbo:Perek  a             owl:Class ;
-        rdfs:label       "פרק" ;
-        rdfs:subClassOf  jbo:Container .
-
-jbo:AmudBavli  a         owl:Class ;
-        rdfs:label       "עמוד בבלי" ;
-        rdfs:subClassOf  jbo:TalmudBavli .
+jbo:KoheletBook  a       owl:Class ;
+        rdfs:label       "קהלת" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "33" .
 
 jbo:TanachContainer  a   owl:Class ;
         rdfs:label       "TanachContainer" ;
         rdfs:subClassOf  jbo:Tanach .
 
-jbo:Siman  a             owl:Class ;
-        rdfs:label       "סימן" ;
+jbo:Mishnaya  a          owl:Class ;
+        rdfs:label       "משניה" ;
+        rdfs:subClassOf  jbo:Mishna .
+
+jbo:AmudBavli  a         owl:Class ;
+        rdfs:label       "עמוד בבלי" ;
+        rdfs:subClassOf  jbo:TalmudBavli .
+
+jbo:Perek  a             owl:Class ;
+        rdfs:label       "פרק" ;
         rdfs:subClassOf  jbo:Container .
 
 jbo:PerushBavliRan  a    owl:Class ;
         rdfs:label       "הר\"ן בבלי" ;
         rdfs:subClassOf  jbo:PerushBavli .
+
+jbo:Siman  a             owl:Class ;
+        rdfs:label       "סימן" ;
+        rdfs:subClassOf  jbo:Container .
+
+jbo:ZecharyaBook  a      owl:Class ;
+        rdfs:label       "ספר זכריה" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "25" .
 
 jbo:BavliContainer  a    owl:Class ;
         rdfs:label       "BavliContainer" ;
@@ -223,6 +334,11 @@ jbo:PerushLechemMishne
         a                owl:Class ;
         rdfs:label       "לחם משנה" ;
         rdfs:subClassOf  jbo:PerushMishneTorah .
+
+jbo:IyovBook  a          owl:Class ;
+        rdfs:label       "ספר איוב" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "29" .
 
 jbo:Chelek  a            owl:Class ;
         rdfs:label       "חלק" ;
@@ -247,12 +363,42 @@ jbo:PerushMalbimBeurHainyan
 jbo:textNikud  a    owl:ObjectProperty ;
         rdfs:label  "טקסט מנוקד" .
 
+jbo:YehoshuaBook  a      owl:Class ;
+        rdfs:label       "ספר יהושע" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "6" .
+
+jbo:TehilimBook  a       owl:Class ;
+        rdfs:label       "ספר תהילים" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "27" .
+
 jbo:numOfMentions  a  owl:ObjectProperty ;
         rdfs:label  "מספר איזכורים" .
+
+jbo:HosheaBook  a        owl:Class ;
+        rdfs:label       "ספר הושע" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "15" .
 
 jbo:TalmudBavli  a       owl:Class ;
         rdfs:label       "תלמוד בבלי" ;
         rdfs:subClassOf  owl:Thing .
+
+jbo:DevarimBook  a       owl:Class ;
+        rdfs:label       "ספר דברים" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "5" .
+
+jbo:ChagayBook  a        owl:Class ;
+        rdfs:label       "ספר חגי" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "24" .
+
+jbo:ShemuelABook  a      owl:Class ;
+        rdfs:label       "ספר שמואל א" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "8" .
 
 jbo:MidrashTanchuma  a   owl:Class ;
         rdfs:label       "מדרש תנחומא" ;
@@ -270,9 +416,19 @@ jbo:MishnaContainer  a   owl:Class ;
         rdfs:label       "MishnaContainer" ;
         rdfs:subClassOf  jbo:Mishna .
 
+jbo:MelachimBBook  a     owl:Class ;
+        rdfs:label       "ספר מלכים ב" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "11" .
+
 jbo:Parasha  a           owl:Class ;
         rdfs:label       "פרשה" ;
         rdfs:subClassOf  jbo:Container .
+
+jbo:BereshitBook  a      owl:Class ;
+        rdfs:label       "ספר בראשית" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "1" .
 
 jbo:Mishna  a            owl:Class ;
         rdfs:label       "משנה" ;
@@ -282,25 +438,45 @@ jbo:TargumOnkelos  a     owl:Class ;
         rdfs:label       "אונקלוס" ;
         rdfs:subClassOf  jbo:PerushTanach .
 
+jbo:PerushMalbim  a      owl:Class ;
+        rdfs:label       "מלבי\"ם" ;
+        rdfs:subClassOf  jbo:PerushTanach .
+
 jbo:PerushMishna  a      owl:Class ;
         rdfs:label       "פירוש משנה" ;
         rdfs:subClassOf  jbo:Mishna .
 
-jbo:PerushMalbim  a      owl:Class ;
-        rdfs:label       "מלבי\"ם" ;
-        rdfs:subClassOf  jbo:PerushTanach .
+jbo:YonaBook  a          owl:Class ;
+        rdfs:label       "ספר מלכים א" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "19" .
 
 jbo:TargumYonatan  a     owl:Class ;
         rdfs:label       "תרגום יונתן" ;
         rdfs:subClassOf  jbo:PerushTanach .
 
+jbo:ShemuelBBook  a      owl:Class ;
+        rdfs:label       "ספר שמואל ב" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "9" .
+
 jbo:Seder  a             owl:Class ;
         rdfs:label       "סדר" ;
         rdfs:subClassOf  jbo:Container .
 
+jbo:YeshaayaBook  a      owl:Class ;
+        rdfs:label       "ספר ישעיה" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "12" .
+
 jbo:PerushBavliRashi  a  owl:Class ;
         rdfs:label       "רש\"י בבלי" ;
         rdfs:subClassOf  jbo:PerushBavli .
+
+jbo:MalachiBook  a       owl:Class ;
+        rdfs:label       "ספר מלאכי" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "26" .
 
 jbo:PasukTorah  a        owl:Class ;
         rdfs:label       "פסוק תורה" ;
@@ -310,6 +486,11 @@ jbo:PasukTorah  a        owl:Class ;
 jbo:SeferHamitzvot  a    owl:Class ;
         rdfs:label       "ספר המצוות" ;
         rdfs:subClassOf  jbo:MishneTorah .
+
+jbo:ShemotBook  a        owl:Class ;
+        rdfs:label       "ספר שמות" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "2" .
 
 jbo:Halachot  a          owl:Class ;
         rdfs:label       "הלכות" ;
@@ -323,6 +504,21 @@ jbo:PerushTanach  a      owl:Class ;
         rdfs:label       "פירוש תנ\"ך" ;
         rdfs:subClassOf  jbo:Tanach .
 
+jbo:EsterBook  a         owl:Class ;
+        rdfs:label       "מגילת אסתר" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "34" .
+
+jbo:NechemyaBook  a      owl:Class ;
+        rdfs:label       "ספר נחמיה" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "37" .
+
+jbo:MelachimABook  a     owl:Class ;
+        rdfs:label       "ספר מלכים א" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "10" .
+
 jbo:PerushSifteyChachamim
         a                owl:Class ;
         rdfs:label       "שפתי חכמים" ;
@@ -332,6 +528,11 @@ jbo:PerushDaatZekenim
         a                owl:Class ;
         rdfs:label       "דעת זקנים" ;
         rdfs:subClassOf  jbo:PerushTanach .
+
+jbo:YechezkelBook  a     owl:Class ;
+        rdfs:label       "ספר יחזקאל" ;
+        rdfs:subClassOf  jbo:TanachBook ;
+        jbo:position     "14" .
 
 jbo:positionInParasha
         a           owl:ObjectProperty ;
@@ -345,6 +546,10 @@ jbo:HalachaShulchanAruch
 jbo:ShemonaKevatzim  a   owl:Class ;
         rdfs:label       "שמונה קבצים" ;
         rdfs:subClassOf  jbo:HaravKuk .
+
+jbo:TanachBook  a        owl:Class ;
+        rdfs:label       "תנ\"ך" ;
+        rdfs:subClassOf  jbo:Book .
 
 jbo:PerushBavliRashbam
         a                owl:Class ;
