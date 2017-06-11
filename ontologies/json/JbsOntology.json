@@ -83,7 +83,7 @@
     {
       "uri" : "jbo:Book",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "תנ\"ך",
+      "rdfs:label" : "ספר",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
