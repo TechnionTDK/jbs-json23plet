@@ -159,7 +159,7 @@ jbo:Halacha  a           owl:Class ;
         rdfs:subClassOf  owl:Thing .
 
 jbo:Book  a              owl:Class ;
-        rdfs:label       "תנ\"ך" ;
+        rdfs:label       "ספר" ;
         rdfs:subClassOf  owl:Thing .
 
 jbo:Musar  a             owl:Class ;
