@@ -17,8 +17,10 @@ public class JbsOntology
     public static OntModel model = ((OntModel) ((OntModel) ModelFactory.createOntologyModel()).read(ontPath.toString()));
     public static String JBO_PREFIX = "jbo";
     public static String JBR_PREFIX = "jbr";
+    public static String DC_PREFIX = "dc";
     public static String JBO_URI = "http://jbs.technion.ac.il/ontology/";
     public static String JBR_URI = "http://jbs.technion.ac.il/resource/";
+    public static String DC_URI = "http://purl.org/dc/terms/";
     public static Resource JBO_C_CONTAINER = (model.getOntClass(JBO_URI + "Container"));
     public static Resource JBO_C_SEFER = (model.getOntClass(JBO_URI + "Sefer"));
     public static Resource JBO_C_SEDER = (model.getOntClass(JBO_URI + "Seder"));

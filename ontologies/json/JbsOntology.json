@@ -7,6 +7,10 @@
     {
       "prefix" : "jbr",
       "uri" : "http://jbs.technion.ac.il/resource/"
+    },
+    {
+      "prefix" : "dc",
+      "uri" : "http://purl.org/dc/terms/"
     }
   ],
   "metadata" : [
