@@ -15,72 +15,16 @@
   ],
   "metadata" : [
     {
-      "uri" : "jbo:Container",
+      "uri" : "jbo:Text",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Container",
+      "rdfs:label" : "טקסט",
       "rdfs:subClassOf" : "owl:Thing"
     },
-	
-    {
-      "uri" : "jbo:Sefer",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר",
-      "rdfs:subClassOf" : "jbo:Container"
-    },
 
     {
-      "uri" : "jbo:Seder",
+      "uri" : "jbo:Section",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "סדר",
-      "rdfs:subClassOf" : "jbo:Container"
-    },
-	
-    {
-      "uri" : "jbo:Parasha",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "פרשה",
-      "rdfs:subClassOf" : "jbo:Container"
-    },
-	
-    {
-      "uri" : "jbo:Perek",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "פרק",
-      "rdfs:subClassOf" : "jbo:Container"
-    },
-
-    {
-      "uri" : "jbo:Masechet",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מסכת",
-      "rdfs:subClassOf" : "jbo:Container"
-    },
-
-    {
-      "uri" : "jbo:Chelek",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "חלק",
-      "rdfs:subClassOf" : "jbo:Container"
-    },
-
-    {
-      "uri" : "jbo:Halachot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "הלכות",
-      "rdfs:subClassOf" : "jbo:Container"
-    },
-
-    {
-      "uri" : "jbo:Siman",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "סימן",
-      "rdfs:subClassOf" : "jbo:Container"
-    },
-	
-    {
-      "uri" : "jbo:Tanach",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "תנ\"ך",
+      "rdfs:label" : "יחידה",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
@@ -92,336 +36,66 @@
     },
 
     {
-      "uri" : "jbo:TanachBook",
+      "uri" : "jbo:Person",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "תנ\"ך",
-      "rdfs:subClassOf" : "jbo:Book"
-    },
-
-    {
-      "uri" : "jbo:BereshitBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר בראשית",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "1"
-    },
-
-    {
-      "uri" : "jbo:ShemotBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר שמות",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "2"
-    },
-
-    {
-      "uri" : "jbo:VayikraBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר ויקרא",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "3"
-    },
-
-    {
-      "uri" : "jbo:BamidbarBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר במדבר",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "4"
-    },
-
-    {
-      "uri" : "jbo:DevarimBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר דברים",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "5"
-    },
-
-    {
-      "uri" : "jbo:YehoshuaBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר יהושע",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "6"
-    },
-
-    {
-      "uri" : "jbo:ShoftimBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר שופטים",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "7"
-    },
-
-    {
-      "uri" : "jbo:ShemuelABook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר שמואל א",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "8"
-    },
-
-    {
-      "uri" : "jbo:ShemuelBBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר שמואל ב",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "9"
-    },
-
-    {
-      "uri" : "jbo:MelachimABook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר מלכים א",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "10"
-    },
-
-    {
-      "uri" : "jbo:MelachimBBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר מלכים ב",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "11"
-    },
-
-    {
-      "uri" : "jbo:YeshaayaBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר ישעיה",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "12"
-    },
-
-    {
-      "uri" : "jbo:YirmiyaBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר ירמיה",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "13"
-    },
-
-    {
-      "uri" : "jbo:YechezkelBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר יחזקאל",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "14"
-    },
-
-    {
-      "uri" : "jbo:HosheaBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר הושע",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "15"
-    },
-
-    {
-      "uri" : "jbo:YoelBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר יואל",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "16"
-    },
-
-    {
-      "uri" : "jbo:AmosBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר עמוס",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "17"
-    },
-
-    {
-      "uri" : "jbo:OvadyaBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר עובדיה",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "18"
-    },
-
-    {
-      "uri" : "jbo:YonaBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר מלכים א",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "19"
-    },
-
-    {
-      "uri" : "jbo:MichaBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר מיכה",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "20"
-    },
-
-    {
-      "uri" : "jbo:NachumBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר נחום",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "21"
-    },
-
-    {
-      "uri" : "jbo:ChavakukBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר חבקוק",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "22"
-    },
-
-    {
-      "uri" : "jbo:TzefanyaBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר צפניה",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "23"
-    },
-
-    {
-      "uri" : "jbo:ChagayBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר חגי",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "24"
-    },
-
-    {
-      "uri" : "jbo:ZecharyaBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר זכריה",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "25"
-    },
-
-    {
-      "uri" : "jbo:MalachiBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר מלאכי",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "26"
-    },
-
-    {
-      "uri" : "jbo:TehilimBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר תהילים",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "27"
-    },
-
-    {
-      "uri" : "jbo:MishleyBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר משלי",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "28"
-    },
-
-    {
-      "uri" : "jbo:IyovBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר איוב",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "29"
-    },
-
-    {
-      "uri" : "jbo:ShirHashirimBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "שיר השירים",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "30"
-    },
-
-    {
-      "uri" : "jbo:RutBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מגילת רות",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "31"
-    },
-
-    {
-      "uri" : "jbo:EychaBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מגילת איכה",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "32"
-    },
-
-    {
-      "uri" : "jbo:KoheletBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "קהלת",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "33"
-    },
-
-    {
-      "uri" : "jbo:EsterBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מגילת אסתר",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "34"
-    },
-
-    {
-      "uri" : "jbo:DanielBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר דניאל",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "35"
-    },
-
-    {
-      "uri" : "jbo:EzraBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר עזרא",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "36"
-    },
-
-    {
-      "uri" : "jbo:NechemyaBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר נחמיה",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "37"
-    },
-
-    {
-      "uri" : "jbo:DivreyHayamimABook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר דברי הימים א",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "38"
-    },
-
-    {
-      "uri" : "jbo:DivreyHayamimBBook",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר דברי הימים ב",
-      "rdfs:subClassOf" : "jbo:TanachBook",
-      "jbo:position" : "39"
-    },
-
-    {
-      "uri" : "jbo:Machashava",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מחשבה",
+      "rdfs:label" : "אישיות",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
-      "uri" : "jbo:Musar",
+      "uri" : "jbo:Category",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "מוסר",
+      "rdfs:label" : "קטגוריה",
       "rdfs:subClassOf" : "owl:Thing"
+    },
+
+    {
+      "uri" : "jbo:Seder",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "סדר",
+      "rdfs:subClassOf" : "jbo:Section"
+    },
+	
+    {
+      "uri" : "jbo:Parasha",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "פרשה",
+      "rdfs:subClassOf" : "jbo:Section"
+    },
+	
+    {
+      "uri" : "jbo:Perek",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "פרק",
+      "rdfs:subClassOf" : "jbo:Section"
+    },
+
+    {
+      "uri" : "jbo:Masechet",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "מסכת",
+      "rdfs:subClassOf" : "jbo:Section"
+    },
+
+    {
+      "uri" : "jbo:Chelek",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "חלק",
+      "rdfs:subClassOf" : "jbo:Section"
+    },
+
+    {
+      "uri" : "jbo:Halachot",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "הלכות",
+      "rdfs:subClassOf" : "jbo:Section"
+    },
+
+    {
+      "uri" : "jbo:Siman",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "סימן",
+      "rdfs:subClassOf" : "jbo:Section"
     },
 
     {
@@ -432,426 +106,45 @@
     },
 
     {
-      "uri" : "jbo:Halacha",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "הלכה",
-      "rdfs:subClassOf" : "owl:Thing"
-    },
-
-    {
-      "uri" : "jbo:Chasidut",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "חסידות",
-      "rdfs:subClassOf" : "owl:Thing"
-    },
-
-    {
-      "uri" : "jbo:LikuteyMoharan",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ליקוטי מוהר\"ן",
-      "rdfs:subClassOf" : "jbo:Chasidut"
-    },
-
-    {
-      "uri" : "jbo:Mishna",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "משנה",
-      "rdfs:subClassOf" : "owl:Thing"
-    },
-
-    {
       "uri" : "jbo:Mishnaya",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "משניה",
-      "rdfs:subClassOf" : "jbo:Mishna"
+      "rdfs:subClassOf" : "jbo:Text"
     },
 
     {
-      "uri" : "jbo:MishnaContainer",
+      "uri" : "jbo:Perush",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "MishnaContainer",
-      "rdfs:subClassOf" : "jbo:Mishna"
-    },
-
-    {
-      "uri" : "jbo:PerushMishna",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "פירוש משנה",
-      "rdfs:subClassOf" : "jbo:Mishna"
-    },
-
-
-    {
-      "uri" : "jbo:TalmudBavli",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "תלמוד בבלי",
-      "rdfs:subClassOf" : "owl:Thing"
+      "rdfs:label" : "פירוש",
+      "rdfs:subClassOf" : "jbo:Text"
     },
 
     {
       "uri" : "jbo:AmudBavli",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "עמוד בבלי",
-      "rdfs:subClassOf" : "jbo:TalmudBavli"
+      "rdfs:subClassOf" : "jbo:Text"
     },
 
     {
-      "uri" : "jbo:BavliContainer",
+      "uri" : "jbo:Mitzva",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "BavliContainer",
-      "rdfs:subClassOf" : "jbo:TalmudBavli"
+      "rdfs:label" : "מצווה",
+      "rdfs:subClassOf" : "jbo:Text"
     },
 
     {
-      "uri" : "jbo:PerushBavli",
+      "uri" : "jbo:Halacha",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "פירוש בבלי",
-      "rdfs:subClassOf" : "jbo:TalmudBavli"
-    },
-
-    {
-      "uri" : "jbo:PerushBavliRashi",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "רש\"י בבלי",
-      "rdfs:subClassOf" : "jbo:PerushBavli"
-    },
-
-    {
-      "uri" : "jbo:PerushBavliTosafot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "תוספות",
-      "rdfs:subClassOf" : "jbo:PerushBavli"
-    },
-
-    {
-      "uri" : "jbo:PerushBavliRashbam",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "רשב\"ם בבלי",
-      "rdfs:subClassOf" : "jbo:PerushBavli"
-    },
-
-    {
-      "uri" : "jbo:PerushBavliRan",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "הר\"ן בבלי",
-      "rdfs:subClassOf" : "jbo:PerushBavli"
-    },
-
-    {
-      "uri" : "jbo:MishneTorah",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "משנה תורה",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:MishneTorahContainer",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "MishneTorahContainer",
-      "rdfs:subClassOf" : "jbo:MishneTorah"
-    },
-
-    {
-      "uri" : "jbo:SeferHamitzvot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר המצוות",
-      "rdfs:subClassOf" : "jbo:MishneTorah"
-    },
-
-    {
-      "uri" : "jbo:MitzvatAse",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מצוות עשה",
-      "rdfs:subClassOf" : "jbo:SeferHamitzvot"
-    },
-
-    {
-      "uri" : "jbo:MitzvatLoTaase",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מצוות לא תעשה",
-      "rdfs:subClassOf" : "jbo:SeferHamitzvot"
-    },
-
-    {
-      "uri" : "jbo:HalachaMishneTorah",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "הלכה משנה תורה",
-      "rdfs:subClassOf" : "jbo:MishneTorah"
-    },
-
-    {
-      "uri" : "jbo:PerushMishneTorah",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "פירוש משנה תורה",
-      "rdfs:subClassOf" : "jbo:MishneTorah"
-    },
-
-    {
-      "uri" : "jbo:PerushPerush",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "פירוש פירוש",
-      "rdfs:subClassOf" : "jbo:PerushMishneTorah"
-    },
-
-    {
-      "uri" : "jbo:PerushKesefMishne",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "כסף משנה",
-      "rdfs:subClassOf" : "jbo:PerushMishneTorah"
-    },
-
-    {
-      "uri" : "jbo:PerushLechemMishne",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "לחם משנה",
-      "rdfs:subClassOf" : "jbo:PerushMishneTorah"
-    },
-
-    {
-      "uri" : "jbo:PerushRaabad",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "השגות הראב\"ד",
-      "rdfs:subClassOf" : "jbo:PerushMishneTorah"
-    },
-
-    {
-      "uri" : "jbo:PerushMagidMishne",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מגיד משנה",
-      "rdfs:subClassOf" : "jbo:PerushMishneTorah"
-    },
-
-    {
-      "uri" : "jbo:ShulchanAruch",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "שולחן ערוך",
-      "rdfs:subClassOf" : "jbo:Halacha"
-    },
-
-    {
-      "uri" : "jbo:HalachaShulchanAruch",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "הלכה שולחן ערוך",
-      "rdfs:subClassOf" : "jbo:ShulchanAruch"
-    },
-
-    {
-      "uri" : "jbo:PerushShulchanAruch",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "פירוש שולחן ערוך",
-      "rdfs:subClassOf" : "jbo:ShulchanAruch"
-    },
-
-    {
-      "uri" : "jbo:HaravKuk",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "הרב קוק",
-      "rdfs:subClassOf" : "jbo:Machashava"
-    },
-
-    {
-      "uri" : "jbo:DerashotHaran",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "דרשות הר\"ן",
-      "rdfs:subClassOf" : "jbo:Machashava"
+      "rdfs:label" : "הלכה",
+      "rdfs:subClassOf" : "jbo:Text"
     },
 
 	{
       "uri" : "jbo:Pasuk",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "פסוק",
-      "rdfs:subClassOf" : "jbo:Tanach"
-    },
-
-	{
-      "uri" : "jbo:PerushTanach",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "פירוש תנ\"ך",
-      "rdfs:subClassOf" : "jbo:Tanach"
-    },
-		
-	{
-      "uri" : "jbo:TanachContainer",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "TanachContainer",
-      "rdfs:subClassOf" : "jbo:Tanach"
-    },
-	
-	{
-      "uri" : "jbo:PasukTorah",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "פסוק תורה",
-      "rdfs:subClassOf" : "jbo:Pasuk",
-	  "jbo:position" : "1"
-    },
-	
-	{
-      "uri" : "jbo:PasukNeviyim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "פסוק נביאים",
-      "rdfs:subClassOf" : "jbo:Pasuk",
-	  "jbo:position" : "2"
-    },
-	
-	{
-      "uri" : "jbo:PasukKetuvim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "פסוק כתובים",
-      "rdfs:subClassOf" : "jbo:Pasuk",
-	  "jbo:position" : "3"
-    },
-	
-	{
-      "uri" : "jbo:PerushRashi",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "רש\"י תנ\"ך",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:PerushSifteyChachamim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "שפתי חכמים",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:PerushRamban",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "רמב\"ן תורה",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:TargumYonatan",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "תרגום יונתן",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:PerushOrHachayim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "אור החיים הקדוש",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:PerushIbnEzra",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "הראב\"ע",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:PerushBaalHaturim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "בעל הטורים",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:TargumOnkelos",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "אונקלוס",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:PerushSeforno",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספורנו",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:PerushKeliYekar",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "כלי יקר",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:PerushDaatZekenim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "דעת זקנים",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:MidrashRaba",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מדרש רבה",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:MidrashTanchuma",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מדרש תנחומא",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:PerushMetzudatDavid",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מצודת דוד",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:PerushMetzudatTziyon",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מצודת ציון",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:PerushRalbag",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "רלב\"ג",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:PerushMalbim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מלבי\"ם",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	{
-      "uri" : "jbo:PerushMalbimBeurHainyan",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מלבי\"ם ביאור העניין",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:PerushMalbimBeurHamilot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מלבי\"ם ביאור המילות",
-      "rdfs:subClassOf" : "jbo:PerushTanach"
-    },
-	
-	{
-      "uri" : "jbo:ShemonaKevatzim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "שמונה קבצים",
-      "rdfs:subClassOf" : "jbo:HaravKuk"
-    },
-	
-	{
-      "uri" : "jbo:Orot",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "אורות",
-      "rdfs:subClassOf" : "jbo:HaravKuk"
-    },
-	
-	{
-      "uri" : "jbo:MesilatYesharim",
-      "rdf:type" : "owl:Class",
-      "rdfs:label" : "מסילת ישרים",
-      "rdfs:subClassOf" : "jbo:Musar"
+      "rdfs:subClassOf" : "jbo:Text"
     },
 	
     {
