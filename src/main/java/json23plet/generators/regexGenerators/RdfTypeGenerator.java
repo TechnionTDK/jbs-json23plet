@@ -48,21 +48,25 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
     @Override
     public void registerGenerators() {
 
+        // apply owl:Thing to all URIs
         registerGenerator(new TypeRegEx("jbr:.*", OWL_C_THING));
+
+        // first level hierarchy
         registerGenerator(new TypeRegEx("jbr:text-.*", JBO_C_TEXT));
         registerGenerator(new TypeRegEx("jbr:section-.*", JBO_C_SECTION));
         registerGenerator(new TypeRegEx("jbr:book-.*", JBO_C_BOOK));
         registerGenerator(new TypeRegEx("jbr:person-.*", JBO_C_PERSON));
         registerGenerator(new TypeRegEx("jbr:category-.*", JBO_C_CATEGORY));
 
-//        registerMachashavaGenerators();
-//        registerMusarGenerators();
-//        registerTanachGenerators();
-//        registerMishnaGenerators();
-//        registerBavliGenerators();
-//        registerMishneTorahGenerators();
-//        registerShulchanAruchGenerators();
-//        registerChasidutGenerators();
+        // apply to subclasses of jbo:Text
+        registerGenerator(new TypeRegEx("jbr:text-tanach-\\d+-\\d+-\\d+", JBO_C_PASUK));
+        registerGenerator(new TypeRegEx("jbr:text-bavli-\\d+-\\d+-\\d+", JBO_C_AMUDBAVLI));
+        registerGenerator(new TypeRegEx("jbr:text-seferhamitzvot-3-\\d+", JBO_C_MITZVA));
+        registerGenerator(new TypeRegEx("jbr:text-seferhamitzvot-4-\\d+", JBO_C_MITZVA));
+        registerGenerator(new TypeRegEx("jbr:text-mishnetorah-\\d+-\\d+-\\d+-\\d+", JBO_C_HALACHA));
+        registerGenerator(new TypeRegEx("jbr:text-shulchanaruch-\\d+-\\d+-\\d+", JBO_C_HALACHA));
+        registerGenerator(new TypeRegEx("jbr:text-mishna-\\d+-\\d+-\\d+-\\d+", JBO_C_MISHNAYA));
+
 
         //registerGenerator(new TypeRegEx("jbr:mention__.*", JBO_C_MENTION)); // inserted into the generator
     }
