@@ -20,6 +20,10 @@ jbo:Category  a          owl:Class ;
         rdfs:label       "קטגוריה" ;
         rdfs:subClassOf  owl:Thing .
 
+jbo:PerushTanach  a      owl:Class ;
+        rdfs:label       "פירוש תנ\"ך" ;
+        rdfs:subClassOf  jbo:Perush .
+
 jbo:span  a         owl:ObjectProperty ;
         rdfs:label  "פרישה" .
 
@@ -71,6 +75,10 @@ jbo:Seder  a             owl:Class ;
         rdfs:label       "סדר" ;
         rdfs:subClassOf  jbo:Section .
 
+jbo:ParashaTorah  a      owl:Class ;
+        rdfs:label       "פרשה" ;
+        rdfs:subClassOf  jbo:Section .
+
 jbo:explains  a     owl:ObjectProperty ;
         rdfs:label  "מבאר" .
 
@@ -81,10 +89,6 @@ jbo:Pasuk  a             owl:Class ;
 jbo:Mention  a           owl:Class ;
         rdfs:label       "איזכור" ;
         rdfs:subClassOf  owl:Thing .
-
-jbo:Parasha  a           owl:Class ;
-        rdfs:label       "פרשה" ;
-        rdfs:subClassOf  jbo:Section .
 
 jbo:positionInPerek  a  owl:ObjectProperty ;
         rdfs:label  "מיקום בפרק" .

@@ -27,7 +27,7 @@ public class JbsOntology
     public static Resource JBO_C_PERSON = (model.getOntClass(JBO_URI + "Person"));
     public static Resource JBO_C_CATEGORY = (model.getOntClass(JBO_URI + "Category"));
     public static Resource JBO_C_SEDER = (model.getOntClass(JBO_URI + "Seder"));
-    public static Resource JBO_C_PARASHA = (model.getOntClass(JBO_URI + "Parasha"));
+    public static Resource JBO_C_PARASHATORAH = (model.getOntClass(JBO_URI + "ParashaTorah"));
     public static Resource JBO_C_PEREK = (model.getOntClass(JBO_URI + "Perek"));
     public static Resource JBO_C_MASECHET = (model.getOntClass(JBO_URI + "Masechet"));
     public static Resource JBO_C_CHELEK = (model.getOntClass(JBO_URI + "Chelek"));
@@ -36,6 +36,7 @@ public class JbsOntology
     public static Resource JBO_C_MENTION = (model.getOntClass(JBO_URI + "Mention"));
     public static Resource JBO_C_MISHNAYA = (model.getOntClass(JBO_URI + "Mishnaya"));
     public static Resource JBO_C_PERUSH = (model.getOntClass(JBO_URI + "Perush"));
+    public static Resource JBO_C_PERUSHTANACH = (model.getOntClass(JBO_URI + "PerushTanach"));
     public static Resource JBO_C_AMUDBAVLI = (model.getOntClass(JBO_URI + "AmudBavli"));
     public static Resource JBO_C_MITZVA = (model.getOntClass(JBO_URI + "Mitzva"));
     public static Resource JBO_C_HALACHA = (model.getOntClass(JBO_URI + "Halacha"));

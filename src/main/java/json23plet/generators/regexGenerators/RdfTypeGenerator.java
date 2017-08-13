@@ -58,7 +58,21 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         registerGenerator(new TypeRegEx("jbr:person-.*", JBO_C_PERSON));
         registerGenerator(new TypeRegEx("jbr:category-.*", JBO_C_CATEGORY));
 
-        // apply to subclasses of jbo:Text
+        // register deeper levels
+        registerTextSubclasses();
+        registerSectionSubclasses();
+
+
+
+
+        //registerGenerator(new TypeRegEx("jbr:mention__.*", JBO_C_MENTION)); // inserted into the generator
+    }
+
+    private void registerSectionSubclasses() {
+        registerGenerator(new TypeRegEx("jbr:section-tanach-parasha-\\d+", JBO_C_PARASHATORAH));
+    }
+
+    private void registerTextSubclasses() {
         registerGenerator(new TypeRegEx("jbr:text-tanach-\\d+-\\d+-\\d+", JBO_C_PASUK));
         registerGenerator(new TypeRegEx("jbr:text-bavli-\\d+-\\d+-\\d+", JBO_C_AMUDBAVLI));
         registerGenerator(new TypeRegEx("jbr:text-seferhamitzvot-3-\\d+", JBO_C_MITZVA));
@@ -67,10 +81,8 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         registerGenerator(new TypeRegEx("jbr:text-shulchanaruch-\\d+-\\d+-\\d+", JBO_C_HALACHA));
         registerGenerator(new TypeRegEx("jbr:text-mishna-\\d+-\\d+-\\d+-\\d+", JBO_C_MISHNAYA));
 
-
-        //registerGenerator(new TypeRegEx("jbr:mention__.*", JBO_C_MENTION)); // inserted into the generator
+        registerGenerator(new TypeRegEx("jbr:tanach-\\D+-\\d+-\\d+-\\d+", JBO_C_PERUSHTANACH)); // \D matches non-digits
     }
-
 
 
 //    private void registerMachashavaGenerators() {

@@ -57,7 +57,7 @@
     },
 	
     {
-      "uri" : "jbo:Parasha",
+      "uri" : "jbo:ParashaTorah",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "פרשה",
       "rdfs:subClassOf" : "jbo:Section"
@@ -117,6 +117,13 @@
       "rdf:type" : "owl:Class",
       "rdfs:label" : "פירוש",
       "rdfs:subClassOf" : "jbo:Text"
+    },
+
+    {
+      "uri" : "jbo:PerushTanach",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "פירוש תנ\"ך",
+      "rdfs:subClassOf" : "jbo:Perush"
     },
 
     {
