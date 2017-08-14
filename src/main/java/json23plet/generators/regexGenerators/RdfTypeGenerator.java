@@ -70,7 +70,7 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
     }
 
     private void registerBookSubclasses() {
-        registerGenerator(new TypeRegEx("jbr:book-tanach-\\d+", JBO_C_BOOKTANACH));
+        registerGenerator(new TypeRegEx("jbr:book-tanach-\\D+", JBO_C_BOOKTANACH));
     }
 
     private void registerSectionSubclasses() {
@@ -78,7 +78,7 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
     }
 
     private void registerTextSubclasses() {
-        registerGenerator(new TypeRegEx("jbr:text-tanach-\\d+-\\d+-\\D+", JBO_C_PASUK));
+        registerGenerator(new TypeRegEx("jbr:text-tanach-\\d+-\\d+-\\d+", JBO_C_PASUK));
         registerGenerator(new TypeRegEx("jbr:text-bavli-\\d+-\\d+-\\d+", JBO_C_AMUDBAVLI));
         registerGenerator(new TypeRegEx("jbr:text-seferhamitzvot-3-\\d+", JBO_C_MITZVA));
         registerGenerator(new TypeRegEx("jbr:text-seferhamitzvot-4-\\d+", JBO_C_MITZVA));
