@@ -16,6 +16,10 @@ jbo:Perush  a            owl:Class ;
         rdfs:label       "פירוש" ;
         rdfs:subClassOf  jbo:Text .
 
+jbo:BookTanach  a        owl:Class ;
+        rdfs:label       "ספר תנ\"ך" ;
+        rdfs:subClassOf  jbo:Book .
+
 jbo:Category  a          owl:Class ;
         rdfs:label       "קטגוריה" ;
         rdfs:subClassOf  owl:Thing .

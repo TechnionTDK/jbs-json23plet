@@ -61,11 +61,16 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
         // register deeper levels
         registerTextSubclasses();
         registerSectionSubclasses();
+        registerBookSubclasses();
 
 
 
 
         //registerGenerator(new TypeRegEx("jbr:mention__.*", JBO_C_MENTION)); // inserted into the generator
+    }
+
+    private void registerBookSubclasses() {
+        registerGenerator(new TypeRegEx("jbr:book-tanach-\\d+", JBO_C_BOOKTANACH));
     }
 
     private void registerSectionSubclasses() {

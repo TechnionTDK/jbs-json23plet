@@ -24,6 +24,7 @@ public class JbsOntology
     public static Resource JBO_C_TEXT = (model.getOntClass(JBO_URI + "Text"));
     public static Resource JBO_C_SECTION = (model.getOntClass(JBO_URI + "Section"));
     public static Resource JBO_C_BOOK = (model.getOntClass(JBO_URI + "Book"));
+    public static Resource JBO_C_BOOKTANACH = (model.getOntClass(JBO_URI + "BookTanach"));
     public static Resource JBO_C_PERSON = (model.getOntClass(JBO_URI + "Person"));
     public static Resource JBO_C_CATEGORY = (model.getOntClass(JBO_URI + "Category"));
     public static Resource JBO_C_SEDER = (model.getOntClass(JBO_URI + "Seder"));

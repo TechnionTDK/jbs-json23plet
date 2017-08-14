@@ -36,6 +36,13 @@
     },
 
     {
+      "uri" : "jbo:BookTanach",
+      "rdf:type" : "owl:Class",
+      "rdfs:label" : "ספר תנ\"ך",
+      "rdfs:subClassOf" : "jbo:Book"
+    },
+
+    {
       "uri" : "jbo:Person",
       "rdf:type" : "owl:Class",
       "rdfs:label" : "אישיות",
