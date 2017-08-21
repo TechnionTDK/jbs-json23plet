@@ -78,16 +78,16 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
     }
 
     private void registerTextSubclasses() {
-        registerGenerator(new TypeRegEx("jbr:text-tanach-\\d+-\\d+-\\d+", JBO_C_PASUK));
-        registerGenerator(new TypeRegEx("jbr:text-bavli-\\d+-\\d+-\\d+", JBO_C_AMUDBAVLI));
-        registerGenerator(new TypeRegEx("jbr:text-seferhamitzvot-3-\\d+", JBO_C_MITZVA));
-        registerGenerator(new TypeRegEx("jbr:text-seferhamitzvot-4-\\d+", JBO_C_MITZVA));
-        registerGenerator(new TypeRegEx("jbr:text-mishnetorah-\\d+-\\d+-\\d+-\\d+", JBO_C_HALACHA));
-        registerGenerator(new TypeRegEx("jbr:text-shulchanaruch-\\d+-\\d+-\\d+", JBO_C_HALACHA));
-        registerGenerator(new TypeRegEx("jbr:text-mishna-\\d+-\\d+-\\d+-\\d+", JBO_C_MISHNAYA));
+    registerGenerator(new TypeRegEx("jbr:text-tanach-\\d+-\\d+-\\d+", JBO_C_PASUK));
+    registerGenerator(new TypeRegEx("jbr:text-bavli-\\d+-\\d+-\\d+", JBO_C_AMUDBAVLI));
+    registerGenerator(new TypeRegEx("jbr:text-seferhamitzvot-3-\\d+", JBO_C_MITZVA));
+    registerGenerator(new TypeRegEx("jbr:text-seferhamitzvot-4-\\d+", JBO_C_MITZVA));
+    registerGenerator(new TypeRegEx("jbr:text-mishnetorah-\\d+-\\d+-\\d+-\\d+", JBO_C_HALACHA));
+    registerGenerator(new TypeRegEx("jbr:text-shulchanaruch-\\d+-\\d+-\\d+", JBO_C_HALACHA));
+    registerGenerator(new TypeRegEx("jbr:text-mishna-\\d+-\\d+-\\d+-\\d+", JBO_C_MISHNAYA));
 
-        registerGenerator(new TypeRegEx("jbr:tanach-\\D+-\\d+-\\d+-\\d+", JBO_C_PERUSHTANACH)); // \D matches non-digits
-    }
+    registerGenerator(new TypeRegEx("jbr:text-tanach-\\D+-\\d+-\\d+-\\d+", JBO_C_PERUSHTANACH)); // \D matches non-digits
+}
 
 
 //    private void registerMachashavaGenerators() {
