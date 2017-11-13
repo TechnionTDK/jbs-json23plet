@@ -17,217 +17,223 @@
     {
       "uri" : "jbo:Text",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "טקסט",
+      "rdfs:label" : "Text",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
       "uri" : "jbo:Section",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "יחידה",
+      "rdfs:label" : "Section",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
       "uri" : "jbo:Book",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר",
+      "rdfs:label" : "Book",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
       "uri" : "jbo:BookTanach",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "ספר תנ\"ך",
+      "rdfs:label" : "BookTanach",
       "rdfs:subClassOf" : "jbo:Book"
     },
 
     {
       "uri" : "jbo:Person",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "אישיות",
+      "rdfs:label" : "Person",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
       "uri" : "jbo:Category",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "קטגוריה",
+      "rdfs:label" : "Category",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
       "uri" : "jbo:Seder",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "סדר",
+      "rdfs:label" : "Seder",
       "rdfs:subClassOf" : "jbo:Section"
     },
 	
     {
       "uri" : "jbo:ParashaTorah",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "פרשה",
+      "rdfs:label" : "ParashaTorah",
       "rdfs:subClassOf" : "jbo:Section"
     },
 	
     {
       "uri" : "jbo:Perek",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "פרק",
+      "rdfs:label" : "Perek",
       "rdfs:subClassOf" : "jbo:Section"
     },
 
     {
       "uri" : "jbo:Masechet",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "מסכת",
+      "rdfs:label" : "Masechet",
       "rdfs:subClassOf" : "jbo:Section"
     },
 
     {
       "uri" : "jbo:Chelek",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "חלק",
+      "rdfs:label" : "Chelek",
       "rdfs:subClassOf" : "jbo:Section"
     },
 
     {
       "uri" : "jbo:Halachot",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "הלכות",
+      "rdfs:label" : "Halachot",
       "rdfs:subClassOf" : "jbo:Section"
     },
 
     {
       "uri" : "jbo:Siman",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "סימן",
+      "rdfs:label" : "Siman",
       "rdfs:subClassOf" : "jbo:Section"
     },
 
     {
       "uri" : "jbo:Mention",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "איזכור",
+      "rdfs:label" : "Mention",
       "rdfs:subClassOf" : "owl:Thing"
     },
 
     {
       "uri" : "jbo:Mishnaya",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "משניה",
+      "rdfs:label" : "Mishnaya",
       "rdfs:subClassOf" : "jbo:Text"
     },
 
     {
       "uri" : "jbo:Perush",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "פירוש",
+      "rdfs:label" : "Perush",
       "rdfs:subClassOf" : "jbo:Text"
     },
 
     {
       "uri" : "jbo:PerushTanach",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "פירוש תנ\"ך",
+      "rdfs:label" : "PerushTanach",
       "rdfs:subClassOf" : "jbo:Perush"
     },
 
     {
       "uri" : "jbo:AmudBavli",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "עמוד בבלי",
+      "rdfs:label" : "AmudBavli",
       "rdfs:subClassOf" : "jbo:Text"
     },
 
     {
       "uri" : "jbo:Mitzva",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "מצווה",
+      "rdfs:label" : "Mitzva",
       "rdfs:subClassOf" : "jbo:Text"
     },
 
     {
       "uri" : "jbo:Halacha",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "הלכה",
+      "rdfs:label" : "Halacha",
       "rdfs:subClassOf" : "jbo:Text"
     },
 
 	{
       "uri" : "jbo:Pasuk",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "פסוק",
+      "rdfs:label" : "Pasuk",
       "rdfs:subClassOf" : "jbo:Text"
     },
 	
     {
       "uri" : "jbo:mentions",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "מזכיר"
+      "rdfs:label" : "mentions"
     },
 
     {
-      "uri" : "jbo:explains",
+      "uri" : "jbo:interprets",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "מבאר"
+      "rdfs:label" : "interprets"
     },
 
     {
       "uri" : "jbo:position",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "מיקום"
+      "rdfs:label" : "position"
     },
     {
       "uri" : "jbo:text",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "טקסט"
+      "rdfs:label" : "text"
     },
     {
       "uri" : "jbo:textNikud",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "טקסט מנוקד"
+      "rdfs:label" : "textNikud"
     },
     {
       "uri" : "jbo:positionInPerek",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "מיקום בפרק"
+      "rdfs:label" : "positionInPerek"
     },
 
     {
       "uri" : "jbo:positionInParasha",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "מיקום בפרשה"
+      "rdfs:label" : "positionInParasha"
     },
 
     {
       "uri" : "jbo:source",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "מקור"
+      "rdfs:label" : "source"
     },
 
     {
       "uri" : "jbo:target",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "יעד"
+      "rdfs:label" : "target"
     },
 
     {
       "uri" : "jbo:span",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "פרישה"
+      "rdfs:label" : "span"
     },
 
     {
       "uri" : "jbo:numOfMentions",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "מספר איזכורים"
+      "rdfs:label" : "numOfMentions"
     },
 
     {
       "uri" : "jbo:within",
       "rdf:type" : "owl:ObjectProperty",
-      "rdfs:label" : "נמצא בתוך"
+      "rdfs:label" : "within"
+    },
+
+    {
+      "uri" : "jbo:description",
+      "rdf:type" : "owl:ObjectProperty",
+      "rdfs:label" : "description"
     }
   ]
 }

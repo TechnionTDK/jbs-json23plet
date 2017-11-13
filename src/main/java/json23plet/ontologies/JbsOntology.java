@@ -43,7 +43,7 @@ public class JbsOntology
     public static Resource JBO_C_HALACHA = (model.getOntClass(JBO_URI + "Halacha"));
     public static Resource JBO_C_PASUK = (model.getOntClass(JBO_URI + "Pasuk"));
     public static Property JBO_P_MENTIONS = (model.getOntProperty(JBO_URI + "mentions"));
-    public static Property JBO_P_EXPLAINS = (model.getOntProperty(JBO_URI + "explains"));
+    public static Property JBO_P_INTERPRETS = (model.getOntProperty(JBO_URI + "interprets"));
     public static Property JBO_P_POSITION = (model.getOntProperty(JBO_URI + "position"));
     public static Property JBO_P_TEXT = (model.getOntProperty(JBO_URI + "text"));
     public static Property JBO_P_TEXTNIKUD = (model.getOntProperty(JBO_URI + "textNikud"));
@@ -54,4 +54,5 @@ public class JbsOntology
     public static Property JBO_P_SPAN = (model.getOntProperty(JBO_URI + "span"));
     public static Property JBO_P_NUMOFMENTIONS = (model.getOntProperty(JBO_URI + "numOfMentions"));
     public static Property JBO_P_WITHIN = (model.getOntProperty(JBO_URI + "within"));
+    public static Property JBO_P_DESCRIPTION = (model.getOntProperty(JBO_URI + "description"));
 }

@@ -7,122 +7,125 @@
 @prefix dc:    <http://purl.org/dc/terms/> .
 
 jbo:text  a         owl:ObjectProperty ;
-        rdfs:label  "טקסט" .
+        rdfs:label  "text" .
 
 jbo:target  a       owl:ObjectProperty ;
-        rdfs:label  "יעד" .
+        rdfs:label  "target" .
+
+jbo:description  a  owl:ObjectProperty ;
+        rdfs:label  "description" .
 
 jbo:Perush  a            owl:Class ;
-        rdfs:label       "פירוש" ;
+        rdfs:label       "Perush" ;
         rdfs:subClassOf  jbo:Text .
 
 jbo:BookTanach  a        owl:Class ;
-        rdfs:label       "ספר תנ\"ך" ;
+        rdfs:label       "BookTanach" ;
         rdfs:subClassOf  jbo:Book .
 
 jbo:Category  a          owl:Class ;
-        rdfs:label       "קטגוריה" ;
+        rdfs:label       "Category" ;
         rdfs:subClassOf  owl:Thing .
 
 jbo:PerushTanach  a      owl:Class ;
-        rdfs:label       "פירוש תנ\"ך" ;
+        rdfs:label       "PerushTanach" ;
         rdfs:subClassOf  jbo:Perush .
 
 jbo:span  a         owl:ObjectProperty ;
-        rdfs:label  "פרישה" .
+        rdfs:label  "span" .
 
 jbo:Masechet  a          owl:Class ;
-        rdfs:label       "מסכת" ;
+        rdfs:label       "Masechet" ;
         rdfs:subClassOf  jbo:Section .
 
 jbo:Siman  a             owl:Class ;
-        rdfs:label       "סימן" ;
+        rdfs:label       "Siman" ;
         rdfs:subClassOf  jbo:Section .
 
 jbo:Mishnaya  a          owl:Class ;
-        rdfs:label       "משניה" ;
+        rdfs:label       "Mishnaya" ;
         rdfs:subClassOf  jbo:Text .
 
 jbo:Section  a           owl:Class ;
-        rdfs:label       "יחידה" ;
+        rdfs:label       "Section" ;
         rdfs:subClassOf  owl:Thing .
 
 jbo:numOfMentions  a  owl:ObjectProperty ;
-        rdfs:label  "מספר איזכורים" .
+        rdfs:label  "numOfMentions" .
 
 jbo:position  a     owl:ObjectProperty ;
-        rdfs:label  "מיקום" .
+        rdfs:label  "position" .
 
 jbo:positionInParasha
         a           owl:ObjectProperty ;
-        rdfs:label  "מיקום בפרשה" .
+        rdfs:label  "positionInParasha" .
 
 jbo:textNikud  a    owl:ObjectProperty ;
-        rdfs:label  "טקסט מנוקד" .
+        rdfs:label  "textNikud" .
+
+jbo:interprets  a   owl:ObjectProperty ;
+        rdfs:label  "interprets" .
 
 jbo:Mitzva  a            owl:Class ;
-        rdfs:label       "מצווה" ;
+        rdfs:label       "Mitzva" ;
         rdfs:subClassOf  jbo:Text .
 
 jbo:AmudBavli  a         owl:Class ;
-        rdfs:label       "עמוד בבלי" ;
+        rdfs:label       "AmudBavli" ;
         rdfs:subClassOf  jbo:Text .
 
 jbo:Halacha  a           owl:Class ;
-        rdfs:label       "הלכה" ;
+        rdfs:label       "Halacha" ;
         rdfs:subClassOf  jbo:Text .
 
 jbo:within  a       owl:ObjectProperty ;
-        rdfs:label  "נמצא בתוך" .
+        rdfs:label  "within" .
 
 jbo:Seder  a             owl:Class ;
-        rdfs:label       "סדר" ;
+        rdfs:label       "Seder" ;
         rdfs:subClassOf  jbo:Section .
 
 jbo:ParashaTorah  a      owl:Class ;
-        rdfs:label       "פרשה" ;
+        rdfs:label       "ParashaTorah" ;
         rdfs:subClassOf  jbo:Section .
 
-jbo:explains  a     owl:ObjectProperty ;
-        rdfs:label  "מבאר" .
-
 jbo:Pasuk  a             owl:Class ;
-        rdfs:label       "פסוק" ;
+        rdfs:label       "Pasuk" ;
         rdfs:subClassOf  jbo:Text .
 
 jbo:Mention  a           owl:Class ;
-        rdfs:label       "איזכור" ;
+        rdfs:label       "Mention" ;
         rdfs:subClassOf  owl:Thing .
 
 jbo:positionInPerek  a  owl:ObjectProperty ;
-        rdfs:label  "מיקום בפרק" .
+        rdfs:label  "positionInPerek" .
 
 jbo:Book  a              owl:Class ;
-        rdfs:label       "ספר" ;
+        rdfs:label       "Book" ;
         rdfs:subClassOf  owl:Thing .
 
 jbo:Person  a            owl:Class ;
-        rdfs:label       "אישיות" ;
+        rdfs:label       "Person" ;
         rdfs:subClassOf  owl:Thing .
 
 jbo:Text  a              owl:Class ;
-        rdfs:label       "טקסט" ;
+        rdfs:label       "Text" ;
         rdfs:subClassOf  owl:Thing .
 
 jbo:Halachot  a          owl:Class ;
-        rdfs:label       "הלכות" ;
+        rdfs:label       "Halachot" ;
         rdfs:subClassOf  jbo:Section .
 
 jbo:Perek  a             owl:Class ;
-        rdfs:label       "פרק" ;
+        rdfs:label       "Perek" ;
         rdfs:subClassOf  jbo:Section .
 
 jbo:source  a       owl:ObjectProperty ;
-        rdfs:label  "מקור" .
+        rdfs:label  "source" .
 
 jbo:Chelek  a            owl:Class ;
-        rdfs:label       "חלק" ;
+        rdfs:label       "Chelek" ;
         rdfs:subClassOf  jbo:Section .
 
 jbo:mentions  a     owl:ObjectProperty ;
-        rdfs:label  "מזכיר" .
+        rdfs:label  "mentions" .
