@@ -29,7 +29,7 @@ public class JbsOntology
     public static Resource JBO_C_CATEGORY = (model.getOntClass(JBO_URI + "Category"));
     public static Resource JBO_C_SEDER = (model.getOntClass(JBO_URI + "Seder"));
     public static Resource JBO_C_PARASHATORAH = (model.getOntClass(JBO_URI + "ParashaTorah"));
-    public static Resource JBO_C_PEREK = (model.getOntClass(JBO_URI + "Perek"));
+    public static Resource JBO_C_PEREKTANACH = (model.getOntClass(JBO_URI + "PerekTanach"));
     public static Resource JBO_C_MASECHET = (model.getOntClass(JBO_URI + "Masechet"));
     public static Resource JBO_C_CHELEK = (model.getOntClass(JBO_URI + "Chelek"));
     public static Resource JBO_C_HALACHOT = (model.getOntClass(JBO_URI + "Halachot"));

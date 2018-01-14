@@ -71,9 +71,9 @@
     },
 	
     {
-      "uri" : "jbo:Perek",
+      "uri" : "jbo:PerekTanach",
       "rdf:type" : "owl:Class",
-      "rdfs:label" : "Perek",
+      "rdfs:label" : "PerekTanach",
       "rdfs:subClassOf" : "jbo:Section"
     },
 

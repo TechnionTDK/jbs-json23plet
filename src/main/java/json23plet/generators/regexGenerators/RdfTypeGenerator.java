@@ -75,6 +75,7 @@ public class RdfTypeGenerator extends BaseRegexGenerator {
 
     private void registerSectionSubclasses() {
         registerGenerator(new TypeRegEx("jbr:section-tanach-parasha-\\d+", JBO_C_PARASHATORAH));
+        registerGenerator(new TypeRegEx("jbr:section-tanach-\\d+-\\d+", JBO_C_PEREKTANACH));
     }
 
     private void registerTextSubclasses() {

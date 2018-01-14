@@ -116,12 +116,12 @@ jbo:Halachot  a          owl:Class ;
         rdfs:label       "Halachot" ;
         rdfs:subClassOf  jbo:Section .
 
-jbo:Perek  a             owl:Class ;
-        rdfs:label       "Perek" ;
-        rdfs:subClassOf  jbo:Section .
-
 jbo:source  a       owl:ObjectProperty ;
         rdfs:label  "source" .
+
+jbo:PerekTanach  a       owl:Class ;
+        rdfs:label       "PerekTanach" ;
+        rdfs:subClassOf  jbo:Section .
 
 jbo:Chelek  a            owl:Class ;
         rdfs:label       "Chelek" ;
